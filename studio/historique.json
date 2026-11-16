@@ -71,6 +71,23 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=6214109773277317275"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-avant-aujourdhui",
+      "format": "calme",
+      "palette": "peche",
+      "sujet": "Vendre avant vs aujourd'hui",
+      "approche": "avant / après",
+      "cta": "question",
+      "fichier": "studio/videos/2026-11-17-avant-aujourdhui/2026-11-17-avant-aujourdhui.mp4",
+      "publie": true,
+      "programme": "2026-11-17T10:30 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7628667743676287608"
     }
   ]
 }

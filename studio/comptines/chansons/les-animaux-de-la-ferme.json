@@ -1,0 +1,123 @@
+{
+  "id": "les-animaux-de-la-ferme",
+  "titre": "Les animaux de la ferme",
+  "theme": "ferme",
+  "animal": "ours",
+  "bpm": 100,
+  "transpose": -2,
+  "sous_titre": "Chante avec Petit Ours !",
+  "lignes": [
+    {
+      "texte": "La va|che fait meuh,",
+      "notes": [
+        [
+          "C4",
+          1
+        ],
+        [
+          "E4",
+          0.5
+        ],
+        [
+          "G4",
+          0.5
+        ],
+        [
+          "G4",
+          1
+        ],
+        [
+          "E4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "le co|chon fait groin,",
+      "notes": [
+        [
+          "D4",
+          1
+        ],
+        [
+          "F4",
+          0.5
+        ],
+        [
+          "A4",
+          0.5
+        ],
+        [
+          "A4",
+          1
+        ],
+        [
+          "G4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "le pe|tit ca|nard",
+      "notes": [
+        [
+          "E4",
+          1
+        ],
+        [
+          "G4",
+          0.5
+        ],
+        [
+          "A4",
+          0.5
+        ],
+        [
+          "G4",
+          1
+        ],
+        [
+          "E4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "fait coin coin coin !",
+      "notes": [
+        [
+          "F4",
+          1
+        ],
+        [
+          "D4",
+          1
+        ],
+        [
+          "E4",
+          1
+        ],
+        [
+          "C4",
+          1
+        ]
+      ]
+    }
+  ],
+  "type": "originale (écrite pour la chaîne)",
+  "repetitions": 3,
+  "pause_beats": 2,
+  "fin": "Bravo !",
+  "youtube": {
+    "titre": "Les animaux de la ferme 🐄 Comptine pour enfants avec paroles | Chante avec Petit Ours",
+    "description": "Meuh, groin, coin coin ! Chante les cris des animaux de la ferme avec Petit Ours ! 🐻🐄\nUne comptine originale avec les paroles à l'écran.\n\n#comptine #chansonpourenfant #comptines",
+    "tags": [
+      "comptine",
+      "chanson pour enfant",
+      "animaux de la ferme",
+      "comptines",
+      "maternelle",
+      "karaoké enfant"
+    ]
+  }
+}

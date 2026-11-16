@@ -28,6 +28,21 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 - `caption` : 2 à 4 lignes qui résument la valeur + appel à l'action ; `hashtags` : 5 à 6 (base + rotation).
 - Respecter toutes les `regles` du cerveau (aucune promesse de revenus, aucun chiffre inventé).
 
+
+## 2 bis. Format (important pour la qualité)
+- **2 vidéos sur 3 au format `calme`** (`"format": "calme"`, voir `studio/scripts/2026-11-17-avant-aujourdhui.json`) :
+  fond papier pointillé + halo, titre gras avec un mot en *italique* (entre astérisques), cartes qui se remplissent,
+  mot prononcé au centre, mascotte pixel originale en haut à droite avec une `bulle` (2 à 4 mots) par segment.
+  - palettes à alterner : `peche`, `menthe`, `lilas`, `ciel`, `beurre` ;
+  - scènes : `texte` (title, text, sub), `liste` (title, label, items[t, at]), `versus` (title, left/right {label, items}, at),
+    `chiffre` (title, label, value, sub, at), `question` (title, label, text, cta) ;
+  - ton posé, phrases simples, 90 à 130 mots ; explique UNE chose concrète, comme à un ami.
+- 1 vidéo sur 3 au format présentateur (dynamique, 3D) pour varier.
+- **Engagement (commentaires)** : le dernier segment est toujours une `question` simple et précise à laquelle on répond
+  en 1 mot ou 1 chiffre (ex. « Tu publies sur quel réseau ? », « 1, 2 ou 3 ? »). Mettre la même question dans la légende
+  et dans `firstCommentText` du post Metricool (premier commentaire automatique).
+- Hashtags : 3 à 5, précis.
+
 ## 3. Fabriquer et vérifier
 ```bash
 python3 studio/make_video.py studio/scripts/<id>.json --stills   # images de contrôle
@@ -44,7 +59,7 @@ python3 studio/make_video.py studio/scripts/<id>.json
 3. Vérifier les réseaux connectés avec `getBrandSettings` (networksData), puis Metricool `createScheduledPost`
    (blogId `8094155`, fuseau `Europe/Paris`) environ 20 minutes après maintenant :
    - providers : `tiktok`, `instagram`, et `facebook` seulement si `facebookData` apparaît dans networksData (jamais `youtube`)
-   - media : [URL publique] ; text : caption + hashtags
+   - media : [URL publique] ; text : caption + hashtags ; firstCommentText : la question finale
    - `tiktokData` : `{"privacyOption":"PUBLIC_TO_EVERYONE","isAigc":true,"title":"<titre court>"}`
    - `instagramData` : `{"type":"REEL","showReelOnFeed":true,"isAiGenerated":true}`
    - `facebookData` : `{"type":"REEL","title":"<titre>"}`

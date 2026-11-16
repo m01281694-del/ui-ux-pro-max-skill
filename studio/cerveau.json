@@ -47,7 +47,8 @@
     "Comptines YouTube : contenu 100 % enfant, madeForKids=true, aucune vente, aucun lien, textes traditionnels du domaine public ou originaux.",
     "Uniquement du marketing digital (réseaux sociaux, contenu, pub en ligne, email, SEO, e-commerce, funnels, copywriting en ligne, analytics). Exemples concrets tirés du digital, jamais d'objets hors sujet.",
     "Chaque vidéo change TOUT par rapport à la précédente : approche (liste 'approches'), type d'accroche, phrases, style visuel, univers 3D (scene3d : orbit, phone, grid, bars, knots), personnage (champ host : skin 0-3, hairColor 0-3, hair fade/curly/long/bun/buzz, beard, cap, glasses, jacket), type de scènes et appel à l'action.",
-    "Une seule idée par vidéo, expliquée avec un exemple concret du digital."
+    "Une seule idée par vidéo, expliquée avec un exemple concret du digital.",
+    "Chaque vidéo finit par une question simple qui donne envie de commenter, reprise dans la légende et en premier commentaire."
   ],
   "accroches": [
     "Contre-pied : « X, c'est pas Y. »",
@@ -263,5 +264,9 @@
     "checklist",
     "chiffre clé expliqué",
     "boucle ouverte avec révélation finale"
-  ]
+  ],
+  "formats": {
+    "calme": "2 vidéos sur 3 : style éditorial clair, mascotte pixel originale en haut à droite, voix posée",
+    "presentateur": "1 vidéo sur 3 : personnage animé + décor 3D, plus dynamique"
+  }
 }
