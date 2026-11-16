@@ -1,0 +1,24 @@
+{
+  "id": "2026-11-17-avant-aujourdhui",
+  "format": "calme",
+  "palette": "peche",
+  "sujet": "Vendre avant vs aujourd'hui : ce qui compte vraiment en marketing digital",
+  "approche": "avant / après",
+  "segments": [
+    {"id": "intro", "bulle": "On compare ?", "say": "Vendre, avant et aujourd'hui. Ça n'a plus rien à voir.",
+     "scene": {"type": "texte", "title": "Vendre *avant* vs *aujourd'hui*", "text": "Ça n'a *plus rien* à voir.", "size": 110}},
+    {"id": "versus", "bulle": "Tout a changé", "say": "Avant, il fallait une boutique, et une pub à la télé. Aujourd'hui, il te faut un téléphone, et une vidéo de trente secondes.",
+     "scene": {"type": "versus", "title": "Avant *vs* aujourd'hui", "at": "aujourd",
+       "left": {"label": "Avant", "items": [{"t": "Une boutique", "at": "boutique"}, {"t": "Une pub à la télé", "at": "tele"}]},
+       "right": {"label": "Aujourd'hui", "items": [{"t": "Un téléphone", "at": "telephone"}, {"t": "Une vidéo de 30 s", "at": "video"}]}}},
+    {"id": "cles", "bulle": "Note bien ça", "say": "Mais ce qui compte vraiment, c'est trois choses : une niche précise, une vraie valeur dans chaque vidéo, et la régularité.",
+     "scene": {"type": "liste", "title": "Ce qui *compte* vraiment", "label": "Les 3 clés", "items": [{"t": "Une niche précise", "at": "niche"}, {"t": "De la valeur à chaque vidéo", "at": "valeur"}, {"t": "La régularité", "at": "regularite"}]}},
+    {"id": "test", "bulle": "Simple.", "say": "Le vrai test ? Une vidéo par jour, pendant trente jours. Puis tu regardes ce qui a marché.",
+     "scene": {"type": "chiffre", "title": "Le *vrai* test", "label": "Pendant 30 jours", "value": "1/jour", "sub": "puis garde ce qui marche", "at": "video"}},
+    {"id": "question", "bulle": "Je lis tout", "say": "Et toi, tu publies sur quel réseau en ce moment ? Dis-le-moi en commentaire.",
+     "scene": {"type": "question", "title": "Et *toi* ?", "label": "À toi", "text": "Tu publies sur quel réseau en ce moment ?", "cta": "Réponds en commentaire ↓"}}
+  ],
+  "caption": "Vendre avant vs aujourd'hui 📱\nAvant : une boutique et une pub télé. Aujourd'hui : un téléphone et une vidéo de 30 secondes.\nCe qui compte vraiment : une niche précise, de la valeur à chaque vidéo, et la régularité.\n💬 Et toi, tu publies sur quel réseau en ce moment ?",
+  "titre": "Vendre avant vs aujourd'hui",
+  "hashtags": ["#marketingdigital", "#entrepreneur", "#createurdecontenu", "#businessenligne"]
+}
