@@ -79,15 +79,16 @@
       "palette": "peche",
       "sujet": "Vendre avant vs aujourd'hui",
       "approche": "avant / après",
-      "cta": "question",
+      "cta": "VIP",
       "fichier": "studio/videos/2026-11-17-avant-aujourdhui/2026-11-17-avant-aujourdhui.mp4",
       "publie": true,
-      "programme": "2026-11-17T10:30 Europe/Paris",
+      "programme": "2026-11-17T07:00 Europe/Paris",
       "reseaux": [
         "tiktok",
         "instagram"
       ],
-      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7628667743676287608"
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7628667743676287608",
+      "duree": "47 s"
     },
     {
       "date": "2026-11-16",
@@ -96,15 +97,16 @@
       "look": "nuit",
       "sujet": "Automatiser la création et la publication de ses vidéos",
       "approche": "tuto en 4 étapes (mini-film)",
-      "cta": "question",
+      "cta": "VIP",
       "fichier": "studio/videos/2026-11-16-pilote-automatique/2026-11-16-pilote-automatique.mp4",
       "publie": true,
-      "programme": "2026-11-16T23:00 Europe/Paris",
+      "programme": "2026-11-16T23:15 Europe/Paris",
       "reseaux": [
         "tiktok",
         "instagram"
       ],
-      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=699494805668712164"
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=699494805668712164",
+      "duree": "46 s"
     }
   ]
 }

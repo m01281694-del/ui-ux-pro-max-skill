@@ -33,7 +33,7 @@
       "Elite": "697 € paiement unique, coaching"
     },
     "cta_dm": "Écris-moi VIP en message privé",
-    "regle_vente": "Au maximum 1 vidéo sur 3 parle de VIP. Les autres donnent de la valeur pure et finissent par enregistre / abonne-toi / commente."
+    "regle_vente": "CHAQUE vidéo marketing finit par la mention de la formation de marketing digital et « Écris VIP en commentaire, et je t'envoie tout »."
   },
   "regles": [
     "Jamais de promesse de revenus ni de chiffres de gains inventés.",
@@ -41,14 +41,14 @@
     "Toujours déclarer le contenu généré par IA (TikTok isAigc=true, Instagram isAiGenerated=true, YouTube isAiGeneratedContent=true).",
     "Pas de marques ni logos de tiers dans les visuels ; pas de personne réelle imitée.",
     "Accroche dans les 2 premières secondes : contre-pied, question, boucle ouverte, erreur fréquente ou promesse concrète. Jamais 'Arrête de scroller', jamais 'Salut c'est moi'.",
-    "Durée parlée 25 à 45 secondes (120 à 160 mots).",
     "Écrire les nombres en lettres dans le texte parlé quand ils doivent être prononcés ; en chiffres dans les visuels.",
     "Ne jamais répéter un sujet déjà présent dans historique.json ; varier style, accroche, type de scènes et appel à l'action à chaque vidéo.",
     "Comptines YouTube : contenu 100 % enfant, madeForKids=true, aucune vente, aucun lien, textes traditionnels du domaine public ou originaux.",
     "Uniquement du marketing digital (réseaux sociaux, contenu, pub en ligne, email, SEO, e-commerce, funnels, copywriting en ligne, analytics). Exemples concrets tirés du digital, jamais d'objets hors sujet.",
     "Chaque vidéo change TOUT par rapport à la précédente : approche (liste 'approches'), type d'accroche, phrases, style visuel, univers 3D (scene3d : orbit, phone, grid, bars, knots), personnage (champ host : skin 0-3, hairColor 0-3, hair fade/curly/long/bun/buzz, beard, cap, glasses, jacket), type de scènes et appel à l'action.",
     "Une seule idée par vidéo, expliquée avec un exemple concret du digital.",
-    "Chaque vidéo finit par une question simple qui donne envie de commenter, reprise dans la légende et en premier commentaire."
+    "Chaque vidéo finit par une question simple qui donne envie de commenter, reprise dans la légende et en premier commentaire.",
+    "Durée : environ 45 secondes (125 à 140 mots), rythme dynamique."
   ],
   "accroches": [
     "Contre-pied : « X, c'est pas Y. »",

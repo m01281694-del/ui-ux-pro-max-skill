@@ -16,11 +16,11 @@ git fetch origin claude/tiktok-video-link-reading-tb3u57 && git checkout claude/
 - Choisir un sujet de la banque (ou un sujet marketing nouveau, utile et concret, si la banque est épuisée).
 - Choisir une **approche** (liste `approches`), un **style**, un **univers 3D** (`scene3d`) et un **personnage** (`host`)
   différents des 3 dernières vidéos, un type d'accroche différent, des phrases neuves et des types de scènes variés.
-- CTA : au plus 1 vidéo sur 3 vend VIP (`dm`) ; sinon `save`, `follow` ou `comment`.
+- **Fin obligatoire de CHAQUE vidéo** : « J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout. » (gros « VIP » à l'écran, `cta_at` = moment où « VIP » est prononcé). Même phrase dans la légende et `firstCommentText` = « Écris VIP en commentaire 👇 ».
 
 ## 2. Écrire le script
 Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026-11-17-benefice.json` :
-- 5 à 8 segments, 120 à 160 mots au total, phrases courtes, tutoiement.
+- **45 secondes** (environ 125 à 140 mots), 5 à 7 segments, phrases courtes, tutoiement, rythme dynamique.
 - Premier segment = accroche (moins de 2 secondes à dire).
 - Chaque segment a une `scene` parmi : `bigword`, `cards`, `tiles`, `versus`, `stat`, `steps`, `quote`, `arrow`, `save`, `cta`.
   Les champs `at` désignent le mot prononcé qui déclenche l'apparition (un mot présent dans `say`).
@@ -53,7 +53,7 @@ python3 studio/make_video.py studio/scripts/<id>.json
 
 ## 4. Publier
 1. `git add studio && git commit && git push` sur la branche `claude/tiktok-video-link-reading-tb3u57`.
-2. Attendre que l'URL publique réponde 200 :
+2. Utiliser l'URL **figée sur le commit** (`git rev-parse HEAD` à la place du nom de branche, évite le cache) et attendre qu'elle réponde 200 :
    `https://raw.githubusercontent.com/m01281694-del/ui-ux-pro-max-skill/claude/tiktok-video-link-reading-tb3u57/studio/videos/<id>/<id>.mp4`
 3. Vérifier les réseaux connectés avec `getBrandSettings` (networksData), puis Metricool `createScheduledPost`
    (blogId `8094155`, fuseau `Europe/Paris`) environ 20 minutes après maintenant :
