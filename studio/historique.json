@@ -1,0 +1,6 @@
+{
+  "videos": [
+    {"date": "2026-11-15", "id": "vip-mot-secret", "sujet": "Présentation de VIP (mot secret)", "style": "navy", "cta": "dm", "fichier": "VIP-tiktok.mp4", "publie": false},
+    {"date": "2026-11-16", "id": "c-est-quoi-le-marketing", "sujet": "C'est quoi le marketing (pas de la pub, 4 mots, exemple des cafés)", "style": "forest", "cta": "dm", "fichier": "Marketing-tiktok.mp4", "publie": false}
+  ]
+}
