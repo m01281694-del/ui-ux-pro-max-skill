@@ -201,7 +201,6 @@
     "reseaux": [
       "tiktok",
       "instagram (REEL, visible dans le fil)",
-      "youtube (short)",
       "facebook (REEL, dès que la page est connectée dans Metricool)"
     ],
     "delai": "programmer environ 20 minutes après la fabrication",
@@ -214,16 +213,10 @@
       "showReelOnFeed": true,
       "isAiGenerated": true
     },
-    "youtubeData": {
-      "type": "short",
-      "privacy": "public",
-      "category": "EDUCATION",
-      "madeForKids": false,
-      "isAiGeneratedContent": true
-    },
     "facebookData": {
       "type": "REEL"
-    }
+    },
+    "youtube": "JAMAIS de marketing sur YouTube : la chaîne YouTube est réservée aux comptines pour enfants (voir youtube_comptines)."
   },
   "youtube_comptines": {
     "nom_de_chaine_suggere": "Les Petites Comptines",

@@ -1,7 +1,8 @@
 # Studio — routine automatique (toutes les 5 heures)
 
 Cette routine est exécutée toutes les 5 heures par une tâche planifiée. Elle fabrique **une vidéo de marketing digital
-nouvelle** et la publie sur TikTok, Instagram (Reel visible dans le fil), YouTube (Short) et Facebook (Reel, si connecté).
+nouvelle** et la publie sur TikTok, Instagram (Reel visible dans le fil) et Facebook (Reel, si connecté).
+**Jamais sur YouTube** : la chaîne YouTube est réservée aux comptines (voir studio/comptines/).
 
 ## 0. Préparer la session
 ```bash
@@ -42,11 +43,10 @@ python3 studio/make_video.py studio/scripts/<id>.json
    `https://raw.githubusercontent.com/m01281694-del/ui-ux-pro-max-skill/claude/tiktok-video-link-reading-tb3u57/studio/videos/<id>/<id>.mp4`
 3. Vérifier les réseaux connectés avec `getBrandSettings` (networksData), puis Metricool `createScheduledPost`
    (blogId `8094155`, fuseau `Europe/Paris`) environ 20 minutes après maintenant :
-   - providers : `tiktok`, `instagram`, `youtube`, et `facebook` seulement si `facebookData` apparaît dans networksData
+   - providers : `tiktok`, `instagram`, et `facebook` seulement si `facebookData` apparaît dans networksData (jamais `youtube`)
    - media : [URL publique] ; text : caption + hashtags
    - `tiktokData` : `{"privacyOption":"PUBLIC_TO_EVERYONE","isAigc":true,"title":"<titre court>"}`
    - `instagramData` : `{"type":"REEL","showReelOnFeed":true,"isAiGenerated":true}`
-   - `youtubeData` : `{"title":"<titre> #shorts","type":"short","privacy":"public","category":"EDUCATION","madeForKids":false,"isAiGeneratedContent":true,"tags":[...]}`
    - `facebookData` : `{"type":"REEL","title":"<titre>"}`
 4. Ajouter l'entrée dans `studio/historique.json` (date, id, sujet, style, cta, fichier, publie: true, plannerUrl), commit + push.
 

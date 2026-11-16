@@ -13,7 +13,7 @@ const FPS = 30;
   await p.addInitScript(([s, t]) => { window.SPEC = s; window.TL = t; }, [SPEC, TL]);
   let err = null;
   p.on('pageerror', e => { err = e; console.log('ERR', e.message); });
-  await p.goto('file://' + path.join(__dirname, 'template.html'));
+  await p.goto('file://' + (process.env.STUDIO_TEMPLATE || path.join(__dirname, 'template.html')));
   await p.waitForTimeout(700);
   if (err) process.exit(2);
   fs.writeFileSync(punchPath, JSON.stringify(await p.evaluate(() => window.PUNCH_TIMES)));
