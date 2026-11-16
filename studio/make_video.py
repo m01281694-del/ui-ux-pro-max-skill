@@ -29,6 +29,7 @@ render = os.path.join(HERE, "engine", "render.js")
 RENV = dict(os.environ)
 if spec.get("format") == "calme": RENV["STUDIO_TEMPLATE"] = os.path.join(HERE, "engine", "calme.html")
 if spec.get("format") == "film": RENV["STUDIO_TEMPLATE"] = os.path.join(HERE, "engine", "film.html")
+if spec.get("format") == "sketch": RENV["STUDIO_TEMPLATE"] = os.path.join(HERE, "engine", "sketch.html")
 punch = out + "/punch.json"
 if stills:
     ts = [str(round(s["start"] + .9 * (s["end"] - s["start"]), 2)) for s in tl["segs"]] + [str(round(tl["duration"] - .3, 2))]

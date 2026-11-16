@@ -127,3 +127,62 @@ def make(spec, out_dir):
     tl = {"duration": dur, "segs": out_segs, "words": words, "vis": vis, "mouth": [round(float(x), 3) for x in amp], "voice_engine": engine}
     json.dump(tl, open(out_dir + "/timeline.json", "w"), ensure_ascii=False)
     return tl
+
+
+# ---------- dialogues à plusieurs voix ----------
+VOICES = {"leo": "TX3LPaxmHKxFdv7VOQHJ", "bip": "cgSgspJ2msm6clMCkdW9"}
+
+
+def make_dialogue(spec, out_dir):
+    global ELEVEN_VOICE
+    segs = spec["segments"]; sr = 44100
+    who_list = sorted(set(s.get("who", "leo") for s in segs))
+    tracks = {w: [] for w in who_list}
+    audio, t = [], LEAD
+    words, out_segs = [], []
+    engine = "elevenlabs"
+    for k, s in enumerate(segs):
+        txt = s["say"].strip(); who = s.get("who", "leo")
+        try:
+            ELEVEN_VOICE = VOICES.get(who, VOICES["leo"])
+            a, sr2, chars, cs, ce = eleven(txt, out_dir)
+        except Exception as e:
+            print("ElevenLabs indisponible, repli Piper :", str(e)[:120]); engine = "piper"
+            a, sr2, chars, cs, ce = piper([txt], out_dir)
+        nz = np.where(np.abs(a) > .01)[0]
+        off = 0
+        if len(nz): off = max(0, nz[0] - 300); a = a[off: nz[-1] + 900]
+        o = off / sr; joined = "".join(chars)
+        i = 0
+        while i < len(chars):
+            if chars[i].isspace(): i += 1; continue
+            j = i
+            while j < len(chars) and not chars[j].isspace(): j += 1
+            words.append({"w": joined[i:j], "a": round(t + cs[i] - o, 3), "b": round(t + ce[j-1] - o, 3), "seg": s["id"], "who": who})
+            i = j
+        d = len(a) / sr
+        out_segs.append({"id": s["id"], "who": who, "start": round(t, 3), "end": round(t + d, 3), "text": txt})
+        audio.append((t, a, who)); t += d + s.get("pause", .28)
+    dur = round(t + TAIL, 3)
+    N = int(dur * sr); full = np.zeros(N, dtype=np.float32); per = {w: np.zeros(N, dtype=np.float32) for w in who_list}
+    for (st, a, who) in audio:
+        i0 = int(st * sr); i1 = min(N, i0 + len(a)); full[i0:i1] += a[:i1 - i0]; per[who][i0:i1] += a[:i1 - i0]
+    m = np.abs(full).max(); full = full / max(1e-6, m) * .95
+    sf.write(out_dir + "/voice.wav", full, sr)
+    hop = sr // FPS; mouths = {}
+    for w, tr in per.items():
+        amp = np.array([float(np.sqrt(np.mean(tr[f*hop:(f+1)*hop] ** 2))) for f in range(int(dur * FPS))])
+        ref = np.percentile(amp[amp > .005], 90) if (amp > .005).any() else 1
+        mouths[w] = [round(float(x), 3) for x in np.clip(amp / (ref + 1e-6), 0, 1)]
+    amp_all = np.clip(np.array([float(np.sqrt(np.mean(full[f*hop:(f+1)*hop] ** 2))) for f in range(int(dur * FPS))]) / .1, 0, 1)
+    tl = {"duration": dur, "segs": out_segs, "words": words, "mouths": mouths, "mouth": [round(float(x), 3) for x in amp_all],
+          "vis": [[0, .3, 0, 0, 0]] * int(dur * FPS), "voice_engine": engine}
+    json.dump(tl, open(out_dir + "/timeline.json", "w"), ensure_ascii=False)
+    return tl
+
+
+_make_single = make
+def make(spec, out_dir):
+    if spec.get("format") == "sketch" or any("who" in s for s in spec.get("segments", [])):
+        return make_dialogue(spec, out_dir)
+    return _make_single(spec, out_dir)
