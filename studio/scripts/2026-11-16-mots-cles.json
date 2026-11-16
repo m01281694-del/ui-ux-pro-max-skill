@@ -1,0 +1,27 @@
+{
+  "id": "2026-11-16-mots-cles",
+  "sujet": "Mots-clés plutôt que hashtags en 2026 (SEO TikTok et Instagram)",
+  "approche": "l'erreur que tout le monde fait",
+  "style": "ocean",
+  "scene3d": "grid",
+  "host": {"hair": "bun", "skin": 1, "hairColor": 2, "glasses": true, "beard": false, "cap": false},
+  "segments": [
+    {"id": "hook", "say": "Arrête de coller trente hashtags sous tes vidéos.",
+     "scene": {"type": "bigword", "label": "L'erreur classique", "word": "#30", "sub": "hashtags", "strike": true, "at": "hashtags"}},
+    {"id": "google", "say": "Aujourd'hui, TikTok et Instagram marchent comme un moteur de recherche : les gens tapent des mots, et l'algorithme lit les tiens.",
+     "scene": {"type": "arrow", "from": "Des hashtags", "to": "DES MOTS-CLÉS", "at": "recherche"}},
+    {"id": "trois", "say": "Place ton mot-clé à trois endroits : dans ce que tu dis, dans le texte à l'écran, et dans ta légende.",
+     "scene": {"type": "cards", "label": "3 endroits", "items": [{"t": "Dans ce que tu dis", "icon": "megaphone", "at": "dis"}, {"t": "Dans le texte à l'écran", "icon": "phone", "at": "ecran"}, {"t": "Dans ta légende", "icon": "chat", "at": "legende"}]}},
+    {"id": "exemple", "say": "Exemple : au lieu de hashtag business, écris plutôt : trouver ses premiers clients sur Instagram.",
+     "scene": {"type": "versus", "left": {"t": "#business", "sub": "trop vague, personne ne le cherche", "icon": "cross"}, "right": {"t": "Premiers clients", "sub": "ce que les gens tapent vraiment", "icon": "target"}, "winner": "right", "at": "premiers", "verdict": "SOIS PRÉCIS"}},
+    {"id": "client", "say": "Pose-toi une seule question : qu'est-ce que mon client tape dans la barre de recherche ?",
+     "scene": {"type": "quote", "text": "Qu'est-ce que mon client tape dans la barre de recherche ?"}},
+    {"id": "dosage", "say": "Et garde trois à cinq hashtags précis, pas plus.",
+     "scene": {"type": "stat", "label": "Le bon dosage", "value": "3-5", "sub": "hashtags précis, pas plus", "at": "trois"}},
+    {"id": "save", "say": "Enregistre cette vidéo, et réécris ta prochaine légende avec un vrai mot-clé.",
+     "scene": {"type": "save", "word": "ENREGISTRE", "sub": "et réécris ta prochaine légende"}}
+  ],
+  "caption": "Arrête les 30 hashtags 🚫 TikTok et Instagram fonctionnent comme un moteur de recherche : place ton mot-clé dans ce que tu dis, dans le texte à l'écran et dans ta légende. Pense à ce que ton client tape vraiment.\n🔖 Enregistre et réécris ta prochaine légende",
+  "titre": "Arrête les 30 hashtags",
+  "hashtags": ["#marketingdigital", "#seotiktok", "#instagramastuce", "#createurdecontenu"]
+}
