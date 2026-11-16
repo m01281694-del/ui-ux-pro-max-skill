@@ -34,7 +34,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;font-family:"Inter Display"
 #mascot{position:absolute;left:30px;top:172px;width:112px;height:112px;z-index:25;overflow:visible}
 #emote{position:absolute;left:128px;top:146px;width:76px;height:76px;border-radius:24px 24px 24px 6px;background:#fff;display:grid;place-items:center;font-size:42px;z-index:25;opacity:0;font-family:"Noto Color Emoji",sans-serif}
 </style></head>
-<body><div id="stage"><div id="pat"></div><div id="bar"></div><div id="world"></div><div id="caps"></div>
+<body><script src="vendor/three.min.js"></script><div id="stage"><div id="pat"></div><canvas id="three" width="540" height="960" style="position:absolute;inset:0;width:1080px;height:1920px"></canvas><div id="veil" style="position:absolute;inset:0"></div><div id="bar"></div><div id="world"></div><div id="caps"></div>
 <svg id="mascot" viewBox="0 0 100 100"><g id="mg">
  <path d="M50 22 C50 14 54 10 58 8" stroke="var(--a1)" stroke-width="3" fill="none" stroke-linecap="round"/>
  <path id="m-star" d="M58 1l2 5 5 1-4 3 1 5-4-3-5 2 2-5-3-4 5 0z" fill="var(--a3)"/>
@@ -81,6 +81,47 @@ const ST = STYLES[SPEC.style] || STYLES.forest;
   const pat = { grid:`linear-gradient(${pc} 2px,transparent 2px),linear-gradient(90deg,${pc} 2px,transparent 2px)`, dots:`radial-gradient(${pc} 3px,transparent 3.5px)`, diag:`repeating-linear-gradient(45deg,${pc} 0 3px,transparent 3px 46px)` }[ST.pat];
   $("pat").style.background = pat; $("pat").style.backgroundSize = ST.pat === "diag" ? "auto" : "70px 70px"; r.setProperty("--patOp", 1);
   $("caps").className = SPEC.captions || ["pill","color","box"][Math.floor(rnd()*3)];
+}
+
+/* ---------- couche 3D ---------- */
+let render3d = () => {};
+if (window.THREE && SPEC.three !== false) {
+  $("veil").style.background = `radial-gradient(ellipse 62% 30% at 50% 29%, color-mix(in srgb, ${ST.bg[1]} 72%, transparent), transparent 100%)`;
+  const cv = $("three"); const r3 = new THREE.WebGLRenderer({canvas: cv, antialias: true, alpha: true, preserveDrawingBuffer: true});
+  r3.setPixelRatio(1); r3.setSize(540, 960, false);
+  const sc = new THREE.Scene(); sc.fog = new THREE.Fog(new THREE.Color(ST.bg[1]), 9, 24);
+  const cam = new THREE.PerspectiveCamera(55, 540/960, .1, 80);
+  sc.add(new THREE.HemisphereLight(0xffffff, new THREE.Color(ST.bg[2]), .85));
+  const dl = new THREE.DirectionalLight(0xffffff, .95); dl.position.set(3, 6, 7); sc.add(dl);
+  const pl = new THREE.PointLight(new THREE.Color(ST.a2), 1.4, 22); pl.position.set(-4, 3, 2); sc.add(pl);
+  const C = [ST.a1, ST.a2, ST.a3].map(c => new THREE.Color(c));
+  const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({color: c, metalness: .35, roughness: .32}, o));
+  const MODE = SPEC.scene3d || ["orbit", "phone", "grid", "bars", "knots"][Math.floor(rnd()*5)];
+  const objs = []; const add = (m, x, y, z, spin) => { m.position.set(x, y, z); m.userData = {x, y, z, spin, ph: rnd()*6.28}; sc.add(m); objs.push(m); return m; };
+  const G = [() => new THREE.IcosahedronGeometry(.7, 0), () => new THREE.TorusGeometry(.6, .22, 16, 40), () => new THREE.SphereGeometry(.55, 24, 16),
+             () => new THREE.BoxGeometry(.9, .9, .9), () => new THREE.OctahedronGeometry(.7, 0), () => new THREE.ConeGeometry(.55, 1.1, 24)];
+  if (MODE === "orbit") { for (let i = 0; i < 16; i++) { const a = rnd()*6.28, rad = 3.2 + rnd()*3; add(new THREE.Mesh(G[i % G.length](), M(C[i % 3])), Math.cos(a)*rad, -3.5 + rnd()*9, -3 - rnd()*7, .3 + rnd()*.8); } }
+  if (MODE === "phone") { const side = rnd() < .5 ? -1 : 1; const ph = add(new THREE.Mesh(new THREE.BoxGeometry(2.4, 4.8, .26), M(0x151515, {metalness: .6, roughness: .25})), side*3.6, 2.6, -7, 0);
+    ph.userData.phone = side; const scr = new THREE.Mesh(new THREE.PlaneGeometry(2.15, 4.5), new THREE.MeshBasicMaterial({color: C[1]})); scr.position.z = .14; ph.add(scr);
+    for (let k = 0; k < 4; k++) { const bar = new THREE.Mesh(new THREE.PlaneGeometry(1.6 - k*.2, .28), new THREE.MeshBasicMaterial({color: k % 2 ? C[0] : C[2]})); bar.position.set(0, 1.4 - k*.7, .15); ph.add(bar); }
+    for (let i = 0; i < 9; i++) { add(new THREE.Mesh(new THREE.TorusGeometry(.3, .11, 12, 30), M(C[(i+1) % 3])), (i % 2 ? 1 : -1)*(2.2 + rnd()*2.2), .5 + rnd()*6, -4 - rnd()*4, .6); } }
+  if (MODE === "grid") { const gh = new THREE.GridHelper(60, 40, C[0], C[1]); gh.position.set(0, -3.2, -10); sc.add(gh); objs.push(Object.assign(gh, {userData: {grid: true}}));
+    const sun = add(new THREE.Mesh(new THREE.CircleGeometry(3.2, 48), new THREE.MeshBasicMaterial({color: C[2]})), 0, 2.4, -22, 0);
+    for (let i = 0; i < 10; i++) add(new THREE.Mesh(new THREE.BoxGeometry(.8, .8, .8), M(C[i % 3], {wireframe: i % 2 === 0})), (i % 2 ? 1 : -1)*(2.5 + rnd()*3), -1 + rnd()*6, -4 - rnd()*8, .5); }
+  if (MODE === "bars") { for (let i = 0; i < 7; i++) { const b = add(new THREE.Mesh(new THREE.BoxGeometry(.8, 1, .8), M(C[i % 3])), -3.6 + i*1.2, -3, -7, 0); b.userData.bar = 1 + i*.7 + rnd(); }
+    for (let i = 0; i < 6; i++) add(new THREE.Mesh(G[i % G.length](), M(C[(i+2) % 3])), (i % 2 ? 1 : -1)*(3 + rnd()*2), 2 + rnd()*4, -5 - rnd()*4, .5); }
+  if (MODE === "knots") { [[-2.6, 3.4, -6], [2.8, 1, -7], [0, -1.8, -9]].forEach((p, i) => add(new THREE.Mesh(new THREE.TorusKnotGeometry(1, .32, 160, 20, 2 + i, 3), M(C[i])), p[0], p[1], p[2], .35));
+    for (let i = 0; i < 8; i++) add(new THREE.Mesh(new THREE.SphereGeometry(.25, 16, 12), M(C[i % 3])), -4 + rnd()*8, -3 + rnd()*8, -3 - rnd()*6, 0); }
+  render3d = (t, segIdx, pulse) => {
+    const sx = ((segIdx % 3) - 1) * 1.1; cam.position.set(Math.sin(t*.17)*1.4 + sx*.6, .6 + Math.sin(t*.11)*.5, 9 - pulse*.6); cam.lookAt(sx*.3, 1, -4);
+    objs.forEach((o, i) => { const u = o.userData;
+      if (u.grid) { o.position.z = -10 + (t*2.2 % 1.5); return; }
+      if (u.bar) { const h = u.bar * (.3 + .7*Math.min(1, t / (TL.duration*.8))) * (1 + pulse*.2); o.scale.y = h; o.position.y = -3 + h/2; o.rotation.y = t*.2; return; }
+      if (u.phone) { o.position.y = u.y + Math.sin(t*.7)*.25; o.rotation.set(Math.sin(t*.5)*.08, -u.phone*.45 + Math.sin(t*.4)*.18, 0); const k = 1 + pulse*.06; o.scale.set(k, k, k); return; }
+      o.position.y = u.y + Math.sin(t*.9 + u.ph)*.35; o.rotation.x = t*u.spin*.7 + u.ph; o.rotation.y = t*u.spin + u.ph;
+      const sc2 = 1 + pulse*.18; o.scale.set(sc2, sc2, sc2); });
+    r3.render(sc, cam); };
+  window.MODE3D = MODE;
 }
 
 /* ---------- icônes ---------- */
@@ -195,7 +236,7 @@ function build(seg){
      PUNCH.push(S.start + .15); GEST.push([S.start + .2, "side", "R"], [S.end, null, "R"]); break; }
    case "cta": {
      const l1 = add(`<div class="c h" style="top:330px;font-size:110px">${esc(sc.line || "ÉCRIS-MOI")}</div>`);
-     const b = add(`<div class="bubble" style="left:50%;top:480px;transform-origin:center">${esc(sc.word || "VIP")}</div>`);
+     const bwTxt = String(sc.word || "VIP"); const b = add(`<div class="bubble" style="left:50%;top:480px;transform-origin:center;font-size:${Math.min(140, Math.floor(1350 / Math.max(3, bwTxt.length)))}px">${esc(bwTxt)}</div>`);
      const s2 = add(`<div class="c" style="top:760px;font-weight:800;font-size:46px;color:var(--muted)">${esc(sc.sub || "en message privé")}</div>`);
      const ta = sc.at ? K(id, sc.at) : S.start + .5; PUNCH.push(ta);
      up.push(t => { pop(l1, t, S.start, .3); const p = P(t, ta - .08, .3); const bw = b.offsetWidth;
@@ -211,7 +252,9 @@ PUNCH.sort((a,b) => a - b);
 const SKINS = [["#E7B089","#D09163","#B9774B","#C7885B","#9E6440"],["#F3C9A6","#E2A97F","#C98C62","#D9A07A","#B67C55"],["#B07A52","#94603B","#7A4B2C","#8A5636","#6A3F24"],["#8A5A3C","#734A30","#5C3A24","#6A4229","#4F311D"]];
 const HAIRS = [["#3A2A20","#15100C"],["#1A1A1A","#050505"],["#6B4423","#3E2412"],["#C9A24A","#8C6A22"]];
 const H = SPEC.host || {}; const sk = SKINS[H.skin ?? Math.floor(rnd()*SKINS.length)]; const hc = HAIRS[H.hairColor ?? Math.floor(rnd()*HAIRS.length)];
-const hairStyle = H.hair || ["fade","curly","long","fade"][Math.floor(rnd()*4)];
+const hairStyle = H.hair || ["fade","curly","long","bun","buzz","fade"][Math.floor(rnd()*6)];
+const beard = H.beard ?? (["fade","buzz","curly"].includes(hairStyle) && rnd() < .45);
+const cap = H.cap ?? (["fade","buzz"].includes(hairStyle) && rnd() < .3);
 const jk = H.jacket || [ST.a2, ST.a3, ST.a1][Math.floor(rnd()*3)];
 const glasses = H.glasses ?? (rnd() < .3);
 function shade(hex, k){ const n = parseInt(hex.slice(1),16); let r=n>>16,g=n>>8&255,b=n&255; r=Math.round(r*k);g=Math.round(g*k);b=Math.round(b*k); return "#"+[r,g,b].map(x=>Math.min(255,x).toString(16).padStart(2,"0")).join(""); }
@@ -221,6 +264,8 @@ function hairSVG(){
     for (let i = 0; i < 26; i++) { const a = Math.PI * (1.05 + .9 * i / 25); const r = 128 + (i%3)*8; const x = 320 + Math.cos(a) * r, y = 210 + Math.sin(a) * r * .85; s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${30 + (i%4)*4}" fill="url(#gHair)"/>`; }
     for (let i = 0; i < 9; i++) s += `<circle cx="${230 + i*22}" cy="${130 - Math.sin(i/8*Math.PI)*30}" r="30" fill="url(#gHair)"/>`;
     return s; }
+  if (hairStyle === "buzz") return `<path d="M200 240 C196 150 252 100 320 100 C388 100 444 150 440 240 C430 196 400 166 320 162 C240 166 210 196 200 240Z" fill="url(#gHair)" opacity=".85"/>`;
+  if (hairStyle === "bun") return `<circle cx="320" cy="78" r="46" fill="url(#gHair)"/><path d="M190 262 C180 140 248 92 322 92 C398 92 464 140 452 262 C440 206 404 172 322 168 C240 172 204 206 190 262Z" fill="url(#gHair)"/><path d="M196 250 C186 320 196 380 214 400 L222 300Z M444 250 C454 320 444 380 426 400 L418 300Z" fill="url(#gHair)"/>`;
   if (hairStyle === "long") return `<path d="M188 260 C170 400 180 520 220 560 L250 430 C230 380 220 320 222 270Z" fill="url(#gHair)"/><path d="M452 260 C470 400 460 520 420 560 L390 430 C410 380 420 320 418 270Z" fill="url(#gHair)"/>
     <path d="M190 262 C180 140 248 84 322 84 C398 84 464 140 452 262 C440 210 410 176 360 168 C330 200 280 214 230 210 C210 222 196 240 190 262Z" fill="url(#gHair)"/>
     <path d="M250 112 C290 86 340 84 380 100 M360 168 C340 150 330 130 332 110" stroke="${hc[0]}" stroke-width="5" fill="none" opacity=".6"/>`;
@@ -255,6 +300,8 @@ $("host").innerHTML = `<defs>
    <path d="M214 330 C226 390 266 440 320 446 C374 440 414 390 426 330 C420 380 390 420 352 432 C334 437 306 437 288 432 C250 420 220 380 214 330Z" fill="${sk[4]}" opacity=".22"/>
    <ellipse cx="248" cy="330" rx="26" ry="14" fill="#E8798A" opacity=".18"/><ellipse cx="392" cy="330" rx="26" ry="14" fill="#E8798A" opacity=".18"/>
    ${hairSVG()}
+   ${beard ? `<path d="M214 320 C222 400 266 452 320 456 C374 452 418 400 426 320 C414 360 396 380 380 384 C360 360 280 360 260 384 C244 380 226 360 214 320Z" fill="${hc[0]}" opacity=".88"/>` : ""}
+   ${cap ? `<path d="M196 214 C196 120 256 86 320 86 C384 86 444 120 444 214 Z" fill="${ST.a3}"/><path d="M196 214 C260 196 380 196 444 214 L470 226 C420 232 250 232 196 214Z" fill="${shade(ST.a3, .75)}"/><circle cx="320" cy="92" r="9" fill="${shade(ST.a3, .7)}"/>` : ""}
    <g id="face">
     <g id="browL"><path d="M232 230 C248 214 280 212 302 220 L300 230 C280 224 252 226 236 238Z" fill="${hc[1]}"/></g>
     <g id="browR"><path d="M408 230 C392 214 360 212 338 220 L340 230 C360 224 388 226 404 238Z" fill="${hc[1]}"/></g>
@@ -294,7 +341,8 @@ function render(t){
     const pin = i === 0 ? 1 : P(t, a, .2), pout = i === SCN.length - 1 ? 0 : P(t, b - .16, .16); s.root.style.opacity = pin * (1 - pout);
     s.root.style.transform = TRANS === "zoom" ? `scale(${.8 + .2*eo(pin) + .2*eo(pout)})` : TRANS === "swipe" ? `translateX(${(1-eo(pin))*300 - eo(pout)*300}px)` : `translateY(${(1-eo(pin))*90 - eo(pout)*90}px) scale(${.94 + .06*eo(pin)})`;
     s.up.forEach(f => f(t)); });
-  let z = 1 + .3*(1 - eo(P(t, 0, .45))) + .012*Math.sin(t*.9); PUNCH.forEach(p => { if (t >= p - .03) z += .06 * Math.exp(-(t - p + .03) / .12); });
+  let z = 1 + .3*(1 - eo(P(t, 0, .45))) + .012*Math.sin(t*.9); let pulse = 0; PUNCH.forEach(p => { if (t >= p - .03) { const k = Math.exp(-(t - p + .03) / .12); z += .06 * k; pulse = Math.max(pulse, k); } });
+  { const si = Math.max(0, TL.segs.findIndex(s => t < s.next || s === TL.segs[TL.segs.length-1])); render3d(t, SCN.findIndex(s => { const S = SEG[s.id]; return t < S.next; }), pulse); }
   $("world").style.transform = `translate(540px, 540px) scale(${.9*z}) rotate(${Math.sin(t*.55)*.5}deg) translate(-540px, -480px)`;
   const ch = CHUNKS.find(c => t >= c[0].a - .06 && t < c[c.length-1].b + .18);
   $("caps").innerHTML = !ch ? "" : ch.map(w => `<span class="${t >= w.a - .03 && t < w.b + .02 ? "on" : ""}">${esc(w.w)}</span>`).join("");

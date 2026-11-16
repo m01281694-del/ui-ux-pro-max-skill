@@ -22,7 +22,7 @@ const FPS = 30;
     await b.close(); return;
   }
   const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', '-pix_fmt', 'yuv420p', out], { stdio: ['pipe', 'inherit', 'inherit'] });
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-pix_fmt', 'yuv420p', out], { stdio: ['pipe', 'inherit', 'inherit'] });
   const N = Math.ceil(TL.duration * FPS);
   for (let i = 0; i < N; i++) {
     await p.evaluate(t => render(t), i / FPS);
