@@ -30,17 +30,16 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 
 
 ## 2 bis. Format (important pour la qualité)
-- **2 vidéos sur 3 au format `calme`** (`"format": "calme"`, voir `studio/scripts/2026-11-17-avant-aujourdhui.json`) :
-  fond papier pointillé + halo, titre gras avec un mot en *italique* (entre astérisques), cartes qui se remplissent,
-  mot prononcé au centre, mascotte pixel originale en haut à droite avec une `bulle` (2 à 4 mots) par segment.
-  - palettes à alterner : `peche`, `menthe`, `lilas`, `ciel`, `beurre` ;
-  - scènes : `texte` (title, text, sub), `liste` (title, label, items[t, at]), `versus` (title, left/right {label, items}, at),
-    `chiffre` (title, label, value, sub, at), `question` (title, label, text, cta) ;
-  - ton posé, phrases simples, 90 à 130 mots ; explique UNE chose concrète, comme à un ami.
-- 1 vidéo sur 3 au format présentateur (dynamique, 3D) pour varier.
-- **Engagement (commentaires)** : le dernier segment est toujours une `question` simple et précise à laquelle on répond
-  en 1 mot ou 1 chiffre (ex. « Tu publies sur quel réseau ? », « 1, 2 ou 3 ? »). Mettre la même question dans la légende
-  et dans `firstCommentText` du post Metricool (premier commentaire automatique).
+- **Format principal : `film`** (court-métrage 3D, voir `studio/scripts/2026-11-16-pilote-automatique.json`) :
+  plateau 3D de nuit, robot original « Bip » qui parle (visage lumineux), hologramme qui affiche le contenu,
+  écran de bureau, plans de cinéma, carton d'ouverture, chapitres, sous-titres, grain.
+  - champs : `film_titre` (un mot en *italique*), `presente`, `look` (nuit, aube, neon — alterner),
+    `plans` (optionnel), et par segment : `chapitre`, `plan` (large, moyen, visage, epaule, orbite, ecran), `holo` {tag, title, items[≤3]} ;
+  - ton posé et clair, 100 à 130 mots, structure en chapitres (prologue, 2 à 4 chapitres, épilogue = question).
+- Formats `calme` et présentateur : seulement de temps en temps, pour varier.
+- Sujets prioritaires : automatisation, IA pour créateurs, créer son site, outils no-code, marketing digital.
+- **Engagement (commentaires)** : le dernier segment est toujours une question simple et précise à laquelle on répond
+  en 1 mot ou 1 chiffre. Mettre la même question dans la légende et dans `firstCommentText` du post Metricool.
 - Hashtags : 3 à 5, précis.
 
 ## 3. Fabriquer et vérifier

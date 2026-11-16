@@ -88,6 +88,23 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7628667743676287608"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-16-pilote-automatique",
+      "format": "film",
+      "look": "nuit",
+      "sujet": "Automatiser la création et la publication de ses vidéos",
+      "approche": "tuto en 4 étapes (mini-film)",
+      "cta": "question",
+      "fichier": "studio/videos/2026-11-16-pilote-automatique/2026-11-16-pilote-automatique.mp4",
+      "publie": true,
+      "programme": "2026-11-16T23:00 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=699494805668712164"
     }
   ]
 }

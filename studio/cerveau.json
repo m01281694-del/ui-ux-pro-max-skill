@@ -61,6 +61,22 @@
     "Chiffre prudent : « La plupart des gens ratent leur bio pour une seule raison. »"
   ],
   "sujets": [
+    "Automatiser ses publications sur les réseaux",
+    "L'IA pour écrire ses scripts de vidéos",
+    "Créer son site en une soirée sans coder",
+    "Les 3 pages indispensables d'un site qui vend",
+    "Choisir un nom de domaine",
+    "Créer une landing page qui convertit",
+    "Automatiser ses emails de bienvenue",
+    "Les outils no-code pour lancer un business",
+    "Générer des idées de contenu avec l'IA",
+    "Transformer une vidéo en 5 contenus",
+    "Un chatbot pour répondre aux messages",
+    "Automatiser la facturation et les relances",
+    "Créer une boutique en ligne pas à pas",
+    "Mesurer ses résultats avec un tableau de bord",
+    "Les prompts qui donnent de bons résultats",
+    "Ce que l'IA ne remplace pas en marketing",
     "Les 3 premières secondes et la rétention",
     "Comment marche l'algorithme TikTok",
     "Comment marche l'algorithme des Reels Instagram",
@@ -266,7 +282,8 @@
     "boucle ouverte avec révélation finale"
   ],
   "formats": {
-    "calme": "2 vidéos sur 3 : style éditorial clair, mascotte pixel originale en haut à droite, voix posée",
-    "presentateur": "1 vidéo sur 3 : personnage animé + décor 3D, plus dynamique"
+    "film": "FORMAT PRINCIPAL : court-métrage 3D avec le robot original Bip",
+    "calme": "occasionnel",
+    "presentateur": "occasionnel"
   }
 }
