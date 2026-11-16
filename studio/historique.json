@@ -26,11 +26,28 @@
       "accroche": "contre-pied",
       "cta": "follow",
       "fichier": "studio/videos/2026-11-17-benefice/2026-11-17-benefice.mp4",
-      "publie": true,
-      "programme": "2026-11-17T12:30 Europe/Paris",
+      "publie": false,
       "reseaux": [
         "tiktok",
         "instagram"
+      ],
+      "note": "remplacée avant publication (sujet jugé hors marketing digital)"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-17-trois-secondes",
+      "sujet": "Les 3 premières secondes et la rétention",
+      "approche": "chiffre clé expliqué",
+      "style": "electric",
+      "scene3d": "phone",
+      "cta": "comment",
+      "fichier": "studio/videos/2026-11-17-trois-secondes/2026-11-17-trois-secondes.mp4",
+      "publie": true,
+      "programme": "2026-11-16T21:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram",
+        "youtube"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=1193485369018697889"
     }

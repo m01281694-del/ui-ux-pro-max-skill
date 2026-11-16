@@ -1,7 +1,7 @@
-# Studio — routine quotidienne automatique
+# Studio — routine automatique (toutes les 5 heures)
 
-Cette routine est exécutée chaque jour par une tâche planifiée. Elle fabrique **une vidéo marketing
-nouvelle** (TikTok + Reel Instagram) et la programme via Metricool.
+Cette routine est exécutée toutes les 5 heures par une tâche planifiée. Elle fabrique **une vidéo de marketing digital
+nouvelle** et la publie sur TikTok, Instagram (Reel visible dans le fil), YouTube (Short) et Facebook (Reel, si connecté).
 
 ## 0. Préparer la session
 ```bash
@@ -13,8 +13,8 @@ git fetch origin claude/tiktok-video-link-reading-tb3u57 && git checkout claude/
 - Lire `studio/cerveau.json` (marque, offre, règles, banque de sujets, accroches, styles, CTA, hashtags).
 - Lire `studio/historique.json`. **Ne jamais reprendre un sujet déjà présent.**
 - Choisir un sujet de la banque (ou un sujet marketing nouveau, utile et concret, si la banque est épuisée).
-- Choisir un **style différent** des 2 dernières vidéos, un **type d'accroche différent** de la dernière,
-  et des types de scènes variés.
+- Choisir une **approche** (liste `approches`), un **style**, un **univers 3D** (`scene3d`) et un **personnage** (`host`)
+  différents des 3 dernières vidéos, un type d'accroche différent, des phrases neuves et des types de scènes variés.
 - CTA : au plus 1 vidéo sur 3 vend VIP (`dm`) ; sinon `save`, `follow` ou `comment`.
 
 ## 2. Écrire le script
@@ -40,12 +40,14 @@ python3 studio/make_video.py studio/scripts/<id>.json
 1. `git add studio && git commit && git push` sur la branche `claude/tiktok-video-link-reading-tb3u57`.
 2. Attendre que l'URL publique réponde 200 :
    `https://raw.githubusercontent.com/m01281694-del/ui-ux-pro-max-skill/claude/tiktok-video-link-reading-tb3u57/studio/videos/<id>/<id>.mp4`
-3. Metricool `createScheduledPost` (blogId `8094155`, fuseau `Europe/Paris`) à l'horaire libre suivant parmi
-   `cerveau.json > publication > horaires_par_defaut` (vérifier `getScheduledPosts` pour ne pas doubler) :
-   - providers : `tiktok`, `instagram`
+3. Vérifier les réseaux connectés avec `getBrandSettings` (networksData), puis Metricool `createScheduledPost`
+   (blogId `8094155`, fuseau `Europe/Paris`) environ 20 minutes après maintenant :
+   - providers : `tiktok`, `instagram`, `youtube`, et `facebook` seulement si `facebookData` apparaît dans networksData
    - media : [URL publique] ; text : caption + hashtags
    - `tiktokData` : `{"privacyOption":"PUBLIC_TO_EVERYONE","isAigc":true,"title":"<titre court>"}`
    - `instagramData` : `{"type":"REEL","showReelOnFeed":true,"isAiGenerated":true}`
+   - `youtubeData` : `{"title":"<titre> #shorts","type":"short","privacy":"public","category":"EDUCATION","madeForKids":false,"isAiGeneratedContent":true,"tags":[...]}`
+   - `facebookData` : `{"type":"REEL","title":"<titre>"}`
 4. Ajouter l'entrée dans `studio/historique.json` (date, id, sujet, style, cta, fichier, publie: true, plannerUrl), commit + push.
 
 ## 5. Compte rendu
