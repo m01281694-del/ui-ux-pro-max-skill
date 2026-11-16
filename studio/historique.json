@@ -50,6 +50,27 @@
         "youtube"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=1193485369018697889"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-16-mots-cles",
+      "sujet": "Mots-clés plutôt que hashtags en 2026",
+      "approche": "l'erreur que tout le monde fait",
+      "style": "ocean",
+      "scene3d": "grid",
+      "host": {
+        "hair": "bun",
+        "glasses": true
+      },
+      "cta": "save",
+      "fichier": "studio/videos/2026-11-16-mots-cles/2026-11-16-mots-cles.mp4",
+      "publie": true,
+      "programme": "2026-11-16T22:30 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=6214109773277317275"
     }
   ]
 }
