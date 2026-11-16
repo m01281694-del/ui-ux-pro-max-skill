@@ -4,7 +4,7 @@ Usage :
   python3 studio/make_video.py studio/scripts/<id>.json            # vidéo complète
   python3 studio/make_video.py studio/scripts/<id>.json --stills    # images de contrôle seulement
 
-Sortie : studio/out/<id>/<id>.mp4, caption.txt, cover.jpg, timeline.json
+Sortie : studio/videos/<id>/<id>.mp4, caption.txt, cover.jpg, timeline.json
 """
 import sys, os, json, subprocess, zlib
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +14,7 @@ import voice, audio  # noqa: E402
 spec_path = sys.argv[1]
 stills = "--stills" in sys.argv
 spec = json.load(open(spec_path, encoding="utf-8"))
-out = os.path.join(HERE, "out", spec["id"]); os.makedirs(out, exist_ok=True)
+out = os.path.join(HERE, "videos", spec["id"]); os.makedirs(out, exist_ok=True)
 json.dump(spec, open(out + "/spec.json", "w"), ensure_ascii=False)
 
 tl_path = out + "/timeline.json"
