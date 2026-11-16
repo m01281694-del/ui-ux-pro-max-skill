@@ -12,6 +12,7 @@ La chaîne YouTube ne reçoit **que** des comptines (jamais de marketing).
 - **Jamais** : chansons modernes protégées, personnages, musiques, scripts ou visuels d'autres chaînes.
 
 ## 1. Choisir
+- **D'abord** : s'il existe dans `studio/comptines/videos/` une comptine déjà fabriquée qui n'est pas dans l'historique, la publier (étape 4) au lieu d'en fabriquer une nouvelle.
 - Lire `studio/comptines/historique.json` (ne pas republier une même chanson avant 30 publications).
 - Alterner : 1 traditionnelle, puis 2 originales.
 - Changer à chaque fois : `theme` (matin, nuit, etoiles, ferme, mer), `animal` (ours, chat, lapin, souris, poussin, grenouille), `bpm`, `transpose` (-3 à +3).

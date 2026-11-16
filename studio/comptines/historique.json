@@ -1,3 +1,16 @@
 {
-  "comptines": []
+  "comptines": [
+    {
+      "date": "2026-11-16",
+      "id": "frere-jacques",
+      "titre": "Frère Jacques",
+      "type": "traditionnelle",
+      "theme": "matin",
+      "animal": "ours",
+      "fichier": "studio/comptines/videos/frere-jacques/frere-jacques.mp4",
+      "publie": true,
+      "programme": "2026-11-16T21:40 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-3782540977394923507"
+    }
+  ]
 }
