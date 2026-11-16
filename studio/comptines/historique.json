@@ -11,6 +11,18 @@
       "publie": true,
       "programme": "2026-11-16T21:40 Europe/Paris",
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-3782540977394923507"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "au-clair-de-la-lune",
+      "titre": "Au clair de la lune",
+      "type": "traditionnelle",
+      "theme": "nuit",
+      "animal": "lapin",
+      "fichier": "studio/comptines/videos/au-clair-de-la-lune/au-clair-de-la-lune.mp4",
+      "publie": true,
+      "programme": "2026-11-16T22:45 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7641800283353859649"
     }
   ]
 }
