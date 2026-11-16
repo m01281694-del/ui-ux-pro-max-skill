@@ -107,6 +107,23 @@
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=699494805668712164",
       "duree": "46 s"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-sketch-automatise",
+      "format": "sketch",
+      "sujet": "Sketch : l'assistant IA qui automatise tout le contenu",
+      "approche": "sketch dialogue",
+      "cta": "VIP",
+      "duree": "49 s",
+      "fichier": "studio/videos/2026-11-17-sketch-automatise/2026-11-17-sketch-automatise.mp4",
+      "publie": true,
+      "programme": "2026-11-17T00:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1760470755447127764"
     }
   ]
 }

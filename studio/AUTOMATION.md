@@ -30,7 +30,13 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 
 
 ## 2 bis. Format (important pour la qualité)
-- **Format principal : `film`** (court-métrage 3D, voir `studio/scripts/2026-11-16-pilote-automatique.json`) :
+- **Format principal : `sketch`** (2 vidéos sur 3, voir `studio/scripts/2026-11-17-sketch-automatise.json`) :
+  sketch 3D low-poly dans une chambre de nuit, le créateur Léo (personnage original) et son assistant robot Bip qui
+  dialoguent (champ `who` : `leo` ou `bip`, 2 voix différentes), réactions (`emotion` : surpris, fache), `regard`, `geste`,
+  écran du bureau (`ecran` {tag, title, items}), plans (`plan` : large, leo, leo2, bip, deux, ecran, bas).
+  Ton drôle et rythmé, répliques courtes, une idée de marketing digital concrète, ~45 s. Dernière réplique (Léo) =
+  la fin VIP obligatoire. Varier `couleur_sweat` à chaque fois.
+- **Format secondaire : `film`** (1 vidéo sur 3) (court-métrage 3D, voir `studio/scripts/2026-11-16-pilote-automatique.json`) :
   plateau 3D de nuit, robot original « Bip » qui parle (visage lumineux), hologramme qui affiche le contenu,
   écran de bureau, plans de cinéma, carton d'ouverture, chapitres, sous-titres, grain.
   - champs : `film_titre` (un mot en *italique*), `presente`, `look` (nuit, aube, neon — alterner),
