@@ -47,6 +47,18 @@
       "publie": true,
       "programme": "2026-11-17T19:55 Europe/Paris",
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1621170911830260626"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "je-compte-jusqua-cinq",
+      "titre": "Je compte jusqu'à cinq",
+      "type": "originale",
+      "theme": "mer",
+      "animal": "grenouille",
+      "fichier": "studio/comptines/videos/je-compte-jusqua-cinq/je-compte-jusqua-cinq.mp4",
+      "publie": true,
+      "programme": "2026-11-17T22:45 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-9088808353342600447"
     }
   ]
 }
