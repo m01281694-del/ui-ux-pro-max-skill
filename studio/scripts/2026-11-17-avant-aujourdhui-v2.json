@@ -1,0 +1,26 @@
+{
+  "id": "2026-11-17-avant-aujourdhui-v2",
+  "sujet": "Vendre avant vs aujourd'hui (version dynamique)",
+  "approche": "avant / après rythmé",
+  "style": "cherry",
+  "scene3d": "bars",
+  "host": {"hair": "short", "skin": 2, "hairColor": 0, "glasses": false, "beard": true, "cap": true},
+  "segments": [
+    {"id": "hook", "say": "Avant, pour vendre, il te fallait une boutique.",
+     "scene": {"type": "bigword", "label": "Avant", "word": "BOUTIQUE", "sub": "loyer, stock, vendeurs", "strike": true, "at": "boutique"}},
+    {"id": "auj", "say": "Aujourd'hui ? Un téléphone suffit.",
+     "scene": {"type": "arrow", "from": "Une boutique", "to": "UN TÉLÉPHONE", "at": "telephone"}},
+    {"id": "versus", "say": "Avant, une pub télé coûtait une fortune. Aujourd'hui, une vidéo de trente secondes peut toucher des milliers de personnes, gratuitement.",
+     "scene": {"type": "versus", "left": {"t": "Pub télé", "sub": "très chère, pour tout le monde", "icon": "cross"}, "right": {"t": "Vidéo 30 s", "sub": "gratuite, pour ta cible", "icon": "target"}, "winner": "right", "at": "gratuitement", "verdict": "AVANTAGE : TOI"}},
+    {"id": "trois", "say": "Mais attention, ça marche seulement avec trois choses : une niche précise, de la valeur dans chaque vidéo, et de la régularité.",
+     "scene": {"type": "cards", "label": "Les 3 clés", "items": [{"t": "Une niche précise", "icon": "target", "at": "niche"}, {"t": "De la valeur", "icon": "megaphone", "at": "valeur"}, {"t": "De la régularité", "icon": "phone", "at": "regularite"}]}},
+    {"id": "erreur", "say": "La plupart abandonnent après dix vidéos. Ceux qui gagnent, ils continuent.",
+     "scene": {"type": "stat", "label": "L'erreur n°1", "value": "10", "sub": "vidéos, puis ils abandonnent", "at": "dix"}},
+    {"id": "fin", "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
+     "scene": {"type": "cta", "line": "COMMENTE", "word": "VIP", "sub": "je t'explique tout dans ma formation", "at": "VIP"}}
+  ],
+  "caption": "Vendre avant vs aujourd'hui 📱⚡\nAvant : une boutique et une pub télé hors de prix. Aujourd'hui : un téléphone et une vidéo de 30 secondes.\nLes 3 clés : une niche précise, de la valeur, de la régularité.\n🎓 J'explique tout, étape par étape, dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "Vendre avant vs aujourd'hui",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": ["#marketingdigital", "#vendreenligne", "#entrepreneur", "#businessenligne", "#createurdecontenu"]
+}
