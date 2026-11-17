@@ -16,7 +16,8 @@ LEAD, TAIL = 0.35, 2.6
 def eleven(text, out_dir):
     body = {"text": text, "model_id": ELEVEN_MODEL,
             "voice_settings": {"stability": 0.5, "similarity_boost": 0.8} if ELEVEN_MODEL == "eleven_v3"
-            else {"stability": 0.32, "similarity_boost": 0.8, "style": 0.45, "use_speaker_boost": True, "speed": 1.06}}
+            else {"stability": 0.32, "similarity_boost": 0.8, "style": 0.45, "use_speaker_boost": True, "speed": float(os.environ.get("STUDIO_SPEED", "1.06"))}}
+    if ELEVEN_MODEL.endswith("_v2_5"): body["language_code"] = "fr"
     req = urllib.request.Request(
         f"https://api.elevenlabs.io/v1/text-to-speech/{ELEVEN_VOICE}/with-timestamps?output_format=mp3_44100_128",
         data=json.dumps(body).encode(), headers={"xi-api-key": "proxy-injected", "Content-Type": "application/json"})
@@ -84,6 +85,8 @@ def make(spec, out_dir):
     engine = "elevenlabs"
     try:
         if spec.get("voix") == "piper": raise RuntimeError("voix française native (Piper) demandée")
+        if spec.get("voix") == "eleven_fr":
+            global ELEVEN_MODEL; ELEVEN_MODEL = "eleven_turbo_v2_5"; os.environ["STUDIO_SPEED"] = str(spec.get("vitesse", 1.12))
         a, sr, chars, cs, ce = eleven(text, out_dir)
     except Exception as e:  # quota, réseau, clé...
         print("ElevenLabs indisponible, repli sur Piper :", str(e)[:200])
