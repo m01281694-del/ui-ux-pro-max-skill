@@ -175,6 +175,23 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-6737557524089846907"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-idees-videos",
+      "format": "3D dynamique + chat pixel",
+      "voix": "piper",
+      "sujet": "Quoi poster quand on n'a plus d'idées (4 formats)",
+      "cta": "VIP",
+      "duree": "36 s",
+      "fichier": "studio/videos/2026-11-17-idees-videos/2026-11-17-idees-videos.mp4",
+      "publie": true,
+      "programme": "2026-11-17T22:10 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7275509814188199469"
     }
   ]
 }

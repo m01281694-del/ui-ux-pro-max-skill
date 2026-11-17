@@ -31,7 +31,10 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 
 ## 2 bis. Format (important pour la qualité) — DEMANDE DU CRÉATEUR (17/11)
 - **PLUS DE ROBOT, plus de sketch Léo/Bip, plus de film robot** sur TikTok/Instagram.
-- **Format unique : `calme`** (voir `studio/scripts/2026-11-17-page-qui-vend.json`) : fond crème à pois + halo,
+- **Format principal (2 fois sur 3) : 3D dynamique avec le grand chat pixel** (voir `studio/scripts/2026-11-17-idees-videos.json` :
+  pas de champ `format`, `"chat": true`, `"voix": "piper"`, scènes bigword/tiles/arrow/steps/stat/versus/cards + `cta` VIP en dernier ;
+  varier `style` (electric, ocean, candy, cherry, navy, forest, sunset) et `scene3d` (orbit, phone, grid, bars, knots) et `couleur_chat`).
+- **Format secondaire (1 fois sur 3) : `calme`** (voir `studio/scripts/2026-11-17-page-qui-vend.json`) : fond crème à pois + halo,
   gros titre avec un mot en *italique*, petit personnage pixel original en haut à droite, cartes qui se remplissent,
   mot parlé au centre. Mettre `"voix": "piper"` (voix française de France, jamais d'accent canadien) et `"beat": true`.
   Scènes : `texte`, `grille` (2 colonnes de tuiles, 4 à 8 items avec `at`), `liste`, `versus`, `chiffre`, `question`,
