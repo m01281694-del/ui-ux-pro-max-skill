@@ -23,6 +23,18 @@
       "publie": true,
       "programme": "2026-11-16T22:45 Europe/Paris",
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7641800283353859649"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "ah-vous-dirai-je-maman",
+      "titre": "Ah ! vous dirai-je maman",
+      "type": "traditionnelle",
+      "theme": "etoiles",
+      "animal": "chat",
+      "fichier": "studio/comptines/videos/ah-vous-dirai-je-maman/ah-vous-dirai-je-maman.mp4",
+      "publie": true,
+      "programme": "2026-11-17T12:40 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-7559883851464946615"
     }
   ]
 }

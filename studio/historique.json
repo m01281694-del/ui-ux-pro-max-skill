@@ -124,6 +124,24 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1760470755447127764"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-chambre-site",
+      "format": "sketch",
+      "moteur": "chambre.html (HD)",
+      "sujet": "Pourquoi ta page de vente ne vend pas",
+      "approche": "sketch dialogue",
+      "cta": "VIP",
+      "duree": "39 s",
+      "fichier": "studio/videos/2026-11-17-chambre-site/2026-11-17-chambre-site.mp4",
+      "publie": true,
+      "programme": "2026-11-17T12:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8419028939560602320"
     }
   ]
 }
