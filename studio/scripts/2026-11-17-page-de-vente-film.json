@@ -8,24 +8,83 @@
   "sujet": "Pourquoi ta page de vente ne vend pas (version film)",
   "approche": "mini-film en 3 règles",
   "segments": [
-    {"id": "prologue", "chapitre": "PROLOGUE", "plan": "large",
-     "say": "Des visites sur ton site… mais zéro vente ? Le problème est en haut de ta page. Trois règles pour le régler.",
-     "holo": {"tag": "Prologue", "title": "Zéro vente ?", "items": []}},
-    {"id": "r1", "chapitre": "RÈGLE 1 · LE RÉSULTAT", "plan": "visage",
-     "say": "Un : arrête de parler de toi. Ton client veut savoir une seule chose : ce que ça change pour lui.",
-     "holo": {"tag": "Règle 1", "title": "Le résultat", "items": ["Pas « qui je suis »", "Ce que ça change"]}},
-    {"id": "r2", "chapitre": "RÈGLE 2 · LA PREUVE", "plan": "epaule",
-     "say": "Deux : montre une preuve tout de suite. Un avis client, une capture, un avant après.",
-     "holo": {"tag": "Règle 2", "title": "Une preuve", "items": ["Avis client", "Avant / après"]}},
-    {"id": "r3", "chapitre": "RÈGLE 3 · UN SEUL BOUTON", "plan": "ecran",
-     "say": "Trois : un seul bouton. Trop de choix, et personne ne clique. Les gens survolent, alors fais simple.",
-     "holo": {"tag": "Règle 3", "title": "Un seul bouton", "items": ["Un choix", "Un clic"]}},
-    {"id": "fin", "chapitre": "ÉPILOGUE", "plan": "moyen",
-     "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
-     "holo": {"tag": "La formation", "title": "Ma formation", "items": ["Étape par étape", "Marketing digital"]}}
+    {
+      "id": "prologue",
+      "chapitre": "PROLOGUE",
+      "plan": "large",
+      "say": "Des visites sur ton site… mais zéro vente ? Le problème est en haut de ta page. Trois règles pour le régler.",
+      "holo": {
+        "tag": "Prologue",
+        "title": "Zéro vente ?",
+        "items": []
+      }
+    },
+    {
+      "id": "r1",
+      "chapitre": "RÈGLE 1 · LE RÉSULTAT",
+      "plan": "visage",
+      "say": "Un : arrête de parler de toi. Ton client veut savoir une seule chose : ce que ça change pour lui.",
+      "holo": {
+        "tag": "Règle 1",
+        "title": "Le résultat",
+        "items": [
+          "Pas « qui je suis »",
+          "Ce que ça change"
+        ]
+      }
+    },
+    {
+      "id": "r2",
+      "chapitre": "RÈGLE 2 · LA PREUVE",
+      "plan": "epaule",
+      "say": "Deux : montre une preuve tout de suite. Un avis client, une capture, un avant après.",
+      "holo": {
+        "tag": "Règle 2",
+        "title": "Une preuve",
+        "items": [
+          "Avis client",
+          "Avant / après"
+        ]
+      }
+    },
+    {
+      "id": "r3",
+      "chapitre": "RÈGLE 3 · UN SEUL BOUTON",
+      "plan": "ecran",
+      "say": "Trois : un seul bouton. Trop de choix, et personne ne clique. Les gens survolent, alors fais simple.",
+      "holo": {
+        "tag": "Règle 3",
+        "title": "Un seul bouton",
+        "items": [
+          "Un choix",
+          "Un clic"
+        ]
+      }
+    },
+    {
+      "id": "fin",
+      "chapitre": "ÉPILOGUE",
+      "plan": "moyen",
+      "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
+      "holo": {
+        "tag": "La formation",
+        "title": "Ma formation",
+        "items": [
+          "Étape par étape",
+          "Marketing digital"
+        ]
+      }
+    }
   ],
   "caption": "Des visites mais zéro vente ? 👀\nLes 3 règles d'une page qui vend :\n1️⃣ parle du résultat, pas de toi\n2️⃣ une preuve tout de suite\n3️⃣ un seul bouton\n🎓 J'explique tout, étape par étape, dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
   "titre": "La page qui vend",
   "question": "Écris VIP en commentaire 👇",
-  "hashtags": ["#marketingdigital", "#pagedevente", "#siteweb", "#entrepreneur", "#vendreenligne"]
+  "hashtags": [
+    "#marketingdigital",
+    "#pagedevente",
+    "#siteweb",
+    "#entrepreneur",
+    "#vendreenligne"
+  ],
+  "cta_at": 5.06
 }
