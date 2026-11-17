@@ -35,6 +35,18 @@
       "publie": true,
       "programme": "2026-11-17T12:40 Europe/Paris",
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-7559883851464946615"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "les-couleurs",
+      "titre": "Les couleurs",
+      "type": "originale",
+      "theme": "couleurs",
+      "animal": "poussin",
+      "fichier": "studio/comptines/videos/les-couleurs/les-couleurs.mp4",
+      "publie": true,
+      "programme": "2026-11-17T19:55 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1621170911830260626"
     }
   ]
 }

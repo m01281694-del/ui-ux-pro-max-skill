@@ -142,6 +142,22 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8419028939560602320"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-avant-aujourdhui-v2",
+      "format": "presentateur dynamique",
+      "sujet": "Vendre avant vs aujourd'hui (refaite, version dynamique)",
+      "cta": "VIP",
+      "duree": "35 s",
+      "fichier": "studio/videos/2026-11-17-avant-aujourdhui-v2/2026-11-17-avant-aujourdhui-v2.mp4",
+      "publie": true,
+      "programme": "2026-11-17T19:50 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=5414631310486489680"
     }
   ]
 }
