@@ -31,7 +31,9 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 
 ## 2 bis. Format (important pour la qualité)
 - **Format principal : `sketch`** (2 vidéos sur 3, voir `studio/scripts/2026-11-17-sketch-automatise.json`) :
-  sketch 3D low-poly dans une chambre de nuit, le créateur Léo (personnage original) et son assistant robot Bip qui
+  sketch 3D (moteur `studio/engine/chambre.html` : chambre tamisée, bureau très détaillé, Léo low-poly + assistant voxel original Bip,
+  voix Léo = Liam, voix Bip = Jessica, modèle eleven_multilingual_v2, plans : large, leo, leo2, leobas, bip, deux, ecran ;
+  couleurs `couleur_sweat`, `couleur_bip`, `couleur_chaise` à varier), dans une chambre de nuit, le créateur Léo (personnage original) et son assistant robot Bip qui
   dialoguent (champ `who` : `leo` ou `bip`, 2 voix différentes), réactions (`emotion` : surpris, fache), `regard`, `geste`,
   écran du bureau (`ecran` {tag, title, items}), plans (`plan` : large, leo, leo2, bip, deux, ecran, bas).
   Ton drôle et rythmé, répliques courtes, une idée de marketing digital concrète, ~45 s. Dernière réplique (Léo) =

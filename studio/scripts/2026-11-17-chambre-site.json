@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-17-chambre-site",
+  "format": "sketch",
+  "nom_createur": "LÉO",
+  "nom_assistant": "BIP",
+  "couleur_sweat": "#3f6fd1",
+  "couleur_bip": "#4fd1b5",
+  "couleur_chaise": "#d65a5a",
+  "fin_sous": "je t'explique tout dans ma formation",
+  "ecran_titre": "Ma page de vente",
+  "sujet": "Sketch : pourquoi ta page de vente ne vend pas",
+  "approche": "sketch dialogue",
+  "segments": [
+    {"id": "l1", "who": "leo", "plan": "large", "emotion": "fache", "say": "Franchement, j'comprends pas. Mon site a des visites, mais personne n'achète."},
+    {"id": "b1", "who": "bip", "plan": "bip", "say": "Montre-moi ta page. Ah oui… je vois le problème."},
+    {"id": "l2", "who": "leo", "emotion": "surpris", "regard": "bip", "say": "Quoi ? Elle est super belle pourtant !"},
+    {"id": "b2", "who": "bip", "plan": "ecran", "say": "Belle, oui. Mais en haut, tu parles de toi. Ton client, lui, il veut savoir ce que ça change pour lui.",
+      "ecran": {"tag": "AVANT", "title": "« Bienvenue chez moi »", "items": ["Qui je suis", "Mon parcours", "Mes services"]}},
+    {"id": "l3", "who": "leo", "regard": "bip", "say": "D'accord… et je mets quoi, alors ?"},
+    {"id": "b3", "who": "bip", "plan": "ecran", "say": "Une phrase claire : le résultat, en combien de temps, et un seul bouton.",
+      "ecran": {"tag": "APRÈS", "title": "Le résultat, en clair", "items": ["Une promesse simple", "Une preuve", "Un seul bouton"]}},
+    {"id": "l4", "who": "leo", "emotion": "surpris", "geste": "montre", "say": "Attends… c'est tout ?"},
+    {"id": "b4", "who": "bip", "plan": "deux", "say": "C'est tout. Les gens ne lisent pas, ils survolent. Fais simple."},
+    {"id": "fin", "who": "leo", "plan": "leo", "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout."}
+  ],
+  "caption": "Ton site a des visites mais personne n'achète ? 👀\nLe problème est souvent tout en haut de la page : tu parles de toi, pas du résultat pour ton client.\n🎓 J'explique tout, étape par étape, dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "Pourquoi ta page de vente ne vend pas",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": ["#marketingdigital", "#pagedevente", "#siteweb", "#entrepreneur", "#ia"]
+}

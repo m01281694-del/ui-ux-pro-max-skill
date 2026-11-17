@@ -130,12 +130,15 @@ def make(spec, out_dir):
 
 
 # ---------- dialogues à plusieurs voix ----------
-VOICES = {"leo": "TX3LPaxmHKxFdv7VOQHJ", "bip": "cgSgspJ2msm6clMCkdW9"}
+VOICES = {"leo": os.environ.get("STUDIO_VOICE_LEO", "TX3LPaxmHKxFdv7VOQHJ"), "bip": os.environ.get("STUDIO_VOICE_BIP", "cgSgspJ2msm6clMCkdW9")}
+DIALOGUE_MODEL = os.environ.get("STUDIO_DIALOGUE_MODEL", "eleven_multilingual_v2")
 
 
 def make_dialogue(spec, out_dir):
-    global ELEVEN_VOICE
+    global ELEVEN_VOICE, ELEVEN_MODEL
+    ELEVEN_MODEL = DIALOGUE_MODEL
     segs = spec["segments"]; sr = 44100
+    visq = []
     who_list = sorted(set(s.get("who", "leo") for s in segs))
     tracks = {w: [] for w in who_list}
     audio, t = [], LEAD
@@ -162,6 +165,7 @@ def make_dialogue(spec, out_dir):
             i = j
         d = len(a) / sr
         out_segs.append({"id": s["id"], "who": who, "start": round(t, 3), "end": round(t + d, 3), "text": txt})
+        visq.append((t - o, who, chars, cs, ce, t, t + d))
         audio.append((t, a, who)); t += d + s.get("pause", .28)
     dur = round(t + TAIL, 3)
     N = int(dur * sr); full = np.zeros(N, dtype=np.float32); per = {w: np.zeros(N, dtype=np.float32) for w in who_list}
@@ -175,7 +179,21 @@ def make_dialogue(spec, out_dir):
         ref = np.percentile(amp[amp > .005], 90) if (amp > .005).any() else 1
         mouths[w] = [round(float(x), 3) for x in np.clip(amp / (ref + 1e-6), 0, 1)]
     amp_all = np.clip(np.array([float(np.sqrt(np.mean(full[f*hop:(f+1)*hop] ** 2))) for f in range(int(dur * FPS))]) / .1, 0, 1)
-    tl = {"duration": dur, "segs": out_segs, "words": words, "mouths": mouths, "mouth": [round(float(x), 3) for x in amp_all],
+    Nf = int(dur * FPS); visw = {w: [] for w in who_list}
+    for w in who_list:
+        cur = np.array([0, .3, 0, 0, 0], dtype=float); arr = []
+        for f in range(Nf):
+            tt = f / FPS; tg = (0, .3, 0, 0, 0)
+            for (base, who, chars, cs, ce, a0, a1) in visq:
+                if who == w and a0 <= tt <= a1:
+                    rel = tt - base + .02
+                    for ci in range(len(chars)):
+                        if cs[ci] <= rel <= ce[ci] + .03: tg = shape(chars[ci]); break
+                    break
+            tg = np.array(tg, dtype=float); tg[0] *= (.35 + .65 * mouths[w][f]); cur = cur + (tg - cur) * .55
+            arr.append([round(float(x), 3) for x in cur[:3]])
+        visw[w] = arr
+    tl = {"duration": dur, "segs": out_segs, "words": words, "mouths": mouths, "visw": visw, "mouth": [round(float(x), 3) for x in amp_all],
           "vis": [[0, .3, 0, 0, 0]] * int(dur * FPS), "voice_engine": engine}
     json.dump(tl, open(out_dir + "/timeline.json", "w"), ensure_ascii=False)
     return tl
