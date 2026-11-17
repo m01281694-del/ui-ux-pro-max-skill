@@ -3,8 +3,7 @@
   "format": "film",
   "look": "neon",
   "chat": true,
-  "voix": "eleven_fr",
-  "vitesse": 1.12,
+  "voix": "piper",
   "film_titre": "Objectif *10K* par mois",
   "presente": "MANU DIGITAL PRÉSENTE",
   "fin_sous": "je t'explique tout dans ma formation",
@@ -106,5 +105,5 @@
     "#automatisation",
     "#entrepreneur"
   ],
-  "cta_at": 8.18
+  "cta_at": 7.38
 }
