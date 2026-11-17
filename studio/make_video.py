@@ -41,7 +41,7 @@ cta = next((s for s in spec["segments"] if (s.get("scene") or {}).get("type") ==
 cta_t = None
 if cta:
     seg = next(s for s in tl["segs"] if s["id"] == cta["id"]); cta_t = seg["start"] + .5
-audio.mix(out, zlib.crc32(spec["id"].encode()) % 1000, json.load(open(punch)), [s["start"] for s in tl["segs"]], cta_t, calm=spec.get("format") == "calme")
+audio.mix(out, zlib.crc32(spec["id"].encode()) % 1000, json.load(open(punch)), [s["start"] for s in tl["segs"]], cta_t, calm=spec.get("format") == "calme" and not spec.get("beat"))
 mp4 = f"{out}/{spec['id']}.mp4"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out + "/silent.mp4", "-i", out + "/mix.wav", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                 "-ar", "44100", "-shortest", "-movflags", "+faststart", mp4], check=True)

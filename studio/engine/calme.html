@@ -23,6 +23,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;font-family:"Inter Display"
 #shadow{position:absolute;left:820px;top:632px;width:136px;height:16px;border-radius:50%;background:rgba(60,30,20,.12)}
 #bubble{position:absolute;right:290px;top:470px;max-width:520px;padding:20px 30px;border-radius:30px 30px 6px 30px;background:var(--ink);color:var(--paper);font-weight:700;font-size:40px;line-height:1.15;letter-spacing:-.01em;opacity:0;z-index:6}
 #bar{position:absolute;left:0;top:0;height:10px;background:var(--acc);z-index:9}
+.tile{position:absolute;width:458px;height:118px;background:var(--card);border-radius:26px;display:flex;align-items:center;gap:22px;padding:0 26px;font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.05;box-shadow:0 24px 40px -30px rgba(80,40,20,.35)}
+.tile svg{width:64px;height:64px;flex:none}
+.vip{display:inline-block;padding:24px 80px;border-radius:44px;background:var(--acc);color:#fff;font-weight:900;font-size:190px;letter-spacing:-.04em;line-height:1}
 </style></head>
 <body><div id="stage"><div id="glow"></div><div id="dots"></div><div id="bar"></div>
 <div id="title"></div><div id="cards"></div><div id="word"></div>
@@ -106,6 +109,14 @@ const SC = SPEC.segments.map(seg => {
     ups.push(t => { const p = P(t, S.start - .15, .45); c.style.opacity = eo(p); c.style.transform = `translateY(${(1 - eo(p))*60}px)`; const v = c.querySelector(".big"); const q = P(t, ta - .1, .5); v.style.transform = `scale(${.7 + .3*eb(q)})`; }); }
   else if (sc.type === "question") { const c = card(590, `<div class="lab">${esc(sc.label || "À toi")}</div><div style="font-weight:800;font-size:76px;line-height:1.05;letter-spacing:-.035em">${esc(sc.text)}</div><div class="sub" style="text-align:left;color:${PA.acc};font-size:48px;margin-top:30px">${esc(sc.cta || "Réponds en commentaire ↓")}</div>`);
     ups.push(t => { const p = P(t, S.start - .15, .45); c.style.opacity = eo(p); c.style.transform = `translateY(${(1 - eo(p))*60}px) rotate(${(1 - eo(p))*-1.5}deg)`; }); window.PUNCH_TIMES.push(S.start); }
+  else if (sc.type === "grille") {
+    const items = sc.items || []; const mini = (i) => `<svg viewBox="0 0 22 22" shape-rendering="crispEdges">${px}<rect x="6" y="8" width="2" height="3" fill="#1A1424"/><rect x="14" y="8" width="2" height="3" fill="#1A1424"/></svg>`;
+    items.forEach((it, i) => { const d = document.createElement("div"); d.className = "tile"; d.style.left = (i % 2 ? 556 : 66) + "px"; d.style.top = (690 + Math.floor(i / 2) * 146) + "px";
+      d.innerHTML = `${mini(i)}<span>${esc(it.t)}</span>`; root.appendChild(d); const a = it.at ? K(seg.id, it.at) : S.start + .25 + i*.35; window.PUNCH_TIMES.push(a);
+      ups.push(t => { const p = P(t, a - .12, .3); d.style.opacity = eo(p); d.style.transform = `translateY(${(1 - eo(p))*40}px) scale(${.85 + .15*eb(p)})`; d.style.outline = (t >= a - .1 && t < a + .9) ? `4px solid ${PA.acc}` : "none"; }); }); }
+  else if (sc.type === "vip") { const c = card(600, `<div class="lab" style="text-align:center">${esc(sc.label || "Écris en commentaire")}</div><div style="text-align:center"><span class="vip">VIP</span></div><div class="sub" style="margin-top:34px">${esc(sc.sub || "je t'explique tout dans ma formation")}</div>`);
+    c.style.background = "transparent"; c.style.boxShadow = "none"; const ta = K(seg.id, "VIP"); window.PUNCH_TIMES.push(ta);
+    ups.push(t => { const p = P(t, ta - .15, .4); c.style.opacity = eo(p); c.querySelector(".vip").style.transform = `scale(${(.4 + .6*eb(p)) * (1 + .03*Math.sin(t*7))})`; }); }
   else { const c = card(620, `<div style="font-weight:800;font-size:${sc.size || 92}px;line-height:1.02;letter-spacing:-.04em;text-align:center">${fmtTitle(sc.text || "")}</div>${sc.sub ? `<div class="sub" style="color:${PA.muted};font-size:44px">${esc(sc.sub)}</div>` : ""}`);
     c.style.background = "transparent"; c.style.boxShadow = "none";
     ups.push(t => { const p = P(t, S.start - .1, .5); c.style.opacity = eo(p); c.style.transform = `scale(${.94 + .06*eo(p)})`; }); window.PUNCH_TIMES.push(S.start); }

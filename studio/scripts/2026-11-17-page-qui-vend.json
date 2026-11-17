@@ -1,0 +1,27 @@
+{
+  "id": "2026-11-17-page-qui-vend",
+  "format": "calme",
+  "palette": "peche",
+  "voix": "piper",
+  "beat": true,
+  "sujet": "8 éléments d'une page de vente qui vend",
+  "approche": "liste en grille (8 éléments)",
+  "segments": [
+    {"id": "hook", "bulle": "Note bien ça", "say": "Ta page a des visites, mais zéro vente ? Voici les huit éléments d'une page qui vend.",
+     "scene": {"type": "texte", "title": "Ta page *ne vend pas* ?", "text": "Des visites… *zéro vente*", "size": 104}},
+    {"id": "grille", "say": "Un titre qui promet un résultat. Une vidéo courte. Des avis clients. Un avant après. Une offre claire. Un prix simple. Une garantie. Et un seul bouton.",
+     "scene": {"type": "grille", "title": "*8 éléments* qui vendent", "items": [
+       {"t": "Titre résultat", "at": "titre"}, {"t": "Vidéo courte", "at": "video"},
+       {"t": "Avis clients", "at": "avis"}, {"t": "Avant / après", "at": "avant"},
+       {"t": "Offre claire", "at": "offre"}, {"t": "Prix simple", "at": "prix"},
+       {"t": "Garantie", "at": "garantie"}, {"t": "Un seul bouton", "at": "bouton"}]}},
+    {"id": "erreur", "bulle": "L'erreur n°1", "say": "Et l'erreur numéro un ? Parler de toi en haut de la page. Ton client, lui, veut savoir ce que ça change pour lui.",
+     "scene": {"type": "versus", "title": "L'erreur *n°1*", "at": "client", "left": {"label": "Ce que tu écris", "items": [{"t": "Qui je suis", "at": "parler"}]}, "right": {"label": "Ce qu'il veut lire", "items": [{"t": "Ce que ça change pour lui", "at": "change"}]}}},
+    {"id": "fin", "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
+     "scene": {"type": "vip", "title": "Ma *formation*", "label": "Écris en commentaire"}}
+  ],
+  "caption": "Ta page a des visites mais zéro vente ? 👀\nLes 8 éléments d'une page qui vend : titre résultat, vidéo courte, avis clients, avant/après, offre claire, prix simple, garantie, un seul bouton.\n🎓 J'explique tout, étape par étape, dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "8 éléments d'une page qui vend",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": ["#marketingdigital", "#pagedevente", "#siteweb", "#entrepreneur", "#vendreenligne"]
+}

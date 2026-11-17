@@ -83,6 +83,7 @@ def make(spec, out_dir):
     text = " ".join(texts)
     engine = "elevenlabs"
     try:
+        if spec.get("voix") == "piper": raise RuntimeError("voix française native (Piper) demandée")
         a, sr, chars, cs, ce = eleven(text, out_dir)
     except Exception as e:  # quota, réseau, clé...
         print("ElevenLabs indisponible, repli sur Piper :", str(e)[:200])
