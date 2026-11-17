@@ -29,22 +29,15 @@ Créer `studio/scripts/AAAA-MM-JJ-<slug>.json` au format de `studio/scripts/2026
 - Respecter toutes les `regles` du cerveau (aucune promesse de revenus, aucun chiffre inventé).
 
 
-## 2 bis. Format (important pour la qualité)
-- **Format principal : `sketch`** (2 vidéos sur 3, voir `studio/scripts/2026-11-17-sketch-automatise.json`) :
-  sketch 3D (moteur `studio/engine/chambre.html` : chambre tamisée, bureau très détaillé, Léo low-poly + assistant voxel original Bip,
-  voix Léo = Liam, voix Bip = Jessica, modèle eleven_multilingual_v2, plans : large, leo, leo2, leobas, bip, deux, ecran ;
-  couleurs `couleur_sweat`, `couleur_bip`, `couleur_chaise` à varier), dans une chambre de nuit, le créateur Léo (personnage original) et son assistant robot Bip qui
-  dialoguent (champ `who` : `leo` ou `bip`, 2 voix différentes), réactions (`emotion` : surpris, fache), `regard`, `geste`,
-  écran du bureau (`ecran` {tag, title, items}), plans (`plan` : large, leo, leo2, bip, deux, ecran, bas).
-  Ton drôle et rythmé, répliques courtes, une idée de marketing digital concrète, ~45 s. Dernière réplique (Léo) =
-  la fin VIP obligatoire. Varier `couleur_sweat` à chaque fois.
-- **Format secondaire : `film`** (1 vidéo sur 3) (court-métrage 3D, voir `studio/scripts/2026-11-16-pilote-automatique.json`) :
-  plateau 3D de nuit, robot original « Bip » qui parle (visage lumineux), hologramme qui affiche le contenu,
-  écran de bureau, plans de cinéma, carton d'ouverture, chapitres, sous-titres, grain.
-  - champs : `film_titre` (un mot en *italique*), `presente`, `look` (nuit, aube, neon — alterner),
-    `plans` (optionnel), et par segment : `chapitre`, `plan` (large, moyen, visage, epaule, orbite, ecran), `holo` {tag, title, items[≤3]} ;
-  - ton posé et clair, 100 à 130 mots, structure en chapitres (prologue, 2 à 4 chapitres, épilogue = question).
-- Formats `calme` et présentateur : seulement de temps en temps, pour varier.
+## 2 bis. Format (important pour la qualité) — DEMANDE DU CRÉATEUR (17/11)
+- **PLUS DE ROBOT, plus de sketch Léo/Bip, plus de film robot** sur TikTok/Instagram.
+- **Format unique : `calme`** (voir `studio/scripts/2026-11-17-page-qui-vend.json`) : fond crème à pois + halo,
+  gros titre avec un mot en *italique*, petit personnage pixel original en haut à droite, cartes qui se remplissent,
+  mot parlé au centre. Mettre `"voix": "piper"` (voix française de France, jamais d'accent canadien) et `"beat": true`.
+  Scènes : `texte`, `grille` (2 colonnes de tuiles, 4 à 8 items avec `at`), `liste`, `versus`, `chiffre`, `question`,
+  et **toujours** `vip` en dernier segment (gros « VIP »). Titres type liste/chiffre accrocheur (« 8 outils… », « 5 erreurs… »).
+  Varier la `palette` (peche, menthe, lilas, ciel, beurre) à chaque vidéo.
+- Si le créateur fournit plus tard un identifiant de voix ElevenLabs française (STUDIO_VOICE_*), retirer `"voix": "piper"`.
 - Sujets prioritaires : automatisation, IA pour créateurs, créer son site, outils no-code, marketing digital.
 - **Engagement (commentaires)** : le dernier segment est toujours une question simple et précise à laquelle on répond
   en 1 mot ou 1 chiffre. Mettre la même question dans la légende et dans `firstCommentText` du post Metricool.

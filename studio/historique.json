@@ -158,6 +158,23 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=5414631310486489680"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-page-qui-vend",
+      "format": "calme (grille, style capture)",
+      "voix": "piper (français de France)",
+      "sujet": "8 éléments d'une page de vente qui vend",
+      "cta": "VIP",
+      "duree": "34 s",
+      "fichier": "studio/videos/2026-11-17-page-qui-vend/2026-11-17-page-qui-vend.mp4",
+      "publie": true,
+      "programme": "2026-11-17T21:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-6737557524089846907"
     }
   ]
 }
