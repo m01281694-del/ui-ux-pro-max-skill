@@ -368,5 +368,29 @@ function render(t){
   $("disc").style.transform = `scale(${1 + talk*.025})`;
 }
 window.render = render;
+/* option « chat » : remplace le présentateur par un grand chat pixel original (pattes, queue, bouche synchronisée) */
+if (SPEC.chat) {
+  ["host", "disc", "mascot", "emote"].forEach(id => $(id).style.display = "none");
+  const CP = ["...##..........##.....","...###........###.....","...####......####.....","...##############.....","..################....","..################....","..################....","..################....","..################....","...##############.....","....############......","...##############.##..","..################.##.","..##################..","..#################...","..################....","..################....","...##..##....##..##...","...##..##....##..##..."];
+  const main = SPEC.couleur_chat || "#F07A3C", shade = SPEC.ombre_chat || "#B4512A";
+  let r = ""; CP.forEach((row, y) => [...row].forEach((c, x) => { if (c === "#" && y < 17) r += `<rect x="${x}" y="${y+1}" width="1.03" height="1.03" fill="${(x >= 18 || (y < 3 && (x === 3 || x === 16))) ? shade : main}"/>`; }));
+  let legs = ""; [[3,0],[7,1],[13,0],[17,1]].forEach(([x, k]) => legs += `<g class="leg" data-k="${k}"><rect x="${x}" y="18" width="2.03" height="2.03" fill="${shade}"/></g>`);
+  const cat = document.createElementNS("http://www.w3.org/2000/svg", "svg"); cat.setAttribute("viewBox", "0 0 22 22"); cat.setAttribute("shape-rendering", "crispEdges");
+  cat.style.cssText = "position:absolute;left:300px;top:1200px;width:480px;height:480px;z-index:12;overflow:visible;filter:drop-shadow(0 30px 30px rgba(0,0,0,.35))";
+  cat.innerHTML = `<ellipse cx="11" cy="21.2" rx="8" ry=".9" fill="rgba(0,0,0,.25)"/><g id="catb">${r}${legs}
+    <rect x="4" y="2" width="1" height="1" fill="#FF8FB5"/><rect x="15" y="2" width="1" height="1" fill="#FF8FB5"/>
+    <g id="ceyes"><rect x="6" y="6" width="2" height="2" fill="#1A1424"/><rect x="12" y="6" width="2" height="2" fill="#1A1424"/><rect x="6" y="6" width="1" height="1" fill="#fff"/><rect x="12" y="6" width="1" height="1" fill="#fff"/></g>
+    <rect x="4" y="8" width="2" height="1" fill="#FF8FB5"/><rect x="14" y="8" width="2" height="1" fill="#FF8FB5"/>
+    <rect id="cmouth" x="9" y="9" width="2" height="1" fill="#1A1424"/></g>`;
+  $("stage").appendChild(cat);
+  const base = render; const CB = []; { let b = 1.3; while (b < TL.duration) { CB.push(b); b += 2.4 + (b * 2.9 % 1.6); } }
+  window.render = function (t) { base(t);
+    const fr = Math.min(TL.mouth.length - 1, Math.max(0, Math.round(t * 30))); const amp = TL.mouth[fr] || 0;
+    const hop = Math.abs(Math.sin(t * 3.1)) * 18 + amp * 14; const tilt = Math.sin(t * 1.7) * 4 + (PUNCH.some(p => t >= p && t < p + .25) ? 6 : 0);
+    const sq = 1 + amp * .05; cat.style.transform = `translateY(${-hop}px) rotate(${tilt}deg) scale(${sq}, ${2 - sq})`;
+    document.querySelectorAll("#catb .leg").forEach(g => g.setAttribute("transform", `translate(0 ${(+g.dataset.k ? Math.sin(t * 9) : -Math.sin(t * 9)) * .5})`));
+    const bl = CB.some(b => t >= b && t < b + .12); $("ceyes").setAttribute("transform", bl ? "translate(0 7) scale(1 .2) translate(0 -7)" : "");
+    const m = $("cmouth"); const h = amp > .1 ? 1 + Math.round(amp * 2.4) : 1; m.setAttribute("height", h); m.setAttribute("width", amp > .1 ? 3 : 2); m.setAttribute("x", amp > .1 ? 8.5 : 9); };
+}
 window.PUNCH_TIMES = PUNCH;
 </script></body></html>
