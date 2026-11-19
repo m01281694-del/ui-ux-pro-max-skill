@@ -737,3 +737,6 @@ body.intro-lock { overflow: hidden; }
   .site-header, .site-footer, .cookie-banner, .preview-banner, .fab-call, .page-transition, .scroll-progress { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+.demo-note { color: var(--accent-text); font-weight: 600; }
+.key-specs + .v-section, .gallery + .v-section { margin-top: var(--space-7); }
