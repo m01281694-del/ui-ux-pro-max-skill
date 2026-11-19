@@ -10,6 +10,7 @@ const NAV = [
   { href: "/city", label: "Ville" },
   { href: "/brain", label: "Cerveau" },
   { href: "/gallery", label: "Galerie" },
+  { href: "/messages", label: "Messages" },
   { href: "/system", label: "Système" },
 ];
 
@@ -41,12 +42,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <span className="grid h-6 w-6 place-items-center rounded-md bg-orange-500 text-[11px] text-white">AC</span>
           <span className="hidden sm:inline">Agent City</span>
         </Link>
-        <nav className="flex gap-1">
+        <nav className="flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none]">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} className={`rounded-md px-1.5 py-1 text-[13px] sm:px-2.5 sm:text-sm transition-colors ${path?.startsWith(n.href) ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"}`}>{n.label}</Link>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-2 sm:gap-3">
+        <div className="ml-auto hidden shrink-0 items-center gap-2 sm:flex sm:gap-3">
           <Clock />
         </div>
       </header>

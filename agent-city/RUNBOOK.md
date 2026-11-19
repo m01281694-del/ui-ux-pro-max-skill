@@ -68,8 +68,9 @@ Chaque action réelle s'enregistre avec `npx tsx scripts/add-work.ts '<json>'`. 
    - Mets à jour `brain/Playbook.md` (règle, confiance, vidéos qui la prouvent).
    - Baisse la confiance des croyances que les données contredisent.
 2. **Curiosité.** Repère la galaxie la plus pauvre (le moins de notes), fais une recherche Firecrawl pour le combler, puis écris une note sourcée.
-3. **Weekly Report (le lundi seulement).** Écris `brain/Rapports/Semaine AAAA-SS.md` : ce qui a marché, ce qui a raté, pourquoi, et 3 décisions pour la semaine.
-4. Enregistre les tâches, commit, push, déploie.
+3. **DM Agent.** Si les données (commentaires, ventes) montrent qu'une réponse de `data/replies.json` ne convertit pas, améliore-la en respectant les règles d'or (lien `{link}`, aucune promesse de gains). Garde les mêmes `id`.
+4. **Weekly Report (le lundi seulement).** Écris `brain/Rapports/Semaine AAAA-SS.md` : ce qui a marché, ce qui a raté, pourquoi, et 3 décisions pour la semaine.
+5. Enregistre les tâches, commit, push, déploie.
 
 ## Règles d'or (Brand Check éditorial, rien ne sort sans ça)
 

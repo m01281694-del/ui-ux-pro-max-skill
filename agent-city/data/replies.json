@@ -1,0 +1,23 @@
+{
+ "updatedAt": "2026-11-19",
+ "link": "https://shop.beacons.ai/manu.digital/827f5bbd-dcb7-43e5-8d98-b60df8d6be90",
+ "rules": [
+  "Toujours répondre en moins de 24 h : les messages chauds refroidissent vite.",
+  "Poser une question avant d'envoyer le lien : on vend mieux quand on sait où en est la personne.",
+  "Jamais de promesse de gains, jamais les bonus « comptes » : risque de bannissement.",
+  "Une seule relance maximum si pas de réponse."
+ ],
+ "replies": [
+  { "id": "comment-go", "step": "1. Commentaire", "when": "Quelqu'un commente « go » ou « VIP » sous une vidéo", "where": "commentaire", "text": "Je t'envoie tout en privé 📩" },
+  { "id": "dm-go", "step": "2. Premier message", "when": "Quelqu'un t'écrit « go » en message privé", "where": "message", "text": "Hey 👋 merci pour ton message ! Avant de t'envoyer quoi que ce soit, dis-moi : tu débutes complètement sur les réseaux, ou tu postes déjà mais ça ne décolle pas ?" },
+  { "id": "dm-debutant", "step": "3. Présenter ELM", "when": "La personne débute", "where": "message", "text": "Parfait, ELM est pensé exactement pour ça 🙌 Tu y trouves les stratégies TikTok & Instagram, comment transformer tes messages privés en clients, comment automatiser ton contenu avec l'IA, + l'accès au Skool (22 modules) et au Discord. Et je t'accompagne perso jusqu'à ta première vente. Tout est détaillé ici 👉 {link}" },
+  { "id": "dm-bloque", "step": "3. Présenter ELM", "when": "La personne poste déjà mais ça ne marche pas", "where": "message", "text": "Je vois très bien 😅 Souvent ça bloque sur 2 choses : les 3 premières secondes de la vidéo, et ce qui se passe après (les messages privés). C'est exactement ce qu'on travaille dans ELM, avec un accompagnement perso. Regarde le programme ici 👉 {link} et dis-moi ce que tu en penses." },
+  { "id": "dm-prix", "step": "4. Objections", "when": "« C'est combien ? »", "where": "message", "text": "Le prix est indiqué sur la page, avec le paiement possible en plusieurs fois via Klarna 👉 {link} Si tu as une question sur ce qu'il y a dedans avant de te décider, demande-moi 🙂" },
+  { "id": "dm-arnaque", "step": "4. Objections", "when": "« C'est une arnaque ? »", "where": "message", "text": "Bonne question, t'as raison de demander 🙂 Tout le contenu est détaillé sur la page : les modules, le Skool, le Discord, l'accompagnement. Je ne te promets pas de gagner X € : les résultats dépendent du travail que tu mets dedans. Pose-moi n'importe quelle question précise sur le contenu, je te réponds franchement." },
+  { "id": "dm-temps", "step": "4. Objections", "when": "« J'ai pas le temps »", "where": "message", "text": "Je comprends. L'avantage, c'est que tout est sur Skool : tu avances à ton rythme, quand tu peux. Et une bonne partie du programme sert justement à automatiser ton contenu pour gagner du temps 🤖" },
+  { "id": "dm-argent", "step": "4. Objections", "when": "« J'ai pas l'argent en ce moment »", "where": "message", "text": "Pas de souci, aucune pression 🙏 Tu peux déjà apprendre plein de choses avec mes vidéos gratuites. Et si un jour tu veux te lancer, le paiement en 2 ou 3 fois via Klarna existe 👉 {link}" },
+  { "id": "dm-relance", "step": "5. Relance", "when": "Pas de réponse après 24 h (une seule fois)", "where": "message", "text": "Hey, je reviens vers toi au cas où mon message se serait perdu 🙂 Tu voulais toujours des infos sur le marketing digital ? Si c'est pas le moment, aucun souci." },
+  { "id": "dm-achat", "step": "6. Après l'achat", "when": "La personne a acheté", "where": "message", "text": "Bienvenue dans ELM 🎉 Merci pour ta confiance ! Tu as reçu tes accès par mail ; commence par le premier module sur Skool et rejoins le Discord. Si tu bloques sur quoi que ce soit, écris-moi ici directement 💪" },
+  { "id": "dm-avis", "step": "6. Après l'achat", "when": "Environ 2 semaines après l'achat", "where": "message", "text": "Hey ! Ça avance comment dans ELM ? 🙂 Si le programme t'aide, est-ce que tu accepterais de me laisser un petit avis en 1 ou 2 phrases ? Ça aide énormément les prochains." }
+ ]
+}

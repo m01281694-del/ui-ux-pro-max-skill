@@ -33,7 +33,15 @@ test("system: kill switch toggles", async ({ page }) => {
   await expect(btn).toHaveText(before!);
 });
 
-test("gallery lists content with DÉMO badges", async ({ page }) => {
+test("gallery lists content and real post stats", async ({ page }) => {
   await page.goto("/gallery");
   await expect(page.getByTestId("gallery").locator("article").first()).toBeVisible();
+});
+
+test("messages: ready-made replies include the ELM link", async ({ page }) => {
+  await page.goto("/messages");
+  const first = page.getByTestId("replies").locator("article").first();
+  await expect(first).toBeVisible();
+  await expect(page.getByTestId("replies")).toContainText("shop.beacons.ai/manu.digital");
+  await expect(page.getByTestId("replies")).not.toContainText("Netflix");
 });
