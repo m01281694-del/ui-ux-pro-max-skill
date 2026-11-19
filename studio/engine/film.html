@@ -20,7 +20,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#05060c;font-fam
 <body><script src="vendor/three.min.js"></script>
 <div id="stage"><canvas id="gl" width="1080" height="1920"></canvas><div id="vig"></div><canvas id="grain" width="270" height="480"></canvas>
 <div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div><div id="chap"></div><div id="cap"></div>
-<div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0"></div><div id="cta" style="position:absolute;left:0;right:0;top:620px;text-align:center;opacity:0"><div style="font-family:JetBrains Mono,monospace;font-size:34px;letter-spacing:.35em;color:rgba(255,255,255,.8)">COMMENTE</div><div id="ctaw" style="display:inline-block;margin-top:22px;padding:26px 70px;border-radius:40px;background:var(--acc);color:#06121c;font-weight:900;font-size:170px;letter-spacing:.02em">VIP</div><div id="ctas" style="margin-top:26px;font-weight:700;font-size:46px;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.8)"></div></div><div id="card"><small id="pres"></small><h1 id="ctitle"></h1></div></div>
+<div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0"></div><div id="cta" style="position:absolute;left:0;right:0;top:620px;text-align:center;opacity:0"><div style="font-family:JetBrains Mono,monospace;font-size:34px;letter-spacing:.35em;color:rgba(255,255,255,.8)">COMMENTE</div><div id="ctaw" style="display:inline-block;margin-top:22px;padding:26px 70px;border-radius:40px;background:var(--acc);color:#06121c;font-weight:900;font-size:170px;letter-spacing:.02em">VIP</div><div id="ctas" style="margin-top:26px;font-weight:700;font-size:46px;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,.8)"></div></div><div id="gros" style="position:absolute;left:40px;right:40px;top:300px;text-align:center;font-weight:900;font-size:150px;line-height:.92;letter-spacing:-.045em;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.7);opacity:0"></div><div id="card"><small id="pres"></small><h1 id="ctitle"></h1></div></div>
 <script>
 "use strict";
 const SPEC = window.SPEC, TL = window.TL;
@@ -142,7 +142,7 @@ const SHOTS = {
   ecran: u => [[-0.9 + u*.2, 1.7, 2.4 - u*.2], [-1.8, 1.45, -0.9]]
 };
 const PLAN = []; const order = SPEC.plans || ["large", "epaule", "moyen", "visage", "orbite", "epaule", "moyen", "ecran", "visage"];
-let oi = 0; SEG.forEach(s => { const d = s.next - s.start; const nC = Math.max(1, Math.round(d / 2.6)); const cuts = Array.from({length: nC}, (_, k) => s.start + k * d / nC); cuts.forEach((c, k) => { PLAN.push({t: c - (PLAN.length ? .12 : 0), end: k === cuts.length - 1 ? s.next : cuts[k+1], shot: (s.spec.plan && k === 0) ? s.spec.plan : order[oi++ % order.length]}); }); });
+let oi = 0; SEG.forEach(s => { const d = s.next - s.start; const nC = Math.max(1, Math.round(d / (SPEC.coupe || 2.6))); const cuts = Array.from({length: nC}, (_, k) => s.start + k * d / nC); cuts.forEach((c, k) => { PLAN.push({t: c - (PLAN.length ? .12 : 0), end: k === cuts.length - 1 ? s.next : cuts[k+1], shot: (s.spec.plan && k === 0) ? s.spec.plan : order[oi++ % order.length]}); }); });
 PLAN[0].t = 0;
 const W = TL.words;
 const CH = []; { let cur = []; W.forEach((w, i) => { cur.push(w); const nx = W[i+1]; if (cur.length >= 5 || /[.?!:,]$/.test(w.w) && cur.length >= 3 || /[.?!:]$/.test(w.w) || !nx || nx.a - w.b > .4) { CH.push(cur); cur = []; } }); }
@@ -184,6 +184,9 @@ function render(t){
   const lastS = SEG[SEG.length - 1]; const cq = P(t, lastS.start + (SPEC.cta_at || 0), .4); $("cta").style.opacity = SPEC.fin_cta === false ? 0 : eo(cq); $("ctaw").style.transform = `scale(${(.4 + .6*eo(cq)) * (1 + .04*Math.sin(t*7))})`;
   // carton d'ouverture
   const ci = SPEC.carton === false ? 1 : P(t, 1.25, .45); $("card").style.opacity = 1 - eo(ci); $("pres").style.opacity = eo(P(t, .1, .4)); $("ctitle").style.opacity = eo(P(t, .35, .4)); $("ctitle").style.transform = `scale(${1.06 - .06*eo(P(t, .35, .9))})`;
+  // gros mot qui claque au début de chaque segment
+  { const g = S.spec.gros || ""; const q = t - S.start; const el = $("gros"); if (g && q > -.05 && q < 1.9) { if (el.dataset.v !== g) { el.dataset.v = g; el.innerHTML = esc(g).replace(/\*([^*]+)\*/g, `<span style="color:${LK.acc}">$1</span>`); }
+      const a = eo(P(q, 0, .18)); el.style.opacity = a * (1 - P(q, 1.55, .3)); el.style.transform = `scale(${1.7 - .7*a}) rotate(${(1 - a) * -4}deg)`; el.style.filter = `blur(${(1 - a) * 12}px)`; } else el.style.opacity = 0; }
   // chapitre
   const ch = S.spec.chapitre || ""; $("chap").textContent = ch; $("chap").style.opacity = eo(P(t, S.start, .5)) * (1 - P(t, S.start + 3, .6));
   // sous-titres
