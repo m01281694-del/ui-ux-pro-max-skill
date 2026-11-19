@@ -19,6 +19,17 @@
      - Gardez les guillemets autour des textes : "Mon texte".
      - Une virgule sépare chaque élément d'une liste.
      - Chemins d'images : relatifs au site, ex. "assets/images/hero.jpg".
+   ---------------------------------------------------------------------
+   DONNÉES RECHERCHÉES EN LIGNE le 19/11/2026 — À VÉRIFIER AVANT PUBLICATION
+   Sources :
+     [RNE]    annuaire-entreprises.data.gouv.fr/entreprise/cap-auto-marseille-108879529
+     [TIKTOK] tiktok.com/@capautomarseille (bio du profil)
+     [ARGUS]  occasion.largus.fr/auto/cap-auto-marseille/ (annonces + fiche vendeur)
+   ATTENTION : la société enregistrée à cette adresse s'appelle
+   « CAP AUTO MARSEILLE » (et non « CAP AUTO SEPTÈMES »). Confirmez qu'il
+   s'agit bien de votre entreprise et du nom commercial à afficher.
+   Non trouvés en ligne : horaires, e-mail, médiateur de la consommation,
+   photos, vidéo, avis clients → laissés vides.
    ===================================================================== */
 
 window.CAP_CONTENT = {
@@ -46,18 +57,18 @@ window.CAP_CONTENT = {
      COORDONNÉES DU CONCESSIONNAIRE
      ------------------------------------------------------------------ */
   dealer: {
-    phone: "",              // format international pour les liens, ex. "+33400000000"
-    phone_display: "",      // format affiché, ex. "04 00 00 00 00"
+    phone: "+33780875941",  // [TIKTOK] — format international pour les liens, ex. "+33400000000"
+    phone_display: "07 80 87 59 41", // [TIKTOK] — format affiché, ex. "04 00 00 00 00"
     email: "",
     whatsapp: "",           // numéro international sans + ni espaces, ex. "33600000000" — vide = masqué
     address: {
-      street: "",
-      postal_code: "",
-      city: "",
+      street: "16 Chemin de la Bédoule",   // [ARGUS]/[TIKTOK] ; le RNE indique « Le Centre Automobile, Chemin de la Bédoule »
+      postal_code: "13240",
+      city: "Septèmes-les-Vallons",
       country: "France"
     },
-    map_link: "",           // lien « Itinéraire » (Google Maps, Apple Plans, Waze…)
-    map_embed_url: "",      // URL d'intégration de carte (iframe). Chargée seulement après consentement.
+    map_link: "https://www.google.com/maps/search/?api=1&query=16+Chemin+de+la+B%C3%A9doule+13240+Sept%C3%A8mes-les-Vallons",           // lien « Itinéraire » (Google Maps, Apple Plans, Waze…)
+    map_embed_url: "https://maps.google.com/maps?q=16%20Chemin%20de%20la%20B%C3%A9doule%2C%2013240%20Sept%C3%A8mes-les-Vallons&output=embed",      // URL d'intégration de carte (iframe). Chargée seulement après consentement.
 
     /* Horaires : null = à compléter ; [] = fermé ; sinon créneaux ["HH:MM","HH:MM"] */
     hours: [
@@ -76,7 +87,7 @@ window.CAP_CONTENT = {
   social: {
     facebook: "",
     instagram: "",
-    tiktok: "",
+    tiktok: "https://www.tiktok.com/@capautomarseille",   // [TIKTOK]
     youtube: "",
     linkedin: "",
     google_business: ""
@@ -101,11 +112,11 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   home: {
     hero: {
-      eyebrow: "",
-      title: "",
-      subtitle: "",
-      cta_primary:   { label: "", href: "vehicules.html" },
-      cta_secondary: { label: "", href: "contact.html" },
+      eyebrow: "Septèmes-les-Vallons · Marseille",
+      title: "Voitures d'occasion à Septèmes-les-Vallons",
+      subtitle: "Achat, vente, reprise, location et dépôt-vente. Véhicules révisés et contrôlés, garantie et financement possibles.",
+      cta_primary:   { label: "Voir les véhicules", href: "vehicules.html" },
+      cta_secondary: { label: "Nous contacter", href: "contact.html" },
       background_video_mp4: "",   // vidéo d'arrière-plan en boucle (muette)
       background_video_webm: "",
       background_image: "",       // utilisée si pas de vidéo, ou comme affiche
@@ -113,30 +124,37 @@ window.CAP_CONTENT = {
     },
 
     /* Bandeau d'atouts défilant — ex. ["Atout 1", "Atout 2"] */
-    highlights: [],
+    highlights: ["Achat", "Vente", "Reprise", "Location", "Dépôt-vente", "Garantie jusqu'à 12 mois", "Financement"],   // [TIKTOK]/[ARGUS]
 
     featured: {
-      eyebrow: "",
-      title: "",
-      subtitle: "",
-      cta_label: ""            // bouton vers le catalogue
+      eyebrow: "En stock",
+      title: "Nos véhicules",
+      subtitle: "Une sélection de véhicules actuellement disponibles.",
+      cta_label: "Tout le catalogue"            // bouton vers le catalogue
     },
 
     services: {
-      eyebrow: "",
-      title: "",
+      eyebrow: "Nos services",
+      title: "Ce que nous proposons",
       subtitle: "",
       /* { icon: "car|key|shield|wrench|card|swap|truck|star|check|phone", title: "", text: "", href: "" } */
-      items: []
+      items: [   // services annoncés par l'entreprise [TIKTOK]/[ARGUS] — textes à valider
+        { icon: "car",    title: "Vente", text: "Véhicules d'occasion sélectionnés, révisés et contrôlés.", href: "vehicules.html" },
+        { icon: "swap",   title: "Reprise", text: "Reprise de votre ancien véhicule.", href: "contact.html" },
+        { icon: "card",   title: "Financement", text: "Solutions de financement possibles.", href: "contact.html" },
+        { icon: "shield", title: "Garantie", text: "Garantie de 3 mois jusqu'à 1 an : moteur, boîte et pont.", href: "" },
+        { icon: "key",    title: "Achat & location", text: "Achat de votre véhicule et location.", href: "contact.html" },
+        { icon: "check",  title: "Dépôt-vente", text: "Confiez-nous la vente de votre véhicule.", href: "contact.html" }
+      ]
     },
 
     about: {
-      eyebrow: "",
-      title: "",
-      text: "",                // paragraphes séparés par une ligne vide (\n\n)
+      eyebrow: "Qui sommes-nous",
+      title: "Votre garage à Septèmes-les-Vallons",
+      text: "Installés chemin de la Bédoule à Septèmes-les-Vallons, aux portes de Marseille, nous proposons des voitures d'occasion pour tous les budgets.\n\nAchat, vente, reprise, location et dépôt-vente : contactez-nous pour toute demande.",                // paragraphes séparés par une ligne vide (\n\n)
       image: "",
       image_alt: "",
-      cta: { label: "", href: "a-propos.html" }
+      cta: { label: "En savoir plus", href: "a-propos.html" }
     },
 
     /* Chiffres clés RÉELS uniquement — { value: "", label: "" } */
@@ -151,9 +169,9 @@ window.CAP_CONTENT = {
     },
 
     cta_band: {
-      title: "",
-      text: "",
-      button: { label: "", href: "contact.html" }
+      title: "Un véhicule vous intéresse ?",
+      text: "Appelez-nous ou passez nous voir chemin de la Bédoule à Septèmes-les-Vallons.",
+      button: { label: "Nous contacter", href: "contact.html" }
     }
   },
 
@@ -161,8 +179,8 @@ window.CAP_CONTENT = {
      PAGE « À PROPOS »
      ------------------------------------------------------------------ */
   about_page: {
-    title: "",
-    intro: "",
+    title: "À propos",
+    intro: "CAP AUTO, commerce de voitures d'occasion à Septèmes-les-Vallons (Bouches-du-Rhône).",
     image: "",
     image_alt: "",
     /* { title: "", text: "", image: "", image_alt: "" } */
@@ -175,8 +193,8 @@ window.CAP_CONTENT = {
      CATALOGUE
      ------------------------------------------------------------------ */
   catalogue: {
-    title: "",
-    intro: "",
+    title: "Nos véhicules",
+    intro: "Véhicules d'occasion disponibles à Septèmes-les-Vallons. Disponibilités et prix à confirmer par téléphone.",
     empty_message: "",          // vide = message neutre « Aucun véhicule n'est en ligne pour le moment. »
     price_on_request_label: "", // vide = « Prix sur demande »
     legal_note: ""              // mention sous les prix (ex. conditions), à faire valider
@@ -186,8 +204,8 @@ window.CAP_CONTENT = {
      PAGE CONTACT
      ------------------------------------------------------------------ */
   contact_page: {
-    title: "",
-    intro: ""
+    title: "Contact",
+    intro: "Une question sur un véhicule, une reprise ou un financement ? Appelez-nous ou écrivez-nous."
   },
 
   /* ------------------------------------------------------------------
@@ -202,7 +220,7 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   forms: {
     endpoint: "",
-    subjects: [],              // sujets proposés, ex. ["Achat", "Autre"] — vide = champ masqué
+    subjects: ["Achat d'un véhicule", "Reprise", "Financement", "Location", "Dépôt-vente", "Autre"],              // sujets proposés, ex. ["Achat", "Autre"] — vide = champ masqué
     success_message: "",       // vide = « Votre message a bien été transmis. »
     retention_notice: ""       // phrase d'information RGPD sous le formulaire (à faire valider)
   },
@@ -211,14 +229,14 @@ window.CAP_CONTENT = {
      INFORMATIONS JURIDIQUES — à compléter ET à faire vérifier
      ------------------------------------------------------------------ */
   legal: {
-    company_name: "",          // dénomination sociale
-    legal_form: "",            // SAS, SARL, EI…
-    share_capital: "",
-    head_office: "",           // adresse du siège
-    siren: "",
-    rcs: "",                   // ex. « RCS Ville 000 000 000 »
-    vat_number: "",
-    publication_director: "",
+    company_name: "CAP AUTO MARSEILLE",  // [RNE]        // dénomination sociale
+    legal_form: "SARL (société à responsabilité limitée)",  // [RNE]          // SAS, SARL, EI…
+    share_capital: "1 000 €",   // [RNE]
+    head_office: "Le Centre Automobile, Chemin de la Bédoule, 13240 Septèmes-les-Vallons",  // [RNE]         // adresse du siège
+    siren: "108 879 529",   // [RNE] — SIRET 108 879 529 00015
+    rcs: "",  // immatriculée au RNE le 26/08/2026 — mention RCS exacte (greffe) À VÉRIFIER sur votre Kbis                 // ex. « RCS Ville 000 000 000 »
+    vat_number: "FR23 108 879 529",   // [RNE]
+    publication_director: "Mathias Ben Hamou, gérant",   // [RNE] — à confirmer
     contact_email: "",         // e-mail pour les demandes juridiques / RGPD
     dpo: "",                   // délégué à la protection des données (si désigné)
     mediator: {                // médiateur de la consommation (obligatoire en B2C)
@@ -254,14 +272,14 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   seo: {
     title_separator: " | ",
-    default_description: "",
+    default_description: "Voitures d'occasion à Septèmes-les-Vallons, près de Marseille : achat, vente, reprise, location, dépôt-vente. Garantie et financement possibles.",
     og_image: "",              // image de partage 1200×630, ex. "assets/images/og.jpg"
     google_site_verification: "",
     pages: {
-      home:      { title: "", description: "" },
-      vehicles:  { title: "", description: "" },
-      about:     { title: "", description: "" },
-      contact:   { title: "", description: "" },
+      home:      { title: "Voitures d'occasion à Septèmes-les-Vallons", description: "" },
+      vehicles:  { title: "Véhicules d'occasion en stock", description: "Les voitures d'occasion disponibles à Septèmes-les-Vallons : prix, kilométrage, année, énergie." },
+      about:     { title: "À propos", description: "" },
+      contact:   { title: "Contact et accès", description: "Téléphone, adresse et formulaire de contact — 16 chemin de la Bédoule, 13240 Septèmes-les-Vallons." },
       legal:     { title: "Mentions légales", description: "" },
       privacy:   { title: "Politique de confidentialité", description: "" },
       cookies:   { title: "Gestion des cookies", description: "" },

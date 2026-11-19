@@ -109,3 +109,19 @@ scripts/          dev server, check, build
 ## 10. À faire valider avant publication
 
 Les pages juridiques fournissent une **structure**, pas un avis juridique. Faites vérifier par un professionnel : mentions légales, politique de confidentialité (finalités, bases légales, durées, destinataires, transferts hors UE), médiateur de la consommation, mentions d'affichage des prix et, le cas échéant, d'intermédiation en crédit (ORIAS). L'adresse de l'hébergeur Vercel pré-remplie est à vérifier.
+
+## 11. Données remplies à partir de recherches en ligne (19/11/2026) — À VÉRIFIER
+
+| Donnée | Valeur | Source |
+|---|---|---|
+| Société | CAP AUTO MARSEILLE, SARL au capital de 1 000 €, SIREN 108 879 529, TVA FR23 108 879 529 | annuaire-entreprises.data.gouv.fr (RNE/Insee) |
+| Siège | Le Centre Automobile, Chemin de la Bédoule, 13240 Septèmes-les-Vallons | idem |
+| Gérant (directeur de publication) | Mathias Ben Hamou | idem (RNE) |
+| Téléphone | 07 80 87 59 41 | bio TikTok @capautomarseille |
+| Adresse affichée | 16 Chemin de la Bédoule, 13240 Septèmes-les-Vallons | annonces L'argus + TikTok |
+| Services | achat, vente, reprise, location, dépôt-vente, garantie 3 mois à 1 an (moteur, boîte, pont), financement | TikTok + annonces L'argus |
+| 7 véhicules | marque, modèle, version, année, km, énergie, boîte, prix | occasion.largus.fr/auto/cap-auto-marseille/ |
+
+**Points d'attention :** la société enregistrée s'appelle « CAP AUTO MARSEILLE » et non « CAP AUTO SEPTÈMES » — confirmez le nom à afficher (`site.name`). La carrosserie des véhicules a été déduite du modèle. Les stocks et prix changent : vérifiez avant publication.
+
+**Introuvables en ligne (laissés vides) :** horaires, e-mail, médiateur de la consommation, mention RCS exacte, photos, logo, vidéos, avis clients.

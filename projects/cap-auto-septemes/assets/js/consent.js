@@ -95,6 +95,7 @@
   /* ---------------- Bandeau ---------------- */
   var banner;
   function showBanner() {
+    document.body.classList.add("cookie-open");
     if (banner) { banner.classList.add("is-visible"); return; }
     banner = document.createElement("section");
     banner.className = "cookie-banner";
@@ -120,7 +121,7 @@
     });
     requestAnimationFrame(function () { requestAnimationFrame(function () { banner.classList.add("is-visible"); }); });
   }
-  function hideBanner() { if (banner) banner.classList.remove("is-visible"); }
+  function hideBanner() { document.body.classList.remove("cookie-open"); if (banner) banner.classList.remove("is-visible"); }
   function all(v) { var o = {}; usedCats.forEach(function (k) { o[k] = v; }); return o; }
 
   /* ---------------- Panneau de réglages ---------------- */
