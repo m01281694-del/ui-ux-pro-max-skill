@@ -120,8 +120,10 @@ Les pages juridiques fournissent une **structure**, pas un avis juridique. Faite
 | Téléphone | 07 80 87 59 41 | bio TikTok @capautomarseille |
 | Adresse affichée | 16 Chemin de la Bédoule, 13240 Septèmes-les-Vallons | annonces L'argus + TikTok |
 | Services | achat, vente, reprise, location, dépôt-vente, garantie 3 mois à 1 an (moteur, boîte, pont), financement | TikTok + annonces L'argus |
+| Horaires | mardi–samedi 9h30–12h30 / 13h30–18h, fermé dimanche et lundi | fiche Google Maps (captures fournies) |
+| Note Google | 4,9/5 (65 avis) | fiche Google Maps |
 | 7 véhicules | marque, modèle, version, année, km, énergie, boîte, prix | occasion.largus.fr/auto/cap-auto-marseille/ |
 
 **Points d'attention :** la société enregistrée s'appelle « CAP AUTO MARSEILLE » et non « CAP AUTO SEPTÈMES » — confirmez le nom à afficher (`site.name`). La carrosserie des véhicules a été déduite du modèle. Les stocks et prix changent : vérifiez avant publication.
 
-**Introuvables en ligne (laissés vides) :** horaires, e-mail, médiateur de la consommation, mention RCS exacte, photos, logo, vidéos, avis clients.
+**Introuvables en ligne (laissés vides) :** e-mail, médiateur de la consommation, mention RCS exacte, photos, logo, vidéos, avis clients.

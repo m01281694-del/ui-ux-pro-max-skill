@@ -28,7 +28,8 @@
    ATTENTION : la société enregistrée à cette adresse s'appelle
    « CAP AUTO MARSEILLE » (et non « CAP AUTO SEPTÈMES »). Confirmez qu'il
    s'agit bien de votre entreprise et du nom commercial à afficher.
-   Non trouvés en ligne : horaires, e-mail, médiateur de la consommation,
+   Horaires : fiche Google Maps (captures fournies).
+   Non trouvés en ligne : e-mail, médiateur de la consommation,
    photos, vidéo, avis clients → laissés vides.
    ===================================================================== */
 
@@ -71,14 +72,14 @@ window.CAP_CONTENT = {
     map_embed_url: "https://maps.google.com/maps?q=16%20Chemin%20de%20la%20B%C3%A9doule%2C%2013240%20Sept%C3%A8mes-les-Vallons&output=embed",      // URL d'intégration de carte (iframe). Chargée seulement après consentement.
 
     /* Horaires : null = à compléter ; [] = fermé ; sinon créneaux ["HH:MM","HH:MM"] */
-    hours: [
-      { day: "Lundi",    slots: null },
-      { day: "Mardi",    slots: null },
-      { day: "Mercredi", slots: null },
-      { day: "Jeudi",    slots: null },
-      { day: "Vendredi", slots: null },
-      { day: "Samedi",   slots: null },
-      { day: "Dimanche", slots: null }
+    hours: [   // fiche Google Maps « Cap Auto Marseille » (capture fournie le 19/11/2026)
+      { day: "Lundi",    slots: [] },
+      { day: "Mardi",    slots: [["09:30", "12:30"], ["13:30", "18:00"]] },
+      { day: "Mercredi", slots: [["09:30", "12:30"], ["13:30", "18:00"]] },
+      { day: "Jeudi",    slots: [["09:30", "12:30"], ["13:30", "18:00"]] },
+      { day: "Vendredi", slots: [["09:30", "12:30"], ["13:30", "18:00"]] },
+      { day: "Samedi",   slots: [["09:30", "12:30"], ["13:30", "18:00"]] },
+      { day: "Dimanche", slots: [] }
     ],
     hours_note: ""          // ex. information sur les jours fériés
   },
@@ -158,7 +159,11 @@ window.CAP_CONTENT = {
     },
 
     /* Chiffres clés RÉELS uniquement — { value: "", label: "" } */
-    figures: [],
+    figures: [   // note Google Maps au 19/11/2026 — à mettre à jour régulièrement
+      { value: "4,9/5", label: "Note Google (65 avis)" },
+      { value: "Mar. – Sam.", label: "Ouvert 9h30 – 18h" },
+      { value: "12 mois", label: "Garantie jusqu'à" }
+    ],
 
     /* Avis clients RÉELS uniquement, avec accord de leurs auteurs
        { author: "", text: "", rating: 5, source: "", date: "" } */
