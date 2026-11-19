@@ -167,6 +167,22 @@ Inspiré du graphe d'Obsidian : une toile de connaissances que je vois grandir *
 - Timeline : un curseur pour voir le graphe à n'importe quelle date (« comment le cerveau a grandi »).
 - Compteurs : nombre de notes, liens, leçons validées, expériences en cours.
 
+### 4.1 Le rendu de la toile (référence visuelle précise)
+Je veux exactement l'effet du graphe d'Obsidian en mode 3D vu dans les vidéos « mon IA apprend toute seule » :
+- Fond bleu nuit profond (dégradé #050816 → #0b1a3a), **des milliers de petits points lumineux** bleu clair / blanc, avec un léger glow (bloom).
+- Les notes se regroupent en **amas / galaxies** par thème (Tendances, Hooks, Concurrents, Audience, Vidéos, Leçons, Ventes…), avec un nœud central plus gros et lumineux par amas et son nom affiché (comme « Exercice » sur la référence).
+- Rendu en **3D WebGL** avec `3d-force-graph` (Three.js) : rotation lente automatique, je peux tourner, zoomer, plonger dans un amas ; liens fins semi-transparents ; particules qui circulent le long des liens quand une info est utilisée.
+- **Animation de naissance** : quand une nouvelle note est créée, un point apparaît avec un flash, file vers son amas et se relie à ses voisins. Les notes très utilisées grossissent et brillent plus fort ; les notes obsolètes pâlissent.
+- Panneau latéral style Obsidian quand je clique : contenu Markdown, image, backlinks, « qui l'a écrite », date, niveau de confiance, et les vidéos qui ont utilisé cette connaissance.
+- Bandeau en bas, comme sur la référence, avec les tâches d'apprentissage en cours et terminées (« Nuit : consolidation des hooks — 17 min », « Terminées : 13 »).
+- Performances : fluide jusqu'à 20 000 nœuds (instancing, pas de label au-delà d'un certain niveau de zoom, layout calculé dans un Web Worker).
+
+### 4.2 Il apprend VRAIMENT tout seul, même quand je ne fais rien
+- Des tâches planifiées tournent en continu, sans moi : veille toutes les heures (tendances, concurrents, actualité de la niche), lecture et résumé des meilleures sources, analyse des stats, consolidation la nuit, et « curiosité » (combler les trous du graphe).
+- Chaque connaissance a une **source** (lien) et un **niveau de confiance** ; une connaissance n'est jamais inventée, et une croyance est revue quand les données la contredisent.
+- Les leçons validées sont réinjectées automatiquement dans les prompts des 36 métiers : c'est ça qui fait que la ville devient meilleure chaque semaine.
+- Je peux ouvrir le dossier `brain/` dans Obsidian sur mon ordinateur (synchro via le dépôt git) et voir le même graphe en vrai.
+
 ---
 
 ## PARTIE 5 — CONNEXIONS AUX PLATEFORMES (sois honnête et pragmatique)
@@ -191,6 +207,43 @@ Inspiré du graphe d'Obsidian : une toile de connaissances que je vois grandir *
 - **Observabilité** : logs structurés, page `/system` (santé des workers, files, erreurs, coûts, quotas API).
 - **Tests** : tests unitaires de la simulation et des schémas, tests end-to-end Playwright du site, test de bout en bout du pipeline vidéo en mode « dry-run » (rien publié).
 - **Sécurité** : le site est protégé par mot de passe (c'est mon tableau de bord privé), pas de données personnelles de mes abonnés exposées publiquement.
+
+---
+
+## PARTIE 6 BIS — BOÎTE À OUTILS : NE RÉINVENTE RIEN, ÉCONOMISE LES TOKENS
+
+Avant de coder quoi que ce soit, **installe et utilise les outils existants** (agents, skills, serveurs MCP, librairies open source sur GitHub). Vérifie que chacun existe toujours et lis son README avant de l'utiliser. Pour chaque outil : installe-le, teste-le avec un petit exemple, note le résultat dans `DECISIONS.md`.
+
+### Serveurs MCP / connecteurs (pour agir sans écrire de code)
+- **ElevenLabs (MCP officiel hébergé)** : `claude mcp add --transport http elevenlabs https://api.elevenlabs.io/v1/mcp` puis `/mcp` pour se connecter. Voix, clonage, effets sonores, musique, transcription. Skills compagnons : `npx skills add elevenlabs/skills`. (L'ancien serveur local `elevenlabs/elevenlabs-mcp` est déprécié : ne pas l'utiliser.)
+- **Metricool** : programmation et analytics Instagram / TikTok / YouTube / X, meilleurs horaires, mode « à valider ».
+- **Windsor.ai** : statistiques de toutes mes plateformes sociales.
+- **TikTok for Business**, **Canva** (visuels, carrousels, vidéos), **Gmail** (newsletter / relances), **Shopify / Stripe** (vente), **Vercel** (déploiement), **Firecrawl** (recherche web, scraping, veille concurrents — beaucoup moins cher en tokens que lire des pages entières), **Semrush** (mots-clés / tendances de recherche), **PostHog** (analytics du site).
+- **Playwright MCP** (`microsoft/playwright-mcp`) : tester le site, faire des captures d'écran.
+- **Obsidian** : `yanxue06/obsidian-mcp` ou `iansinnott/obsidian-claude-code-mcp` pour que les agents lisent / écrivent le Cerveau comme un graphe (liens, backlinks, notes orphelines).
+- Commence par lister les connecteurs déjà disponibles dans la session ; ajoute seulement ceux qui manquent.
+
+### Skills / plugins d'agents (savoir-faire prêt à l'emploi)
+- **Remotion** : `claude plugin marketplace add remotion-dev/claude-code-plugin` puis `claude plugin install remotion@remotion`, ou `npx remotion skills add` dans le projet vidéo. Utilise `/remotion-best-practices`, `/remotion-create`, `/remotion-captions`, `/remotion-render`.
+- Skills de design UI déjà présents (ui-ux-pro-max, design, banner-design, brand) pour la charte, les miniatures et l'interface du site.
+- Le skill `claude-api` pour les bons modèles, le caching et l'usage des tokens.
+
+### Librairies open source (code de base à réutiliser)
+- **Ville** : s'inspirer de `a16z-infra/ai-town` (MIT, TypeScript : ville d'agents IA avec mémoire et conversations) et du papier « Generative Agents » (Stanford) pour la mémoire / réflexion / planification des habitants ; rendu **PixiJS** (+ `pixi-viewport`) pour 1 000 sprites.
+- **Cerveau** : `vasturiano/3d-force-graph` (3D) ou `sigma.js` + `graphology` (2D), `remark`/`unified` pour parser le Markdown et les `[[wikilinks]]`.
+- **Vidéo** : `remotion`, `@remotion/three`, `@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing` (bloom, profondeur de champ), `ffmpeg`.
+- **Back** : `zod` (schémas), une file de tâches persistante (`pg-boss` sur Postgres ou `BullMQ` sur Redis), `drizzle-orm`.
+
+### Règles pour consommer le moins de tokens possible
+1. **Code avant IA** : tout ce qui peut être fait en code déterministe (simulation des habitants, montage, QA vidéo, calcul de stats, planification) ne passe jamais par un LLM.
+2. **Le bon modèle pour la bonne tâche** : Haiku pour trier / classer / répondre court, Sonnet pour le travail courant, Opus seulement pour la stratégie, les hooks et le rapport hebdo.
+3. **Prompt caching** sur tous les prompts système et le Playbook ; **Batch API** (−50 %) pour tout ce qui n'est pas urgent (analyse nocturne, résumés, consolidation du Cerveau).
+4. **RAG ciblé** : injecter seulement les 5–10 notes pertinentes du Cerveau, jamais tout le Cerveau.
+5. **Sorties JSON courtes** et structurées, pas de prose inutile.
+6. **Cache des résultats** : ne jamais refaire une recherche ou une génération déjà faite (clé = hash de l'entrée).
+7. **Templates** : les dialogues des 1 000 habitants sont des templates ; le LLM n'est appelé que quand je parle à un habitant.
+8. **Outils spécialisés plutôt que lecture de pages** : Firecrawl / API au lieu de faire lire des pages web complètes au modèle.
+9. Compteur de tokens et de coût par métier affiché dans `/system`, avec alerte si un métier dérive.
 
 ---
 
