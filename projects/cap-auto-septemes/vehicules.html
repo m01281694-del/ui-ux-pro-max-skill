@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- SEO:START (complété automatiquement depuis content/site.js → seo) -->
+<title></title>
+<meta name="robots" content="noindex, nofollow">
+<!-- SEO:END -->
+<meta name="theme-color" content="#0B0D10">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/syncopate-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-page="vehicles" data-seo="vehicles">
+<header id="site-header"></header>
+<main id="main" tabindex="-1">
+<section class="page-hero">
+  <div class="container">
+    <nav aria-label="Fil d'Ariane"><ol class="breadcrumb"><li><a href="index.html">Accueil</a></li><li aria-current="page">Véhicules</li></ol></nav>
+    <h1 class="display h1" data-split data-c="catalogue.title" data-todo-label="titre de page"></h1>
+    <p class="lead mt-5" data-reveal data-c="catalogue.intro" data-optional data-todo-label="introduction"></p>
+  </div>
+</section>
+<section class="section" data-catalogue aria-label="Catalogue des véhicules">
+  <div class="container catalogue">
+    <form class="filters" role="search" aria-label="Filtrer les véhicules"></form>
+    <div>
+      <div class="toolbar">
+        <p class="toolbar__count" data-count aria-live="polite"></p>
+        <div class="toolbar__right">
+          <button type="button" class="btn btn--ghost btn--sm filters-open" data-filters-open aria-controls="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg><span>Filtres</span></button>
+          <label class="sr-only" for="sort">Trier par</label>
+          <select class="select" id="sort" data-sort>
+            <option value="recent">Plus récents</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="km-asc">Kilométrage croissant</option>
+            <option value="year-desc">Année (récente)</option>
+          </select>
+        </div>
+      </div>
+      <div class="active-filters" data-active></div>
+      <div class="grid grid--3" data-results></div>
+      <div class="load-more" data-more hidden><button type="button" class="btn btn--ghost">Afficher plus de véhicules</button></div>
+      <p class="form-legal mt-7" data-c="catalogue.legal_note" data-optional data-no-todo></p>
+    </div>
+  </div>
+  <div class="backdrop" data-filters-backdrop></div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="content/site.js" defer></script>
+<script src="content/vehicles.js" defer></script>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/consent.js" defer></script>
+<script src="assets/js/vehicles-lib.js" defer></script>
+<script src="assets/js/pages.js" defer></script>
+<script src="assets/js/catalogue.js" defer></script>
+<script src="assets/js/animations.js" defer></script>
+</body>
+</html>

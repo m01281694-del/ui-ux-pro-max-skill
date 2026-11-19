@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gestion du site — outil local</title>
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+  body { padding-bottom: 4rem; }
+  .admin-top { position: sticky; top: 0; z-index: 50; background: rgba(11,13,16,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .admin-top .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; padding-block: .6rem; }
+  .tabs { display: flex; gap: .3rem; }
+  .tab { min-height: 40px; padding: 0 1rem; border-radius: var(--radius-pill); border: 1px solid var(--line-strong); background: none; font-weight: 700; font-size: .88rem; }
+  .tab[aria-selected="true"] { background: var(--text); color: var(--bg); }
+  .admin-layout { display: grid; grid-template-columns: 360px 1fr; gap: 2rem; align-items: start; margin-top: 2rem; }
+  @media (max-width: 1000px) { .admin-layout { grid-template-columns: 1fr; } }
+  .vlist { list-style: none; display: grid; gap: .5rem; max-height: calc(100vh - 220px); overflow: auto; }
+  .vitem { display: grid; grid-template-columns: 56px 1fr auto; gap: .8rem; align-items: center; padding: .6rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); cursor: pointer; text-align: left; width: 100%; }
+  .vitem[aria-current="true"] { border-color: var(--accent); }
+  .vitem img, .vitem .ph { width: 56px; height: 42px; object-fit: cover; border-radius: 6px; background: var(--surface-2); }
+  .vitem small { color: var(--muted); display: block; }
+  .vitem .st { font-size: .7rem; font-weight: 800; text-transform: uppercase; color: var(--muted); }
+  .editor { display: grid; gap: 1.2rem; }
+  .editor fieldset { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.2rem; margin: 0; display: grid; gap: 1rem; }
+  .editor legend { padding: 0 .5rem; font-weight: 800; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; }
+  .thumbs { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .thumbs figure { margin: 0; width: 110px; }
+  .thumbs img { width: 110px; height: 82px; object-fit: cover; border-radius: 6px; background: var(--surface-2); }
+  .thumbs figcaption { font-size: .7rem; color: var(--muted); word-break: break-all; }
+  .bar { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .issues { list-style: none; display: grid; gap: .35rem; font-size: .9rem; }
+  .issues li { padding: .5rem .8rem; border-radius: 8px; background: var(--surface); border-left: 3px solid var(--danger); }
+  .issues.warn li { border-left-color: var(--warning); }
+  .draft-flag { font-size: .8rem; color: var(--warning); font-weight: 700; }
+  code { font-size: .85em; }
+</style>
+</head>
+<body>
+<header class="admin-top">
+  <div class="container">
+    <div><strong class="brand__name">Gestion du site</strong> <span class="muted" style="font-size:.85rem">· outil local, non publié</span></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="tab-vehicles" id="t-vehicles">Véhicules</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-check" id="t-check">Contrôle avant publication</button>
+    </div>
+    <a class="btn btn--ghost btn--sm" href="../index.html" target="_blank" rel="noopener">Voir le site</a>
+  </div>
+</header>
+
+<main class="container">
+  <section id="tab-vehicles" role="tabpanel" aria-labelledby="t-vehicles">
+    <div class="panel mt-6">
+      <p><strong>Comment ça marche :</strong> les fiches sont enregistrées <em>dans ce navigateur</em> (brouillon). Quand vous avez terminé,
+        cliquez sur <strong>Exporter vehicles.js</strong> et remplacez le fichier <code>content/vehicles.js</code> du projet par celui téléchargé.
+        Les photos doivent être copiées dans <code>assets/images/vehicules/&lt;id&gt;/</code>.</p>
+      <div class="bar mt-4">
+        <button class="btn btn--sm" id="add">+ Nouveau véhicule</button>
+        <button class="btn btn--ghost btn--sm" id="export">Exporter vehicles.js</button>
+        <button class="btn btn--ghost btn--sm" id="copy">Copier le code</button>
+        <label class="btn btn--ghost btn--sm" style="cursor:pointer">Importer un fichier<input type="file" id="import" accept=".js,.json" hidden></label>
+        <button class="btn btn--ghost btn--sm" id="reset">Abandonner le brouillon</button>
+        <span class="draft-flag" id="draft-flag" hidden>● Modifications non exportées</span>
+      </div>
+      <p class="form-status mt-4" id="msg" role="status" aria-live="polite"></p>
+    </div>
+    <div class="admin-layout">
+      <div>
+        <p class="muted" id="count" style="margin-bottom:.6rem"></p>
+        <ul class="vlist" id="vlist"></ul>
+      </div>
+      <div id="editor-box"><div class="empty-state"><h2>Sélectionnez ou créez un véhicule</h2><p>Le catalogue ne contient aucun véhicule fictif.</p></div></div>
+    </div>
+  </section>
+
+  <section id="tab-check" role="tabpanel" aria-labelledby="t-check" hidden>
+    <div class="panel mt-6" id="check-box"></div>
+  </section>
+</main>
+
+<script src="../content/site.js"></script>
+<script src="../content/vehicles.js"></script>
+<script src="checks.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
