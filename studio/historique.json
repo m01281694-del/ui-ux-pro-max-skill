@@ -192,6 +192,38 @@
         "instagram"
       ],
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7275509814188199469"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "2026-11-19-plan-10k",
+      "format": "film 3D (chat voxel, gros mots)",
+      "voix": "piper + musique",
+      "sujet": "Le plan 10K par mois avec Claude",
+      "cta": "VIP",
+      "duree": "36 s",
+      "fichier": "studio/videos/2026-11-19-plan-10k/2026-11-19-plan-10k.mp4",
+      "publie": true,
+      "programme": "2026-11-19T20:30 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8258520445054568964"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "2026-11-19-story-claude",
+      "format": "story 3D (chat pixel)",
+      "voix": "piper",
+      "sujet": "Story : ce que Claude fait pour ton business",
+      "cta": "VIP",
+      "fichier": "studio/videos/2026-11-19-story-claude/2026-11-19-story-claude.mp4",
+      "publie": true,
+      "programme": "2026-11-19T20:35 Europe/Paris",
+      "reseaux": [
+        "instagram story"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8474708732688681022"
     }
   ]
 }

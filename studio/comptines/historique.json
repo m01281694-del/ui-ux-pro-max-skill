@@ -59,6 +59,18 @@
       "publie": true,
       "programme": "2026-11-17T22:45 Europe/Paris",
       "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-9088808353342600447"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "bonjour-petit-soleil",
+      "titre": "Bonjour petit soleil",
+      "type": "originale",
+      "theme": "matin",
+      "animal": "souris",
+      "fichier": "studio/comptines/videos/bonjour-petit-soleil/bonjour-petit-soleil.mp4",
+      "publie": true,
+      "programme": "2026-11-19T15:15 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-2841260162578232782"
     }
   ]
 }
