@@ -40,7 +40,7 @@ export default function BrainView() {
   const host = useRef<HTMLDivElement>(null);
   const graphRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [real, setReal] = useState<{ nodes: GNode[]; links: Link[] } | null>(null);
-  const [showDemo, setShowDemo] = useState(true);
+  const [showDemo] = useState(false); // real notes only
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   const [atTime, setAtTime] = useState<number | null>(null); // timeline cursor (null = now)
   const [sel, setSel] = useState<GNode | null>(null);
@@ -260,7 +260,6 @@ export default function BrainView() {
               <span className="mr-1 inline-block h-1.5 w-1.5 rounded-full" style={{ background: COLORS[c] }} />{c}
             </button>
           ))}
-          <label className="mt-1 flex w-full items-center gap-1.5 text-sky-100/70"><input type="checkbox" checked={showDemo} onChange={(e) => setShowDemo(e.target.checked)} /> Afficher les notes <b className="text-amber-300">DÉMO</b></label>
         </div>
       </div>
       {/* timeline */}

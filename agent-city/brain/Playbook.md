@@ -18,3 +18,8 @@ Règles lues par Research et Content avant chaque tâche. **Vide au démarrage**
 - Brand Check ≥ 80/100 avant toute publication.
 
 Voir [[Leçons]] · [[Hooks]] · [[Formats]]
+
+## Règles issues des données (19/11/2026)
+- Les vues TikTok plafonnent à ~700 : priorité absolue à la rétention des 3 premières secondes. Confiance 0,5. Source : [[TikTok — les vues plafonnent autour de 700]]
+- CTA court « envoie go » en fin de vidéo éducative (à tester). Confiance 0,4. Source : [[TikTok — le CTA « go » triple les likes mais pas les vues]]
+- Aucune promesse de gains, aucun bonus « comptes » dans les vidéos. Source : [[Offre — Formation marketing digital]]

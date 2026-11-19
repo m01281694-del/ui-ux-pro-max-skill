@@ -8,6 +8,7 @@ import { economyAt, balanceOf } from "@/lib/sim/economy";
 import { goLive, setState, simNow, startReplay, useApp } from "@/lib/client/store";
 import { useTick } from "@/lib/client/useWork";
 import type { Task } from "@/lib/work/types";
+import { ago, useStats } from "@/lib/client/useStats";
 
 const deptColor = (d?: string) => (d ? DEPT_BY_ID[d as keyof typeof DEPT_BY_ID]?.color : undefined) ?? "#94a3b8";
 const eur = (n: number) => n.toLocaleString("fr-FR", { maximumFractionDigits: 0 }) + " €";
@@ -59,32 +60,32 @@ export function Feed() {
   );
 }
 
-// ---------------------------------------------------------------- Dashboard
+// ---------------------------------------------------------------- Dashboard (REAL data: Metricool + Gmail/Beacons)
 export function Dashboard() {
   useTick(5000);
+  const stats = useStats();
   const tasks = useApp((s) => s.tasks);
   const contents = useApp((s) => s.contents);
   const now = simNow();
   const c = parisClock(now);
   const dayStart = tsOf(c.day, 0);
-  const doneToday = tasks.filter((t) => t.end <= now && t.end >= dayStart);
-  const count = (job: string) => doneToday.filter((t) => t.job === job).length;
-  const published = contents.filter((x) => x.publishAt <= now && x.publishAt >= dayStart).length;
-  const scheduled = contents.filter((x) => x.publishAt > now).length;
-  const views = contents.filter((x) => x.publishAt <= now).reduce((s, x) => s + (x.stats?.views ?? 0), 0);
-  const cost = doneToday.length * 0.011;
-  const kpis = [
-    ["Vues (7 j)", views.toLocaleString("fr-FR")],
-    ["Publiés auj.", String(published)],
-    ["Programmés", String(scheduled)],
-    ["Leads", String(count("Lead Catcher"))],
-    ["Appels réservés", String(count("Call Booker"))],
-    ["Revenus", eur(count("Payment Link") * 97)],
-    ["Tâches finies", String(doneToday.length)],
-    ["Coût IA auj.", cost.toFixed(2) + " €"],
+  const doneToday = tasks.filter((t) => !t.demo && t.end <= now && t.end >= dayStart).length;
+  const p = stats?.platforms ?? {};
+  const followers = Object.values(p).reduce((a, x) => a + (x.followers ?? 0), 0);
+  const views = Object.values(p).reduce((a, x) => a + (x.views ?? 0), 0);
+  const scheduled = (stats?.scheduled ?? []).filter((x) => Date.parse(x.at) > Date.now()).length;
+  const kpis: [string, string][] = [
+    ["Vues (30 j)", views.toLocaleString("fr-FR")],
+    ["Abonnés", followers.toLocaleString("fr-FR")],
+    ["Revenus", eur(stats?.revenue.total ?? 0)],
+    ["Ventes", String(stats?.revenue.sales.length ?? 0)],
+    ["TikTok vues", (p.tiktok?.views ?? 0).toLocaleString("fr-FR")],
+    ["Insta vues", (p.instagram?.views ?? 0).toLocaleString("fr-FR")],
+    ["Programmés", String(scheduled || contents.filter((x) => x.publishAt > Date.now() && x.publishAt < 4e12).length)],
+    ["Tâches auj.", String(doneToday)],
   ];
   return (
-    <Card title="Tableau de bord" right={<Demo />}>
+    <Card title="Tableau de bord" right={<span className="text-[10px] text-emerald-400">● réel · {stats ? ago(stats.updatedAt) : "…"}</span>}>
       <div className="grid grid-cols-4 gap-1.5" data-testid="dashboard">
         {kpis.map(([k, v]) => (
           <div key={k} className="rounded-lg bg-white/[0.04] px-2 py-1.5">
@@ -93,7 +94,7 @@ export function Dashboard() {
           </div>
         ))}
       </div>
-      <div className="mt-2 flex items-center gap-2 text-[11px] text-slate-400"><span className="h-2 w-2 rounded-full bg-emerald-400" />Santé : simulation OK · pipeline réel non branché (Phase 2)</div>
+      <div className="mt-2 text-[11px] text-slate-400">Sources : {stats?.source ?? "…"} · coût IA : 0 € (abonnement Claude)</div>
     </Card>
   );
 }

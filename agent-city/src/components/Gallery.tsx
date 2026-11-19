@@ -6,6 +6,7 @@ import { simNow, useApp } from "@/lib/client/store";
 import { useTick, useWorkSync } from "@/lib/client/useWork";
 import { fmtTime } from "@/lib/sim/clock";
 import type { Content } from "@/lib/work/types";
+import { ago, useStats } from "@/lib/client/useStats";
 
 const FLOW = ["brouillon", "validé", "programmé", "publié", "analysé"] as const;
 function statusOf(c: Content, now: number): (typeof FLOW)[number] {
@@ -23,6 +24,7 @@ export default function Gallery() {
   const [m, setM] = useState(false);
   useEffect(() => setM(true), []);
   const contents = useApp((s) => s.contents);
+  const stats = useStats();
   const now = simNow();
   const list = contents.filter((c) => c.created <= now);
   return (
@@ -30,7 +32,7 @@ export default function Gallery() {
       <div className="absolute inset-0 overflow-y-auto p-4">
         <div className="mx-auto max-w-6xl">
           <h1 className="font-display text-xl font-semibold text-white">Galerie de production</h1>
-          <p className="mt-1 text-sm text-slate-400">Vidéos, carrousels et newsletters, du brouillon à l&apos;analyse. Les éléments <b className="text-amber-300">DÉMO</b> seront remplacés par les vraies productions dès la Phase 2.</p>
+          <p className="mt-1 text-sm text-slate-400">Ce que la ville produit, du brouillon à l&apos;analyse, puis les vues réelles de chacune de tes publications.</p>
           {m && (
             <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="gallery">
               {list.map((c) => {
@@ -62,6 +64,30 @@ export default function Gallery() {
                 );
               })}
             </div>
+          )}
+          {stats && (
+            <section className="mt-8" data-testid="post-stats">
+              <h2 className="font-display text-lg font-semibold text-white">Vues de chaque publication <span className="text-xs font-normal text-emerald-400">● réel · {ago(stats.updatedAt)}</span></h2>
+              <p className="text-xs text-slate-400">Source : {stats.source} · {stats.period}</p>
+              <div className="mt-3 overflow-x-auto rounded-xl border border-white/10">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-white/5 text-xs text-slate-400"><tr><th className="p-2">Date</th><th className="p-2">Réseau</th><th className="p-2">Publication</th><th className="p-2 text-right">Vues</th><th className="p-2 text-right">Likes</th><th className="p-2 text-right">Comm.</th><th className="p-2 text-right">Partages</th></tr></thead>
+                  <tbody>
+                    {[...stats.posts].sort((a, b) => b.views - a.views).map((p) => (
+                      <tr key={p.url} className="border-t border-white/5">
+                        <td className="whitespace-nowrap p-2 text-xs text-slate-400">{new Date(p.publishedAt).toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit" })}</td>
+                        <td className="p-2 text-xs">{p.network}</td>
+                        <td className="max-w-[360px] truncate p-2"><a href={p.url} target="_blank" rel="noreferrer" className="text-slate-200 hover:text-orange-300">{p.title}</a></td>
+                        <td className="p-2 text-right tabular-nums text-white">{p.views.toLocaleString("fr-FR")}</td>
+                        <td className="p-2 text-right tabular-nums">{p.likes}</td>
+                        <td className="p-2 text-right tabular-nums">{p.comments}</td>
+                        <td className="p-2 text-right tabular-nums">{p.shares}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
           )}
         </div>
       </div>

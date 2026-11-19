@@ -47,7 +47,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
-          <span title="Les données de travail affichées sont des exemples tant que le pipeline réel n'est pas branché" className="hidden rounded border border-amber-400/40 bg-amber-400/10 px-1.5 py-0.5 text-[10px] sm:inline font-bold tracking-wider text-amber-300">DÉMO</span>
           <Clock />
         </div>
       </header>

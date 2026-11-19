@@ -2,8 +2,8 @@
 date: "2026-11-19"
 auteur: "Audience Listener"
 type: "persona"
-confiance: 0.2
-source: "hypothèse de départ (niche déclarée : marketing digital) — à remplacer par les stats Windsor.ai / Metricool"
+confiance: 0.35
+source: "Metricool : TikTok 9 abonnés, Instagram 1, YouTube 0 (30 j) — démographie pas encore disponible"
 ---
 
 # Persona (hypothèse) : créateur·rice qui débute en marketing digital

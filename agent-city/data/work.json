@@ -205,6 +205,54 @@
    "contentId": "v001",
    "stage": "programmé",
    "platform": "youtube"
+  },
+  {
+   "id": "r-1795114920000-14",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "cherche les ventes Beacons dans Gmail (aucune vente trouvée)",
+   "start": 1795114920000,
+   "end": 1795114980000,
+   "residentId": 273
+  },
+  {
+   "id": "r-1795115040000-15",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "récupère les stats Metricool : TikTok 11 375 vues / 16 vidéos, Instagram 805, YouTube 1",
+   "start": 1795115040000,
+   "end": 1795115160000,
+   "residentId": 261,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795115280000-16",
+   "demo": false,
+   "dept": "loop",
+   "job": "Loop Feeder",
+   "title": "écrit 2 leçons (plafond ~700 vues, CTA « go ») et met à jour le Playbook",
+   "start": 1795115280000,
+   "end": 1795115400000,
+   "residentId": 296,
+   "output": {
+    "kind": "note",
+    "label": "2 leçons"
+   }
+  },
+  {
+   "id": "r-1795115100000-17",
+   "demo": false,
+   "dept": "sales",
+   "job": "Payment Link",
+   "title": "enregistre l offre ELM (197,99 €, Beacons) et ses règles de promotion",
+   "start": 1795115100000,
+   "end": 1795115160000,
+   "residentId": 247
   }
  ],
  "contents": [

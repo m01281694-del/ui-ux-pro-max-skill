@@ -9,7 +9,7 @@ import { ContentSchema, TaskSchema, type Content, type FeedItem, type Task } fro
 import { z } from "zod";
 
 const FILE = path.join(process.cwd(), "data", "work.json");
-export const DEMO_MODE = process.env.DEMO_MODE !== "off";
+export const DEMO_MODE = process.env.DEMO_MODE === "on"; // real data only by default
 
 function readReal(): { tasks: Task[]; contents: Content[] } {
   try {

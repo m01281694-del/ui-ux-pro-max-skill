@@ -13,18 +13,23 @@ const browserExecutable = process.env.REMOTION_CHROME ?? "/opt/pw-browsers/chrom
 const chromiumOptions = { gl: "swangle" as const };
 
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
-const composition = await selectComposition({ serveUrl, id: "Short", browserExecutable, chromiumOptions });
+const dir = path.resolve("content", id);
+const script = JSON.parse(fs.readFileSync(path.join(dir, "script.json"), "utf8"));
+const timing = JSON.parse(fs.readFileSync(path.join(dir, "timing.json"), "utf8"));
+fs.copyFileSync(path.join(dir, "voice.mp3"), path.resolve("public", `${id}-voice.mp3`));
+const inputProps = { id, voiceSrc: `${id}-voice.mp3`, handle: script.handle ?? "manu.digi0", brand: script.brand, scenes: script.scenes, timing };
+const composition = await selectComposition({ serveUrl, id: "Short", browserExecutable, chromiumOptions, inputProps });
 console.log("composition", composition.durationInFrames, "frames");
 
 for (const [name, sec] of [["hook", 0.5], ["tension", 4], ["p1", 9.5], ["p2", 14], ["p3", 18], ["payoff", 23.5], ["cta", 28]] as const) {
-  await renderStill({ serveUrl, composition, frame: Math.round(sec * 30), output: path.join(out, `still-${name}.png`), browserExecutable, chromiumOptions });
+  await renderStill({ serveUrl, composition, inputProps, frame: Math.min(composition.durationInFrames - 1, Math.round(sec * 30)), output: path.join(out, `still-${name}.png`), browserExecutable, chromiumOptions });
 }
 if (stillsOnly) process.exit(0);
 
 const raw = path.join(out, "raw.mp4");
 let last = 0;
 await renderMedia({
-  serveUrl, composition, codec: "h264", outputLocation: raw, browserExecutable, chromiumOptions, crf: 18, concurrency: 3,
+  serveUrl, composition, inputProps, codec: "h264", outputLocation: raw, browserExecutable, chromiumOptions, crf: 18, concurrency: 3,
   onProgress: ({ progress }) => { const p = Math.floor(progress * 10); if (p !== last) { last = p; console.log(`render ${p * 10}%`); } },
 });
 // loudness -14 LUFS integrated, TP -1 dBTP
