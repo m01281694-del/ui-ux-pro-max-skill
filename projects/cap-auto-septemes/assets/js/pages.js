@@ -175,6 +175,23 @@
     var el = document.querySelector("[data-testimonials]");
     if (!el) return;
     var items = list("home.testimonials.items");
+    var g = CAP.get("home.testimonials.google") || {};
+    var gUrl = CAP.safeUrl(g.url), gWrite = CAP.safeUrl(g.write_url);
+    if (!items.length && (gUrl || gWrite)) {
+      // Résumé des avis Google : note + accès aux avis + bouton pour en laisser un
+      var stars5 = "";
+      for (var k = 0; k < 5; k++) stars5 += CAP.icon("star");
+      el.innerHTML = '<div class="card review-summary" style="grid-column:1/-1">' +
+        '<div class="review-summary__score"><span class="review-summary__rating">' + CAP.esc(g.rating || "") + '</span><span class="review-summary__max">/5</span></div>' +
+        '<div class="review-summary__body"><div class="stars review-summary__stars" role="img" aria-label="Note de ' + CAP.esc(g.rating || "") + ' sur 5">' + stars5 + "</div>" +
+        "<p><strong>" + CAP.esc(g.count_label || "Avis clients") + '</strong> sur Google</p>' +
+        '<p class="muted">Votre avis compte : partagez votre expérience avec nous.</p></div>' +
+        '<div class="review-summary__actions">' +
+        (gWrite ? '<a class="btn" data-magnetic href="' + CAP.esc(gWrite) + '" target="_blank" rel="noopener noreferrer">' + CAP.icon("star") + "<span>Laisser un avis</span></a>" : "") +
+        (gUrl ? '<a class="btn btn--ghost" href="' + CAP.esc(gUrl) + '" target="_blank" rel="noopener noreferrer"><span>Voir tous les avis</span>' + CAP.icon("arrow-up-right") + "</a>" : "") +
+        "</div></div>";
+      return;
+    }
     if (!items.length) {
       if (!P) return removeSection(el);
       el.innerHTML = [1, 2, 3].map(function (i) {
@@ -272,6 +289,8 @@
         if (el.hasAttribute("data-legal-link")) {
           var u = CAP.safeUrl(v);
           el.innerHTML = u ? '<a href="' + CAP.esc(u) + '" target="_blank" rel="noopener noreferrer">' + CAP.esc(v) + "</a>" : CAP.esc(v);
+        } else if (el.hasAttribute("data-legal-tel") && CAP.phoneHref()) {
+          el.innerHTML = '<a href="' + CAP.esc(CAP.phoneHref()) + '">' + CAP.esc(v) + "</a>";
         } else if (el.hasAttribute("data-legal-mail")) {
           el.innerHTML = '<a href="mailto:' + CAP.esc(v) + '">' + CAP.esc(v) + "</a>";
         } else el.textContent = v;

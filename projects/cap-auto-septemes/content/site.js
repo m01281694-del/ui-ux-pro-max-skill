@@ -69,8 +69,8 @@ window.CAP_CONTENT = {
       city: "Septèmes-les-Vallons",
       country: "France"
     },
-    map_link: "https://www.google.com/maps/search/?api=1&query=16+Chemin+de+la+B%C3%A9doule+13240+Sept%C3%A8mes-les-Vallons",           // lien « Itinéraire » (Google Maps, Apple Plans, Waze…)
-    map_embed_url: "https://maps.google.com/maps?q=16%20Chemin%20de%20la%20B%C3%A9doule%2C%2013240%20Sept%C3%A8mes-les-Vallons&output=embed",      // URL d'intégration de carte (iframe). Chargée seulement après consentement.
+    map_link: "https://maps.app.goo.gl/4oSVozdZpVEnuTVx8",           // lien « Itinéraire » (Google Maps, Apple Plans, Waze…)
+    map_embed_url: "https://maps.google.com/maps?q=43.4021715,5.3569289&z=17&output=embed",      // URL d'intégration de carte (iframe). Chargée seulement après consentement.
 
     /* Horaires : null = à compléter ; [] = fermé ; sinon créneaux ["HH:MM","HH:MM"] */
     hours: [   // fiche Google Maps « Cap Auto Marseille » (capture fournie le 19/11/2026)
@@ -162,7 +162,7 @@ window.CAP_CONTENT = {
 
     /* Chiffres clés RÉELS uniquement — { value: "", label: "" } */
     figures: [   // note Google Maps au 19/11/2026 — à mettre à jour régulièrement
-      { value: "4,9/5", label: "Note Google (65 avis)" },
+      { value: "4,9/5", label: "Note Google (60+ avis)" },
       { value: "Mar. – Sam.", label: "Ouvert 9h30 – 18h" },
       { value: "12 mois", label: "Garantie jusqu'à" }
     ],
@@ -170,15 +170,23 @@ window.CAP_CONTENT = {
     /* Avis clients RÉELS uniquement, avec accord de leurs auteurs
        { author: "", text: "", rating: 5, source: "", date: "" } */
     testimonials: {
-      eyebrow: "",
-      title: "",
-      items: []
+      eyebrow: "Avis Google",
+      title: "Ce que disent nos clients",
+      items: [],
+      /* Bloc « avis Google » : note, lien vers tous les avis et bouton « laisser un avis ».
+         Les textes des avis ne sont pas recopiés (droits des auteurs / conditions Google). */
+      google: {
+        rating: "4,9",                       // fiche Google Maps — à mettre à jour de temps en temps
+        count_label: "Plus de 60 avis clients",
+        url: "https://maps.app.goo.gl/4oSVozdZpVEnuTVx8",
+        write_url: "https://maps.google.com/?cid=6520266454442802631"
+      }
     },
 
     cta_band: {
       title: "Un véhicule vous intéresse ?",
       text: "Appelez-nous ou passez nous voir chemin de la Bédoule à Septèmes-les-Vallons.",
-      button: { label: "Nous contacter", href: "contact.html" }
+      button: { label: "Appeler le 07 80 87 59 41", href: "tel:+33780875941" }
     }
   },
 
