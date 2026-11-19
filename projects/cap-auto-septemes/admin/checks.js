@@ -94,7 +94,7 @@
     var social = get(C, "social") || {};
     if (!Object.keys(social).some(function (k) { return !empty(social[k]); })) warnings.push("Aucun réseau social renseigné (les icônes seront masquées)");
 
-    if (get(C, "intro.enabled") !== false && get(C, "intro.mode") === "video" && empty(get(C, "intro.video_mp4")) && empty(get(C, "intro.video_webm"))) warnings.push("Vidéo d'introduction activée mais aucun fichier (intro.video_mp4) — l'intro sera ignorée");
+    if (get(C, "intro.enabled") !== false && empty(get(C, "intro.video_mp4")) && empty(get(C, "intro.video_webm"))) warnings.push("Vidéo d'introduction activée mais aucun fichier (intro.video_mp4) — l'intro sera ignorée");
     if (empty(get(C, "home.hero.background_video_mp4")) && empty(get(C, "home.hero.background_image"))) warnings.push("Pas de vidéo ni de photo de fond pour le héro (décor graphique utilisé)");
 
     (get(C, "home.testimonials.items") || []).forEach(function (t, i) {

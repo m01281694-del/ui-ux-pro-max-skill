@@ -101,13 +101,16 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   intro: {
     enabled: true,          // false = pas d'introduction
-    mode: "3d",             // "3d" = film 3D temps réel (aucun fichier requis) ; "video" = votre vidéo ci-dessous
-    video_mp4: "",          // ex. "assets/video/intro.mp4"
-    video_webm: "",         // optionnel, ex. "assets/video/intro.webm"
-    poster: "",             // image affichée pendant le chargement
+    /* Film cinématique pré-rendu (voiture 3D « Car Concept », CC BY 4.0 — voir mentions légales).
+       Vous pouvez le remplacer par votre propre vidéo : mêmes champs. */
+    video_mp4: "assets/video/intro-cinematique-1080.mp4",          // ordinateurs
+    video_mp4_mobile: "assets/video/intro-cinematique-720.mp4",    // téléphones / connexion lente
+    video_webm: "assets/video/intro-cinematique-1080.webm",
+    video_webm_mobile: "assets/video/intro-cinematique-720.webm",
+    poster: "assets/video/intro-cinematique-poster.jpg",
+    title_at: 5.6,          // seconde où le nom apparaît sur le film
     once_per_session: true, // ne la rejouer qu'une fois par visite
-    skip_label: "",         // vide = « Passer l'intro »
-    logo_reveal: true       // affiche le nom / logo à la fin de la vidéo
+    skip_label: ""          // vide = « Passer l'intro »
   },
 
   /* ------------------------------------------------------------------
