@@ -12,6 +12,11 @@
 <link rel="preload" href="assets/fonts/syncopate-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
+<script>
+/* Anti-flash : écran noir immédiat si l'introduction va être jouée (retiré par intro.js, ou au bout de 6 s par sécurité) */
+(function(){try{var d=document.documentElement,s=sessionStorage.getItem("cap_intro_seen")==="1",f=/[?&]intro=1\b/.test(location.search);
+if((!s||f)&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},6000);}}catch(e){}})();
+</script>
 </head>
 <body data-page="home" data-seo="home">
 <header id="site-header"></header>

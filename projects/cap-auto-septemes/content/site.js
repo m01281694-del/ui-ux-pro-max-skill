@@ -101,6 +101,7 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   intro: {
     enabled: true,          // false = pas d'introduction
+    mode: "3d",             // "3d" = film 3D temps réel (aucun fichier requis) ; "video" = votre vidéo ci-dessous
     video_mp4: "",          // ex. "assets/video/intro.mp4"
     video_webm: "",         // optionnel, ex. "assets/video/intro.webm"
     poster: "",             // image affichée pendant le chargement

@@ -740,3 +740,51 @@ body.intro-lock { overflow: hidden; }
 
 .demo-note { color: var(--accent-text); font-weight: 600; }
 .key-specs + .v-section, .gallery + .v-section { margin-top: var(--space-7); }
+
+/* =====================================================================
+   Introduction cinématique 3D
+   ===================================================================== */
+/* Écran noir dès le premier rendu, le temps que l'intro démarre (anti-flash) */
+html.intro-pending body::before { content: ""; position: fixed; inset: 0; z-index: 850; background: #000; }
+
+.intro3d { position: fixed; inset: 0; z-index: 800; background: #000; overflow: hidden; opacity: 1; isolation: isolate; }
+.intro3d__stage { position: absolute; inset: 0; }
+.intro3d__canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 600ms var(--ease-out); }
+.intro3d.is-playing .intro3d__canvas { opacity: 1; }
+.intro3d__dip { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; z-index: 2; }
+/* Étalonnage : vignettage + teinte froide/chaude façon publicité */
+.intro3d__grade { position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 55%, rgba(0,0,0,0.75) 100%),
+              linear-gradient(180deg, rgba(20,40,80,0.10), rgba(120,10,20,0.06)); mix-blend-mode: normal; }
+.intro3d__grain { position: absolute; inset: -50%; z-index: 4; pointer-events: none; opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.5s steps(4) infinite; }
+@keyframes grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } 100% { transform: translate(0, 0); } }
+/* Bandes cinéma 2.39:1 */
+.intro3d__bar { position: absolute; left: 0; right: 0; z-index: 5; background: #000; height: max(0px, calc((100vh - 100vw / 2.39) / 2)); transform: scaleY(0); transition: transform 1s var(--ease-in-out); }
+.intro3d__bar--top { top: 0; transform-origin: top; }
+.intro3d__bar--bottom { bottom: 0; transform-origin: bottom; }
+.intro3d.is-on .intro3d__bar { transform: scaleY(1); }
+@media (max-aspect-ratio: 1/1) { .intro3d__bar { display: none; } }
+/* Chargement discret */
+.intro3d__loader { position: absolute; left: 50%; top: 50%; z-index: 6; width: 120px; height: 1px; transform: translate(-50%, -50%); background: rgba(255,255,255,0.12); overflow: hidden; transition: opacity 400ms; }
+.intro3d__loader span { position: absolute; inset: 0; background: var(--accent); animation: load-bar 1.2s var(--ease-in-out) infinite; transform-origin: left; }
+.intro3d.is-playing .intro3d__loader { opacity: 0; }
+/* Nom de la marque */
+.intro3d__title { position: absolute; left: 50%; top: 50%; z-index: 6; transform: translate(-50%, -50%); width: max-content; max-width: 92vw; text-align: center;
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(1.4rem, 5vw, 4.4rem); letter-spacing: 0.08em; color: #fff; pointer-events: none; }
+.intro3d__title span { display: inline-block; opacity: 0; filter: blur(14px); transform: translateY(18px) scale(1.04); letter-spacing: 0.35em;
+  transition: opacity 900ms var(--ease-out), filter 900ms var(--ease-out), transform 1100ms var(--ease-out), letter-spacing 1400ms var(--ease-out); transition-delay: var(--d, 0ms);
+  text-shadow: 0 0 30px rgba(255,255,255,0.25); }
+.intro3d__title img { max-width: min(520px, 80vw); max-height: 30vh; opacity: 0; filter: blur(12px); transition: opacity 900ms var(--ease-out), filter 900ms var(--ease-out); }
+.intro3d__line { display: block; height: 2px; width: 100%; margin-top: 0.4em; background: linear-gradient(90deg, transparent, var(--accent), transparent); transform: scaleX(0); transition: transform 1200ms var(--ease-out) 300ms; }
+.intro3d.show-title .intro3d__title span, .intro3d.show-title .intro3d__title img { opacity: 1; filter: none; transform: none; letter-spacing: 0.08em; }
+.intro3d.show-title .intro3d__line { transform: scaleX(1); }
+.intro3d__skip { position: absolute; right: var(--gutter); bottom: max(1.25rem, calc((100vh - 100vw / 2.39) / 2 + 1rem)); z-index: 7; background: rgba(0,0,0,0.4); backdrop-filter: blur(6px); color: #fff; }
+@media (max-aspect-ratio: 1/1) { .intro3d__skip { bottom: 1.5rem; } }
+/* Sortie : le film s'efface en avançant vers le spectateur, l'accueil apparaît dessous */
+.intro3d.is-leaving { opacity: 0; pointer-events: none; transition: opacity 900ms var(--ease-out); }
+.intro3d.is-leaving .intro3d__stage { transform: scale(1.08); filter: blur(8px); transition: transform 1000ms var(--ease-out), filter 900ms var(--ease-out); }
+.intro3d.is-leaving .intro3d__title { transform: translate(-50%, -50%) scale(1.15); transition: transform 1000ms var(--ease-out); }
+.intro3d.is-leaving.is-fast { transition-duration: 400ms; }
+@media (prefers-reduced-motion: reduce) { .intro3d { display: none; } }
