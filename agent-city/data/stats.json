@@ -9,7 +9,9 @@
    "posts": 16,
    "views": 11375,
    "likes": 299,
-   "profileViews": 107
+   "profileViews": 107,
+   "comments": 9,
+   "shares": 9
   },
   "instagram": {
    "handle": "@manu.digi0",
@@ -239,6 +241,30 @@
     "youtube"
    ],
    "metricoolId": 434625821
+  }
+ ],
+ "quota": {
+  "elevenlabs": {
+   "used": 1314,
+   "limit": 10000,
+   "resetAt": 1797746103000
+  }
+ },
+ "goals": [
+  {
+   "label": "Abonnés (tous réseaux)",
+   "current": 10,
+   "target": 1000
+  },
+  {
+   "label": "Première vente ELM",
+   "current": 0,
+   "target": 1
+  },
+  {
+   "label": "Vidéos publiées par la ville ce mois",
+   "current": 0,
+   "target": 20
   }
  ]
 }

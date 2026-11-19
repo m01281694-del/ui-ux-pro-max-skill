@@ -45,3 +45,11 @@ test("messages: ready-made replies include the ELM link", async ({ page }) => {
   await expect(page.getByTestId("replies")).toContainText("shop.beacons.ai/manu.digital");
   await expect(page.getByTestId("replies")).not.toContainText("Netflix");
 });
+
+test("dashboard: command center shows real KPIs and platforms", async ({ page }) => {
+  await page.goto("/");
+  await expect(page).toHaveURL(/\/dashboard/);
+  await expect(page.getByTestId("kpis")).toContainText("Audience totale");
+  await expect(page.getByTestId("platforms")).toContainText("TikTok");
+  await expect(page.getByTestId("daily").locator("svg")).toBeVisible();
+});

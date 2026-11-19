@@ -7,6 +7,7 @@ import { simNow, useApp } from "@/lib/client/store";
 import { useTick } from "@/lib/client/useWork";
 
 const NAV = [
+  { href: "/dashboard", label: "Tableau de bord" },
   { href: "/city", label: "Ville" },
   { href: "/brain", label: "Cerveau" },
   { href: "/gallery", label: "Galerie" },
@@ -38,13 +39,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-dvh flex-col bg-[var(--bg)] text-slate-200">
       <header className="flex h-12 shrink-0 items-center gap-2 sm:gap-3 border-b border-white/10 bg-[#0a0f1f]/90 px-3 backdrop-blur">
-        <Link href="/city" className="flex items-center gap-2 font-display text-[15px] font-bold tracking-tight text-white">
+        <Link href="/dashboard" className="flex shrink-0 items-center gap-2 font-display text-[15px] font-bold tracking-tight text-white">
           <span className="grid h-6 w-6 place-items-center rounded-md bg-orange-500 text-[11px] text-white">AC</span>
           <span className="hidden sm:inline">Agent City</span>
         </Link>
         <nav className="flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none]">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className={`rounded-md px-1.5 py-1 text-[13px] sm:px-2.5 sm:text-sm transition-colors ${path?.startsWith(n.href) ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"}`}>{n.label}</Link>
+            <Link key={n.href} href={n.href} className={`shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 text-[13px] sm:px-2.5 sm:text-sm transition-colors ${path?.startsWith(n.href) ? "bg-white/10 text-white" : "text-slate-400 hover:text-white"}`}>{n.label}</Link>
           ))}
         </nav>
         <div className="ml-auto hidden shrink-0 items-center gap-2 sm:flex sm:gap-3">
