@@ -27,6 +27,7 @@ Journal des choix faits sans te demander (cahier des charges : `PROMPT-ville-ia.
 | 19 | Kill switch + mode Approval Desk (`/api/control`) : fichier `data/control.json` en local, mémoire sur Vercel (FS en lecture seule). Démarrage en `semi-auto`. | Passera en Postgres en Phase 3 (avant toute publication réelle). | ✅ (persistance Vercel ⏳) |
 | 20 | Coûts IA : plafond `AI_DAILY_CAP_EUR` (10 € par défaut), compteur par métier, dégradation Opus → Sonnet → Haiku à 70 % puis 90 % du plafond (`src/lib/ai/budget.ts`). | §1.5 | ✅ (en mémoire ; en base en Phase 2) |
 | 21 | Mot de passe : HTTP Basic via `SITE_PASSWORD`. Tant qu'il n'est pas défini, le déploiement Vercel est un **déploiement preview protégé par l'authentification Vercel** (toi seul y accèdes, connecté à Vercel). | Ne jamais générer ni coller de mot de passe dans le chat. | ✅ |
+| 23 | Déployé sur Vercel (projet `agent-city`). La protection Vercel Authentication est active sur tous les domaines *.vercel.app. | Accès réservé au propriétaire du compte Vercel tant que `SITE_PASSWORD` n'est pas défini. | ✅ |
 | 22 | Tests : Vitest (10 tests : simulation, économie, horloge, schémas, cerveau) et Playwright (4 scénarios × desktop/mobile). | §6 Tests | ✅ 18/18 |
 
 ## Plan des phases suivantes (choix déjà arrêtés)
