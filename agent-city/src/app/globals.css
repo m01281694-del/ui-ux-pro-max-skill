@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 @theme {
+  /* charte : bleu foncé « un peu clair », orange Claude, blanc */
+  --color-orange-300: #EBA790;
+  --color-orange-400: #E08A6D;
+  --color-orange-500: #D97757;
+  --color-orange-600: #C4643F;
+  --color-brand-navy: #1F3B73;
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }

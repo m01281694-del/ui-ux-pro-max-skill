@@ -33,6 +33,8 @@ export const ContentSchema = z.object({
   stages: z.array(z.object({ stage: ContentStatus, at: z.number() })),
   stats: z.object({ views: z.number(), likes: z.number(), shares: z.number(), saves: z.number(), retention: z.number() }).optional(),
   brandScore: z.number().optional(),
+  media: z.object({ video: z.string(), cover: z.string().optional(), brainNote: z.string().optional() }).optional(),
+  caption: z.string().optional(),
 });
 export type Content = z.infer<typeof ContentSchema>;
 

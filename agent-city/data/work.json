@@ -1,1 +1,188 @@
-{"tasks":[],"contents":[]}
+{
+ "tasks": [
+  {
+   "id": "r-v001-0",
+   "demo": false,
+   "dept": "research",
+   "job": "Audience Listener",
+   "title": "identifie les comptes : Instagram @manu.digi0, TikTok @manu_digi0, YouTube (via Metricool + Windsor.ai)",
+   "start": 1795113060000,
+   "end": 1795113120000,
+   "residentId": 10,
+   "contentId": "v001"
+  },
+  {
+   "id": "r-v001-1",
+   "demo": false,
+   "dept": "research",
+   "job": "Trend Scout",
+   "title": "choisit l'angle « rétention : la première seconde décide de tout » (marketing digital)",
+   "start": 1795113120000,
+   "end": 1795113180000,
+   "residentId": 1,
+   "contentId": "v001",
+   "output": {
+    "kind": "tendance",
+    "label": "Angle rétention"
+   }
+  },
+  {
+   "id": "r-v001-2",
+   "demo": false,
+   "dept": "content",
+   "job": "Voiceover",
+   "title": "teste 4 voix ElevenLabs sur le même hook (Eric, Will, Sarah, Laura — eleven_v4)",
+   "start": 1795113180000,
+   "end": 1795113240000,
+   "residentId": 74,
+   "contentId": "v001",
+   "output": {
+    "kind": "audio",
+    "label": "4 essais de voix",
+    "url": "/media/voix/eric.mp3"
+   }
+  },
+  {
+   "id": "r-v001-3",
+   "demo": false,
+   "dept": "research",
+   "job": "Post Writer",
+   "title": "écrit le script #001 — 10 hooks notés, garde « Ta vidéo est morte en une seconde » (92/100)",
+   "start": 1795113240000,
+   "end": 1795113300000,
+   "residentId": 34,
+   "contentId": "v001",
+   "stage": "script",
+   "output": {
+    "kind": "script",
+    "label": "Script #001"
+   }
+  },
+  {
+   "id": "r-v001-4",
+   "demo": false,
+   "dept": "content",
+   "job": "Voiceover",
+   "title": "génère la voix de la vidéo #001 avec timestamps mot à mot (31,1 s, 96 mots)",
+   "start": 1795113300000,
+   "end": 1795113360000,
+   "residentId": 74,
+   "contentId": "v001",
+   "stage": "voix",
+   "output": {
+    "kind": "audio",
+    "label": "Voix #001"
+   }
+  },
+  {
+   "id": "r-v001-5",
+   "demo": false,
+   "dept": "content",
+   "job": "Visual Designer",
+   "title": "génère les SFX (whoosh, impact, riser) et compose la musique libre de droits",
+   "start": 1795113360000,
+   "end": 1795113420000,
+   "residentId": 54,
+   "contentId": "v001",
+   "stage": "visuels",
+   "output": {
+    "kind": "audio",
+    "label": "SFX + musique"
+   }
+  },
+  {
+   "id": "r-v001-6",
+   "demo": false,
+   "dept": "content",
+   "job": "Video Editor",
+   "title": "monte et rend la vidéo #001 en 3D (Remotion + Three.js, 1080×1920, 30 fps, sous-titres karaoké)",
+   "start": 1795113480000,
+   "end": 1795113840000,
+   "residentId": 84,
+   "contentId": "v001",
+   "stage": "montage",
+   "output": {
+    "kind": "video",
+    "label": "Vidéo #001 (32 s)",
+    "url": "/media/videos/v001.mp4"
+   }
+  },
+  {
+   "id": "r-v001-7",
+   "demo": false,
+   "dept": "content",
+   "job": "Brand Check",
+   "title": "contrôle qualité de la vidéo #001 — score 100/100 (−14,9 LUFS, 0 écran noir, 0 frame figée)",
+   "start": 1795113900000,
+   "end": 1795113960000,
+   "residentId": 97,
+   "contentId": "v001",
+   "stage": "brand_check",
+   "output": {
+    "kind": "qa",
+    "label": "QA 100/100"
+   }
+  },
+  {
+   "id": "r-v001-8",
+   "demo": false,
+   "dept": "loop",
+   "job": "Loop Feeder",
+   "title": "écrit 6 notes dans le Cerveau (vidéo, hooks, 3 incidents API, persona)",
+   "start": 1795113960000,
+   "end": 1795114020000,
+   "residentId": 296,
+   "contentId": "v001",
+   "output": {
+    "kind": "note",
+    "label": "6 notes"
+   }
+  }
+ ],
+ "contents": [
+  {
+   "id": "v001",
+   "demo": false,
+   "kind": "video",
+   "number": 1,
+   "title": "Ta vidéo est morte en 1 seconde",
+   "hook": "Ta vidéo est morte en une seconde.",
+   "trend": "rétention / hook",
+   "created": 1795113240000,
+   "publishAt": 4070908800000,
+   "stages": [
+    {
+     "stage": "idée",
+     "at": 1795113180000
+    },
+    {
+     "stage": "script",
+     "at": 1795113300000
+    },
+    {
+     "stage": "voix",
+     "at": 1795113360000
+    },
+    {
+     "stage": "visuels",
+     "at": 1795113420000
+    },
+    {
+     "stage": "montage",
+     "at": 1795113840000
+    },
+    {
+     "stage": "brand_check",
+     "at": 1795113960000
+    }
+   ],
+   "brandScore": 100,
+   "media": {
+    "video": "/media/videos/v001.mp4",
+    "cover": "/media/videos/v001-cover.jpg",
+    "brainNote": "Vidéo 001 — Morte en 1 seconde"
+   },
+   "caption": "En attente de ta validation (Approval Desk) — non publiée."
+  }
+ ]
+}

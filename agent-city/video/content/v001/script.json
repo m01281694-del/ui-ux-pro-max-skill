@@ -1,0 +1,30 @@
+{
+  "id": "v001",
+  "title": "Ta vidéo est morte en 1 seconde",
+  "angle": "Rétention : la première seconde décide de tout",
+  "hooks": [
+    { "text": "Ta vidéo est morte en une seconde.", "score": 92, "why": "choc + concerne tout créateur + promesse implicite" },
+    { "text": "Arrête de dire « salut tout le monde ».", "score": 86, "why": "interdiction, mais restreint à un seul conseil" },
+    { "text": "Tu postes tous les jours et personne ne regarde ?", "score": 84, "why": "douleur claire, un peu long" },
+    { "text": "Le problème, ce n'est pas l'algorithme.", "score": 83, "why": "contre-intuitif, mais abstrait" },
+    { "text": "3 règles pour qu'on regarde ta vidéo jusqu'au bout.", "score": 78, "why": "liste claire, format vu partout" },
+    { "text": "Pourquoi tes vidéos plafonnent ?", "score": 74, "why": "question générique" },
+    { "text": "Personne ne te dit ça sur TikTok.", "score": 71, "why": "curiosité, mais cliché" },
+    { "text": "J'ai compris ça trop tard.", "score": 66, "why": "histoire perso non vérifiable" },
+    { "text": "Le secret des vidéos qui retiennent.", "score": 62, "why": "promesse vague" },
+    { "text": "Regarde ça avant de poster.", "score": 58, "why": "faible tension" }
+  ],
+  "scenes": [
+    { "id": "hook", "voice": "Ta vidéo est morte en une seconde.", "screen": "MORTE EN 1 SECONDE", "visual": "title-explode", "sfx": "impact" },
+    { "id": "tension", "voice": "Sur TikTok et sur Reels, on décide presque tout de suite si on reste… ou si on scrolle.", "screen": "RESTER ou SCROLLER ?", "visual": "phone-scroll", "sfx": "whoosh" },
+    { "id": "p1", "voice": "Un : commence par le résultat. Pas par « salut tout le monde ».", "screen": "1 · LE RÉSULTAT D'ABORD", "visual": "list-1", "sfx": "whoosh" },
+    { "id": "p2", "voice": "Deux : change d'image toutes les une à deux secondes. Zéro temps mort.", "screen": "2 · ZÉRO TEMPS MORT", "visual": "list-2", "sfx": "whoosh" },
+    { "id": "p3", "voice": "Trois : écris tes mots à l'écran. Beaucoup regardent sans le son.", "screen": "3 · DU TEXTE À L'ÉCRAN", "visual": "list-3", "sfx": "whoosh" },
+    { "id": "payoff", "voice": "Résultat : les gens restent plus longtemps, et ta vidéo est montrée à plus de monde.", "screen": "PLUS DE RÉTENTION = PLUS DE PORTÉE", "visual": "chart-up", "sfx": "rise" },
+    { "id": "cta", "voice": "Toute la méthode est dans ma formation, lien en bio. Et maintenant… regarde ta première seconde.", "screen": "LIEN EN BIO", "visual": "reveal-loop", "sfx": "impact" }
+  ],
+  "brand": { "navy": "#1F3B73", "navyDeep": "#0F2147", "orange": "#D97757", "white": "#FFFFFF" },
+  "voice": { "voiceId": "cjVigY5qzO86Huf0OWal", "name": "Eric (provisoire)", "model": "eleven_v4" },
+  "caption": "Ta première seconde décide de tout. 3 règles pour garder les gens jusqu'au bout 👇 #marketingdigital #tiktokconseils #reels #createurdecontenu",
+  "aiLabel": true
+}

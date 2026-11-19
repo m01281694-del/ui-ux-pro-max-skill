@@ -47,3 +47,23 @@ Journal des choix faits sans te demander (cahier des charges : `PROMPT-ville-ia.
 | IA Claude | API Anthropic, plafonnée à 10 €/jour | objectif ≈ 60 à 120 €, plafond dur 300 € |
 | Voix / SFX | ElevenLabs (ton abonnement actuel) | selon ton plan |
 | Remotion | licence gratuite pour les individus et petites structures (à vérifier selon ta situation) | 0 € |
+
+## Tes réponses (19/11) et ce qu'elles changent
+
+- **Niche** : marketing digital ; les vidéos font la promotion de **ta formation** (CTA « lien en bio »). Détails de l'offre encore inconnus (nom, prix, lien).
+- **Comptes** (trouvés via Metricool) : Instagram `@manu.digi0`, TikTok `@manu_digi0`, YouTube (chaîne liée). Sur Windsor.ai, seul TikTok est branché.
+- **Charte** : bleu foncé « un peu clair » `#1F3B73` (fond profond `#0F2147`), orange Claude `#D97757`, blanc `#FFFFFF`. Titres en Space Grotesk Bold, texte en Inter. Appliquée aux vidéos et au site.
+- **Budget 0 €**, ce qui change l'architecture :
+  - **Pas d'API Claude payante.** Le « cerveau » des agents, ce sont des sessions Claude Code (ton abonnement), lancées par des tâches planifiées. Elles utilisent les connecteurs (ElevenLabs, Metricool, Windsor, Firecrawl), rendent les vidéos dans le conteneur, puis commitent `data/` et `brain/` ; Vercel redéploie.
+  - Hébergement : Vercel Hobby (gratuit). Pas de VPS ni de Postgres : la file de tâches reste dans le fichier `data/work.json`, versionné dans git.
+  - ElevenLabs gratuit : 10 000 caractères par mois, soit environ 15 vidéos de 30 s. Pas de voix natives françaises (payantes), pas de musique, pas de licence commerciale. Voir `brain/Incidents/`.
+
+## Phase 2 : premier vrai contenu (livrée, en attente de ta validation)
+
+| # | Décision | État |
+|---|---|---|
+| 24 | Pipeline vidéo dans `video/` (paquet séparé pour ne pas alourdir le site) : `script.json` (scènes, 10 hooks notés), `scripts/voice.ts` (ElevenLabs `eleven_v4` + `with-timestamps`), Remotion 4 + `@remotion/three` (`src/Short.tsx`), `scripts/render.ts` (rendu, puis `loudnorm` à −14 LUFS), `scripts/brandcheck.py` (QA ffmpeg notée sur 100). | ✅ |
+| 25 | Modèle de voix : `eleven_v4`, le plus récent qui gère le français d'après `GET /v1/models`. Voix provisoire : **Eric** (4 voix t'ont été proposées). | ⏳ ton choix |
+| 26 | Musique synthétisée avec ffmpeg (libre de droits) et SFX ElevenLabs. Ducking automatique de la musique sous la voix. | ✅ |
+| 27 | Rendu avec le Chromium préinstallé (`gl: swangle`), 3 onglets en parallèle : environ 3 min pour 32 s de vidéo. | ✅ |
+| 28 | Vidéo #001 : 32 s, Brand Check 100/100, **non publiée** (Approval Desk : elle attend ta validation de la voix et du style). | ✅ |
