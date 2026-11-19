@@ -127,7 +127,7 @@ const Reveal: React.FC<{ local: number; dur: number; brand: ShortProps["brand"];
   return (
     <>
       <div style={{ position: "absolute", left: 540 - r / 2, top: 1050 - r / 2, width: r, height: r, borderRadius: "50%", border: `6px solid ${brand.orange}`, boxShadow: `0 0 80px ${brand.orange}`, opacity: 0.7 }} />
-      <div style={{ position: "absolute", top: 900, width: "100%", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 52, color: brand.white, opacity: interpolate(local, [0.4, 0.8], [0, 1], { extrapolateRight: "clamp" }) }}>Formation · @{handle}</div>
+      <div style={{ position: "absolute", top: 900, width: "100%", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 52, color: brand.white, opacity: interpolate(local, [0.4, 0.8], [0, 1], { extrapolateRight: "clamp" }) }}>Formation <span style={{ color: brand.orange }}>ELM</span> · @{handle}</div>
       <AbsoluteFill style={{ background: brand.white, opacity: flash * 0.9 }} />
     </>
   );
