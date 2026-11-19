@@ -64,4 +64,12 @@ also runs headless in CI via `scripts/design-audit.mjs`.
 - **21st.dev Magic MCP** — generate React components from a prompt ("v0 in your editor"). Needs
   an API key. <https://github.com/21st-dev/magic-mcp>
 
-Both are opt-in (see `docs/SETUP.md`) so the base stack runs with zero secrets.
+- **FreeLLMAPI** — a self-hosted router that stacks the free tiers of dozens of LLM providers
+  behind one OpenAI-compatible `/v1` endpoint (plus an Anthropic `/v1/messages` surface), with
+  automatic failover on rate limits and encrypted provider keys. Useful for cheap prototyping:
+  drafting placeholder copy, generating test content, or wiring a demo chatbot into a page you
+  are designing. **Personal experimentation only** — no SLA, no frontier models, and each
+  provider's own terms apply; swap in a paid API before shipping. MIT.
+  <https://github.com/tashfeenahmed/freellmapi>
+
+All three are opt-in (see `docs/SETUP.md`) so the base stack runs with zero secrets.

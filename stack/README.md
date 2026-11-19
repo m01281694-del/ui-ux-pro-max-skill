@@ -18,6 +18,7 @@ design is missing: a **knowledge** layer, a **taste** layer, and a **visual feed
 | 🧩 **Components** | [`shadcn` MCP](https://ui.shadcn.com/docs/mcp) | Search/add production components by natural language |
 | 👁️ **Visual feedback** | [`@playwright/mcp`](https://github.com/microsoft/playwright-mcp) + [`chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Claude opens a real browser, screenshots, reads the console, exercises states, and fixes what it sees |
 | ✅ **Automated review** | `design-review` subagent + `/design-review` | 7-phase audit across viewports: WCAG AA, responsive, interaction states |
+| 🆓 **Free LLM endpoint** *(optional)* | [`FreeLLMAPI`](https://github.com/tashfeenahmed/freellmapi) | Self-hosted, OpenAI-compatible `/v1` router over free provider tiers — live model output for prototypes and demos (personal use only, see `docs/SETUP.md`) |
 
 ## Quickstart
 
