@@ -67,3 +67,14 @@ Journal des choix faits sans te demander (cahier des charges : `PROMPT-ville-ia.
 | 26 | Musique synthétisée avec ffmpeg (libre de droits) et SFX ElevenLabs. Ducking automatique de la musique sous la voix. | ✅ |
 | 27 | Rendu avec le Chromium préinstallé (`gl: swangle`), 3 onglets en parallèle : environ 3 min pour 32 s de vidéo. | ✅ |
 | 28 | Vidéo #001 : 32 s, Brand Check 100/100, **non publiée** (Approval Desk : elle attend ta validation de la voix et du style). | ✅ |
+
+## 19/11 (soir) : passage au réel
+
+| # | Décision | État |
+|---|---|---|
+| 29 | **Plus de données DÉMO** : la couche travail et le cerveau n'affichent que du réel. La vie des habitants reste une simulation (§1.5 du cahier des charges). | ✅ |
+| 30 | Stats réelles : Metricool → `data/stats.json` → `/api/stats` → tableau de bord et vues de chaque publication. | ✅ |
+| 31 | **Beacons n'a ni connecteur ni API publique.** Les revenus viennent des mails de vente Beacons lus dans Gmail (montant et date seulement). Aucune vente trouvée au 19/11. | ✅ |
+| 32 | Autonomie via des tâches planifiées Claude Code dans **cette** session (seule à avoir les connecteurs) : production à 06:47 chaque jour, stats toutes les 3 h. La nuit (03:17) tourne en session séparée, sans connecteurs ; elle consolide le cerveau. | ✅ |
+| 33 | « En direct » = mise à jour toutes les 3 h (compromis avec l'usage de l'abonnement Claude). Les vues des plateformes ne sont de toute façon pas temps réel côté Metricool. | ✅ |
+| 34 | Règles éditoriales sur ELM : aucune promesse de gains, jamais les bonus « comptes TikTok/Netflix/Spotify » (voir `RUNBOOK.md`). | ✅ |
