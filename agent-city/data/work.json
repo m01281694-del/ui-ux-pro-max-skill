@@ -253,6 +253,30 @@
    "start": 1795115100000,
    "end": 1795115160000,
    "residentId": 247
+  },
+  {
+   "id": "r-1795122420000-18",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève les stats Metricool des 16 vidéos TikTok + Instagram + YouTube (aucun changement)",
+   "start": 1795122420000,
+   "end": 1795122480000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795122480000-19",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795122480000,
+   "end": 1795122540000,
+   "residentId": 273
   }
  ],
  "contents": [
