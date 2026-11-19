@@ -13,7 +13,11 @@
 
   var C = window.CAP_CONTENT || {};
   var VEHICLES = Array.isArray(window.CAP_VEHICLES) ? window.CAP_VEHICLES : [];
-  var PREVIEW = !(C.publication && C.publication.ready === true);
+  var READY = !!(C.publication && C.publication.ready === true);
+  /* Mode démonstration : rendu propre (aucun repère « À PERSONNALISER »),
+     mais toujours non indexé et signalé comme proposition de site. */
+  var DEMO = !READY && !!(C.publication && C.publication.demo === true);
+  var PREVIEW = !READY && !DEMO;
   var PAGE = document.body.getAttribute("data-page") || "";
 
   /* ------------------------------------------------------------------ */
@@ -365,7 +369,8 @@
       '<div><p class="footer-title">Horaires</p><div data-hours-compact></div></div>' +
       "</div>" +
       '<div class="footer-giant" aria-hidden="true">' + esc(name) + "</div>" +
-      '<div class="footer-bottom"><p>© ' + year + " " + esc(get("legal.company_name") || name) + "</p>" +
+      '<div class="footer-bottom"><p>© ' + year + " " + esc(get("legal.company_name") || name) +
+      (DEMO ? ' · <span class="demo-note">Proposition de site — version de démonstration</span>' : "") + "</p>" +
       '<ul><li><a href="mentions-legales.html">Mentions légales</a></li>' +
       '<li><a href="confidentialite.html">Confidentialité</a></li>' +
       '<li><a href="cookies.html">Cookies</a></li>' +
@@ -419,9 +424,17 @@
   function renderHoursCompact(el) {
     if (!el) return;
     if (!hoursFilled()) { el.innerHTML = PREVIEW ? todo("dealer.hours", "horaires") : ""; return; }
-    el.innerHTML = '<ul class="footer-links">' + hoursList().map(function (h) {
+    // Regroupe les jours consécutifs aux horaires identiques : « Mar. – Sam. »
+    var groups = [];
+    hoursList().forEach(function (h) {
       var t = slotsText(h.slots);
-      return "<li><span>" + esc(h.day.slice(0, 3)) + ". " + (t == null ? "—" : esc(t)) + "</span></li>";
+      var last = groups[groups.length - 1];
+      if (last && last.t === t) last.to = h.day; else groups.push({ from: h.day, to: h.day, t: t });
+    });
+    function ab(d) { return d.slice(0, 3) + "."; }
+    el.innerHTML = '<ul class="footer-links">' + groups.map(function (g) {
+      var days = g.from === g.to ? ab(g.from) : ab(g.from) + " – " + ab(g.to);
+      return '<li><span><strong>' + esc(days) + "</strong><br>" + (g.t == null ? "—" : esc(g.t)) + "</span></li>";
     }).join("") + "</ul>";
   }
 
@@ -484,7 +497,7 @@
     if (title) document.title = title;
     var desc = opts.description || pageSeo.description || get("seo.default_description") || "";
     setMeta("name", "description", desc);
-    setMeta("name", "robots", PREVIEW || opts.noindex ? "noindex, nofollow" : "index, follow");
+    setMeta("name", "robots", !READY || opts.noindex ? "noindex, nofollow" : "index, follow");
     setMeta("name", "google-site-verification", get("seo.google_site_verification"));
     setMeta("name", "theme-color", get("site.theme_color") || "#0B0D10");
 
@@ -517,7 +530,7 @@
   /* Données structurées de l'entreprise — seulement les champs réellement remplis */
   function dealerJsonLd() {
     var name = siteName();
-    if (!name || PREVIEW) return null; // rien de publié tant que le contenu n'est pas validé
+    if (!name || !READY) return null; // rien de publié tant que le contenu n'est pas validé
     var a = get("dealer.address") || {};
     var d = { "@context": "https://schema.org", "@type": "AutoDealer", name: name };
     var url = get("site.url"); if (url) d.url = url;
@@ -574,7 +587,7 @@
   /* Initialisation                                                      */
   /* ------------------------------------------------------------------ */
   window.CAP = {
-    content: C, vehicles: VEHICLES, preview: PREVIEW, page: PAGE,
+    content: C, vehicles: VEHICLES, preview: PREVIEW, demo: DEMO, ready: READY, page: PAGE,
     get: get, isEmpty: isEmpty, esc: esc, safeUrl: safeUrl, paragraphs: paragraphs, todo: todo,
     icon: icon, imageSlot: imageSlot, formatPrice: formatPrice, formatKm: formatKm, formatDate: formatDate,
     slugify: slugify, label: label, LABELS: LABELS, bindAll: bindAll, applySeo: applySeo, addJsonLd: addJsonLd,

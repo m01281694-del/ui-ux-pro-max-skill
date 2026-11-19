@@ -39,14 +39,15 @@ window.CAP_CONTENT = {
      PUBLICATION
      ------------------------------------------------------------------ */
   publication: {
-    ready: false            // ← passer à true UNIQUEMENT quand tout est vérifié
+    ready: false,           // ← passer à true UNIQUEMENT quand tout est vérifié ET validé par l'entreprise
+    demo: true              // version de démonstration : rendu propre, non indexée, signalée « proposition de site »
   },
 
   /* ------------------------------------------------------------------
      IDENTITÉ DU SITE
      ------------------------------------------------------------------ */
   site: {
-    name: "CAP AUTO SEPTÈMES",   // nom fourni dans la consigne — vérifier l'orthographe officielle
+    name: "CAP AUTO MARSEILLE",   // nom fourni dans la consigne — vérifier l'orthographe officielle
     url: "https://cap-auto-septemes.vercel.app",   // adresse Vercel provisoire — à remplacer par votre domaine, ex. "https://www.exemple.fr" (sans / final)
     logo: "",                    // ex. "assets/images/logo.svg" — vide = nom affiché en texte
     logo_alt: "",
@@ -185,11 +186,14 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   about_page: {
     title: "À propos",
-    intro: "CAP AUTO, commerce de voitures d'occasion à Septèmes-les-Vallons (Bouches-du-Rhône).",
+    intro: "Cap Auto Marseille, commerce de voitures d'occasion à Septèmes-les-Vallons (Bouches-du-Rhône).",
     image: "",
     image_alt: "",
     /* { title: "", text: "", image: "", image_alt: "" } */
-    sections: [],
+    sections: [
+      { title: "Un garage aux portes de Marseille", text: "Cap Auto Marseille est installé au 16 chemin de la Bédoule, à Septèmes-les-Vallons, à proximité immédiate de l'A51.\n\nNous sommes ouverts du mardi au samedi, de 9h30 à 12h30 et de 13h30 à 18h.", image: "", image_alt: "" },
+      { title: "Achat, vente, reprise", text: "Nous proposons des voitures d'occasion révisées et contrôlées, avec une garantie de 3 mois à 1 an (moteur, boîte et pont) et des solutions de financement.\n\nNous reprenons aussi votre ancien véhicule, et proposons la location et le dépôt-vente.", image: "", image_alt: "" }
+    ],
     /* Galerie de photos du concessionnaire : { src: "", alt: "" } */
     gallery: []
   },

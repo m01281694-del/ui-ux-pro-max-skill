@@ -278,10 +278,12 @@
       } else {
         // Les informations légales manquantes restent visibles comme « à compléter » même hors prévisualisation :
         // le build refuse de toute façon la publication tant qu'elles sont vides.
-        el.innerHTML = '<span class="todo">À COMPLÉTER ET À VÉRIFIER <small>' + CAP.esc(path) + "</small></span>";
+        el.innerHTML = CAP.demo
+          ? '<span class="muted">À compléter par l\'entreprise</span>'
+          : '<span class="todo">À COMPLÉTER ET À VÉRIFIER <small>' + CAP.esc(path) + "</small></span>";
       }
     });
-    if (!P) document.querySelectorAll("[data-legal-review]").forEach(function (n) { n.remove(); });
+    if (!P && !CAP.demo) document.querySelectorAll("[data-legal-review]").forEach(function (n) { n.remove(); });
     // Lignes facultatives (ex. ORIAS) : masquées en publication si vides
     document.querySelectorAll("[data-legal-optional]").forEach(function (row) {
       if (!P && CAP.isEmpty(CAP.get(row.getAttribute("data-legal-optional")))) row.remove();
