@@ -18,6 +18,7 @@ export function runChecks() {
   add(content.seo?.og_image, "seo.og_image");
   add(content.intro?.video_mp4, "intro.video_mp4");
   add(content.intro?.video_webm, "intro.video_webm");
+  add(content.intro?.video_mp4_mobile, "intro.video_mp4_mobile");
   add(content.intro?.poster, "intro.poster");
   const h = content.home?.hero || {};
   add(h.background_video_mp4, "home.hero.background_video_mp4");

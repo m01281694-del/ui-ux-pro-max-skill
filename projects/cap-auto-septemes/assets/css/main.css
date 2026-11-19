@@ -799,3 +799,9 @@ html.intro-pending body::before { content: ""; position: fixed; inset: 0; z-inde
 .review-summary__body p.muted { font-size: var(--step-0); }
 .review-summary__actions { display: flex; flex-direction: column; gap: var(--space-3); }
 @media (max-width: 860px) { .review-summary { grid-template-columns: 1fr; text-align: left; } .review-summary__actions { flex-direction: row; flex-wrap: wrap; } }
+
+/* Lecteur du film d'introduction */
+.intro3d__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 700ms var(--ease-out); background: #000; }
+.intro3d.is-playing .intro3d__video { opacity: 1; }
+@media (max-aspect-ratio: 1/1) { .intro3d__video { object-fit: contain; } }
+.intro3d__progress { position: absolute; left: 0; bottom: 0; z-index: 7; height: 2px; width: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); opacity: 0.8; }
