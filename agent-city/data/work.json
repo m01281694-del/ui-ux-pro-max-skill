@@ -137,6 +137,74 @@
     "kind": "note",
     "label": "6 notes"
    }
+  },
+  {
+   "id": "r-v001-9",
+   "demo": false,
+   "dept": "content",
+   "job": "Approval Desk",
+   "title": "valide la vidéo #001 (accord du propriétaire, mode semi-auto)",
+   "start": 1795114440000,
+   "end": 1795114470000,
+   "residentId": 107,
+   "contentId": "v001",
+   "stage": "approbation"
+  },
+  {
+   "id": "r-v001-10",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "programme la vidéo #001 le ven. 20/11 à 10:00 (meilleur créneau Metricool TikTok + Instagram)",
+   "start": 1795114500000,
+   "end": 1795114560000,
+   "residentId": 113,
+   "contentId": "v001",
+   "stage": "programmé",
+   "output": {
+    "kind": "post",
+    "label": "Metricool #434625821",
+    "url": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-3243075578347830183"
+   }
+  },
+  {
+   "id": "r-v001-11",
+   "demo": false,
+   "dept": "publish",
+   "job": "TikTok Poster",
+   "title": "prépare la publication TikTok de la vidéo #001 (label IA activé)",
+   "start": 1795114560000,
+   "end": 1795114590000,
+   "residentId": 120,
+   "contentId": "v001",
+   "stage": "programmé",
+   "platform": "tiktok"
+  },
+  {
+   "id": "r-v001-12",
+   "demo": false,
+   "dept": "publish",
+   "job": "Reels Poster",
+   "title": "prépare la publication Reel Instagram de la vidéo #001 (label IA activé)",
+   "start": 1795114560000,
+   "end": 1795114590000,
+   "residentId": 129,
+   "contentId": "v001",
+   "stage": "programmé",
+   "platform": "instagram"
+  },
+  {
+   "id": "r-v001-13",
+   "demo": false,
+   "dept": "publish",
+   "job": "Shorts Poster",
+   "title": "prépare la publication YouTube Short de la vidéo #001 (label IA activé)",
+   "start": 1795114560000,
+   "end": 1795114590000,
+   "residentId": 138,
+   "contentId": "v001",
+   "stage": "programmé",
+   "platform": "youtube"
   }
  ],
  "contents": [
@@ -149,7 +217,7 @@
    "hook": "Ta vidéo est morte en une seconde.",
    "trend": "rétention / hook",
    "created": 1795113240000,
-   "publishAt": 4070908800000,
+   "publishAt": 1795165200000,
    "stages": [
     {
      "stage": "idée",
@@ -174,6 +242,14 @@
     {
      "stage": "brand_check",
      "at": 1795113960000
+    },
+    {
+     "stage": "approbation",
+     "at": 1795114470000
+    },
+    {
+     "stage": "programmé",
+     "at": 1795114560000
     }
    ],
    "brandScore": 100,
@@ -182,7 +258,7 @@
     "cover": "/media/videos/v001-cover.jpg",
     "brainNote": "Vidéo 001 — Morte en 1 seconde"
    },
-   "caption": "En attente de ta validation (Approval Desk) — non publiée."
+   "caption": "Programmée ven. 20/11 10:00 — TikTok, Reels, Shorts (Metricool)."
   }
  ]
 }
