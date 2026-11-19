@@ -47,7 +47,7 @@ window.CAP_CONTENT = {
      ------------------------------------------------------------------ */
   site: {
     name: "CAP AUTO SEPTÈMES",   // nom fourni dans la consigne — vérifier l'orthographe officielle
-    url: "",                     // adresse définitive, ex. "https://www.exemple.fr" (sans / final)
+    url: "https://cap-auto-septemes.vercel.app",   // adresse Vercel provisoire — à remplacer par votre domaine, ex. "https://www.exemple.fr" (sans / final)
     logo: "",                    // ex. "assets/images/logo.svg" — vide = nom affiché en texte
     logo_alt: "",
     favicon: "",                 // ex. "assets/images/favicon.png" — vide = icône neutre fournie
@@ -227,7 +227,7 @@ window.CAP_CONTENT = {
     endpoint: "",
     subjects: ["Achat d'un véhicule", "Reprise", "Financement", "Location", "Dépôt-vente", "Autre"],              // sujets proposés, ex. ["Achat", "Autre"] — vide = champ masqué
     success_message: "",       // vide = « Votre message a bien été transmis. »
-    retention_notice: ""       // phrase d'information RGPD sous le formulaire (à faire valider)
+    retention_notice: "Vos données sont utilisées uniquement pour répondre à votre demande et conservées au maximum 3 ans après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer en nous contactant."       // phrase d'information RGPD sous le formulaire (à faire valider)
   },
 
   /* ------------------------------------------------------------------
@@ -255,7 +255,7 @@ window.CAP_CONTENT = {
       address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
       url: "https://vercel.com"
     },
-    last_update: ""            // date de dernière mise à jour des pages juridiques
+    last_update: "19 novembre 2026"            // date de dernière mise à jour des pages juridiques
   },
 
   /* ------------------------------------------------------------------
