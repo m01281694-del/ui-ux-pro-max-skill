@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Film 01</title>
+<style>
+@font-face{font-family:Sora;font-weight:800;src:url(node_modules/@fontsource/sora/files/sora-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:Sora;font-weight:700;src:url(node_modules/@fontsource/sora/files/sora-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:Sora;font-weight:600;src:url(node_modules/@fontsource/sora/files/sora-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:500;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:700;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:Mono;font-weight:500;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
+:root{--violet:#a855f7;--violet2:#7c3aed;--blue:#22d3ee;--blue2:#3b82f6;--gold:#f5c76b;--white:#f7f5ff;--ink:#05030a}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+canvas{position:absolute;inset:0;width:1080px;height:1920px}
+#ui{position:absolute;inset:0;pointer-events:none;font-family:Sora,sans-serif;color:var(--white)}
+.abs{position:absolute}
+#progress{left:0;top:0;height:7px;background:linear-gradient(90deg,var(--violet2),var(--blue),var(--gold));box-shadow:0 0 18px var(--violet)}
+#kicker{left:90px;right:150px;top:190px;font:700 30px/1.25 Sora;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,255,.86)}
+#kicker b{color:var(--gold);font-weight:800}
+#kicker .rule{display:block;height:3px;width:120px;margin-top:18px;background:linear-gradient(90deg,var(--gold),transparent)}
+#cap{left:70px;right:150px;top:1235px;text-align:center;font:800 76px/1.12 Sora;letter-spacing:-.01em}
+#cap .w{display:inline-block;margin:0 .13em;opacity:.55;color:#fff;paint-order:stroke;-webkit-text-stroke:10px rgba(5,3,10,.55);text-shadow:0 6px 26px rgba(0,0,0,.85)}
+#cap .w.on{opacity:1}
+#cap .w.k{color:var(--gold)}
+#cap .w.cur{opacity:1}
+#cap.big{top:860px;font-size:168px;letter-spacing:-.03em}
+#cap.big .w{-webkit-text-stroke:0;background:linear-gradient(180deg,#fff 0%,#f5c76b 55%,#c48a2c 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 30px rgba(168,85,247,.75)) drop-shadow(0 8px 30px rgba(0,0,0,.8))}
+.lbl{transform:translate(-50%,-50%);white-space:nowrap;font:700 30px/1 Sora;letter-spacing:.04em;padding:14px 22px;border-radius:16px;background:rgba(12,8,24,.62);border:1.5px solid rgba(168,85,247,.55);box-shadow:0 0 30px rgba(124,58,237,.35),inset 0 0 20px rgba(168,85,247,.15);backdrop-filter:blur(6px)}
+.lbl small{display:block;font:500 21px/1.2 Inter;letter-spacing:.06em;color:rgba(247,245,255,.7);margin-top:7px}
+.lbl.gold{border-color:rgba(245,199,107,.8);box-shadow:0 0 34px rgba(245,199,107,.35)}
+.lbl.gold b{color:var(--gold)}
+.lbl.blue{border-color:rgba(34,211,238,.7);box-shadow:0 0 30px rgba(34,211,238,.3)}
+.lbl.blue b{color:var(--blue)}
+.lbl.dim{opacity:.55;transform:translate(-50%,-50%) scale(.82)}
+#badge{left:90px;top:190px;font:700 24px/1 Mono;letter-spacing:.16em;padding:14px 20px;border-radius:999px;color:var(--blue);border:1.5px solid rgba(34,211,238,.6);background:rgba(4,20,30,.55);box-shadow:0 0 24px rgba(34,211,238,.25)}
+#badge i{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--blue);margin-right:12px;box-shadow:0 0 14px var(--blue)}
+#card{left:90px;right:150px;top:180px;padding:30px 34px;border-radius:28px;background:linear-gradient(160deg,rgba(40,24,70,.72),rgba(10,6,20,.78));border:1.5px solid rgba(245,199,107,.55);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(245,199,107,.18);backdrop-filter:blur(10px)}
+#card h4{margin:0 0 12px;font:800 30px/1.1 Sora;letter-spacing:.12em;color:var(--gold)}
+#card p{margin:0;font:500 31px/1.38 Inter;color:rgba(247,245,255,.92)}
+#card .pills{display:flex;gap:16px;margin-top:4px}
+#card .pill{flex:1;text-align:center;font:800 30px/1 Sora;padding:22px 0;border-radius:18px;background:rgba(168,85,247,.16);border:1.5px solid rgba(168,85,247,.5)}
+#card .pill.on{background:linear-gradient(135deg,rgba(124,58,237,.6),rgba(34,211,238,.35));border-color:var(--blue);box-shadow:0 0 30px rgba(34,211,238,.35)}
+#step{left:0;right:0;top:185px;text-align:center;font:700 28px/1 Mono;letter-spacing:.3em;color:rgba(247,245,255,.8)}
+#step b{color:var(--gold);font-size:46px;font-family:Sora;font-weight:800;letter-spacing:.02em}
+#step .bar{margin:22px auto 0;width:420px;height:6px;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden}
+#step .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--blue),var(--gold))}
+#cta{left:90px;right:150px;top:1180px;text-align:center}
+#cta .btn{display:inline-flex;align-items:center;gap:22px;font:800 64px/1 Sora;letter-spacing:.02em;padding:34px 60px;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#a855f7 45%,#22d3ee);box-shadow:0 0 60px rgba(168,85,247,.7),0 0 120px rgba(34,211,238,.35),inset 0 2px 0 rgba(255,255,255,.35)}
+#cta .btn svg{width:56px;height:56px}
+#cta .handle{margin-top:30px;font:800 44px/1 Sora;letter-spacing:.02em;color:#fff;text-shadow:0 0 24px rgba(168,85,247,.8)}
+#cta .next{margin-top:42px;font:600 30px/1.35 Sora;color:rgba(247,245,255,.85);letter-spacing:.04em}
+#cta .next b{display:block;color:var(--gold);font-size:38px;margin-top:10px;font-weight:800}
+#title{left:90px;right:150px;top:300px;text-align:center}
+#title .t1{font:800 92px/1.02 Sora;letter-spacing:-.02em;background:linear-gradient(180deg,#fff,#f5c76b 70%,#c48a2c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 28px rgba(168,85,247,.6))}
+#title .t2{margin-top:22px;font:700 32px/1.2 Sora;letter-spacing:.28em;color:var(--blue)}
+.hide{display:none}
+</style></head>
+<body><div id="stage"><canvas id="c" width="1080" height="1920"></canvas>
+<div id="ui">
+  <div id="progress" class="abs"></div>
+  <div id="kicker" class="abs hide"></div>
+  <div id="badge" class="abs hide"><i></i>SIMULATION · CHIFFRES FICTIFS</div>
+  <div id="step" class="abs hide"></div>
+  <div id="card" class="abs hide"></div>
+  <div id="labels" class="abs" style="inset:0"></div>
+  <div id="title" class="abs hide"><div class="t1">CRÉER.<br>COMMUNIQUER.<br>VENDRE.</div><div class="t2">LA COMPÉTENCE QUI CHANGE TOUT</div></div>
+  <div id="cap" class="abs"></div>
+  <div id="cta" class="abs hide"><div class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>ABONNE-TOI</div><div class="handle">@manu.digi0</div><div class="next">PROCHAIN ÉPISODE<b>Trouver une niche rentable</b></div></div>
+</div></div>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module" src="film.js"></script>
+</body></html>

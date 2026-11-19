@@ -63,3 +63,16 @@ Abonne-toi : l'épisode 2 arrive (trouver une niche rentable).
 
 **YouTube Shorts — titre :** Comment atteindre 10 000 € par mois grâce au marketing digital ? #shorts
 
+
+## Fichiers
+
+- `episode01_9x16.mp4` : master vertical 1080×1920, 30 i/s, 88,8 s, -14,5 LUFS (TikTok / Reels / Shorts)
+- `episode01_16x9.mp4` : version horizontale 1920×1080 (vidéo centrée sur fond flouté)
+- `cover.jpg` : image de couverture
+- `source/` : moteur 3D (Three.js : `index.html` + `film.js`), timeline et sous-titres synchronisés, scripts voix/audio/rendu
+
+## Refaire le rendu
+
+Les sources ont été produites dans un dossier de travail avec `npm i three@0.170.0 @fontsource/sora @fontsource/inter @fontsource/jetbrains-mono`.
+Servez le dossier en HTTP (`python3 -m http.server 8765`), puis lancez `node render.js <image_début> <image_fin> sortie.mp4` (Playwright + Chromium).
+Les voix (`audio/vo/*_edit.wav`) ne sont pas versionnées ; `tts.py` + `vo_edit.py` les régénèrent avec une clé ElevenLabs.
