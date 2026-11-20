@@ -81,11 +81,17 @@ def norm(s):
 
 
 def font_css(rel):
-    faces = [("Literata", "Literata[opsz,wght].ttf", "normal"), ("Literata", "Literata-Italic[opsz,wght].ttf", "italic"),
-             ("Source Serif 4", "SourceSerif4[opsz,wght].ttf", "normal"), ("Montserrat", "Montserrat[wght].ttf", "normal"),
-             ("Oswald", "Oswald[wght].ttf", "normal"), ("Bebas Neue", "BebasNeue-Regular.ttf", "normal"),
-             ("Fraunces", "Fraunces[SOFT,WONK,opsz,wght].ttf", "normal")]
-    return "\n".join(f"@font-face{{font-family:'{f}';src:url('{rel}/{fn}');font-style:{st};font-weight:100 900}}" for f, fn, st in faces)
+    """Polices statiques (instanciées depuis les polices variables OFL) : Chromium les incorpore en vraies polices
+    TrueType (texte sélectionnable, impression sûre), au lieu de glyphes Type 3."""
+    faces = [("Literata", "Literata-Regular", 400, "normal"), ("Literata", "Literata-Bold", 700, "normal"),
+             ("Literata", "Literata-Italic", 400, "italic"), ("Literata", "Literata-BoldItalic", 700, "italic"),
+             ("Source Serif 4", "SourceSerif4-Regular", 400, "normal"), ("Source Serif 4", "SourceSerif4-Bold", 700, "normal"),
+             ("Montserrat", "Montserrat-Medium", 500, "normal"), ("Montserrat", "Montserrat-SemiBold", 600, "normal"),
+             ("Montserrat", "Montserrat-Bold", 700, "normal"), ("Montserrat", "Montserrat-ExtraBold", 800, "normal"),
+             ("Montserrat", "Montserrat-Black", 900, "normal"), ("Oswald", "Oswald-Bold", 700, "normal"),
+             ("Fraunces", "Fraunces-Bold", 700, "normal"), ("Fraunces", "Fraunces-Black", 900, "normal")]
+    css = "\n".join(f"@font-face{{font-family:'{f}';src:url('{rel}/static/{fn}.ttf');font-weight:{wt};font-style:{st}}}" for f, fn, wt, st in faces)
+    return css + f"\n@font-face{{font-family:'Bebas Neue';src:url('{rel}/BebasNeue-Regular.ttf')}}"
 
 
 # ---------- SVG -> PNG (pour DOCX / EPUB) ----------
@@ -109,8 +115,17 @@ def rasterize_svgs(book):
 
 
 # ---------- construction du livre ----------
+def fr_typo(src):
+    """Typographie française : espace insécable avant : ; ! ? » et après « (évite les coupures disgracieuses)."""
+    src = re.sub(r"« ", "«\u00a0", src)
+    src = re.sub(r" »", "\u00a0»", src)
+    src = re.sub(r"(?<=\S) ([;!?])", "\u202f\\1", src)
+    src = re.sub(r"(?<=\S) :(?=\s)", "\u00a0:", src)
+    return src
+
+
 def md_to_html(book, files):
-    src = "\n\n".join(open(f, encoding="utf-8").read() for f in files)
+    src = fr_typo("\n\n".join(open(f, encoding="utf-8").read() for f in files))
     return sh(["pandoc", "-f", "markdown+smart", "-t", "html5", "--section-divs"], input=src)
 
 
@@ -118,7 +133,7 @@ def book_css(meta, rel_fonts, trim):
     c = meta.get("couleurs", {})
     acc = c.get("accent", "#1f4e79")
     return font_css(rel_fonts) + f"""
-html{{font-family:'{meta.get('police','Literata')}',serif;font-size:10.6pt;line-height:1.48;color:#1a1a1a;hyphens:auto;-webkit-hyphens:auto}}
+html{{font-family:'{meta.get('police','Literata')}',serif;font-size:{meta.get('taille_police',10.6)}pt;line-height:{meta.get('interligne',1.48)};color:#1a1a1a;hyphens:auto;-webkit-hyphens:auto}}
 body{{margin:0}}
 p{{margin:0 0 .55em;text-align:justify;orphans:2;widows:2}}
 h1{{font-family:'Montserrat',sans-serif;font-weight:800;font-size:21pt;line-height:1.12;color:{acc};margin:.6in 0 .35in;break-before:page;letter-spacing:-.01em}}
@@ -130,7 +145,7 @@ blockquote{{margin:.8em 0;padding:.55em .8em;border-left:3pt solid {acc};backgro
 blockquote p{{text-align:left;margin:.2em 0}}
 table{{border-collapse:collapse;width:100%;font-size:9pt;margin:.6em 0 .9em;break-inside:avoid;font-family:'Source Serif 4',serif}}
 th{{background:{acc};color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;text-align:left;padding:4pt 5pt}}
-td{{border-bottom:.5pt solid #bbb;padding:3.5pt 5pt;vertical-align:top}}
+td{{border-bottom:.5pt solid #bbb;padding:3.5pt 5pt;vertical-align:top}} td:empty{{height:.34in}} td{{border-left:.5pt solid #ddd}} td:first-child{{border-left:none}}
 img,figure{{max-width:100%;break-inside:avoid}} figure{{margin:.7em 0;text-align:center}} figure img{{max-height:{trim[1]*0.55:.2f}in}}
 figcaption{{font-size:8.5pt;color:#555;font-style:italic;margin-top:.25em}}
 hr{{border:none;text-align:center;margin:1em 0}} hr:after{{content:'◆';color:{acc};font-size:9pt}}
@@ -183,7 +198,7 @@ def build(book):
         p = os.path.join(book, "illustrations", m.group(1) + ".svg")
         svg = open(p, encoding="utf-8").read()
         svg = re.sub(r"<\?xml[^>]*>", "", svg)
-        return svg.replace("<svg ", '<svg style="width:100%;height:auto;max-height:%.2fin" ' % (h * 0.55), 1)
+        return svg.replace("<svg ", f'<svg style="width:100%;height:auto;max-height:{h*0.55:.2f}in" ', 1)
     body = re.sub(r'<img[^>]*src="\.\./illustrations/([\w\-]+)\.svg"[^>]*/?>', inline_svg, body)
     rel_fonts = os.path.relpath(FONTS, exp)
 
@@ -233,7 +248,7 @@ def build(book):
     wr.write(out_pdf)
     total = len(wr.pages)
     # DOCX + EPUB (pandoc) : images SVG remplacées par leurs PNG
-    md_all = "\n\n".join(open(f, encoding="utf-8").read() for f in files)
+    md_all = fr_typo("\n\n".join(open(f, encoding="utf-8").read() for f in files))
     md_all = re.sub(r"\.\./illustrations/([\w\-]+)\.svg", r"png/\1.png", md_all)
     md_all = re.sub(r'::: \{\.lignes[^}]*\}\s*:::', "\n\n______________________________________________\n\n______________________________________________\n\n", md_all)
     tmpmd = os.path.join(exp, "_tout.md")
@@ -266,13 +281,24 @@ def cover(book):
     rel = os.path.relpath(FONTS, cdir)
     tpl = open(os.path.join(cdir, "cover.html"), encoding="utf-8").read()
     vals = {"FONTS": font_css(rel), "W": f"{w}", "H": f"{h}", "SPINE": f"{spine:.4f}", "BLEED": f"{bleed}",
-            "TOTALW": f"{2*w+spine+2*bleed:.4f}", "TOTALH": f"{h+2*bleed:.4f}", "SPINE_TEXT": "1" if pages > 79 else "0"}
+            "TOTALW": f"{2*w+spine+2*bleed:.4f}", "TOTALH": f"{h+2*bleed:.4f}", "SPINE_TEXT": "1" if (pages > 79 and spine >= 0.25) else "0",
+            "SPINE_FONT": f"{min(14, (spine - 0.125) * 72 * 0.62):.1f}"}
+    # Texte du dos : autorisé par KDP au-delà de 79 pages, mais on ne l'imprime que si le dos fait >= 0,25 po
+    # (sinon les caractères seraient illisibles une fois retirée la marge de 0,0625 po de chaque côté).
     for k, v in vals.items():
         tpl = tpl.replace("{{" + k + "}}", v)
     full = os.path.join(cdir, "_full.html")
     open(full, "w", encoding="utf-8").write(tpl.replace("{{MODE}}", "full"))
     out = os.path.join(cdir, f"{meta['slug']}_couverture_brochee_KDP.pdf")
     node("pdfpage", full, out, f"{2*w+spine+2*bleed:.4f}", f"{h+2*bleed:.4f}")
+    # Chromium arrondit la taille de page : on recadre à la dimension KDP exacte (le surplus est dans le fond perdu)
+    from pypdf.generic import RectangleObject
+    r = PdfReader(out); wpdf = PdfWriter()
+    pg = r.pages[0]
+    tw, th = (2 * w + spine + 2 * bleed) * 72, (h + 2 * bleed) * 72
+    pg.mediabox = RectangleObject([0, float(pg.mediabox.height) - th, tw, float(pg.mediabox.height)])
+    pg.cropbox = pg.mediabox; pg.trimbox = pg.mediabox
+    wpdf.add_page(pg); wpdf.write(out)
     # Kindle : face avant seule, 1600 x 2560 px (ratio 1,6 recommandé par KDP)
     k = os.path.join(cdir, "_kindle.html")
     open(k, "w", encoding="utf-8").write(tpl.replace("{{MODE}}", "kindle"))
@@ -306,20 +332,30 @@ def check(book):
     crit += g < need
     rep.append(f"- Marges extérieures/haut/bas : {st['marges']} → {'OK' if min(st['marges'].values()) >= .25 else 'ERREUR'} (min 0,25 po)")
     fonts, unembedded = set(), set()
-    for p in rd.pages:
-        res = p.get("/Resources") or {}
+
+    def scan(res, seen):
+        res = res.get_object() if res is not None else None
+        if not res or id(res) in seen:
+            return
+        seen.add(id(res))
         for _, f in ((res.get("/Font") or {}).items()):
             f = f.get_object()
+            if f.get("/Subtype") == "/Type3":  # glyphes dessinés dans le PDF : incorporée par nature
+                fonts.add("Type3 (symboles)"); continue
             name = str(f.get("/BaseFont"))
             fonts.add(name.split("+")[-1])
             desc = f.get("/FontDescriptor")
             if f.get("/Subtype") == "/Type0":
-                d = f["/DescendantFonts"][0].get_object()
-                desc = d.get("/FontDescriptor")
-            if desc is not None:
-                desc = desc.get_object()
-                if not any(k in desc for k in ("/FontFile", "/FontFile2", "/FontFile3")):
-                    unembedded.add(name)
+                desc = f["/DescendantFonts"][0].get_object().get("/FontDescriptor")
+            if desc is None or not any(k in desc.get_object() for k in ("/FontFile", "/FontFile2", "/FontFile3")):
+                unembedded.add(name)
+        for _, x in ((res.get("/XObject") or {}).items()):
+            x = x.get_object()
+            if x.get("/Subtype") == "/Form":
+                scan(x.get("/Resources"), seen)
+    seen = set()
+    for p in rd.pages:
+        scan(p.get("/Resources"), seen)
     rep.append(f"- Polices : {', '.join(sorted(fonts))} → {'toutes incorporées' if not unembedded else 'NON incorporées : ' + ', '.join(unembedded)}")
     crit += bool(unembedded)
     blanks = [i + 1 for i, p in enumerate(rd.pages) if not (p.extract_text() or "").strip() and not (p.get("/Resources") or {}).get("/XObject")]

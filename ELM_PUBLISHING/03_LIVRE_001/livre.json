@@ -7,13 +7,31 @@
   "langue": "fr",
   "annee": 2026,
   "date_verification": "novembre 2026",
-  "format_pouces": [6, 9],
+  "format_pouces": [
+    6,
+    9
+  ],
   "papier": "blanc",
   "police": "Literata",
-  "couleurs": {"accent": "#1f5f8b", "fond": "#eaf2f8"},
-  "prix_broche": 12.90,
-  "prix_broche_tests": [9.99, 11.90, 12.90, 14.90],
+  "couleurs": {
+    "accent": "#1f5f8b",
+    "fond": "#eaf2f8"
+  },
+  "prix_broche": 12.9,
+  "prix_broche_tests": [
+    9.99,
+    11.9,
+    12.9,
+    14.9
+  ],
   "prix_kindle": 4.99,
-  "prix_kindle_tests": [2.99, 3.99, 4.99, 6.99],
-  "mentions_html": "<p><b>Réviser moins, retenir plus</b><br>Première édition, 2026.</p>"
+  "prix_kindle_tests": [
+    2.99,
+    3.99,
+    4.99,
+    6.99
+  ],
+  "mentions_html": "<p><b>Réviser moins, retenir plus</b><br>Première édition, 2026.</p>",
+  "taille_police": 11.3,
+  "interligne": 1.52
 }

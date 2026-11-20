@@ -59,7 +59,7 @@ Les chercheurs comparent souvent deux façons de travailler pendant le même tem
 
 ## Et les « styles d'apprentissage » ?
 
-Tu as peut-être entendu dire que chaque personne serait « visuelle », « auditive » ou « kinesthésique », et devrait apprendre selon son style. Cette idée est très répandue, mais elle n'a pas été confirmée par la recherche : les études qui l'ont testée sérieusement n'ont pas trouvé que les élèves apprennent mieux quand l'enseignement correspond à leur « style » préféré.
+Tu as peut-être entendu dire que chaque personne serait « visuelle », « auditive » ou « kinesthésique », et devrait apprendre selon son style. Cette idée est très répandue, mais elle n'a pas été confirmée par la recherche. En 2008, une revue menée par Harold Pashler et ses collègues a conclu que les études qui l'ont testée sérieusement ne montraient pas que les élèves apprennent mieux quand l'enseignement correspond à leur « style » préféré.
 
 Ce qui compte, c'est surtout **la nature de ce qu'on apprend** (une carte s'apprend mieux avec une image, une langue avec des sons) et **la méthode utilisée** (se tester, espacer…). Tout le monde profite de combiner les mots et les images, comme on le verra au chapitre 6.
 

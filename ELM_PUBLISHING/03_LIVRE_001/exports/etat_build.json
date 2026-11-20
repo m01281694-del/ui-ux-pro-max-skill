@@ -1,6 +1,6 @@
 {
-  "pages": 18,
-  "pages_corps": 13,
+  "pages": 82,
+  "pages_corps": 77,
   "marges": {
     "top": 0.7,
     "bottom": 0.75,
@@ -19,7 +19,63 @@
     [
       "2. Les fausses bonnes méthodes",
       9
+    ],
+    [
+      "3. Méthode n°1 : se tester (la récupération active)",
+      14
+    ],
+    [
+      "4. Méthode n°2 : espacer ses révisions",
+      20
+    ],
+    [
+      "5. Méthode n°3 : mélanger (l’entrelacement)",
+      24
+    ],
+    [
+      "6. Méthode n°4 : comprendre et expliquer",
+      28
+    ],
+    [
+      "7. Rester concentré (même avec un téléphone)",
+      33
+    ],
+    [
+      "8. Sommeil, sport et stress : les alliés invisibles",
+      38
+    ],
+    [
+      "9. Les méthodes, matière par matière",
+      42
+    ],
+    [
+      "10. Préparer un contrôle ou un examen",
+      46
+    ],
+    [
+      "10 bis. Une semaine avec la méthode : exemple détaillé",
+      50
+    ],
+    [
+      "Questions fréquentes",
+      53
+    ],
+    [
+      "11. Ton plan de 30 jours",
+      56
+    ],
+    [
+      "12. Pour les parents : aider sans faire à la place",
+      70
+    ],
+    [
+      "Conclusion : la méthode, c’est toi qui la construis",
+      73
+    ],
+    [
+      "Références",
+      75
     ]
   ],
-  "construit_le": "2026-11-20T22:16:08"
+  "construit_le": "2026-11-20T22:27:17"
 }

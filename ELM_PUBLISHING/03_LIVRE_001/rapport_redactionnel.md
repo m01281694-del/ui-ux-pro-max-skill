@@ -1,0 +1,160 @@
+# Contrôle rédactionnel automatique — 03_LIVRE_001
+
+- Mots : **11772** · chapitres : 17 · lecture estimée : 51 min
+
+## Mots absents du dictionnaire (à vérifier : faute, nom propre, anglicisme ou terme technique)
+
+- the (11×)
+- quelqu (7×)
+- surligner (6×)
+- aujourd (6×)
+- jusqu (6×)
+- learning (6×)
+- improves (3×)
+- memory (3×)
+- than (3×)
+- cœur (2×)
+- œil (2×)
+- sœur (2×)
+- multitâche (2×)
+- œuvres (2×)
+- géo (2×)
+- end (2×)
+- dys (2×)
+- about (2×)
+- practice (2×)
+- term (2×)
+- capacity (2×)
+- sleep (2×)
+- with (2×)
+- mightier (2×)
+- pen (2×)
+- keyboard (2×)
+- taking (2×)
+- surlignes (1×)
+- neuroscientifique (1×)
+- encodent (1×)
+- surlignent (1×)
+- surlignage (1×)
+- kinesthésique (1×)
+- map (1×)
+- photosynthèse (1×)
+- flashcards (1×)
+- élaborative (1×)
+- present (1×)
+- perfect (1×)
+- mind (1×)
+- maps (1×)
+- podcast (1×)
+- instrumentale (1×)
+- reformuler (1×)
+- endormissement (1×)
+- énergisantes (1×)
+- œuvre (1×)
+- réécoute (1×)
+- podcasts (1×)
+- philo (1×)
+- retravaille (1×)
+- week (1×)
+- bristols (1×)
+- metamemory (1×)
+- considerations (1×)
+- human (1×)
+- beings (1×)
+- dir (1×)
+- knowing (1×)
+- recall (1×)
+- tasks (1×)
+- review (1×)
+- synthesis (1×)
+- explanations (1×)
+- understanding (1×)
+- magical (1×)
+- number (1×)
+- reconsideration (1×)
+- storage (1×)
+- function (1×)
+- students (1×)
+- from (1×)
+- educational (1×)
+- psychology (1×)
+- das (1×)
+- produces (1×)
+- more (1×)
+- elaborative (1×)
+- studying (1×)
+- mapping (1×)
+- categories (1×)
+- spacing (1×)
+- enemy (1×)
+- lernt (1×)
+- lernen (1×)
+- much (1×)
+- replication (1×)
+- longhand (1×)
+- over (1×)
+- laptop (1×)
+- analysis (1×)
+- forgetting (1×)
+- curve (1×)
+- processes (1×)
+- evidence (1×)
+- amount (1×)
+- pediatric (1×)
+- statement (1×)
+- testing (1×)
+- worries (1×)
+- boosts (1×)
+- exam (1×)
+- classroom (1×)
+- enhanced (1×)
+- retention (1×)
+- shuffling (1×)
+- mathematics (1×)
+- problems (1×)
+- load (1×)
+- during (1×)
+- problem (1×)
+- solving (1×)
+- mere (1×)
+- presence (1×)
+- one (1×)
+- own (1×)
+- smartphone (1×)
+- reduces (1×)
+- available (1×)
+- iphone (1×)
+- apps (1×)
+- ankiweb (1×)
+
+## Mots doublés
+
+- 108-faq.md : « faire faire »
+
+## Phrases de plus de 45 mots
+
+- 00-introduction.md (51 mots) : Leurs conclusions ont surpris beaucoup de monde :  -   relire   ses cours et   surligner  …
+- 02-fausses-methodes.md (46 mots) : » sur ce qu'on lit   Modérée     S'expliquer à soi-même les étapes d'un raisonnement   Mod…
+- 02-fausses-methodes.md (74 mots) : Exercice : ton audit de méthode    Coche les méthodes que tu utilises le plus souvent aujo…
+- 03-se-tester.md (46 mots) : Prends une boîte divisée en cinq compartiments :    Compartiment   Quand le réviser    ---…
+- 04-espacer.md (83 mots) : Quand   Quoi faire   Durée indicative    --- --- ---    Jour 0 (le soir du cours)   Relire…
+- 07-concentration.md (46 mots) : En 2017, Adrian Ward et ses collègues ont publié une étude suggérant que la simple   prése…
+- 09-matieres.md (77 mots) : Tableau récapitulatif    Matière   Méthode principale   Outil clé    --- --- ---    Maths …
+- 11-plan-30-jours.md (50 mots) : Cours / chapitre   Date   J+1   J+3   J+7   J+21    --- --- --- --- --- ---               …
+- 11-plan-30-jours.md (51 mots) : Fiche : bilan des 30 jours  Ce qui a le mieux marché pour moi :         Ce que j'ai eu du …
+- 11-plan-30-jours.md (381 mots) : Jour   Page blanche   Rappels agenda   Cartes mémoire   Téléphone hors de vue   Coucher à …
+
+## Mots longs répétés 4 fois ou plus dans un paragraphe
+
+- 00-introduction.md : comment (4×)
+- 00-introduction.md : chapitre (7×)
+- 08-sommeil-sport-stress.md : sommeil (4×)
+- 09-matieres.md : correction (4×)
+- 09-matieres.md : mémoire (4×)
+
+## Pourcentages cités (chacun doit renvoyer à une source de references.md)
+
+- 03-se-tester.md : Dans l'une de leurs expériences, ceux qui s'étaient testés à plusieurs reprises retrouvaient environ **61 %** 
+- 03-se-tester.md : - Dans l'étude de Roediger et Karpicke (2006), se tester plusieurs fois a donné environ 61 % de rappel une sem
+- 05-melanger.md : Mais au test final, une semaine plus tard, le groupe « mélangé » réussissait environ **63 %** des problèmes, c
+- 05-melanger.md : - Dans l'étude de Rohrer et Taylor (2007), le groupe « mélangé » a obtenu environ 63 % de réussite contre envi
