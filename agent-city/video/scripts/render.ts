@@ -1,7 +1,7 @@
 // Renders a short with Remotion (server-side), then normalizes loudness to -14 LUFS with ffmpeg.
 import path from "node:path";
 import fs from "node:fs";
-import { execFileSync } from "node:child_process";
+import { loudnorm } from "./loudnorm";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition } from "@remotion/renderer";
 
@@ -12,11 +12,11 @@ fs.mkdirSync(out, { recursive: true });
 const browserExecutable = process.env.REMOTION_CHROME ?? "/opt/pw-browsers/chromium";
 const chromiumOptions = { gl: "swangle" as const };
 
-const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
 const dir = path.resolve("content", id);
+fs.copyFileSync(path.join(dir, "voice.mp3"), path.resolve("public", `${id}-voice.mp3`));
+const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
 const script = JSON.parse(fs.readFileSync(path.join(dir, "script.json"), "utf8"));
 const timing = JSON.parse(fs.readFileSync(path.join(dir, "timing.json"), "utf8"));
-fs.copyFileSync(path.join(dir, "voice.mp3"), path.resolve("public", `${id}-voice.mp3`));
 const inputProps = { id, voiceSrc: `${id}-voice.mp3`, handle: script.handle ?? "manu.digi0", brand: script.brand, scenes: script.scenes, timing };
 const composition = await selectComposition({ serveUrl, id: "Short", browserExecutable, chromiumOptions, inputProps });
 console.log("composition", composition.durationInFrames, "frames");
@@ -32,7 +32,7 @@ await renderMedia({
   serveUrl, composition, inputProps, codec: "h264", outputLocation: raw, browserExecutable, chromiumOptions, crf: 18, concurrency: 3,
   onProgress: ({ progress }) => { const p = Math.floor(progress * 10); if (p !== last) { last = p; console.log(`render ${p * 10}%`); } },
 });
-// loudness -14 LUFS integrated, TP -1 dBTP
+// loudness -14 LUFS integrated, TP -1 dBTP — two-pass loudnorm (single pass under-corrects when peak-limited)
 const final = path.join(out, `${id}.mp4`);
-execFileSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-i", raw, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1:LRA=11", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", final]);
+loudnorm(raw, final);
 console.log("done", final);

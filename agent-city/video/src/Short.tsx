@@ -15,7 +15,7 @@ export type ShortProps = {
   voiceSrc: string;
   handle: string;
   brand: { navy: string; navyDeep: string; orange: string; white: string };
-  scenes: { id: string; screen: string; visual: string; sfx: string }[];
+  scenes: { id: string; screen: string; visual: string; sfx: string; phone?: string[] }[];
   timing: { duration: number; words: Word[]; scenes: SceneT[] };
 };
 
@@ -80,7 +80,7 @@ const Kinetic: React.FC<{ text: string; local: number; dur: number; brand: Short
       {words.map((w, i) => {
         const s = spring({ frame: f - i * 3, fps, config: { damping: 11, stiffness: 160, mass: 0.6 } });
         const isNum = !explode && (/^\d/.test(w) || w === "·");
-        const hl = /SECONDE|SCROLLER|RÉSULTAT|TEMPS|TEXTE|PORTÉE|BIO|1|2|3/.test(w);
+        const hl = /SECONDE|SCROLLER|RÉSULTAT|TEMPS|TEXTE|PORTÉE|BIO|MILLIONS|REEL|MOT-CLÉ|CRÉNEAU|RÉSEAUX|GO|SEULEMENT|1|2|3/.test(w);
         const dir = (i % 2 ? 1 : -1) * (1 + i * 0.3);
         return (
           <span key={i} style={{
@@ -96,15 +96,15 @@ const Kinetic: React.FC<{ text: string; local: number; dur: number; brand: Short
   );
 };
 
-const Phone: React.FC<{ local: number; brand: ShortProps["brand"] }> = ({ local, brand }) => {
+const Phone: React.FC<{ local: number; brand: ShortProps["brand"]; labels?: string[] }> = ({ local, brand, labels }) => {
   const y = interpolate(local, [0.3, 1.2, 2.2, 3.1, 4.2, 5.2], [0, -400, -400, -800, -800, -1200], { extrapolateRight: "clamp", easing: Easing.inOut(Easing.cubic) });
   const enter = interpolate(local, [0, 0.35], [600, 0], { extrapolateRight: "clamp", easing: Easing.out(Easing.back(1.4)) });
   const cards = ["#3b5998", brand.orange, "#2a9d8f", "#6d28d9", "#e11d48", brand.navy];
   return (
-    <div style={{ position: "absolute", left: 360, top: 600, width: 360, height: 620, borderRadius: 54, background: "#0b0f1a", border: `10px solid ${brand.white}`, overflow: "hidden", transform: `translateY(${enter}px) rotateY(-14deg) rotateX(6deg)`, boxShadow: `0 40px 120px ${brand.orange}55` }}>
+    <div style={{ position: "absolute", left: 370, top: 700, width: 340, height: 580, borderRadius: 52, background: "#0b0f1a", border: `10px solid ${brand.white}`, overflow: "hidden", transform: `translateY(${enter}px) rotateY(-14deg) rotateX(6deg)`, boxShadow: `0 40px 120px ${brand.orange}55` }}>
       <div style={{ transform: `translateY(${y}px)` }}>
         {cards.map((c, i) => (
-          <div key={i} style={{ height: 400, margin: 0, background: `linear-gradient(160deg, ${c}, #0b0f1a)`, display: "flex", alignItems: "flex-end", padding: 30, fontFamily: BODY, fontWeight: 800, fontSize: 34, color: "#fff" }}>{i === 0 ? "Salut tout le monde…" : i === 1 ? "Le résultat en 1 s ⚡" : "scroll"}</div>
+          <div key={i} style={{ height: 400, margin: 0, background: `linear-gradient(160deg, ${c}, #0b0f1a)`, display: "flex", alignItems: "flex-end", padding: 30, fontFamily: BODY, fontWeight: 800, fontSize: 34, color: "#fff" }}>{labels?.[i] ?? (i === 0 ? "Salut tout le monde…" : i === 1 ? "Le résultat en 1 s ⚡" : "scroll")}</div>
         ))}
       </div>
     </div>
@@ -185,7 +185,7 @@ export const Short: React.FC<ShortProps> = (p) => {
         </ThreeCanvas>
         <AbsoluteFill style={{ background: "linear-gradient(180deg, #070f2466 0%, transparent 30%, transparent 60%, #070f24cc 100%)" }} />
         <Kinetic key={si} text={sc.screen} local={local} dur={dur} brand={brand} explode={sc.visual === "title-explode"} />
-        {sc.visual === "phone-scroll" && <Phone local={local} brand={brand} />}
+        {sc.visual === "phone-scroll" && <Phone local={local} brand={brand} labels={sc.phone} />}
         {listN > 0 && <NumberBadge n={listN} local={local} brand={brand} />}
         {sc.visual === "reveal-loop" && <Reveal local={local} dur={dur} brand={brand} handle={p.handle} />}
       </AbsoluteFill>

@@ -1,0 +1,558 @@
+{
+ "duration": 30.56,
+ "words": [
+  {
+   "text": "Vingt-huit",
+   "start": 0,
+   "end": 0.48,
+   "scene": 0
+  },
+  {
+   "text": "millions",
+   "start": 0.64,
+   "end": 1.04,
+   "scene": 0
+  },
+  {
+   "text": "de",
+   "start": 1.08,
+   "end": 1.12,
+   "scene": 0
+  },
+  {
+   "text": "Français.",
+   "start": 1.2,
+   "end": 1.84,
+   "scene": 0
+  },
+  {
+   "text": "Et",
+   "start": 2,
+   "end": 2.08,
+   "scene": 0
+  },
+  {
+   "text": "tu",
+   "start": 2.16,
+   "end": 2.24,
+   "scene": 0
+  },
+  {
+   "text": "ne",
+   "start": 2.28,
+   "end": 2.32,
+   "scene": 0
+  },
+  {
+   "text": "postes",
+   "start": 2.44,
+   "end": 2.64,
+   "scene": 0
+  },
+  {
+   "text": "pas",
+   "start": 2.72,
+   "end": 2.8,
+   "scene": 0
+  },
+  {
+   "text": "dessus",
+   "start": 2.92,
+   "end": 3.12,
+   "scene": 0
+  },
+  {
+   "text": "?",
+   "start": 3.6,
+   "end": 3.627,
+   "scene": 0
+  },
+  {
+   "text": "En",
+   "start": 3.653,
+   "end": 3.68,
+   "scene": 1
+  },
+  {
+   "text": "2026,",
+   "start": 3.76,
+   "end": 4.72,
+   "scene": 1
+  },
+  {
+   "text": "Instagram",
+   "start": 5,
+   "end": 5.28,
+   "scene": 1
+  },
+  {
+   "text": "reste",
+   "start": 5.44,
+   "end": 5.6,
+   "scene": 1
+  },
+  {
+   "text": "le",
+   "start": 5.64,
+   "end": 5.68,
+   "scene": 1
+  },
+  {
+   "text": "réseau",
+   "start": 5.76,
+   "end": 6,
+   "scene": 1
+  },
+  {
+   "text": "préféré",
+   "start": 6.12,
+   "end": 6.48,
+   "scene": 1
+  },
+  {
+   "text": "des",
+   "start": 6.56,
+   "end": 6.72,
+   "scene": 1
+  },
+  {
+   "text": "seize-trente-quatre",
+   "start": 6.8,
+   "end": 7.44,
+   "scene": 1
+  },
+  {
+   "text": "ans.",
+   "start": 7.52,
+   "end": 8,
+   "scene": 1
+  },
+  {
+   "text": "Si",
+   "start": 8.04,
+   "end": 8.08,
+   "scene": 1
+  },
+  {
+   "text": "tu",
+   "start": 8.16,
+   "end": 8.24,
+   "scene": 1
+  },
+  {
+   "text": "postes",
+   "start": 8.32,
+   "end": 8.72,
+   "scene": 1
+  },
+  {
+   "text": "seulement",
+   "start": 8.76,
+   "end": 9.04,
+   "scene": 1
+  },
+  {
+   "text": "sur",
+   "start": 9.12,
+   "end": 9.2,
+   "scene": 1
+  },
+  {
+   "text": "TikTok,",
+   "start": 9.28,
+   "end": 9.92,
+   "scene": 1
+  },
+  {
+   "text": "tu",
+   "start": 10,
+   "end": 10.08,
+   "scene": 1
+  },
+  {
+   "text": "passes",
+   "start": 10.16,
+   "end": 10.24,
+   "scene": 1
+  },
+  {
+   "text": "à",
+   "start": 10.32,
+   "end": 10.36,
+   "scene": 1
+  },
+  {
+   "text": "côté.",
+   "start": 10.4,
+   "end": 10.72,
+   "scene": 1
+  },
+  {
+   "text": "Un",
+   "start": 11.28,
+   "end": 11.36,
+   "scene": 2
+  },
+  {
+   "text": ":",
+   "start": 11.84,
+   "end": 11.88,
+   "scene": 2
+  },
+  {
+   "text": "recycle",
+   "start": 11.92,
+   "end": 12.4,
+   "scene": 2
+  },
+  {
+   "text": "chaque",
+   "start": 12.48,
+   "end": 12.64,
+   "scene": 2
+  },
+  {
+   "text": "vidéo",
+   "start": 12.72,
+   "end": 12.96,
+   "scene": 2
+  },
+  {
+   "text": "TikTok",
+   "start": 13.04,
+   "end": 13.44,
+   "scene": 2
+  },
+  {
+   "text": "en",
+   "start": 13.52,
+   "end": 13.6,
+   "scene": 2
+  },
+  {
+   "text": "Reel,",
+   "start": 13.68,
+   "end": 14.24,
+   "scene": 2
+  },
+  {
+   "text": "sans",
+   "start": 14.32,
+   "end": 14.48,
+   "scene": 2
+  },
+  {
+   "text": "le",
+   "start": 14.52,
+   "end": 14.56,
+   "scene": 2
+  },
+  {
+   "text": "logo",
+   "start": 14.68,
+   "end": 14.8,
+   "scene": 2
+  },
+  {
+   "text": "TikTok.",
+   "start": 14.88,
+   "end": 15.36,
+   "scene": 2
+  },
+  {
+   "text": "Deux",
+   "start": 15.84,
+   "end": 16,
+   "scene": 3
+  },
+  {
+   "text": ":",
+   "start": 16.4,
+   "end": 16.44,
+   "scene": 3
+  },
+  {
+   "text": "réécris",
+   "start": 16.48,
+   "end": 16.88,
+   "scene": 3
+  },
+  {
+   "text": "ta",
+   "start": 16.92,
+   "end": 16.96,
+   "scene": 3
+  },
+  {
+   "text": "légende,",
+   "start": 17,
+   "end": 17.6,
+   "scene": 3
+  },
+  {
+   "text": "avec",
+   "start": 17.72,
+   "end": 17.84,
+   "scene": 3
+  },
+  {
+   "text": "le",
+   "start": 17.88,
+   "end": 17.92,
+   "scene": 3
+  },
+  {
+   "text": "mot-clé",
+   "start": 18,
+   "end": 18.32,
+   "scene": 3
+  },
+  {
+   "text": "que",
+   "start": 18.36,
+   "end": 18.4,
+   "scene": 3
+  },
+  {
+   "text": "tes",
+   "start": 18.48,
+   "end": 18.56,
+   "scene": 3
+  },
+  {
+   "text": "clients",
+   "start": 18.72,
+   "end": 18.88,
+   "scene": 3
+  },
+  {
+   "text": "cherchent.",
+   "start": 18.96,
+   "end": 19.68,
+   "scene": 3
+  },
+  {
+   "text": "Trois",
+   "start": 19.76,
+   "end": 19.92,
+   "scene": 4
+  },
+  {
+   "text": ":",
+   "start": 20.32,
+   "end": 20.4,
+   "scene": 4
+  },
+  {
+   "text": "publie",
+   "start": 20.48,
+   "end": 20.8,
+   "scene": 4
+  },
+  {
+   "text": "au",
+   "start": 20.84,
+   "end": 20.88,
+   "scene": 4
+  },
+  {
+   "text": "bon",
+   "start": 21.04,
+   "end": 21.2,
+   "scene": 4
+  },
+  {
+   "text": "créneau,",
+   "start": 21.32,
+   "end": 21.84,
+   "scene": 4
+  },
+  {
+   "text": "pas",
+   "start": 21.92,
+   "end": 22,
+   "scene": 4
+  },
+  {
+   "text": "quand",
+   "start": 22.04,
+   "end": 22.16,
+   "scene": 4
+  },
+  {
+   "text": "tu",
+   "start": 22.2,
+   "end": 22.24,
+   "scene": 4
+  },
+  {
+   "text": "y",
+   "start": 22.32,
+   "end": 22.4,
+   "scene": 4
+  },
+  {
+   "text": "penses.",
+   "start": 22.44,
+   "end": 23.2,
+   "scene": 4
+  },
+  {
+   "text": "Une",
+   "start": 23.28,
+   "end": 23.36,
+   "scene": 5
+  },
+  {
+   "text": "vidéo,",
+   "start": 23.48,
+   "end": 24.08,
+   "scene": 5
+  },
+  {
+   "text": "deux",
+   "start": 24.12,
+   "end": 24.24,
+   "scene": 5
+  },
+  {
+   "text": "réseaux,",
+   "start": 24.32,
+   "end": 24.96,
+   "scene": 5
+  },
+  {
+   "text": "le",
+   "start": 25,
+   "end": 25.04,
+   "scene": 5
+  },
+  {
+   "text": "même",
+   "start": 25.12,
+   "end": 25.28,
+   "scene": 5
+  },
+  {
+   "text": "effort.",
+   "start": 25.4,
+   "end": 26.08,
+   "scene": 5
+  },
+  {
+   "text": "Écris",
+   "start": 26.16,
+   "end": 26.48,
+   "scene": 6
+  },
+  {
+   "text": "GO",
+   "start": 26.64,
+   "end": 26.96,
+   "scene": 6
+  },
+  {
+   "text": "en",
+   "start": 27,
+   "end": 27.04,
+   "scene": 6
+  },
+  {
+   "text": "commentaire,",
+   "start": 27.12,
+   "end": 27.76,
+   "scene": 6
+  },
+  {
+   "text": "et",
+   "start": 27.8,
+   "end": 27.84,
+   "scene": 6
+  },
+  {
+   "text": "je",
+   "start": 27.88,
+   "end": 27.92,
+   "scene": 6
+  },
+  {
+   "text": "t'envoie",
+   "start": 27.96,
+   "end": 28.24,
+   "scene": 6
+  },
+  {
+   "text": "ma",
+   "start": 28.32,
+   "end": 28.4,
+   "scene": 6
+  },
+  {
+   "text": "formation",
+   "start": 28.64,
+   "end": 28.88,
+   "scene": 6
+  },
+  {
+   "text": "ELM.",
+   "start": 29.04,
+   "end": 29.76,
+   "scene": 6
+  },
+  {
+   "text": "Lien",
+   "start": 29.84,
+   "end": 30,
+   "scene": 6
+  },
+  {
+   "text": "en",
+   "start": 30.04,
+   "end": 30.08,
+   "scene": 6
+  },
+  {
+   "text": "bio.",
+   "start": 30.16,
+   "end": 30.56,
+   "scene": 6
+  }
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "start": 0,
+   "end": 3.627
+  },
+  {
+   "id": "tension",
+   "start": 3.653,
+   "end": 10.72
+  },
+  {
+   "id": "p1",
+   "start": 11.28,
+   "end": 15.36
+  },
+  {
+   "id": "p2",
+   "start": 15.84,
+   "end": 19.68
+  },
+  {
+   "id": "p3",
+   "start": 19.76,
+   "end": 23.2
+  },
+  {
+   "id": "payoff",
+   "start": 23.28,
+   "end": 26.08
+  },
+  {
+   "id": "cta",
+   "start": 26.16,
+   "end": 30.56
+  }
+ ]
+}

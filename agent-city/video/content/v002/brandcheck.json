@@ -1,0 +1,82 @@
+{
+ "score": 100,
+ "verdict": "validé",
+ "checks": [
+  {
+   "check": "Résolution 1080×1920",
+   "ok": true,
+   "weight": 10,
+   "detail": "1080×1920"
+  },
+  {
+   "check": "30 fps ou plus",
+   "ok": true,
+   "weight": 5,
+   "detail": "30.00 fps"
+  },
+  {
+   "check": "Durée 20–60 s",
+   "ok": true,
+   "weight": 10,
+   "detail": "31.5 s"
+  },
+  {
+   "check": "Audio présent",
+   "ok": true,
+   "weight": 10,
+   "detail": "aac"
+  },
+  {
+   "check": "Loudness −14 LUFS ±1",
+   "ok": true,
+   "weight": 10,
+   "detail": "-14.5 LUFS, crête -0.3 dBFS"
+  },
+  {
+   "check": "Pas d'écran noir > 0,5 s",
+   "ok": true,
+   "weight": 10,
+   "detail": "0 détection(s)"
+  },
+  {
+   "check": "Pas de frame figée > 1 s",
+   "ok": true,
+   "weight": 10,
+   "detail": "0 détection(s)"
+  },
+  {
+   "check": "Hook < 1,5 s (voix + texte)",
+   "ok": true,
+   "weight": 10,
+   "detail": "1er mot à 0.00 s"
+  },
+  {
+   "check": "Sous-titres synchronisés mot à mot",
+   "ok": true,
+   "weight": 10,
+   "detail": "86 mots horodatés (ElevenLabs)"
+  },
+  {
+   "check": "Pas de temps mort > 1 s dans la voix",
+   "ok": true,
+   "weight": 5,
+   "detail": "plus long silence 0.56 s"
+  },
+  {
+   "check": "Musique libre de droits",
+   "ok": true,
+   "weight": 5,
+   "detail": "musique synthétisée par la ville (ffmpeg) + SFX ElevenLabs"
+  },
+  {
+   "check": "Label IA prévu",
+   "ok": true,
+   "weight": 5,
+   "detail": "étiquette « contenu IA » à cocher à la publication"
+  }
+ ],
+ "manual": [
+  "affirmations : aucune statistique chiffrée non sourcée (vérifié à l'écriture du script)",
+  "regard humain des frames clés : voir frames/"
+ ]
+}

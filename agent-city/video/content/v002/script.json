@@ -1,0 +1,32 @@
+{
+  "id": "v002",
+  "title": "28 millions de Français, et tu n'y es pas ?",
+  "angle": "Recycler chaque TikTok en Reel Instagram (Instagram : 28,2 M d'utilisateurs en France, réseau préféré des 16-34 ans en 2026)",
+  "sources": ["https://www.propulse.me/fr/blog/astuces-tendances/digital-2026-instagram"],
+  "hooks": [
+    { "text": "28 millions de Français. Et tu ne postes pas dessus ?", "score": 90, "why": "chiffre sourcé + reproche implicite + concerne les créateurs TikTok" },
+    { "text": "Tu postes que sur TikTok ? Grosse erreur.", "score": 85, "why": "interpellation directe, mais vague" },
+    { "text": "Une vidéo, deux réseaux, zéro effort en plus.", "score": 82, "why": "promesse claire, moins de tension" },
+    { "text": "Le réseau préféré des 16-34 ans, ce n'est pas TikTok.", "score": 80, "why": "contre-intuitif, sourcé, un peu long" },
+    { "text": "Arrête de laisser tes vidéos mourir sur TikTok.", "score": 76, "why": "émotion, mais flou" },
+    { "text": "Ton audience est sur Instagram. Pas toi.", "score": 74, "why": "court, mais non prouvé pour ce compte" },
+    { "text": "3 étapes pour recycler tes TikTok.", "score": 70, "why": "liste claire, peu de tension" },
+    { "text": "Ce que les gros créateurs font avec chaque vidéo.", "score": 65, "why": "non sourcé" },
+    { "text": "Instagram n'est pas mort.", "score": 62, "why": "débat déjà vu" },
+    { "text": "Regarde avant de poster ta prochaine vidéo.", "score": 55, "why": "faible tension" }
+  ],
+  "scenes": [
+    { "id": "hook", "voice": "Vingt-huit millions de Français. Et tu ne postes pas dessus ?", "screen": "28 MILLIONS", "visual": "title-explode", "sfx": "impact" },
+    { "id": "tension", "voice": "En 2026, Instagram reste le réseau préféré des seize-trente-quatre ans. Si tu postes seulement sur TikTok, tu passes à côté.", "screen": "TIKTOK SEULEMENT ?", "visual": "chart-up", "sfx": "rise" },
+    { "id": "p1", "voice": "Un : recycle chaque vidéo TikTok en Reel, sans le logo TikTok.", "screen": "1 · RECYCLE EN REEL", "visual": "list-1", "sfx": "whoosh" },
+    { "id": "p2", "voice": "Deux : réécris ta légende, avec le mot-clé que tes clients cherchent.", "screen": "2 · UNE LÉGENDE MOT-CLÉ", "visual": "list-2", "sfx": "whoosh" },
+    { "id": "p3", "voice": "Trois : publie au bon créneau, pas quand tu y penses.", "screen": "3 · LE BON CRÉNEAU", "visual": "list-3", "sfx": "whoosh" },
+    { "id": "payoff", "voice": "Une vidéo, deux réseaux, le même effort.", "screen": "1 VIDÉO = 2 RÉSEAUX", "visual": "phone-scroll", "sfx": "whoosh", "phone": ["TikTok ✅", "Reel Instagram ✅", "Même vidéo 🔁", "Bon créneau ⏰", "Légende mot-clé 🔑", "ELM"] },
+    { "id": "cta", "voice": "Écris GO en commentaire, et je t'envoie ma formation ELM. Lien en bio.", "screen": "ÉCRIS « GO »", "visual": "reveal-loop", "sfx": "impact" }
+  ],
+  "brand": { "navy": "#1F3B73", "navyDeep": "#0F2147", "orange": "#D97757", "white": "#FFFFFF" },
+  "voice": { "voiceId": "cjVigY5qzO86Huf0OWal", "name": "Eric", "model": "eleven_v4" },
+  "caption": "Instagram, c'est 28,2 millions d'utilisateurs en France (Digital 2026) 👀 Recycle chaque TikTok en Reel en 3 étapes. Écris GO en commentaire et je t'envoie ma formation ELM 👇 #marketingdigital #createurdecontenu #instagramastuce #reels",
+  "experiment": "CTA « écris GO » + contenu éducatif (leçon : le CTA go triple les likes)",
+  "aiLabel": true
+}
