@@ -1,0 +1,458 @@
+{
+  "nodes": [
+    {
+      "id": "t0",
+      "type": "text",
+      "x": -340,
+      "y": 0,
+      "width": 280,
+      "height": 90,
+      "text": "### Acquisition de l'attention\n[[Création de contenu]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c0",
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[Stratégie de contenu]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c1",
+      "type": "text",
+      "x": 380,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[Hooks]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c2",
+      "type": "text",
+      "x": 760,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[Script vidéo]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c3",
+      "type": "text",
+      "x": 1140,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[Montage vidéo]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c4",
+      "type": "text",
+      "x": 1520,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[TikTok]]",
+      "color": "#EF5D6B"
+    },
+    {
+      "id": "r0c5",
+      "type": "text",
+      "x": 1900,
+      "y": 0,
+      "width": 260,
+      "height": 90,
+      "text": "[[Acquisition]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "t1",
+      "type": "text",
+      "x": -340,
+      "y": 200,
+      "width": 280,
+      "height": 90,
+      "text": "### Persuasion et vente\n[[Marketing digital]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c0",
+      "type": "text",
+      "x": 0,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Persona client]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c1",
+      "type": "text",
+      "x": 380,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Psychologie du consommateur]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c2",
+      "type": "text",
+      "x": 760,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Copywriting]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c3",
+      "type": "text",
+      "x": 1140,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Publicité]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c4",
+      "type": "text",
+      "x": 1520,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Tunnel de vente]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "r1c5",
+      "type": "text",
+      "x": 1900,
+      "y": 200,
+      "width": 260,
+      "height": 90,
+      "text": "[[Conversion]]",
+      "color": "#E5735C"
+    },
+    {
+      "id": "t2",
+      "type": "text",
+      "x": -340,
+      "y": 400,
+      "width": 280,
+      "height": 90,
+      "text": "### Boutique en ligne\n[[E-commerce]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c0",
+      "type": "text",
+      "x": 0,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Recherche de produits]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c1",
+      "type": "text",
+      "x": 380,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Shopify]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c2",
+      "type": "text",
+      "x": 760,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Fiche produit]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c3",
+      "type": "text",
+      "x": 1140,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Optimisation de boutique]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c4",
+      "type": "text",
+      "x": 1520,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Panier moyen]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "r2c5",
+      "type": "text",
+      "x": 1900,
+      "y": 400,
+      "width": 260,
+      "height": 90,
+      "text": "[[Fidélisation client]]",
+      "color": "#D66BA0"
+    },
+    {
+      "id": "t3",
+      "type": "text",
+      "x": -340,
+      "y": 600,
+      "width": 280,
+      "height": 90,
+      "text": "### Résultat financier\n[[Finances]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c0",
+      "type": "text",
+      "x": 0,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Chiffre d'affaires]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c1",
+      "type": "text",
+      "x": 380,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Marge]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c2",
+      "type": "text",
+      "x": 760,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Rentabilité]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c3",
+      "type": "text",
+      "x": 1140,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Trésorerie]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c4",
+      "type": "text",
+      "x": 1520,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Investissements]]",
+      "color": "#5BBF8A"
+    },
+    {
+      "id": "r3c5",
+      "type": "text",
+      "x": 1900,
+      "y": 600,
+      "width": 260,
+      "height": 90,
+      "text": "[[Croissance et scaling]]",
+      "color": "#E0A84F"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0-1",
+      "fromNode": "r0c0",
+      "fromSide": "right",
+      "toNode": "r0c1",
+      "toSide": "left"
+    },
+    {
+      "id": "e0-2",
+      "fromNode": "r0c1",
+      "fromSide": "right",
+      "toNode": "r0c2",
+      "toSide": "left"
+    },
+    {
+      "id": "e0-3",
+      "fromNode": "r0c2",
+      "fromSide": "right",
+      "toNode": "r0c3",
+      "toSide": "left"
+    },
+    {
+      "id": "e0-4",
+      "fromNode": "r0c3",
+      "fromSide": "right",
+      "toNode": "r0c4",
+      "toSide": "left"
+    },
+    {
+      "id": "e0-5",
+      "fromNode": "r0c4",
+      "fromSide": "right",
+      "toNode": "r0c5",
+      "toSide": "left"
+    },
+    {
+      "id": "e1-1",
+      "fromNode": "r1c0",
+      "fromSide": "right",
+      "toNode": "r1c1",
+      "toSide": "left"
+    },
+    {
+      "id": "e1-2",
+      "fromNode": "r1c1",
+      "fromSide": "right",
+      "toNode": "r1c2",
+      "toSide": "left"
+    },
+    {
+      "id": "e1-3",
+      "fromNode": "r1c2",
+      "fromSide": "right",
+      "toNode": "r1c3",
+      "toSide": "left"
+    },
+    {
+      "id": "e1-4",
+      "fromNode": "r1c3",
+      "fromSide": "right",
+      "toNode": "r1c4",
+      "toSide": "left"
+    },
+    {
+      "id": "e1-5",
+      "fromNode": "r1c4",
+      "fromSide": "right",
+      "toNode": "r1c5",
+      "toSide": "left"
+    },
+    {
+      "id": "e2-1",
+      "fromNode": "r2c0",
+      "fromSide": "right",
+      "toNode": "r2c1",
+      "toSide": "left"
+    },
+    {
+      "id": "e2-2",
+      "fromNode": "r2c1",
+      "fromSide": "right",
+      "toNode": "r2c2",
+      "toSide": "left"
+    },
+    {
+      "id": "e2-3",
+      "fromNode": "r2c2",
+      "fromSide": "right",
+      "toNode": "r2c3",
+      "toSide": "left"
+    },
+    {
+      "id": "e2-4",
+      "fromNode": "r2c3",
+      "fromSide": "right",
+      "toNode": "r2c4",
+      "toSide": "left"
+    },
+    {
+      "id": "e2-5",
+      "fromNode": "r2c4",
+      "fromSide": "right",
+      "toNode": "r2c5",
+      "toSide": "left"
+    },
+    {
+      "id": "e3-1",
+      "fromNode": "r3c0",
+      "fromSide": "right",
+      "toNode": "r3c1",
+      "toSide": "left"
+    },
+    {
+      "id": "e3-2",
+      "fromNode": "r3c1",
+      "fromSide": "right",
+      "toNode": "r3c2",
+      "toSide": "left"
+    },
+    {
+      "id": "e3-3",
+      "fromNode": "r3c2",
+      "fromSide": "right",
+      "toNode": "r3c3",
+      "toSide": "left"
+    },
+    {
+      "id": "e3-4",
+      "fromNode": "r3c3",
+      "fromSide": "right",
+      "toNode": "r3c4",
+      "toSide": "left"
+    },
+    {
+      "id": "e3-5",
+      "fromNode": "r3c4",
+      "fromSide": "right",
+      "toNode": "r3c5",
+      "toSide": "left"
+    },
+    {
+      "id": "j0",
+      "fromNode": "r0c5",
+      "fromSide": "bottom",
+      "toNode": "r1c3",
+      "toSide": "top",
+      "label": "nourrit"
+    },
+    {
+      "id": "j1",
+      "fromNode": "r1c5",
+      "fromSide": "bottom",
+      "toNode": "r3c0",
+      "toSide": "top",
+      "label": "génère"
+    },
+    {
+      "id": "j2",
+      "fromNode": "r2c4",
+      "fromSide": "bottom",
+      "toNode": "r3c0",
+      "toSide": "top",
+      "label": "augmente"
+    },
+    {
+      "id": "j3",
+      "fromNode": "r2c2",
+      "fromSide": "top",
+      "toNode": "r1c2",
+      "toSide": "bottom",
+      "label": "s'appuie sur"
+    }
+  ]
+}

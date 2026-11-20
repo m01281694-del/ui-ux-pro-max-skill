@@ -1,0 +1,220 @@
+{
+  "nodes": [
+    {
+      "id": "hub",
+      "type": "text",
+      "x": -230,
+      "y": -110,
+      "width": 460,
+      "height": 220,
+      "color": "#C8A96A",
+      "text": "# [[Accueil|Deuxième Cerveau]]\nCapturer · Relier · Comprendre · Créer\n\n[[Tableau de bord]] · [[Mode d'emploi]]"
+    },
+    {
+      "id": "entrepreneuriat",
+      "type": "text",
+      "x": -190,
+      "y": -865,
+      "width": 380,
+      "height": 210,
+      "color": "#E0A84F",
+      "text": "## 01 · [[Entrepreneuriat]]\n*Créer, structurer et faire grandir des entreprises.*\n\n[[Opportunités business]] · [[Étude de marché]] · [[MVP et validation]] · [[Proposition de valeur]] · [[Modèle économique]] · [[Stratégie d'entreprise]]"
+    },
+    {
+      "id": "marketing",
+      "type": "text",
+      "x": 413,
+      "y": -720,
+      "width": 380,
+      "height": 210,
+      "color": "#E5735C",
+      "text": "## 02 · [[Marketing digital]]\n*Attirer, convaincre et convertir des clients.*\n\n[[Persona client]] · [[Psychologie du consommateur]] · [[Copywriting]] · [[Acquisition]] · [[Publicité]] · [[SEO]]"
+    },
+    {
+      "id": "ecommerce",
+      "type": "text",
+      "x": 786,
+      "y": -340,
+      "width": 380,
+      "height": 210,
+      "color": "#D66BA0",
+      "text": "## 03 · [[E-commerce]]\n*Vendre en ligne et offrir une expérience client mémorable.*\n\n[[Recherche de produits]] · [[Shopify]] · [[Fiche produit]] · [[Optimisation de boutique]] · [[Panier moyen]] · [[Expérience client]]"
+    },
+    {
+      "id": "ia",
+      "type": "text",
+      "x": 786,
+      "y": 130,
+      "width": 380,
+      "height": 210,
+      "color": "#9B7CF0",
+      "text": "## 04 · [[Intelligence artificielle]]\n*Démultiplier mon efficacité avec l'IA.*\n\n[[Outils IA]] · [[Claude]] · [[ChatGPT]] · [[Prompt engineering]] · [[Automatisation]] · [[Agents IA]]"
+    },
+    {
+      "id": "finances",
+      "type": "text",
+      "x": 413,
+      "y": 510,
+      "width": 380,
+      "height": 210,
+      "color": "#5BBF8A",
+      "text": "## 05 · [[Finances]]\n*Comprendre, piloter et faire fructifier l'argent.*\n\n[[Chiffre d'affaires]] · [[Marge]] · [[Rentabilité]] · [[Gestion de budget]] · [[Comptabilité]] · [[Trésorerie]]"
+    },
+    {
+      "id": "branding",
+      "type": "text",
+      "x": -190,
+      "y": 655,
+      "width": 380,
+      "height": 210,
+      "color": "#C9B37E",
+      "text": "## 06 · [[Branding]]\n*Construire une marque reconnaissable et désirable.*\n\n[[Positionnement]] · [[Plateforme de marque]] · [[Storytelling]] · [[Identité visuelle]] · [[Ton de marque]] · [[Image de marque]]"
+    },
+    {
+      "id": "contenu",
+      "type": "text",
+      "x": -793,
+      "y": 510,
+      "width": 380,
+      "height": 210,
+      "color": "#EF5D6B",
+      "text": "## 07 · [[Création de contenu]]\n*Produire du contenu qui capte l'attention et crée de la valeur.*\n\n[[Stratégie de contenu]] · [[Ligne éditoriale]] · [[Hooks]] · [[Script vidéo]] · [[Montage vidéo]] · [[MotionLab]]"
+    },
+    {
+      "id": "dev-perso",
+      "type": "text",
+      "x": -1166,
+      "y": 130,
+      "width": 380,
+      "height": 210,
+      "color": "#5FB7D4",
+      "text": "## 08 · [[Développement personnel]]\n*Devenir la meilleure version de moi-même, durablement.*\n\n[[Objectifs]] · [[Discipline]] · [[Habitudes]] · [[Gestion du temps]] · [[Productivité]] · [[Organisation personnelle]]"
+    },
+    {
+      "id": "tech",
+      "type": "text",
+      "x": -1166,
+      "y": -340,
+      "width": 380,
+      "height": 210,
+      "color": "#4F8EF7",
+      "text": "## 09 · [[Technologie]]\n*Comprendre et construire le web.*\n\n[[Programmation]] · [[HTML et CSS]] · [[JavaScript]] · [[Python]] · [[Développement web]] · [[Création de sites internet]]"
+    },
+    {
+      "id": "projets",
+      "type": "text",
+      "x": -793,
+      "y": -720,
+      "width": 380,
+      "height": 210,
+      "color": "#F2D16B",
+      "text": "## 10 · [[Projets personnels]]\n*Transformer mes connaissances en réalisations concrètes.*\n\n[[ELM]]"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "fromNode": "entrepreneuriat",
+      "fromSide": "right",
+      "toNode": "marketing",
+      "toSide": "left",
+      "label": "trouver des clients"
+    },
+    {
+      "id": "e1",
+      "fromNode": "marketing",
+      "fromSide": "bottom",
+      "toNode": "ecommerce",
+      "toSide": "top",
+      "label": "convertir"
+    },
+    {
+      "id": "e2",
+      "fromNode": "ecommerce",
+      "fromSide": "bottom",
+      "toNode": "finances",
+      "toSide": "top",
+      "label": "chiffre d'affaires"
+    },
+    {
+      "id": "e3",
+      "fromNode": "finances",
+      "fromSide": "top",
+      "toNode": "entrepreneuriat",
+      "toSide": "bottom",
+      "label": "réinvestir"
+    },
+    {
+      "id": "e4",
+      "fromNode": "branding",
+      "fromSide": "top",
+      "toNode": "marketing",
+      "toSide": "bottom",
+      "label": "porter le message"
+    },
+    {
+      "id": "e5",
+      "fromNode": "branding",
+      "fromSide": "left",
+      "toNode": "contenu",
+      "toSide": "right",
+      "label": "ton & identité"
+    },
+    {
+      "id": "e6",
+      "fromNode": "contenu",
+      "fromSide": "top",
+      "toNode": "marketing",
+      "toSide": "bottom",
+      "label": "acquisition organique"
+    },
+    {
+      "id": "e7",
+      "fromNode": "ia",
+      "fromSide": "left",
+      "toNode": "contenu",
+      "toSide": "right",
+      "label": "accélérer la création"
+    },
+    {
+      "id": "e8",
+      "fromNode": "ia",
+      "fromSide": "top",
+      "toNode": "entrepreneuriat",
+      "toSide": "bottom",
+      "label": "automatiser"
+    },
+    {
+      "id": "e9",
+      "fromNode": "tech",
+      "fromSide": "right",
+      "toNode": "ecommerce",
+      "toSide": "left",
+      "label": "sites & boutiques"
+    },
+    {
+      "id": "e10",
+      "fromNode": "tech",
+      "fromSide": "right",
+      "toNode": "ia",
+      "toSide": "left",
+      "label": "agents & code"
+    },
+    {
+      "id": "e11",
+      "fromNode": "dev-perso",
+      "fromSide": "top",
+      "toNode": "projets",
+      "toSide": "bottom",
+      "label": "exécuter"
+    },
+    {
+      "id": "e12",
+      "fromNode": "projets",
+      "fromSide": "right",
+      "toNode": "entrepreneuriat",
+      "toSide": "left",
+      "label": "lancer"
+    }
+  ]
+}

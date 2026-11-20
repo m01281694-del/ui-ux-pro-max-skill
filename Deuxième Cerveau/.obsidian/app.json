@@ -1,0 +1,15 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "01 Inbox",
+  "attachmentFolderPath": "90 Système/Pièces jointes",
+  "userIgnoreFilters": [
+    "90 Système/Modèles/"
+  ],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "showInlineTitle": true,
+  "readableLineLength": true,
+  "showUnsupportedFiles": false,
+  "propertiesInDocument": "visible"
+}

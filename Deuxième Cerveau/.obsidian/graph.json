@@ -1,0 +1,107 @@
+{
+  "collapse-filter": false,
+  "search": "-path:\"90 Système\"",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#hub OR tag:#moc",
+      "color": {
+        "a": 1,
+        "rgb": 15855076
+      }
+    },
+    {
+      "query": "tag:#domaine/entrepreneuriat",
+      "color": {
+        "a": 1,
+        "rgb": 14723151
+      }
+    },
+    {
+      "query": "tag:#domaine/marketing",
+      "color": {
+        "a": 1,
+        "rgb": 15037276
+      }
+    },
+    {
+      "query": "tag:#domaine/ecommerce",
+      "color": {
+        "a": 1,
+        "rgb": 14052256
+      }
+    },
+    {
+      "query": "tag:#domaine/ia",
+      "color": {
+        "a": 1,
+        "rgb": 10190064
+      }
+    },
+    {
+      "query": "tag:#domaine/finances",
+      "color": {
+        "a": 1,
+        "rgb": 6012810
+      }
+    },
+    {
+      "query": "tag:#domaine/branding",
+      "color": {
+        "a": 1,
+        "rgb": 13218686
+      }
+    },
+    {
+      "query": "tag:#domaine/contenu",
+      "color": {
+        "a": 1,
+        "rgb": 15687019
+      }
+    },
+    {
+      "query": "tag:#domaine/dev-perso",
+      "color": {
+        "a": 1,
+        "rgb": 6272980
+      }
+    },
+    {
+      "query": "tag:#domaine/tech",
+      "color": {
+        "a": 1,
+        "rgb": 5213943
+      }
+    },
+    {
+      "query": "tag:#domaine/projets",
+      "color": {
+        "a": 1,
+        "rgb": 15913323
+      }
+    },
+    {
+      "query": "path:\"02 Idées\" OR path:\"03 Stratégies\" OR path:\"04 Apprentissages\" OR path:\"05 Lectures\"",
+      "color": {
+        "a": 1,
+        "rgb": 9146780
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -0.6,
+  "nodeSizeMultiplier": 1.15,
+  "lineSizeMultiplier": 0.8,
+  "collapse-forces": false,
+  "centerStrength": 0.45,
+  "repelStrength": 14,
+  "linkStrength": 1,
+  "linkDistance": 220,
+  "scale": 0.6,
+  "close": false
+}

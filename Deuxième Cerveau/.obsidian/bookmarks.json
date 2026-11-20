@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1763596800000,
+      "path": "00 Accueil/Accueil.md",
+      "title": "Accueil"
+    },
+    {
+      "type": "file",
+      "ctime": 1763596800001,
+      "path": "00 Accueil/Tableau de bord.md",
+      "title": "Tableau de bord"
+    },
+    {
+      "type": "file",
+      "ctime": 1763596800002,
+      "path": "00 Accueil/Cartographie.canvas",
+      "title": "Cartographie"
+    },
+    {
+      "type": "file",
+      "ctime": 1763596800003,
+      "path": "01 Inbox/Inbox.md",
+      "title": "Inbox"
+    },
+    {
+      "type": "file",
+      "ctime": 1763596800004,
+      "path": "90 Système/Mode d'emploi.md",
+      "title": "Mode d'emploi"
+    }
+  ]
+}

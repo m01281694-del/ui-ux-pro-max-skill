@@ -1,0 +1,164 @@
+/* =========================================================
+   Deuxième Cerveau — thème sombre, minimaliste et élégant
+   Activé via Réglages → Apparence → Extraits CSS
+   ========================================================= */
+
+.theme-dark {
+  --background-primary: #111318;
+  --background-primary-alt: #0e1014;
+  --background-secondary: #0c0e12;
+  --background-secondary-alt: #0a0b0e;
+  --background-modifier-border: #23262e;
+  --background-modifier-border-hover: #2f333d;
+  --background-modifier-hover: rgba(200, 169, 106, 0.06);
+  --background-modifier-active-hover: rgba(200, 169, 106, 0.12);
+
+  --text-normal: #dcdfe5;
+  --text-muted: #8b919c;
+  --text-faint: #5c626d;
+
+  --h1-color: #f3efe6;
+  --h2-color: #ece6d8;
+  --h3-color: #c8a96a;
+  --h4-color: #b9bec8;
+
+  --link-color: #d6b97e;
+  --link-color-hover: #f0d59b;
+  --link-external-color: #8fb4e6;
+  --link-unresolved-color: #8b919c;
+  --link-unresolved-opacity: 0.75;
+  --link-unresolved-decoration-style: dashed;
+
+  --tag-color: #c8a96a;
+  --tag-background: rgba(200, 169, 106, 0.10);
+  --tag-background-hover: rgba(200, 169, 106, 0.18);
+  --tag-radius: 6px;
+
+  --blockquote-border-color: #c8a96a;
+  --hr-color: #23262e;
+  --table-border-color: #23262e;
+  --table-header-background: #0e1014;
+  --code-background: #0c0e12;
+  --callout-radius: 10px;
+}
+
+/* ---------- Typographie ---------- */
+body {
+  --font-text-theme: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-interface-theme: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --line-height-normal: 1.65;
+  --h1-weight: 700;
+  --h2-weight: 650;
+  --h3-weight: 600;
+  --inline-title-weight: 700;
+  --inline-title-size: 2.1em;
+}
+.inline-title { letter-spacing: -0.025em; }
+.markdown-rendered h1, .markdown-rendered h2 { letter-spacing: -0.015em; }
+.markdown-rendered h2 {
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-top: 1.8em;
+}
+.markdown-rendered h3 { text-transform: uppercase; font-size: 0.82em; letter-spacing: 0.08em; }
+
+/* ---------- Propriétés plus discrètes ---------- */
+.metadata-container { opacity: 0.8; font-size: 0.88em; }
+.metadata-container:hover { opacity: 1; }
+
+/* ---------- Pages larges : Accueil, Tableau de bord, cartes ---------- */
+.accueil, .dashboard, .moc { --file-line-width: 1040px; }
+.accueil .inline-title, .accueil .metadata-container { display: none; }
+
+/* ---------- Callout HERO (Accueil) ---------- */
+.callout[data-callout="hero"] {
+  --callout-color: 200, 169, 106;
+  --callout-icon: lucide-brain-circuit;
+  text-align: center;
+  padding: 2.4em 1em 2em;
+  border: 1px solid rgba(200, 169, 106, 0.25);
+  background:
+    radial-gradient(ellipse at top, rgba(200, 169, 106, 0.14), transparent 65%),
+    var(--background-primary-alt);
+}
+.callout[data-callout="hero"] .callout-title { justify-content: center; font-size: 2.2em; font-weight: 750; letter-spacing: -0.03em; color: var(--h1-color); }
+.callout[data-callout="hero"] .callout-icon { display: none; }
+.callout[data-callout="hero"] .callout-content { color: var(--text-muted); letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.8em; }
+
+/* ---------- Grilles de cartes : domaines & espaces ---------- */
+.callout[data-callout="domaines"], .callout[data-callout="espaces"] {
+  background: transparent; border: none; padding: 0; box-shadow: none;
+}
+.callout[data-callout="domaines"] > .callout-title,
+.callout[data-callout="espaces"] > .callout-title { display: none; }
+.callout[data-callout="domaines"] .callout-content > ul,
+.callout[data-callout="espaces"] .callout-content > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.callout[data-callout="domaines"] li,
+.callout[data-callout="espaces"] li {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-secondary);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  line-height: 1.45;
+}
+.callout[data-callout="domaines"] li:hover,
+.callout[data-callout="espaces"] li:hover {
+  border-color: rgba(200, 169, 106, 0.55);
+  transform: translateY(-1px);
+}
+.callout[data-callout="domaines"] li::marker,
+.callout[data-callout="espaces"] li::marker { content: ""; }
+.callout[data-callout="domaines"] .list-bullet,
+.callout[data-callout="espaces"] .list-bullet { display: none; }
+.callout[data-callout="domaines"] li strong { color: var(--text-faint); font-weight: 600; font-variant-numeric: tabular-nums; }
+.callout[data-callout="domaines"] li a.internal-link,
+.callout[data-callout="espaces"] li a.internal-link { font-weight: 600; text-decoration: none; }
+.callout[data-callout="domaines"] small,
+.callout[data-callout="espaces"] small { color: var(--text-muted); font-size: 0.82em; }
+
+/* ---------- Callouts personnalisés ---------- */
+.callout[data-callout="carte"]  { --callout-color: 200, 169, 106; --callout-icon: lucide-network; }
+.callout[data-callout="moc"]    { --callout-color: 200, 169, 106; --callout-icon: lucide-map; }
+.callout[data-callout="focus"]  { --callout-color: 95, 183, 212;  --callout-icon: lucide-crosshair; }
+.callout[data-callout="target"] { --callout-color: 91, 191, 138;  --callout-icon: lucide-target; }
+.callout[data-callout="idea"]   { --callout-color: 242, 209, 107; --callout-icon: lucide-lightbulb; }
+.callout[data-callout="carte"] ul { margin-block: 0.2em; }
+
+/* ---------- Tags colorés par domaine ---------- */
+.theme-dark a.tag[href="#domaine/entrepreneuriat"] { color: #E0A84F; background-color: #E0A84F1f; }
+.theme-dark a.tag[href="#domaine/marketing"] { color: #E5735C; background-color: #E5735C1f; }
+.theme-dark a.tag[href="#domaine/ecommerce"] { color: #D66BA0; background-color: #D66BA01f; }
+.theme-dark a.tag[href="#domaine/ia"] { color: #9B7CF0; background-color: #9B7CF01f; }
+.theme-dark a.tag[href="#domaine/finances"] { color: #5BBF8A; background-color: #5BBF8A1f; }
+.theme-dark a.tag[href="#domaine/branding"] { color: #C9B37E; background-color: #C9B37E1f; }
+.theme-dark a.tag[href="#domaine/contenu"] { color: #EF5D6B; background-color: #EF5D6B1f; }
+.theme-dark a.tag[href="#domaine/dev-perso"] { color: #5FB7D4; background-color: #5FB7D41f; }
+.theme-dark a.tag[href="#domaine/tech"] { color: #4F8EF7; background-color: #4F8EF71f; }
+.theme-dark a.tag[href="#domaine/projets"] { color: #F2D16B; background-color: #F2D16B1f; }
+
+/* ---------- Vue graphe ---------- */
+.theme-dark .graph-view.color-fill            { color: #8b919c; }
+.theme-dark .graph-view.color-fill-unresolved { color: #3a3e47; }
+.theme-dark .graph-view.color-fill-tag        { color: #c8a96a; }
+.theme-dark .graph-view.color-line            { color: #262a32; }
+.theme-dark .graph-view.color-line-highlight  { color: #c8a96a; }
+.theme-dark .graph-view.color-fill-highlight  { color: #f0d59b; }
+.theme-dark .graph-view.color-text            { color: #dcdfe5; }
+.theme-dark .graph-view.color-circle          { color: #c8a96a; }
+
+/* ---------- Mermaid ---------- */
+.markdown-rendered .mermaid { text-align: center; }
+.theme-dark .mermaid .node rect { rx: 8px; ry: 8px; }
+
+/* ---------- Tableaux & Bases ---------- */
+.markdown-rendered table { border-radius: 8px; overflow: hidden; }
+.markdown-rendered th { font-weight: 600; color: var(--text-muted); text-transform: uppercase; font-size: 0.78em; letter-spacing: 0.06em; }

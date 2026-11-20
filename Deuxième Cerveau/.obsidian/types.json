@@ -1,0 +1,27 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "tags": "tags",
+    "cssclasses": "multitext",
+    "type": "text",
+    "statut": "text",
+    "domaine": "multitext",
+    "cree": "date",
+    "maj": "date",
+    "debut": "date",
+    "fin": "date",
+    "echeance": "date",
+    "priorite": "text",
+    "progression": "number",
+    "potentiel": "number",
+    "note": "number",
+    "horizon": "text",
+    "source": "text",
+    "auteur": "text",
+    "format": "text",
+    "projet": "text",
+    "prochaine_action": "text",
+    "humeur": "text",
+    "energie": "number"
+  }
+}

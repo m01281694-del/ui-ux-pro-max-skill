@@ -1,0 +1,9 @@
+{
+  "theme": "obsidian",
+  "accentColor": "#c8a96a",
+  "cssTheme": "",
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "deuxieme-cerveau"
+  ]
+}
