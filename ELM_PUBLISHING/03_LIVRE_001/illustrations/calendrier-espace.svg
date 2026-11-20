@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="Montserrat, sans-serif">
+  <rect width="1200" height="560" fill="#fff"/>
+  <g font-size="24" font-weight="700" fill="#fff" text-anchor="middle">
+    <rect x="160" y="30" width="1000" height="56" fill="#1f5f8b" rx="8"/>
+    <text x="231" y="67">Lun</text><text x="374" y="67">Mar</text><text x="517" y="67">Mer</text><text x="660" y="67">Jeu</text><text x="803" y="67">Ven</text><text x="946" y="67">Sam</text><text x="1089" y="67">Dim</text>
+  </g>
+  <g font-size="22" font-weight="700" fill="#333">
+    <text x="20" y="150">Cours A</text><text x="20" y="260">Cours B</text><text x="20" y="370">Cours C</text><text x="20" y="480">Cours D</text>
+  </g>
+  <g stroke="#ddd" stroke-width="2">
+    <line x1="160" y1="190" x2="1160" y2="190"/><line x1="160" y1="300" x2="1160" y2="300"/><line x1="160" y1="410" x2="1160" y2="410"/><line x1="160" y1="520" x2="1160" y2="520"/>
+  </g>
+  <!-- cellules: x=160+143*i -->
+  <g font-size="19" font-weight="700" text-anchor="middle">
+    <!-- A : cours lundi, J1 mardi, J3 jeudi, J7 lundi suivant -->
+    <rect x="168" y="110" width="127" height="64" rx="10" fill="#1f5f8b"/><text x="231" y="150" fill="#fff">Cours</text>
+    <rect x="311" y="110" width="127" height="64" rx="10" fill="#7fb3d5"/><text x="374" y="150" fill="#0d2f45">Test J1</text>
+    <rect x="597" y="110" width="127" height="64" rx="10" fill="#a9cce3"/><text x="660" y="150" fill="#0d2f45">Test J3</text>
+    <!-- B : cours mardi -->
+    <rect x="311" y="220" width="127" height="64" rx="10" fill="#1f5f8b"/><text x="374" y="260" fill="#fff">Cours</text>
+    <rect x="454" y="220" width="127" height="64" rx="10" fill="#7fb3d5"/><text x="517" y="260" fill="#0d2f45">Test J1</text>
+    <rect x="740" y="220" width="127" height="64" rx="10" fill="#a9cce3"/><text x="803" y="260" fill="#0d2f45">Test J3</text>
+    <!-- C : cours mercredi -->
+    <rect x="454" y="330" width="127" height="64" rx="10" fill="#1f5f8b"/><text x="517" y="370" fill="#fff">Cours</text>
+    <rect x="597" y="330" width="127" height="64" rx="10" fill="#7fb3d5"/><text x="660" y="370" fill="#0d2f45">Test J1</text>
+    <rect x="883" y="330" width="127" height="64" rx="10" fill="#a9cce3"/><text x="946" y="370" fill="#0d2f45">Test J3</text>
+    <!-- D : cours jeudi -->
+    <rect x="597" y="440" width="127" height="64" rx="10" fill="#1f5f8b"/><text x="660" y="480" fill="#fff">Cours</text>
+    <rect x="740" y="440" width="127" height="64" rx="10" fill="#7fb3d5"/><text x="803" y="480" fill="#0d2f45">Test J1</text>
+    <rect x="1026" y="440" width="127" height="64" rx="10" fill="#a9cce3"/><text x="1089" y="480" fill="#0d2f45">Test J3</text>
+  </g>
+  <text x="1160" y="548" font-size="17" fill="#666" text-anchor="end" font-style="italic">Le test J7 de chaque cours tombe la semaine suivante.</text>
+</svg>

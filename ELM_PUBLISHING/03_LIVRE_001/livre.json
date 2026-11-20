@@ -1,0 +1,19 @@
+{
+  "id": "LIVRE_001",
+  "slug": "reviser-moins-retenir-plus",
+  "titre": "Réviser moins, retenir plus",
+  "sous_titre": "Les méthodes d'apprentissage validées par la science, expliquées aux collégiens et lycéens — avec un plan de 30 jours",
+  "auteur": "Elm Publishing",
+  "langue": "fr",
+  "annee": 2026,
+  "date_verification": "novembre 2026",
+  "format_pouces": [6, 9],
+  "papier": "blanc",
+  "police": "Literata",
+  "couleurs": {"accent": "#1f5f8b", "fond": "#eaf2f8"},
+  "prix_broche": 12.90,
+  "prix_broche_tests": [9.99, 11.90, 12.90, 14.90],
+  "prix_kindle": 4.99,
+  "prix_kindle_tests": [2.99, 3.99, 4.99, 6.99],
+  "mentions_html": "<p><b>Réviser moins, retenir plus</b><br>Première édition, 2026.</p>"
+}

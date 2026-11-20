@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="Montserrat, sans-serif">
+  <rect width="1200" height="640" fill="#fff"/>
+  <g text-anchor="middle">
+    <rect x="60" y="60" width="500" height="240" rx="22" fill="#1f5f8b"/>
+    <text x="310" y="140" font-size="40" font-weight="800" fill="#fff">SE TESTER</text>
+    <text x="310" y="190" font-size="23" fill="#dbe9f4">Retrouver de mémoire,</text><text x="310" y="222" font-size="23" fill="#dbe9f4">puis vérifier</text>
+    <text x="310" y="270" font-size="20" fill="#a9cce3" font-weight="700">Chapitre 3</text>
+    <rect x="640" y="60" width="500" height="240" rx="22" fill="#2e8b57"/>
+    <text x="890" y="140" font-size="40" font-weight="800" fill="#fff">ESPACER</text>
+    <text x="890" y="190" font-size="23" fill="#d4efdf">Revenir plusieurs fois,</text><text x="890" y="222" font-size="23" fill="#d4efdf">en séances courtes</text>
+    <text x="890" y="270" font-size="20" fill="#a9dfbf" font-weight="700">Chapitre 4</text>
+    <rect x="60" y="340" width="500" height="240" rx="22" fill="#d35400"/>
+    <text x="310" y="420" font-size="40" font-weight="800" fill="#fff">MÉLANGER</text>
+    <text x="310" y="470" font-size="23" fill="#fbe0cc">Alterner les types</text><text x="310" y="502" font-size="23" fill="#fbe0cc">d'exercices</text>
+    <text x="310" y="550" font-size="20" fill="#f5cba7" font-weight="700">Chapitre 5</text>
+    <rect x="640" y="340" width="500" height="240" rx="22" fill="#7d3c98"/>
+    <text x="890" y="420" font-size="40" font-weight="800" fill="#fff">EXPLIQUER</text>
+    <text x="890" y="470" font-size="23" fill="#ead7f1">Pourquoi ? Comment ?</text><text x="890" y="502" font-size="23" fill="#ead7f1">Avec mots et schémas</text>
+    <text x="890" y="550" font-size="20" fill="#d7bde2" font-weight="700">Chapitre 6</text>
+    <circle cx="600" cy="320" r="70" fill="#fff" stroke="#222" stroke-width="5"/>
+    <text x="600" y="314" font-size="22" font-weight="800" fill="#222">RETENIR</text>
+    <text x="600" y="342" font-size="18" font-weight="600" fill="#555">longtemps</text>
+  </g>
+</svg>

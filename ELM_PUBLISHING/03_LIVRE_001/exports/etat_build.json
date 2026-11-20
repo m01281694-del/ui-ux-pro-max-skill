@@ -1,0 +1,25 @@
+{
+  "pages": 18,
+  "pages_corps": 13,
+  "marges": {
+    "top": 0.7,
+    "bottom": 0.75,
+    "left": 0.375,
+    "right": 0.5
+  },
+  "toc": [
+    [
+      "Introduction : tu ne manques pas de travail, tu manques de méthode",
+      1
+    ],
+    [
+      "1. Comment ta mémoire fonctionne vraiment",
+      4
+    ],
+    [
+      "2. Les fausses bonnes méthodes",
+      9
+    ]
+  ],
+  "construit_le": "2026-11-20T22:16:08"
+}
