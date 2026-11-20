@@ -4,7 +4,7 @@ auteur: "Sami (Video Editor) · Post Writer · Brand Check"
 type: "vidéo"
 confiance: 1
 source: "rendu local video/out/v001/v001.mp4"
-statut: "en attente de validation"
+statut: "non publiée — limite Metricool"
 ---
 
 # Vidéo 001 — « Ta vidéo est morte en 1 seconde »
@@ -15,6 +15,6 @@ statut: "en attente de validation"
 - Voix : ElevenLabs eleven_v4, voix Eric (provisoire) · sous-titres karaoké mot à mot
 - Brand Check : 100/100
 - CTA : formation, lien en bio ([[Offre — Formation marketing digital]])
-- Stats : aucune pour l'instant (pas encore publiée).
+- Publication : **échec** le 20/11 à 10:00 sur les 3 réseaux, voir [[Metricool — limite du compte atteinte]]. Aucune stat possible.
 
 [[Vidéos]]
