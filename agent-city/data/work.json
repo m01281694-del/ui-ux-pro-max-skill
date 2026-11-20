@@ -446,6 +446,44 @@
    "start": 1795187340000,
    "end": 1795187400000,
    "residentId": 276
+  },
+  {
+   "id": "r-1795198020000-35",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "détecte 3 nouvelles vidéos TikTok du 19/11 (1 867 vues au total) — TikTok : 19 vidéos, 13 297 vues",
+   "start": 1795198020000,
+   "end": 1795198140000,
+   "residentId": 267,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795198140000-36",
+   "demo": false,
+   "dept": "loop",
+   "job": "Loop Feeder",
+   "title": "met à jour la leçon « CTA go » (confiance 0,5) avec les vidéos du 19/11",
+   "start": 1795198140000,
+   "end": 1795198200000,
+   "residentId": 301,
+   "output": {
+    "kind": "note",
+    "label": "Leçon CTA go"
+   }
+  },
+  {
+   "id": "r-1795198200000-37",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795198200000,
+   "end": 1795198260000,
+   "residentId": 275
   }
  ],
  "contents": [

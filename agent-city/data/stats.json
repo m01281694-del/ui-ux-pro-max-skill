@@ -1,17 +1,17 @@
 {
- "updatedAt": 1795187291255,
+ "updatedAt": 1795198054080,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
   "tiktok": {
    "handle": "@manu_digi0",
    "followers": 9,
-   "posts": 16,
-   "views": 11375,
-   "likes": 299,
+   "posts": 19,
+   "views": 13297,
+   "likes": 357,
    "profileViews": 107,
    "comments": 9,
-   "shares": 9
+   "shares": 11
   },
   "instagram": {
    "handle": "@manu.digi0",
@@ -31,31 +31,35 @@
  "daily": [
   {
    "day": "2026-11-11",
-   "tiktokViews": 615
+   "tiktokViews": 616
   },
   {
    "day": "2026-11-12",
-   "tiktokViews": 1716
+   "tiktokViews": 1720
   },
   {
    "day": "2026-11-13",
-   "tiktokViews": 1702
+   "tiktokViews": 1708
   },
   {
    "day": "2026-11-14",
-   "tiktokViews": 2320
+   "tiktokViews": 2332
   },
   {
    "day": "2026-11-16",
-   "tiktokViews": 3640
+   "tiktokViews": 3663
   },
   {
    "day": "2026-11-17",
-   "tiktokViews": 688
+   "tiktokViews": 691
   },
   {
    "day": "2026-11-18",
-   "tiktokViews": 694
+   "tiktokViews": 700
+  },
+  {
+   "day": "2026-11-19",
+   "tiktokViews": 1867
   }
  ],
  "posts": [
@@ -216,6 +220,36 @@
    "title": "Le style de vie, tout le monde le veut 👀 Découvre ELM",
    "views": 615,
    "likes": 14,
+   "comments": 0,
+   "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795119222000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7709978337401163040",
+   "title": "🔗envoie moi「GO」et je t'apprendrai tôt de A a Z🚀📈",
+   "views": 684,
+   "likes": 37,
+   "comments": 0,
+   "shares": 1
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795116683000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7709967500645240096",
+   "title": "Le plan 10K par mois, en 4 étapes 🎬",
+   "views": 586,
+   "likes": 8,
+   "comments": 0,
+   "shares": 1
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795109579000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7709937015143271713",
+   "title": "10 000 €/mois grâce au marketing digital ? Possible. Facile ? Absolument pas.",
+   "views": 597,
+   "likes": 13,
    "comments": 0,
    "shares": 0
   }
