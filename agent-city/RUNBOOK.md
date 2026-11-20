@@ -25,6 +25,8 @@ Chaque action réelle s'enregistre avec `npx tsx scripts/add-work.ts '<json>'`. 
 
 ## A. Production quotidienne (1 vidéo par jour)
 
+0. **Limite Metricool.** `getScheduledPosts` sur les 3 derniers jours : si un post est en `ERROR` avec « account limit », et que le propriétaire n'a pas dit avoir réglé le problème, **ne produis pas de nouvelle vidéo** (pour économiser le quota de voix). Relance seulement le rappel au propriétaire et passe à l'étape 9.
+
 1. **Quota voix.** `curl -s https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: proxy"`. S'il reste moins de 1 200 caractères, ne fais pas de vidéo : écris une note `brain/Incidents/` « quota ElevenLabs » et passe à l'étape 9.
 2. **Research (Trend Scout, Competitor Watch).** Une ou deux recherches `firecrawl_search` sur les tendances « marketing digital / créateurs / TikTok » en français, de moins de 7 jours. Choisis un angle **pas encore traité** (vérifie `brain/Vidéos/`). Écris une note `brain/Tendances/…` avec les liens sources.
 3. **Post Writer.** Crée `video/content/vNNN/script.json` (même schéma que `v001`, NNN = numéro suivant) :
