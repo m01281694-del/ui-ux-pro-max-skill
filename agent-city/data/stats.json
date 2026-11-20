@@ -1,5 +1,5 @@
 {
- "updatedAt": 1795165671710,
+ "updatedAt": 1795176557714,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
@@ -17,15 +17,15 @@
    "handle": "@manu.digi0",
    "followers": 1,
    "posts": 18,
-   "views": 805,
+   "views": 810,
    "reelViews": 794,
    "interactions": 20
   },
   "youtube": {
    "handle": "chaîne UCC2akO2lNGQEjQ_nX3OgI-Q",
-   "followers": 0,
+   "followers": 2,
    "posts": 5,
-   "views": 1
+   "views": 9
   }
  },
  "daily": [
@@ -242,7 +242,7 @@
  "goals": [
   {
    "label": "Abonnés (tous réseaux)",
-   "current": 10,
+   "current": 12,
    "target": 1000
   },
   {

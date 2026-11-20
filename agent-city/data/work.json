@@ -402,6 +402,30 @@
    "start": 1795165680000,
    "end": 1795165740000,
    "residentId": 268
+  },
+  {
+   "id": "r-1795176540000-31",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "stats Metricool : YouTube 2 abonnés (+2) et 9 vues, Instagram 810 vues",
+   "start": 1795176540000,
+   "end": 1795176600000,
+   "residentId": 271,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795176600000-32",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795176600000,
+   "end": 1795176660000,
+   "residentId": 276
   }
  ],
  "contents": [
