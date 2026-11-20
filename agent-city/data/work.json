@@ -317,6 +317,91 @@
    "start": 1795144080000,
    "end": 1795144140000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795153680000-24",
+   "demo": false,
+   "dept": "research",
+   "job": "Trend Scout",
+   "title": "trouve l angle « Instagram : 28,2 M d utilisateurs en France » (Propulse, Digital 2026)",
+   "start": 1795153680000,
+   "end": 1795153800000,
+   "residentId": 1,
+   "contentId": "v002"
+  },
+  {
+   "id": "r-1795153800000-25",
+   "demo": false,
+   "dept": "research",
+   "job": "Post Writer",
+   "title": "écrit le script #002 — 10 hooks notés, garde « 28 millions de Français… » (90)",
+   "start": 1795153800000,
+   "end": 1795153980000,
+   "residentId": 34,
+   "contentId": "v002",
+   "stage": "script"
+  },
+  {
+   "id": "r-1795153980000-26",
+   "demo": false,
+   "dept": "content",
+   "job": "Voiceover",
+   "title": "génère la voix de la vidéo #002 (Eric, eleven_v4)",
+   "start": 1795153980000,
+   "end": 1795154100000,
+   "residentId": 74,
+   "contentId": "v002",
+   "stage": "voix"
+  },
+  {
+   "id": "r-1795154100000-27",
+   "demo": false,
+   "dept": "content",
+   "job": "Video Editor",
+   "title": "monte et rend la vidéo #002 en 3D (31 s)",
+   "start": 1795154100000,
+   "end": 1795154400000,
+   "residentId": 84,
+   "contentId": "v002",
+   "stage": "montage",
+   "output": {
+    "kind": "video",
+    "label": "Vidéo #002",
+    "url": "/media/videos/v002.mp4"
+   }
+  },
+  {
+   "id": "r-1795154400000-28",
+   "demo": false,
+   "dept": "content",
+   "job": "Brand Check",
+   "title": "contrôle la vidéo #002 : 90 → correction du volume (−14,5 LUFS) → 100/100",
+   "start": 1795154400000,
+   "end": 1795154520000,
+   "residentId": 97,
+   "contentId": "v002",
+   "stage": "brand_check"
+  },
+  {
+   "id": "r-1795165620000-29",
+   "demo": false,
+   "dept": "community",
+   "job": "Escalation",
+   "title": "Metricool refuse la publication de la vidéo #001 (limite du compte) → propriétaire prévenu",
+   "start": 1795165620000,
+   "end": 1795165680000,
+   "residentId": 208,
+   "contentId": "v001"
+  },
+  {
+   "id": "r-1795165680000-30",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève les stats Metricool (aucun changement)",
+   "start": 1795165680000,
+   "end": 1795165740000,
+   "residentId": 268
   }
  ],
  "contents": [
@@ -329,7 +414,7 @@
    "hook": "Ta vidéo est morte en une seconde.",
    "trend": "rétention / hook",
    "created": 1795113240000,
-   "publishAt": 1795165200000,
+   "publishAt": 4070908800000,
    "stages": [
     {
      "stage": "idée",
@@ -370,7 +455,46 @@
     "cover": "/media/videos/v001-cover.jpg",
     "brainNote": "Vidéo 001 — Morte en 1 seconde"
    },
-   "caption": "Programmée ven. 20/11 10:00 — TikTok, Reels, Shorts (Metricool)."
+   "caption": "⚠️ Publication refusée par Metricool (limite du compte atteinte) le 20/11 à 10:00. À publier à la main ou après mise à niveau Metricool."
+  },
+  {
+   "id": "v002",
+   "demo": false,
+   "kind": "video",
+   "number": 2,
+   "title": "28 millions de Français, et tu n'y es pas ?",
+   "hook": "28 millions de Français. Et tu ne postes pas dessus ?",
+   "trend": "recycler TikTok → Reels (Digital 2026)",
+   "created": 1795153800000,
+   "publishAt": 4070908800000,
+   "stages": [
+    {
+     "stage": "idée",
+     "at": 1795153800000
+    },
+    {
+     "stage": "script",
+     "at": 1795153980000
+    },
+    {
+     "stage": "voix",
+     "at": 1795154100000
+    },
+    {
+     "stage": "montage",
+     "at": 1795154400000
+    },
+    {
+     "stage": "brand_check",
+     "at": 1795154520000
+    }
+   ],
+   "brandScore": 100,
+   "media": {
+    "video": "/media/videos/v002.mp4",
+    "cover": "/media/videos/v002-cover.jpg"
+   },
+   "caption": "Prête (Brand Check 100/100) — non programmée : limite Metricool atteinte."
   }
  ]
 }

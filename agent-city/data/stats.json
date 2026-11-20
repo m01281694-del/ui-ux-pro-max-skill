@@ -1,5 +1,5 @@
 {
- "updatedAt": 1795144024809,
+ "updatedAt": 1795165671710,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
@@ -231,18 +231,7 @@
    "url": "https://shop.beacons.ai/manu.digital/827f5bbd-dcb7-43e5-8d98-b60df8d6be90"
   }
  },
- "scheduled": [
-  {
-   "contentId": "v001",
-   "at": "2026-11-20T10:00:00+01:00",
-   "networks": [
-    "tiktok",
-    "instagram",
-    "youtube"
-   ],
-   "metricoolId": 434625821
-  }
- ],
+ "scheduled": [],
  "quota": {
   "elevenlabs": {
    "used": 1314,
@@ -265,6 +254,13 @@
    "label": "Vidéos publiées par la ville ce mois",
    "current": 0,
    "target": 20
+  }
+ ],
+ "alerts": [
+  {
+   "at": 1795165620000,
+   "level": "critical",
+   "text": "Metricool : limite du compte atteinte — la vidéo #001 n'a pas été publiée (TikTok, Instagram, YouTube)."
   }
  ]
 }
