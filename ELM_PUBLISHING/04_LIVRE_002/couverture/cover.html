@@ -1,0 +1,64 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+{{FONTS}}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--W:{{W}}in;--H:{{H}}in;--S:{{SPINE}}in;--B:{{BLEED}}in;--or:#ff6b1a;--dk:#121212}
+html,body{background:var(--dk)} html{overflow:hidden}
+body.full{width:{{TOTALW}}in;height:{{TOTALH}}in;position:relative;overflow:hidden}
+body.kindle{width:1600px;height:2560px;overflow:hidden}
+.front,.back,.spine{position:absolute;top:var(--B);height:var(--H)}
+.full .back{left:var(--B);width:var(--W)} .full .spine{left:calc(var(--B) + var(--W));width:var(--S)} .full .front{left:calc(var(--B) + var(--W) + var(--S));width:var(--W)}
+.kindle .back,.kindle .spine{display:none}
+.kindle .front{top:0;left:0;width:var(--W);height:{{KH}}in;transform-origin:0 0;transform:scale({{KSCALE}})}
+.bg{position:absolute;inset:0;background:linear-gradient(160deg,#1b1b1b 0,#0d0d0d 60%,#2a1206 100%)}
+.court{position:absolute;inset:0;opacity:.14}
+.front .safe{position:absolute;inset:.55in .5in .55in .5in;color:#fff;display:flex;flex-direction:column}
+.kick{font-family:Montserrat;font-weight:800;font-size:13pt;letter-spacing:.3em;color:var(--or)}
+h1{font-family:'Bebas Neue';font-weight:400;font-size:118pt;line-height:.86;margin-top:.15in;letter-spacing:.01em}
+h1 em{font-style:normal;color:var(--or)}
+.sub{font-family:Montserrat;font-weight:600;font-size:15pt;line-height:1.3;margin-top:.2in;color:#e9e9e9;max-width:4.1in}
+.ball{position:absolute;right:-.9in;top:3.9in;width:6.2in;height:6.2in}
+.stats{margin-top:auto;display:flex;gap:.18in}
+.stat{background:rgba(255,107,26,.14);border:2px solid var(--or);border-radius:.12in;padding:.12in .2in;font-family:Montserrat;font-weight:700;font-size:11pt;line-height:1.15}
+.stat b{display:block;font-family:'Bebas Neue';font-weight:400;font-size:40pt;color:var(--or);line-height:.9}
+.brand{margin-top:.3in;font-family:Montserrat;font-weight:700;font-size:11pt;letter-spacing:.35em;color:#9a9a9a}
+.back .safe{position:absolute;inset:.6in .55in .55in .6in;color:#eee;display:flex;flex-direction:column}
+.back h2{font-family:'Bebas Neue';font-weight:400;font-size:44pt;line-height:.95;color:#fff} .back h2 span{color:var(--or)}
+.back p{font-family:'Source Serif 4';font-size:12pt;line-height:1.45;margin-top:.16in}
+.back ul{list-style:none;margin-top:.18in} .back li{font-family:'Source Serif 4';font-size:12pt;line-height:1.4;margin:.09in 0;padding-left:.3in;position:relative}
+.back li:before{content:"";position:absolute;left:0;top:.08in;width:.14in;height:.14in;border-radius:50%;background:var(--or)}
+.back .who{font-family:Montserrat;font-weight:800;font-size:11pt;color:var(--or);margin-top:.22in;letter-spacing:.06em}
+.barcode{position:absolute;right:.3in;bottom:.3in;width:2in;height:1.2in;background:#fff}
+.back .ed{position:absolute;left:.6in;bottom:.6in;font-family:Montserrat;font-weight:700;font-size:10pt;letter-spacing:.3em;color:#9a9a9a}
+.spine .in{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.spine .t{transform:rotate(90deg);white-space:nowrap;font-family:'Bebas Neue';font-size:{{SPINE_FONT}}pt;color:#fff}
+</style></head>
+<body class="{{MODE}}">
+<div class="bg"></div>
+<div class="back"><div class="safe">
+  <h2>Progresse seul, <span>entre deux entraînements.</span></h2>
+  <p>Au club, tu touches le ballon moins souvent que tu ne le crois. Les joueurs qui progressent le plus vite ajoutent des séances courtes et régulières, seuls, avec un ballon et un panier. Ce cahier te dit exactement quoi faire.</p>
+  <ul>
+    <li><b>60 exercices</b> réalisables seul : dribble, tir, finitions, jeu de pieds, passes, défense.</li>
+    <li>Un <b>schéma clair</b> pour chaque exercice, trois niveaux de difficulté et des progressions.</li>
+    <li><b>7 tests de niveau</b> à refaire toutes les 4 semaines pour mesurer tes progrès.</li>
+    <li>Un <b>programme de 8 semaines</b> prêt à suivre, 3 séances par semaine.</li>
+    <li>Des <b>pages de suivi</b> pour noter tes scores et ton ressenti.</li>
+  </ul>
+  <div class="who">POUR LES JOUEURS ET JOUEUSES DE 10 À 18 ANS · DÉBUTANT À CONFIRMÉ</div>
+</div><div class="ed">ELM PUBLISHING</div><div class="barcode"></div></div>
+<div class="spine"><div class="in"><div class="t" data-show="{{SPINE_TEXT}}">BASKET · LE CAHIER D'ENTRAÎNEMENT SOLO</div></div></div>
+<div class="front">
+  <svg class="court" viewBox="0 0 850 1100" preserveAspectRatio="none"><g fill="none" stroke="#ff6b1a" stroke-width="4"><rect x="40" y="40" width="770" height="1020"/><rect x="290" y="40" width="270" height="330"/><path d="M325,370 A100,100 0 0 0 525,370"/><path d="M80,40 L80,210 A380,380 0 0 0 770,210 L770,40"/><path d="M340,1060 A85,85 0 0 1 510,1060"/></g></svg>
+  <svg class="ball" viewBox="0 0 200 200"><defs><radialGradient id="gb" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ff9a52"/><stop offset=".55" stop-color="#f26a12"/><stop offset="1" stop-color="#a83f05"/></radialGradient></defs>
+    <circle cx="100" cy="100" r="92" fill="url(#gb)"/><g fill="none" stroke="#1a0d05" stroke-width="3.5"><path d="M8,100 H192"/><path d="M100,8 V192"/><path d="M35,32 C75,70 75,130 35,168"/><path d="M165,32 C125,70 125,130 165,168"/></g></svg>
+  <div class="safe">
+    <div class="kick">CAHIER D'ENTRAÎNEMENT</div>
+    <h1>BASKET<br><em>SOLO</em></h1>
+    <div class="sub">60 exercices pour progresser seul avec un ballon et un panier — et un programme de 8 semaines</div>
+    <div class="stats"><div class="stat"><b>60</b>exercices</div><div class="stat"><b>8</b>semaines</div><div class="stat"><b>7</b>tests</div></div>
+    <div class="brand">ELM PUBLISHING</div>
+  </div>
+</div>
+<script>document.querySelectorAll('[data-show="0"]').forEach(e=>e.style.display='none')</script>
+</body></html>

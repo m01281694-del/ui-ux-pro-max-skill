@@ -156,7 +156,7 @@ hr{{border:none;text-align:center;margin:1em 0}} hr:after{{content:'◆';color:{
 code{{font-family:'DejaVu Sans Mono',monospace;font-size:8.6pt}}
 .prompt{{font-family:'Source Serif 4',serif;background:#f6f4ef;border:.6pt solid #d8d2c4;border-radius:3pt;padding:.45em .65em;margin:.4em 0 .8em;font-size:9.6pt;break-inside:avoid}}
 .prompt p{{text-align:left;margin:.15em 0}}
-"""
+""" + meta.get("css_extra", "")
 
 
 def front_html(meta, toc, css):
@@ -282,7 +282,8 @@ def cover(book):
     tpl = open(os.path.join(cdir, "cover.html"), encoding="utf-8").read()
     vals = {"FONTS": font_css(rel), "W": f"{w}", "H": f"{h}", "SPINE": f"{spine:.4f}", "BLEED": f"{bleed}",
             "TOTALW": f"{2*w+spine+2*bleed:.4f}", "TOTALH": f"{h+2*bleed:.4f}", "SPINE_TEXT": "1" if (pages > 79 and spine >= 0.25) else "0",
-            "SPINE_FONT": f"{min(14, (spine - 0.125) * 72 * 0.62):.1f}"}
+            "SPINE_FONT": f"{min(14, (spine - 0.125) * 72 * 0.62):.1f}",
+            "KSCALE": f"{1600 / (w * 96):.5f}", "KH": f"{w * 1.6:.4f}"}
     # Texte du dos : autorisé par KDP au-delà de 79 pages, mais on ne l'imprime que si le dos fait >= 0,25 po
     # (sinon les caractères seraient illisibles une fois retirée la marge de 0,0625 po de chaque côté).
     for k, v in vals.items():

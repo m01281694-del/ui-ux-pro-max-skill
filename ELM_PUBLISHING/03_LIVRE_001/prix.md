@@ -14,7 +14,7 @@ Ebook : fichier ≈ 0.66 Mo (frais de livraison 0,12 €/Mo sur Amazon.fr), TVA 
 
 | Prix Kindle TTC | Option | Redevance / vente |
 |---|---|---|
-| 2.99 € | 70 % | 1.90 € |
+| 2.99 € | 70 % | 1.91 € |
 | 3.99 € | 70 % | 2.57 € |
 | 4.99 € | 70 % | 3.23 € |
 | 6.99 € | 70 % | 4.56 € |

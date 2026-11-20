@@ -9,7 +9,7 @@ Dernière mise à jour : 20/11/2026
 
 ## À faire (dans l'ordre)
 1. (Livre 001 terminé)
-2. Livre 002 « Basket : le cahier d'entraînement solo » (8,5×11 po) : tout.
+2. Livre 002 TERMINÉ (92/100) : 56 p. 8,5×11, 60 exercices + schémas, couverture, exports, fiche KDP. Fichiers : 08_FICHIERS_KDP/LIVRE_002
 3. Livre 003 « L'IA, ton assistant business » (6×9 po) : tout.
 4. Tableau de bord, finances, plans de lancement, documentation.
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Montserrat, sans-serif">
+<rect x="0" y="0" width="600" height="620" fill="#f7efe4"/>
+<rect x="20" y="40" width="560" height="560" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<rect x="202" y="40" width="196" height="232" fill="#efe0cc" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 0 372,272" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 1 372,272" fill="none" stroke="#9a7b5b" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M56,40 L56,165 A270,270 0 0 0 544,165 L544,40" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M240,600 A60,60 0 0 1 360,600" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<line x1="270" y1="80" x2="330" y2="80" stroke="#555" stroke-width="5"/>
+<circle cx="300" cy="103" r="18" fill="none" stroke="#e8590c" stroke-width="5"/>
+<polyline points="300.0,405.0 315.3,395.6 313.6,373.9 334.7,368.5 332.9,346.9 354.0,341.5 352.2,319.9 373.3,314.5 371.5,292.8 386.9,283.4" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="386.9,283.4 384.2,299.2 372.8,291.1" fill="#1c7ed6"/>
+<polyline points="395.0,272.0 379.7,281.4 381.4,303.1 360.3,308.5 362.1,330.1 341.0,335.5 342.8,357.1 321.7,362.5 323.5,384.2 308.1,393.6" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="308.1,393.6 310.8,377.8 322.2,385.9" fill="#1c7ed6"/>
+<polyline points="300.0,405.0 296.0,387.4 275.0,382.0 276.7,360.4 255.7,355.0 257.4,333.4 236.4,328.0 238.1,306.3 217.1,301.0 213.1,283.4" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="213.1,283.4 227.2,291.1 215.8,299.2" fill="#1c7ed6"/>
+<circle cx="300" cy="405" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="300" y="412" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+</svg>
