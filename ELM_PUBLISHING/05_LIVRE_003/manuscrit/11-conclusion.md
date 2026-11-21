@@ -26,3 +26,5 @@ Les outils vont continuer à évoluer, parfois très vite. Les noms changeront, 
 ## Pour aller plus loin
 
 Si tu veux être accompagné pas à pas pour construire ta présence en ligne et ta stratégie de marketing digital, l'auteur propose une formation dédiée. Les informations sont disponibles sur ses réseaux sociaux.
+
+*Si ce livre t’a été utile, tu peux laisser un avis honnête sur Amazon : cela aide d’autres lecteurs à le trouver. Merci !*

@@ -1,6 +1,6 @@
 # Contrôle technique — Basket : le cahier d'entraînement solo
 
-*20/11/2026 22:41*
+*21/11/2026 01:11*
 
 - Format des pages : {(8.5, 11.0)} → OK (attendu 8.5×11 po, sans fond perdu)
 - Nombre de pages : 56 → OK (KDP : 24 à 828) ; pair : oui

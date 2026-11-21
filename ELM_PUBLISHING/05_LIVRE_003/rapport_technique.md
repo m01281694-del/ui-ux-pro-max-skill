@@ -1,6 +1,6 @@
 # Contrôle technique — L'IA, ton assistant business
 
-*21/11/2026 01:06*
+*21/11/2026 01:12*
 
 - Format des pages : {(6.0, 9.0)} → OK (attendu 6×9 po, sans fond perdu)
 - Nombre de pages : 64 → OK (KDP : 24 à 828) ; pair : oui

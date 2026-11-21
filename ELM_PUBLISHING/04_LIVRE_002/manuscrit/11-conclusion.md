@@ -21,3 +21,5 @@ Le basket se joue à cinq, mais une grande partie des progrès se construit seul
 | Ligne de lancer franc | 5,80 m de la ligne de fond |
 
 *Source : Règlement officiel de basketball FIBA (en vigueur en France via la FFBB), vérifié en novembre 2026. Le mini-basket utilise des paniers et des ballons adaptés aux plus jeunes : renseigne-toi auprès de ton club.*
+
+*Si ce livre t’a été utile, tu peux laisser un avis honnête sur Amazon : cela aide d’autres lecteurs à le trouver. Merci !*

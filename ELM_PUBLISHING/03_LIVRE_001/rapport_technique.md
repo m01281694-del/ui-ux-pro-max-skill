@@ -1,6 +1,6 @@
 # Contrôle technique — Réviser moins, retenir plus
 
-*20/11/2026 22:40*
+*21/11/2026 01:09*
 
 - Format des pages : {(6.0, 9.0)} → OK (attendu 6×9 po, sans fond perdu)
 - Nombre de pages : 82 → OK (KDP : 24 à 828) ; pair : oui

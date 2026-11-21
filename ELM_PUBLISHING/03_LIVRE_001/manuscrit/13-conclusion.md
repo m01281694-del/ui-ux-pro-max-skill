@@ -19,3 +19,5 @@ Tu ne dois pas tout appliquer parfaitement. Commence par une seule chose ce soir
 Les chercheurs cités dans ce livre ont passé des années à comprendre comment on apprend. À toi maintenant de faire la seule expérience qui compte vraiment : la tienne.
 
 Bonne réussite.
+
+*Si ce livre t’a été utile, tu peux laisser un avis honnête sur Amazon : cela aide d’autres lecteurs à le trouver. Merci !*
