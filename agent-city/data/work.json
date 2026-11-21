@@ -564,6 +564,30 @@
    "start": 1795241280000,
    "end": 1795241340000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795252020000-46",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "stats Metricool : YouTube 4 abonnés (+2) et 11 vues",
+   "start": 1795252020000,
+   "end": 1795252080000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795252080000-47",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795252080000,
+   "end": 1795252140000,
+   "residentId": 273
   }
  ],
  "contents": [
