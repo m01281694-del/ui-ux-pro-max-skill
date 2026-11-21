@@ -524,6 +524,26 @@
    "start": 1795230480000,
    "end": 1795230540000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795240080000-42",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "production du jour suspendue : limite Metricool toujours atteinte (vidéo #001 en erreur) — quota de voix préservé",
+   "start": 1795240080000,
+   "end": 1795240140000,
+   "residentId": 113
+  },
+  {
+   "id": "r-1795240140000-43",
+   "demo": false,
+   "dept": "community",
+   "job": "Escalation",
+   "title": "rappel au propriétaire : régler la limite Metricool pour relancer la publication automatique",
+   "start": 1795240140000,
+   "end": 1795240200000,
+   "residentId": 207
   }
  ],
  "contents": [
