@@ -11,7 +11,8 @@ Dernière mise à jour : 21/11/2026
 1. (Livre 001 terminé)
 2. Livre 002 TERMINÉ (92/100) : 56 p. 8,5×11, 60 exercices + schémas, couverture, exports, fiche KDP. Fichiers : 08_FICHIERS_KDP/LIVRE_002
 3. Livre 003 TERMINÉ (92/100) : 64 p. 6×9, 100 prompts, 3 cas pratiques, couverture, exports, fiche KDP. Fichiers : 08_FICHIERS_KDP/LIVRE_003
-4. Tableau de bord, finances, plans de lancement, documentation.
+4. FAIT : tableau de bord (13), finances (12), plans de lancement (15), documentation (14), guide du titulaire (00).
+5. Reste : actions humaines (compte KDP du parent, Previewer, clic Publier), puis saisie des ventes réelles.
 
 ## Commandes
 python3 11_AUTOMATISATIONS/elm.py all 03_LIVRE_001
