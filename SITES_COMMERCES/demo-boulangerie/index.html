@@ -1,0 +1,139 @@
+<title>La Fournée des Pennes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Mise en page : une colonne mobile d'abord, bandeaux pleine largeur, infos pratiques avant la vitrine */
+:root{
+  --bg:#f6f4ec; --surface:#fffdf6; --fg:#22281c; --muted:#5f6656;
+  --olive:#3f5a2a; --wheat:#d9a441; --line:#e2dfcf; --onolive:#fbf8ee;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Figtree",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#151912; --surface:#1d2318; --fg:#eef0e4; --muted:#a6ad98;
+  --olive:#7fa35a; --wheat:#e6b75a; --line:#2e3626; --onolive:#10140c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151912; --surface:#1d2318; --fg:#eef0e4; --muted:#a6ad98;
+  --olive:#7fa35a; --wheat:#e6b75a; --line:#2e3626; --onolive:#10140c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--body)}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.demo{background:var(--wheat);color:#22281c;font-size:13px;font-weight:600;text-align:center;padding-block:6px}
+.hero{background:var(--olive);color:var(--onolive);margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+.hero .wrap{padding-block:48px 40px;display:grid;gap:18px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.85}
+h1{font:800 clamp(40px,8vw,72px)/.95 var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em}
+.hero p{margin:0;max-width:34em;font-size:18px}
+.open{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--wheat)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--onolive)}
+.btn.main{background:var(--onolive);color:var(--olive)}
+.btn.ghost{color:var(--onolive)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--wheat);outline-offset:3px}
+section{padding-block:44px;border-bottom:1px solid var(--line)}
+h2{font:800 30px/1.1 var(--display);margin:0 0 18px;text-wrap:balance}
+.grid{display:grid;gap:28px;grid-template-columns:1fr}
+@media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:9px 0;border-bottom:1px solid var(--line)} td:last-child{text-align:right}
+tr.today td{font-weight:600;color:var(--olive)}
+tr.today td:first-child::after{content:" · aujourd'hui";font-weight:500;color:var(--muted);font-size:14px}
+.menu{display:grid;gap:0}
+.item{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.item b{font-weight:600} .item span{color:var(--muted);font-size:14px;display:block}
+.price{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.noel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:12px}
+.noel h2{margin:0}
+.noel ul{margin:0;padding-left:20px} .noel li{margin:4px 0}
+.muted{color:var(--muted)}
+.contact{display:grid;gap:6px;font-size:17px}
+.copy{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.02em;user-select:all}
+footer{padding-block:28px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+</style>
+
+<div class="demo"><div class="wrap">Site de démonstration : nom, prix et horaires fictifs</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Boulangerie · Pâtisserie · Les Pennes-Mirabeau</div>
+  <h1>La Fournée des Pennes</h1>
+  <p>Pain au levain, fougasses et viennoiseries faits sur place chaque matin. À deux pas de chez vous.</p>
+  <div class="open" id="open"><span class="dot"></span><span id="openText">Ouvert aujourd'hui de 6 h 30 à 19 h 30</span></div>
+  <div class="cta">
+    <a class="btn main" href="tel:+33400000000">Appeler la boulangerie</a>
+    <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Les+Pennes-Mirabeau+13170" target="_blank" rel="noopener">Itinéraire</a>
+  </div>
+</div></header>
+
+<main>
+<section><div class="wrap grid">
+  <div>
+    <h2>Horaires</h2>
+    <table id="hours">
+      <tr data-d="1"><td>Lundi</td><td>Fermé</td></tr>
+      <tr data-d="2"><td>Mardi</td><td>6 h 30 – 19 h 30</td></tr>
+      <tr data-d="3"><td>Mercredi</td><td>6 h 30 – 19 h 30</td></tr>
+      <tr data-d="4"><td>Jeudi</td><td>6 h 30 – 19 h 30</td></tr>
+      <tr data-d="5"><td>Vendredi</td><td>6 h 30 – 19 h 30</td></tr>
+      <tr data-d="6"><td>Samedi</td><td>6 h 30 – 19 h 30</td></tr>
+      <tr data-d="0"><td>Dimanche</td><td>7 h – 13 h</td></tr>
+    </table>
+  </div>
+  <div>
+    <h2>Nous trouver</h2>
+    <div class="contact">
+      <div>Adresse du commerce<br>13170 Les Pennes-Mirabeau</div>
+      <div class="muted">Téléphone</div>
+      <div class="copy">04 00 00 00 00</div>
+      <div class="muted">Stationnement facile devant la boutique.</div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Au comptoir</h2>
+  <div class="menu">
+    <div class="item"><div><b>Pain au levain</b><span>Farine T80, longue fermentation</span></div><div class="price">3,20 €</div></div>
+    <div class="item"><div><b>Baguette tradition</b><span>Cuite toute la journée</span></div><div class="price">1,30 €</div></div>
+    <div class="item"><div><b>Fougasse aux olives</b><span>Olives noires, huile d'olive</span></div><div class="price">3,50 €</div></div>
+    <div class="item"><div><b>Croissant pur beurre</b></div><div class="price">1,20 €</div></div>
+    <div class="item"><div><b>Navettes à la fleur d'oranger</b><span>Le sachet de 6</span></div><div class="price">4,80 €</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="noel">
+    <div class="eyebrow" style="color:var(--olive)">Noël</div>
+    <h2>Les 13 desserts : commandez à l'avance</h2>
+    <p class="muted" style="margin:0">Pour le réveillon, réservez en boutique ou par téléphone jusqu'au 20 décembre.</p>
+    <ul>
+      <li>Pompe à l'huile</li>
+      <li>Nougat blanc et nougat noir</li>
+      <li>Fougasse sucrée à la fleur d'oranger</li>
+      <li>Bûches et gâteaux sur commande</li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Vos avis</h2>
+  <p class="muted" style="margin:0 0 14px">Ici s'affichent les vrais avis Google de la boulangerie, avec un lien pour en laisser un.</p>
+  <a class="btn main" style="background:var(--olive);color:var(--onolive);border-color:var(--olive)" href="https://www.google.com/maps/search/?api=1&query=boulangerie+Les+Pennes-Mirabeau" target="_blank" rel="noopener">Voir les avis sur Google</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 La Fournée des Pennes (démo)</span>
+  <span>Mentions légales · Site réalisé par [ton nom]</span>
+</div></footer>
+
+<script>
+(function(){
+  var d=new Date().getDay();
+  var row=document.querySelector('#hours tr[data-d="'+d+'"]');
+  if(row){row.className='today';
+    var t=row.children[1].textContent;
+    document.getElementById('openText').textContent= t==='Fermé' ? "Fermé aujourd'hui" : "Ouvert aujourd'hui : "+t.replace('–','à');
+  }
+})();
+</script>
