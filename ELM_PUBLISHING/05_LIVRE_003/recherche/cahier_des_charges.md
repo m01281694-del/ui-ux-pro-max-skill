@@ -1,0 +1,18 @@
+# Cahier des charges — Livre 003
+- **Titre :** L'IA, ton assistant business
+- **Promesse :** savoir quoi demander concrètement à un assistant d'IA pour clarifier ton offre, créer du contenu, écrire pour vendre, servir tes clients et gagner du temps, en vérifiant ce qu'il produit.
+- **Public :** débutants, indépendants, créateurs, petits commerçants, étudiants qui lancent une activité. Aucun prérequis technique.
+- **Ton :** tutoiement, concret, honnête sur les limites.
+- **Contenu :**
+  - fonctionnement et limites de l'IA ;
+  - méthode pour bien formuler une demande ;
+  - 100 prompts classés en 6 chapitres ;
+  - règles d'or (vérification, données personnelles et RGPD, droits, transparence, AI Act) ;
+  - plan d'action en 14 jours.
+- **Règles :**
+  - aucune promesse de revenus ;
+  - aucun prix d'abonnement cité (ils changent) ;
+  - marques citées seulement pour les désigner ;
+  - informations datées de novembre 2026 ;
+  - aucune statistique inventée.
+- **Lien de marque :** cohérent avec la formation de marketing digital du créateur, que le livre peut mentionner sobrement en fin d'ouvrage.

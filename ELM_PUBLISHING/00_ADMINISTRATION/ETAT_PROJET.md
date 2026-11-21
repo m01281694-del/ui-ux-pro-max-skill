@@ -1,6 +1,6 @@
 # ÉTAT DU PROJET ELM PUBLISHING (reprise après interruption)
 
-Dernière mise à jour : 20/11/2026
+Dernière mise à jour : 21/11/2026
 
 ## Fait
 - Étude de marché v1 + règles KDP vérifiées : 01_ETUDE_DE_MARCHE/etude_de_marche.md
@@ -10,7 +10,7 @@ Dernière mise à jour : 20/11/2026
 ## À faire (dans l'ordre)
 1. (Livre 001 terminé)
 2. Livre 002 TERMINÉ (92/100) : 56 p. 8,5×11, 60 exercices + schémas, couverture, exports, fiche KDP. Fichiers : 08_FICHIERS_KDP/LIVRE_002
-3. Livre 003 « L'IA, ton assistant business » (6×9 po) : tout.
+3. Livre 003 TERMINÉ (92/100) : 64 p. 6×9, 100 prompts, 3 cas pratiques, couverture, exports, fiche KDP. Fichiers : 08_FICHIERS_KDP/LIVRE_003
 4. Tableau de bord, finances, plans de lancement, documentation.
 
 ## Commandes

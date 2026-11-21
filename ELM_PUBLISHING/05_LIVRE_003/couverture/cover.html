@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+{{FONTS}}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--W:{{W}}in;--H:{{H}}in;--S:{{SPINE}}in;--B:{{BLEED}}in;--v:#5b3cc4;--v2:#8b6cff;--ink:#14102b;--cream:#f7f4ee}
+html,body{background:var(--cream)} html{overflow:hidden}
+body.full{width:{{TOTALW}}in;height:{{TOTALH}}in;position:relative;overflow:hidden}
+body.kindle{width:1600px;height:2560px;overflow:hidden}
+.front,.back,.spine{position:absolute;top:var(--B);height:var(--H)}
+.full .back{left:var(--B);width:var(--W)} .full .spine{left:calc(var(--B) + var(--W));width:var(--S)} .full .front{left:calc(var(--B) + var(--W) + var(--S));width:var(--W)}
+.kindle .back,.kindle .spine{display:none}
+.kindle .front{top:0;left:0;width:var(--W);height:{{KH}}in;transform-origin:0 0;transform:scale({{KSCALE}})}
+.bg{position:absolute;inset:0;background:var(--cream)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(91,60,196,.18) 1.2px,transparent 1.6px);background-size:.22in .22in}
+.front .safe{position:absolute;inset:.45in .42in .45in .42in;display:flex;flex-direction:column;color:var(--ink)}
+.kick{font-family:Montserrat;font-weight:800;font-size:10pt;letter-spacing:.24em;color:var(--v)}
+h1{font-family:Fraunces;font-weight:900;font-size:44pt;line-height:.98;margin-top:.16in;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--v)}
+.sub{font-family:Literata;font-size:12pt;line-height:1.35;margin-top:.18in;color:#3b3552;max-width:4.9in}
+.art{position:relative;flex:1;margin:.12in 0}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.badge{align-self:flex-start;font-family:Montserrat;font-weight:800;font-size:11pt;color:#fff;background:var(--v);padding:.1in .2in;border-radius:.3in;margin-bottom:.16in}
+.brand{font-family:Montserrat;font-weight:700;font-size:9pt;letter-spacing:.35em;color:#7a7394;text-align:center}
+.back .bgv{position:absolute;inset:0;background:var(--ink)}
+.back .safe{position:absolute;inset:.5in .45in .45in .5in;color:#ece9f7;display:flex;flex-direction:column}
+.back h2{font-family:Fraunces;font-weight:900;font-size:19pt;line-height:1.12;color:#fff} .back h2 span{color:var(--v2)}
+.back p{font-family:Literata;font-size:10pt;line-height:1.45;margin-top:.13in}
+.back ul{list-style:none;margin-top:.14in} .back li{font-family:Literata;font-size:9.8pt;line-height:1.38;margin:.07in 0;padding-left:.24in;position:relative}
+.back li:before{content:"→";position:absolute;left:0;color:var(--v2);font-family:Montserrat;font-weight:800}
+.back .who{font-family:Montserrat;font-weight:700;font-size:9pt;color:var(--v2);margin-top:.16in;letter-spacing:.05em}
+.barcode{position:absolute;right:.25in;bottom:.25in;width:2in;height:1.2in;background:#fff}
+.back .ed{position:absolute;left:.5in;bottom:.5in;font-family:Montserrat;font-weight:700;font-size:8.5pt;letter-spacing:.3em;color:#9a93b8}
+.spine .in{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--v)}
+.spine .t{transform:rotate(90deg);white-space:nowrap;font-family:Montserrat;font-weight:800;font-size:{{SPINE_FONT}}pt;color:#fff}
+</style></head>
+<body class="{{MODE}}">
+<div class="bg"></div><div class="dots"></div>
+<div class="back"><div class="bgv"></div><div class="safe">
+  <h2>Tu as essayé l'IA… <span>et tu as obtenu des réponses génériques ?</span></h2>
+  <p>Le problème vient rarement de l'outil, mais de la façon de lui demander. Ce guide pratique te montre comment faire des assistants d'IA (ChatGPT, Claude, Gemini, Le Chat…) de vrais partenaires pour ton activité.</p>
+  <ul>
+    <li>La méthode <b>RCTF</b> pour formuler des demandes efficaces.</li>
+    <li><b>100 prompts prêts à l'emploi</b> : offre et cible, contenus pour les réseaux, pages de vente et emails, service client, organisation, analyse.</li>
+    <li>3 cas pratiques détaillés, pas à pas.</li>
+    <li>Les <b>règles à respecter</b> : vérification, données personnelles (RGPD), droits d'auteur, transparence (AI Act).</li>
+    <li>Un plan d'action de <b>14 jours</b>.</li>
+  </ul>
+  <p>Aucune promesse de revenus : une méthode concrète et honnête. Informations vérifiées en novembre 2026.</p>
+  <div class="who">POUR LES DÉBUTANTS, INDÉPENDANTS, CRÉATEURS ET PETITS COMMERCES</div>
+</div><div class="ed">ELM PUBLISHING</div><div class="barcode"></div></div>
+<div class="spine"><div class="in"><div class="t" data-show="{{SPINE_TEXT}}">L'IA, ton assistant business</div></div></div>
+<div class="front"><div class="safe">
+  <div class="kick">GUIDE PRATIQUE · ÉDITION 2026</div>
+  <h1>L'IA, ton <em>assistant</em> business</h1>
+  <div class="sub">Lance et développe ton activité avec les assistants d'intelligence artificielle — sans jargon et sans promesses irréalistes</div>
+  <div class="art"><svg viewBox="0 0 600 430" preserveAspectRatio="xMidYMid meet">
+    <g font-family="Montserrat" font-weight="700">
+      <rect x="40" y="40" width="330" height="92" rx="22" fill="#fff" stroke="#d9d2f4" stroke-width="3"/>
+      <text x="64" y="80" font-size="22" fill="#14102b">Écris 3 posts pour la fête</text><text x="64" y="110" font-size="22" fill="#14102b">des mères. Ton : doux, simple.</text>
+      <rect x="220" y="160" width="340" height="128" rx="22" fill="#5b3cc4"/>
+      <text x="246" y="200" font-size="21" fill="#fff">1. « Elle mérite une pause… »</text><text x="246" y="232" font-size="21" fill="#fff">2. « Un parfum de souvenir »</text><text x="246" y="264" font-size="21" fill="#fff">3. « Le cadeau qui dure »</text>
+      <rect x="40" y="316" width="250" height="70" rx="22" fill="#fff" stroke="#d9d2f4" stroke-width="3"/>
+      <text x="64" y="360" font-size="22" fill="#14102b">Plus court, stp ✓</text>
+      <circle cx="530" cy="356" r="40" fill="#8b6cff"/><path d="M512 356 l12 12 22 -26" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g></svg></div>
+  <div class="badge">100 prompts prêts à l'emploi</div>
+  <div class="brand">ELM PUBLISHING</div>
+</div></div>
+<script>document.querySelectorAll('[data-show="0"]').forEach(e=>e.style.display='none')</script>
+</body></html>
