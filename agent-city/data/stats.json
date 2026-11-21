@@ -1,17 +1,17 @@
 {
- "updatedAt": 1795262822869,
+ "updatedAt": 1795273624744,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
   "tiktok": {
    "handle": "@manu_digi0",
-   "followers": 9,
-   "posts": 19,
-   "views": 13297,
-   "likes": 357,
+   "followers": 8,
+   "posts": 22,
+   "views": 14110,
+   "likes": 381,
    "profileViews": 107,
-   "comments": 9,
-   "shares": 11
+   "comments": 11,
+   "shares": 12
   },
   "instagram": {
    "handle": "@manu.digi0",
@@ -43,11 +43,11 @@
   },
   {
    "day": "2026-11-14",
-   "tiktokViews": 2332
+   "tiktokViews": 2333
   },
   {
    "day": "2026-11-16",
-   "tiktokViews": 3663
+   "tiktokViews": 3668
   },
   {
    "day": "2026-11-17",
@@ -59,7 +59,11 @@
   },
   {
    "day": "2026-11-19",
-   "tiktokViews": 1867
+   "tiktokViews": 1871
+  },
+  {
+   "day": "2026-11-20",
+   "tiktokViews": 803
   }
  ],
  "posts": [
@@ -252,6 +256,36 @@
    "likes": 13,
    "comments": 0,
    "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795211276000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7710373705582513441",
+   "title": "Tu as déjà tout ce qu'il faut pour te lancer 📱✨",
+   "views": 285,
+   "likes": 7,
+   "comments": 2,
+   "shares": 1
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795205463000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7710348735125015841",
+   "title": "🔗envoie moi 「go」et deviens riche mec 🚀",
+   "views": 310,
+   "likes": 14,
+   "comments": 0,
+   "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795196519000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7710310328143203617",
+   "title": "Quel est le meilleur business à lancer en 2026 ? 🎬",
+   "views": 208,
+   "likes": 3,
+   "comments": 0,
+   "shares": 0
   }
  ],
  "revenue": {
@@ -276,7 +310,7 @@
  "goals": [
   {
    "label": "Abonnés (tous réseaux)",
-   "current": 14,
+   "current": 13,
    "target": 1000
   },
   {

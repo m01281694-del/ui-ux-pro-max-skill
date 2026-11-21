@@ -608,6 +608,30 @@
    "start": 1795262880000,
    "end": 1795262940000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795273620000-50",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "détecte 3 nouvelles vidéos TikTok du 20/11 (208 à 310 vues, encore jeunes) — TikTok : 22 vidéos, 14 110 vues, 8 abonnés (−1)",
+   "start": 1795273620000,
+   "end": 1795273740000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795273740000-51",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795273740000,
+   "end": 1795273800000,
+   "residentId": 273
   }
  ],
  "contents": [
