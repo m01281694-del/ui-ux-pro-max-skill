@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mirabeau Pneu — Pneus et montage aux Pennes-Mirabeau (13170)</title>
+<meta name="description" content="Mirabeau Pneu, votre spécialiste du pneumatique aux Pennes-Mirabeau (13170), près de Plan de Campagne : vente, montage et réparation de pneus pour voitures, 4x4, SUV et utilitaires. Appelez le 04 42 02 93 77.">
+<meta name="keywords" content="pneus Les Pennes-Mirabeau, montage pneus Les Pennes-Mirabeau, garage pneus 13170, réparation pneus Les Pennes-Mirabeau, centre pneumatique Plan de Campagne">
+<link rel="canonical" href="https://www.exemple-mirabeau-pneu.fr/">
+<meta property="og:title" content="Mirabeau Pneu — La route commence par un bon choix">
+<meta property="og:description" content="Vente, montage et réparation de pneus aux Pennes-Mirabeau. Voitures, 4x4, SUV, utilitaires.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0a0a0b">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,700;125,800;125,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TireShop",
+  "name": "Mirabeau Pneu",
+  "alternateName": "Mirabeau Pneus",
+  "telephone": "+33442029377",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "RN113 – Quartier Pourranque",
+    "addressLocality": "Les Pennes-Mirabeau",
+    "postalCode": "13170",
+    "addressRegion": "Bouches-du-Rhône",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 43.41150, "longitude": 5.30606 },
+  "areaServed": ["Les Pennes-Mirabeau", "Plan de Campagne", "Vitrolles", "Cabriès", "Septèmes-les-Vallons", "Marseille"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "13:00" }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vente de pneumatiques" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montage de pneus" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Réparation de pneus" } }
+  ]
+}
+</script>
+<style>
+/* Layout : intro plein écran -> hero roue géante en diagonale -> sections éditoriales pleine largeur, lignes fines, accent rouge rare */
+:root{
+  --black:#0a0a0b; --coal:#141518; --anth:#1e2025; --line:#2c2f36; --steel:#8d939c;
+  --white:#f3f4f6; --muted:#a3a8b0; --red:#e3161b; --red2:#ff3b3f;
+  --metal:linear-gradient(115deg,#5c6068 0%,#e9ecef 22%,#8a9099 40%,#f7f8f9 55%,#6d727a 75%,#c9cdd2 100%);
+  --display:"Archivo","Arial Narrow",Arial,sans-serif; --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--black);color:var(--white);font:400 17px/1.6 var(--body);overflow-x:hidden}
+body.locked{overflow:hidden}
+img,svg,canvas{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red2);outline-offset:4px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font:700 12px/1 var(--display);font-stretch:112%;letter-spacing:.32em;text-transform:uppercase;color:var(--red2);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--red)}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.95;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,62px)}
+.metal{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- Bandeau maquette ---------- */
+.proto{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:rgba(20,21,24,.86);backdrop-filter:blur(8px);border:1px solid var(--line);color:var(--muted);font:600 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:2px;white-space:nowrap}
+
+/* ---------- Intro ---------- */
+#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center}
+#intro canvas{position:absolute;inset:0;width:100%;height:100%}
+.intro-logo{position:relative;z-index:2;text-align:center;pointer-events:none;margin-top:46vh}
+.intro-logo .word{font:900 clamp(30px,7vw,84px)/1 var(--display);font-stretch:125%;letter-spacing:.06em;display:inline-block}
+.intro-logo .word span{display:inline-block;opacity:0;transform:translateY(40%)}
+.intro-logo .bar{height:2px;width:0;background:var(--red);margin:18px auto 0;max-width:260px}
+.intro-ctrl{position:absolute;z-index:3;top:calc(18px + env(safe-area-inset-top,0px));right:max(18px,env(safe-area-inset-right,0px));display:flex;gap:10px}
+.intro-ctrl button{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;font:600 11px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;padding:11px 14px;cursor:pointer;transition:border-color .3s,background .3s}
+.intro-ctrl button:hover{border-color:var(--red);background:rgba(227,22,27,.12)}
+
+/* ---------- Nav ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top,0px)}
+header.nav.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand b{font:900 17px/1 var(--display);font-stretch:125%;letter-spacing:.08em}
+.brand b i{font-style:normal;color:var(--red2)}
+.menu{display:flex;gap:34px;list-style:none}
+.menu a{font:600 12px/1 var(--display);font-stretch:112%;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);position:relative;padding:8px 0;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.menu a:hover,.menu a.on{color:#fff}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
+.nav-call{display:flex;align-items:center;gap:10px;font:800 14px/1 var(--display);font-stretch:112%;letter-spacing:.06em;border:1px solid var(--line);padding:12px 16px;transition:border-color .3s,background .3s}
+.nav-call:hover{border-color:var(--red);background:rgba(227,22,27,.1)}
+.burger{display:none;width:46px;height:46px;background:none;border:1px solid var(--line);cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .4s,opacity .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:45;background:var(--black);display:flex;flex-direction:column;justify-content:center;padding:100px var(--gut) 60px;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.77,0,.18,1);visibility:hidden}
+.drawer.open{clip-path:inset(0 0 0 0);visibility:visible}
+.drawer a.big{font:900 clamp(34px,10vw,56px)/1.15 var(--display);font-stretch:125%;text-transform:uppercase;display:block;border-bottom:1px solid var(--line);padding:14px 0;transition:color .3s}
+.drawer a.big:hover{color:var(--red2)}
+.drawer .call{margin-top:34px}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;gap:14px;font:800 13px/1 var(--display);font-stretch:112%;letter-spacing:.18em;text-transform:uppercase;padding:20px 28px;position:relative;overflow:hidden;cursor:pointer;border:0;transition:color .4s}
+.btn .arr{width:22px;height:2px;background:currentColor;position:relative;transition:width .4s}
+.btn .arr::after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.btn:hover .arr{width:34px}
+.btn-red{background:var(--red);color:#fff}
+.btn-red::before{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.btn-red:hover{color:var(--black)}
+.btn-red:hover::before{transform:translateX(0)}
+.btn>*{position:relative}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px #fff;background:rgba(255,255,255,.06)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,10,11,.95) 0%,rgba(10,10,11,.7) 45%,rgba(10,10,11,0) 72%),linear-gradient(0deg,var(--black) 0%,transparent 30%)}
+.hero .wrap{width:100%;padding-block:140px 110px}
+.hero h1{font-size:clamp(38px,7.4vw,112px);max-width:11ch;margin:26px 0 28px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .red{color:var(--red2)}
+.hero p.sub{font-size:clamp(18px,1.8vw,22px);color:var(--muted);max-width:30ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:42px}
+.hero-meta{display:flex;gap:40px;margin-top:64px;flex-wrap:wrap}
+.hero-meta div{border-left:1px solid var(--line);padding-left:16px}
+.hero-meta b{display:block;font:900 26px/1 var(--display);font-stretch:125%}
+.hero-meta span{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.scroll-ind{position:absolute;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font:600 10px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll-ind i{width:1px;height:46px;background:linear-gradient(var(--red),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Bande défilante ---------- */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--coal)}
+.ticker .track{display:flex;gap:56px;white-space:nowrap;padding:22px 0;width:max-content;animation:tick 38s linear infinite}
+.ticker span{font:900 22px/1 var(--display);font-stretch:125%;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px #5a5f68}
+.ticker span.r{color:var(--red2);-webkit-text-stroke:0}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{position:relative}
+.sec{padding-block:clamp(90px,12vw,160px)}
+.sec-head{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:clamp(50px,7vw,90px)}
+@media(min-width:900px){.sec-head{grid-template-columns:1.6fr 1fr;align-items:end;gap:60px}}
+.sec-head p{color:var(--muted);max-width:44ch}
+
+/* Services */
+.svc{border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:1fr;gap:22px;border-bottom:1px solid var(--line);padding:34px 0;position:relative;cursor:default}
+@media(min-width:900px){.svc-row{grid-template-columns:90px 1.1fr 1.2fr 300px;align-items:center;gap:36px;padding:28px 0}}
+.svc-row::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.svc-row:hover::before{transform:scaleX(1)}
+.svc-n{font:800 13px/1 var(--display);letter-spacing:.2em;color:var(--steel)}
+.svc-row h3{font-size:clamp(26px,3vw,38px);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.svc-row:hover h3{transform:translateX(10px)}
+.svc-row p{color:var(--muted);max-width:46ch}
+.svc-vis{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--coal);max-width:100%}
+.svc-vis canvas{width:100%;height:100%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.svc-row:hover .svc-vis canvas{transform:scale(1.08)}
+.svc-vis::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,10,11,.7))}
+.svc-vis em{position:absolute;left:12px;bottom:10px;z-index:1;font:600 10px/1 var(--body);font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* Marques */
+.brands{background:var(--coal);border-block:1px solid var(--line)}
+.brand-grid{display:grid;grid-template-columns:repeat(2,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+@media(min-width:900px){.brand-grid{grid-template-columns:repeat(4,1fr)}}
+.bcell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);aspect-ratio:3/2;display:grid;place-items:center;position:relative;overflow:hidden}
+.bcell b{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(18px,2.4vw,30px);letter-spacing:.06em;color:#6e737c;transition:color .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.bcell::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(227,22,27,.28),transparent 60%);opacity:0;transition:opacity .5s}
+.bcell:hover b{color:#fff;transform:scale(1.06)}
+.bcell:hover::before{opacity:1}
+.legal-note{margin-top:22px;font-size:13px;color:#7c818a;max-width:80ch}
+
+/* Pourquoi */
+.why{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:960px){.why{grid-template-columns:1fr 1fr}}
+.why-visual{position:relative;min-height:420px;overflow:hidden;background:#000}
+.why-visual canvas{position:absolute;inset:0;width:100%;height:100%}
+.why-visual .tag{position:absolute;z-index:1;left:var(--gut);bottom:28px;text-shadow:0 4px 30px #000;font:900 clamp(60px,9vw,130px)/.85 var(--display);font-stretch:125%;text-transform:uppercase}
+.why-list{padding:clamp(50px,7vw,100px) var(--gut);display:grid;gap:0;align-content:center;background:var(--coal)}
+.why-item{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+.why-item:first-child{border-top:1px solid var(--line)}
+.why-item svg{width:30px;height:30px;color:var(--red2)}
+.why-item h3{font-size:20px;font-stretch:112%;letter-spacing:.02em;margin-bottom:6px}
+.why-item p{color:var(--muted);font-size:16px}
+
+/* Avis */
+.reviews{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:900px){.reviews{grid-template-columns:1fr 1fr}}
+.score{display:flex;align-items:flex-end;gap:20px}
+.score b{font:900 clamp(110px,16vw,210px)/.8 var(--display);font-stretch:125%}
+.score small{font:800 28px/1 var(--display);color:var(--muted);padding-bottom:14px}
+.stars{display:flex;gap:6px;margin:22px 0 10px}
+.stars svg{width:26px;height:26px}
+.rev-side{border-left:1px solid var(--line);padding-left:clamp(20px,4vw,50px);display:grid;gap:24px}
+.rev-side p{color:var(--muted)}
+.placeholder-box{border:1px dashed #3a3e46;padding:22px;font-size:14px;color:#8a8f98}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:960px){.contact-grid{grid-template-columns:1fr 1.1fr}}
+.c-block{border-top:1px solid var(--line);padding:24px 0}
+.c-label{font:700 11px/1 var(--display);font-stretch:112%;letter-spacing:.26em;text-transform:uppercase;color:var(--steel);margin-bottom:12px}
+.c-big{font:900 clamp(30px,4vw,46px)/1 var(--display);font-stretch:125%}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:9px 0;border-bottom:1px solid #22252b;font-size:16px}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:#fff;font-weight:600}
+.hours tr.today td:first-child::before{content:"";display:inline-block;width:7px;height:7px;background:var(--red2);border-radius:50%;margin-right:10px;vertical-align:middle}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;margin-bottom:14px;color:var(--muted)}
+.status i{width:8px;height:8px;border-radius:50%;background:#555}
+.status.open i{background:#2ecc71;box-shadow:0 0 0 4px rgba(46,204,113,.15)}
+.map{position:relative;aspect-ratio:4/3;background:var(--coal);border:1px solid var(--line);overflow:hidden;max-width:100%}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+.form{display:grid;gap:18px;margin-top:40px}
+.row2{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:640px){.row2{grid-template-columns:1fr 1fr}}
+.field{position:relative}
+.field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid #3a3e46;color:#fff;font:400 17px/1.4 var(--body);padding:24px 0 10px;outline:none;transition:border-color .3s;border-radius:0;appearance:none}
+.field textarea{min-height:110px;resize:vertical}
+.field select option{background:var(--coal)}
+.field label{position:absolute;left:0;top:24px;color:#80858e;font-size:15px;pointer-events:none;transition:all .3s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--red)}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label,.field select+label{top:2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red2)}
+.form-msg{font-size:14px;color:var(--muted);min-height:20px}
+.form-msg.ok{color:#2ecc71}
+
+footer{border-top:1px solid var(--line);padding-block:50px calc(80px + env(safe-area-inset-bottom,0px));color:#7c818a;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
+
+/* Mobile CTA */
+.m-call{display:none}
+
+/* Curseur */
+.cursor{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid rgba(255,255,255,.5);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,background .3s;mix-blend-mode:difference;display:none}
+.cursor.hover{width:64px;height:64px;border-color:var(--red2);background:rgba(227,22,27,.15)}
+@media(hover:hover) and (pointer:fine){.cursor{display:block}}
+
+@media(max-width:899px){
+  .menu,.nav-call{display:none}
+  .burger{display:block}
+  .hero::after{background:linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.75) 45%,var(--black) 100%)}
+  .hero-meta{gap:22px}
+  .m-call{display:flex;position:fixed;right:16px;bottom:calc(60px + env(safe-area-inset-bottom,0px));z-index:55;width:58px;height:58px;border-radius:50%;background:var(--red);align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(227,22,27,.4)}
+  .proto{font-size:9px;letter-spacing:.1em;left:16px;transform:none}
+  .eyebrow .long{display:none}
+}
+.rv{opacity:1}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="locked">
+
+<!-- ================= INTRO ================= -->
+<div id="intro" aria-label="Introduction">
+  <canvas id="introCanvas" aria-hidden="true"></canvas>
+  <div class="intro-ctrl">
+    <button id="soundBtn" type="button" aria-pressed="false">Son : off</button>
+    <button id="skipBtn" type="button">Passer l'introduction</button>
+  </div>
+  <div class="intro-logo" aria-hidden="true">
+    <div class="word" id="introWord"></div>
+    <div class="bar" id="introBar"></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#accueil" class="brand" aria-label="Mirabeau Pneu, accueil">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#e3161b" stroke-width="3"/><circle cx="20" cy="20" r="10" fill="none" stroke="#f3f4f6" stroke-width="2"/><g stroke="#f3f4f6" stroke-width="2"><line x1="20" y1="10" x2="20" y2="4"/><line x1="29.5" y1="16.9" x2="35.2" y2="15.1"/><line x1="25.9" y1="28.1" x2="29.4" y2="33"/><line x1="14.1" y1="28.1" x2="10.6" y2="33"/><line x1="10.5" y1="16.9" x2="4.8" y2="15.1"/></g></svg>
+      <b>MIRABEAU <i>PNEU</i></b>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#marques">Nos marques</a></li>
+        <li><a href="#avis">Avis clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-call" href="tel:+33442029377" data-hover>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#e3161b" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      04 42 02 93 77
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a class="big" href="#accueil">Accueil</a>
+  <a class="big" href="#services">Nos services</a>
+  <a class="big" href="#marques">Nos marques</a>
+  <a class="big" href="#avis">Avis clients</a>
+  <a class="big" href="#contact">Contact</a>
+  <a class="btn btn-red call" href="tel:+33442029377"><span>Appeler maintenant</span><i class="arr"></i></a>
+</div>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="accueil">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow h-in">Centre pneumatique<span class="long">&nbsp;· Les Pennes-Mirabeau</span></div>
+    <h1 aria-label="La route commence par un bon choix.">
+      <span class="ln"><span>La route</span></span>
+      <span class="ln"><span>commence par</span></span>
+      <span class="ln"><span>un bon <span class="red">choix.</span></span></span>
+    </h1>
+    <p class="sub h-in">Votre spécialiste du pneumatique aux Pennes-Mirabeau.</p>
+    <div class="ctas h-in">
+      <a class="btn btn-red" href="#contact" data-hover><span>Nous contacter</span><i class="arr"></i></a>
+      <a class="btn btn-line" href="#services" data-hover><span>Découvrir nos services</span><i class="arr"></i></a>
+    </div>
+    <div class="hero-meta h-in">
+      <div><b>RN113</b><span>Près de Plan de Campagne</span></div>
+      <div><b>442 avis</b><span>sur Google</span></div>
+      <div><b>Auto · SUV · Utilitaire</b><span>Tous véhicules légers</span></div>
+    </div>
+  </div>
+  <div class="scroll-ind" aria-hidden="true"><i></i>Défiler</div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rv">Nos services</div>
+        <h2 class="rv" style="margin-top:22px">Le pneu,<br><span class="metal">notre seul métier.</span></h2>
+      </div>
+      <p class="rv">Vente, montage et réparation : un centre dédié au pneumatique pour les voitures, les 4x4, les SUV et les utilitaires.</p>
+    </div>
+    <div class="svc">
+      <article class="svc-row rv" data-hover>
+        <span class="svc-n">01</span>
+        <h3>Vente de pneumatiques</h3>
+        <p>Des pneus adaptés à votre véhicule et à votre façon de rouler, été, hiver ou toutes saisons, selon les dimensions disponibles.</p>
+        <div class="svc-vis"><canvas data-vis="sale"></canvas><em>Photo de l'atelier à intégrer</em></div>
+      </article>
+      <article class="svc-row rv" data-hover>
+        <span class="svc-n">02</span>
+        <h3>Montage de pneus</h3>
+        <p>Démontage, montage et équilibrage réalisés dans notre atelier. Montage sans rendez-vous selon disponibilité : appelez pour confirmer.</p>
+        <div class="svc-vis"><canvas data-vis="mount"></canvas><em>Photo de l'atelier à intégrer</em></div>
+      </article>
+      <article class="svc-row rv" data-hover>
+        <span class="svc-n">03</span>
+        <h3>Réparation de pneus</h3>
+        <p>Crevaison ? Nous vérifions si votre pneu peut être réparé en toute sécurité, ou s'il doit être remplacé.</p>
+        <div class="svc-vis"><canvas data-vis="repair"></canvas><em>Photo de l'atelier à intégrer</em></div>
+      </article>
+      <article class="svc-row rv" data-hover>
+        <span class="svc-n">04</span>
+        <h3>Pneus 4x4 &amp; SUV</h3>
+        <p>Des véhicules plus lourds, des pneus plus exigeants : des solutions pour les grandes jantes et les usages route ou chemin.</p>
+        <div class="svc-vis"><canvas data-vis="suv"></canvas><em>Photo de l'atelier à intégrer</em></div>
+      </article>
+      <article class="svc-row rv" data-hover>
+        <span class="svc-n">05</span>
+        <h3>Pneus utilitaires</h3>
+        <p>Pour les professionnels qui ne peuvent pas immobiliser leur véhicule : des pneus conçus pour la charge et les kilomètres.</p>
+        <div class="svc-vis"><canvas data-vis="van"></canvas><em>Photo de l'atelier à intégrer</em></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUES ================= -->
+<section class="sec brands" id="marques">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rv">Nos marques</div>
+        <h2 class="rv" style="margin-top:22px">Les grands noms<br><span class="metal">du pneumatique.</span></h2>
+      </div>
+      <p class="rv">Un choix de manufacturiers reconnus. Demandez-nous la disponibilité pour votre dimension.</p>
+    </div>
+    <div class="brand-grid rv">
+      <div class="bcell" data-hover><b>MICHELIN</b></div>
+      <div class="bcell" data-hover><b>CONTINENTAL</b></div>
+      <div class="bcell" data-hover><b>PIRELLI</b></div>
+      <div class="bcell" data-hover><b>HANKOOK</b></div>
+    </div>
+    <p class="legal-note">Les noms et marques cités appartiennent à leurs propriétaires respectifs. Ils sont mentionnés à titre indicatif des produits proposés, selon disponibilité, et n'impliquent aucun partenariat officiel ni exclusif.</p>
+  </div>
+</section>
+
+<!-- ================= POURQUOI ================= -->
+<section id="pourquoi">
+  <div class="why">
+    <div class="why-visual"><canvas id="whyCanvas" aria-hidden="true"></canvas><div class="tag rv"><span class="metal">Local.</span><br>Précis.</div></div>
+    <div class="why-list">
+      <div class="eyebrow rv" style="margin-bottom:34px">Pourquoi nous choisir</div>
+      <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div><h3>La proximité</h3><p>Sur la RN113 aux Pennes-Mirabeau, à quelques minutes de Plan de Campagne, de Vitrolles et du nord de Marseille.</p></div></div>
+      <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg><div><h3>Un centre implanté localement</h3><p>Une entreprise du secteur, que les automobilistes du coin connaissent et recommandent.</p></div></div>
+      <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg><div><h3>Spécialiste du pneumatique</h3><p>Un seul métier, le pneu : un conseil clair pour choisir la bonne référence.</p></div></div>
+      <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="20" height="8" rx="1"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M5 9l3-4h8l3 4"/></svg><div><h3>Tous véhicules légers</h3><p>Voitures, 4x4, SUV et utilitaires pris en charge dans le même atelier.</p></div></div>
+      <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h3>Sans rendez-vous</h3><p>Montage possible sans rendez-vous selon l'affluence. Un appel suffit pour vérifier.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVIS ================= -->
+<section class="sec" id="avis">
+  <div class="wrap">
+    <div class="eyebrow rv">Avis clients</div>
+    <div class="reviews" style="margin-top:40px">
+      <div class="rv">
+        <div class="score"><b data-count="4">4</b><small>/ 5</small></div>
+        <div class="stars" aria-label="Note de 4 sur 5">
+          <svg viewBox="0 0 24 24" fill="#e3161b"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e3161b"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e3161b"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e3161b"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#3a3e46"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z"/></svg>
+        </div>
+        <p style="color:var(--muted)"><b style="color:#fff" data-count="442">442</b> avis clients sur Google <span style="font-size:13px">(relevé du 21 novembre 2026)</span></p>
+      </div>
+      <div class="rev-side rv">
+        <h2 style="font-size:clamp(28px,3.6vw,46px)">Ce sont nos clients<br><span class="metal">qui en parlent le mieux.</span></h2>
+        <p>Consultez les avis laissés par les automobilistes de la région directement sur Google.</p>
+        <div><a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mirabeau+Pneu+Les+Pennes-Mirabeau" data-hover><span>Lire les avis sur Google</span><i class="arr"></i></a></div>
+        <div class="placeholder-box">Emplacement prévu pour l'intégration des avis Google en direct (widget officiel), une fois le site en ligne.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec" id="contact" style="background:var(--coal);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rv">Contact</div>
+        <h2 class="rv" style="margin-top:22px">Passez nous voir<br><span class="metal">ou appelez-nous.</span></h2>
+      </div>
+      <p class="rv">Une question sur une dimension, une disponibilité ou un montage ? Le plus rapide reste de nous appeler.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="c-block rv">
+          <div class="c-label">Téléphone</div>
+          <a class="c-big" href="tel:+33442029377" data-hover>04 42 02 93 77</a>
+          <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:12px">
+            <a class="btn btn-red" href="tel:+33442029377" data-hover><span>Appeler maintenant</span><i class="arr"></i></a>
+            <a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=43.41150,5.30606" data-hover><span>Itinéraire</span><i class="arr"></i></a>
+          </div>
+        </div>
+        <div class="c-block rv">
+          <div class="c-label">Adresse</div>
+          <address style="font-style:normal;font-size:19px">MIRABEAU PNEU<br>RN113 – Quartier Pourranque<br>13170 Les Pennes-Mirabeau</address>
+          <p style="color:var(--muted);font-size:15px;margin-top:10px">Accès direct depuis la RN113, à proximité de la zone de Plan de Campagne.</p>
+        </div>
+        <div class="c-block rv">
+          <div class="c-label">Horaires</div>
+          <div class="status" id="status"><i></i><span>—</span></div>
+          <table class="hours" id="hours"></table>
+          <p style="color:#7c818a;font-size:13px;margin-top:10px">Horaires indicatifs, à confirmer par téléphone.</p>
+        </div>
+      </div>
+      <div>
+        <div class="map rv">
+          <iframe title="Carte : Mirabeau Pneu, Les Pennes-Mirabeau" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=43.41150,5.30606&z=15&output=embed"></iframe>
+        </div>
+        <form class="form" id="form" novalidate>
+          <div class="row2">
+            <div class="field"><input id="f-name" name="name" placeholder=" " required autocomplete="name"><label for="f-name">Nom</label></div>
+            <div class="field"><input id="f-tel" name="tel" type="tel" placeholder=" " required autocomplete="tel"><label for="f-tel">Téléphone</label></div>
+          </div>
+          <div class="row2">
+            <div class="field"><select id="f-veh" name="vehicule"><option>Voiture</option><option>4x4 / SUV</option><option>Utilitaire</option></select><label for="f-veh">Véhicule</label></div>
+            <div class="field"><input id="f-dim" name="dimension" placeholder=" "><label for="f-dim">Dimension (ex. 205/55 R16)</label></div>
+          </div>
+          <div class="field"><textarea id="f-msg" name="message" placeholder=" "></textarea><label for="f-msg">Votre message</label></div>
+          <div><button class="btn btn-red" type="submit" data-hover><span>Envoyer la demande</span><i class="arr"></i></button></div>
+          <p class="form-msg" id="formMsg" role="status">Formulaire de démonstration : aucune donnée n'est envoyée dans cette maquette.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:#fff;font-family:var(--display);font-stretch:125%;letter-spacing:.08em">MIRABEAU <span style="color:var(--red2)">PNEU</span></b><br>RN113 – Quartier Pourranque, 13170 Les Pennes-Mirabeau · <a href="tel:+33442029377">04 42 02 93 77</a></div>
+    <div>Pneus Les Pennes-Mirabeau · Montage · Réparation · 4x4 · SUV · Utilitaires<br>Mentions légales · Politique de confidentialité</div>
+  </div>
+</footer>
+
+<a class="m-call" href="tel:+33442029377" aria-label="Appeler Mirabeau Pneu"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></a>
+<div class="proto">Maquette de proposition · non officielle</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ===== Données modifiables ===== */
+const HORAIRES = { // 0 = dimanche
+  1:[["08:00","12:00"],["14:00","18:00"]], 2:[["08:00","12:00"],["14:00","18:00"]], 3:[["08:00","12:00"],["14:00","18:00"]],
+  4:[["08:00","12:00"],["14:00","18:00"]], 5:[["08:00","12:00"],["14:00","18:00"]], 6:[["08:30","13:00"]], 0:[]
+};
+const JOURS=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hasGSAP = typeof gsap !== "undefined";
+
+/* ===== Roue (dessin canvas) ===== */
+function drawWheel(ctx,cx,cy,R,ang,o={}){
+  const blur=o.blur||0;
+  ctx.save();ctx.translate(cx,cy);
+  // pneu
+  let g=ctx.createRadialGradient(0,0,R*.6,0,0,R);
+  g.addColorStop(0,"#16171a");g.addColorStop(.85,"#0d0e10");g.addColorStop(1,"#050506");
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();
+  // sculptures
+  ctx.save();ctx.rotate(ang);
+  const N=44;
+  for(let i=0;i<N;i++){
+    ctx.rotate(Math.PI*2/N);
+    ctx.fillStyle=i%2?"#1c1d21":"#222328";
+    ctx.beginPath();ctx.moveTo(-R*.045,-R*.995);ctx.lineTo(R*.045,-R*.995);ctx.lineTo(R*.03,-R*.9);ctx.lineTo(-R*.03,-R*.9);ctx.closePath();ctx.fill();
+  }
+  ctx.restore();
+  // flanc + texte
+  ctx.strokeStyle="#2a2c31";ctx.lineWidth=R*.012;ctx.beginPath();ctx.arc(0,0,R*.86,0,7);ctx.stroke();
+  ctx.save();ctx.rotate(ang*.999);ctx.fillStyle="#34363c";ctx.font=`800 ${R*.055}px Archivo, Arial`;ctx.textAlign="center";
+  const txt="MIRABEAU PNEU · LES PENNES-MIRABEAU · ";
+  for(let k=0;k<2;k++){ctx.rotate(Math.PI);for(let i=0;i<txt.length;i++){ctx.save();ctx.rotate((i-txt.length/2)*0.042);ctx.fillText(txt[i],0,-R*.775);ctx.restore();}}
+  ctx.restore();
+  // disque de frein
+  ctx.fillStyle="#3b3e44";ctx.beginPath();ctx.arc(0,0,R*.6,0,7);ctx.fill();
+  ctx.save();ctx.rotate(ang);ctx.fillStyle="#2a2c30";
+  for(let i=0;i<36;i++){ctx.rotate(Math.PI*2/36);ctx.beginPath();ctx.arc(0,-R*.5,R*.012,0,7);ctx.fill();}
+  ctx.restore();
+  // étrier rouge (fixe)
+  ctx.save();ctx.rotate(-0.9);ctx.fillStyle="#c8141a";
+  ctx.beginPath();ctx.arc(0,0,R*.6,-0.42,0.42);ctx.arc(0,0,R*.44,0.42,-0.42,true);ctx.closePath();ctx.fill();
+  ctx.fillStyle="#fff";ctx.font=`800 ${R*.04}px Archivo, Arial`;ctx.restore();
+  // jante
+  ctx.save();ctx.rotate(ang);
+  const rim=R*.68;
+  g=ctx.createLinearGradient(-rim,-rim,rim,rim);
+  g.addColorStop(0,"#5d6168");g.addColorStop(.3,"#e8ebee");g.addColorStop(.5,"#7b8088");g.addColorStop(.7,"#f4f5f6");g.addColorStop(1,"#55595f");
+  ctx.lineWidth=R*.07;ctx.strokeStyle=g;ctx.beginPath();ctx.arc(0,0,rim-R*.035,0,7);ctx.stroke();
+  for(let i=0;i<5;i++){
+    ctx.save();ctx.rotate(i*Math.PI*2/5);
+    for(const s of [-1,1]){
+      ctx.fillStyle=g;ctx.beginPath();
+      ctx.moveTo(s*R*.035,-R*.14);ctx.lineTo(s*R*.13,-rim+R*.06);ctx.lineTo(s*R*.06,-rim+R*.06);ctx.lineTo(s*R*.012,-R*.14);ctx.closePath();ctx.fill();
+    }
+    ctx.restore();
+  }
+  // moyeu
+  g=ctx.createRadialGradient(-R*.04,-R*.04,0,0,0,R*.16);g.addColorStop(0,"#f4f5f6");g.addColorStop(1,"#4a4e55");
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R*.16,0,7);ctx.fill();
+  ctx.fillStyle="#0b0b0c";ctx.beginPath();ctx.arc(0,0,R*.09,0,7);ctx.fill();
+  ctx.strokeStyle="#e3161b";ctx.lineWidth=R*.012;ctx.beginPath();ctx.arc(0,0,R*.09,0,7);ctx.stroke();
+  ctx.fillStyle="#bfc3c8";for(let i=0;i<5;i++){ctx.save();ctx.rotate(i*Math.PI*2/5+.6);ctx.beginPath();ctx.arc(0,-R*.125,R*.017,0,7);ctx.fill();ctx.restore();}
+  ctx.restore();
+  // flou de vitesse
+  if(blur>0){ctx.fillStyle=`rgba(10,10,11,${Math.min(blur,.55)})`;ctx.beginPath();ctx.arc(0,0,R*.68,0,7);ctx.fill();}
+  // reflet balayant
+  if(o.sweep!==undefined){
+    ctx.save();ctx.rotate(o.sweep);
+    g=ctx.createLinearGradient(-R,0,R,0);g.addColorStop(.42,"rgba(255,255,255,0)");g.addColorStop(.5,"rgba(255,255,255,.22)");g.addColorStop(.58,"rgba(255,255,255,0)");
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();ctx.restore();
+  }
+  ctx.restore();
+}
+function fit(c){const d=Math.min(devicePixelRatio||1,2);const r=c.getBoundingClientRect();c.width=Math.max(1,r.width*d);c.height=Math.max(1,r.height*d);return d;}
+
+/* ===== Intro ===== */
+const intro=document.getElementById("intro"), ic=document.getElementById("introCanvas"), ix=ic.getContext("2d");
+const word=document.getElementById("introWord");
+"MIRABEAU PNEU".split("").forEach(ch=>{const s=document.createElement("span");s.textContent=ch===" "?" ":ch;if("PNEU".includes(ch)&&word.children.length>8)s.style.color="#ff3b3f";word.appendChild(s);});
+let introDone=false, t0=performance.now(), audio=null, soundOn=false;
+const DUR=6200;
+function introFrame(now){
+  if(introDone)return;
+  const d=fit(ic), W=ic.width, H=ic.height, t=(now-t0)/DUR;
+  ix.fillStyle="#000";ix.fillRect(0,0,W,H);
+  // traînées lumineuses (travelling)
+  const sp=Math.min(1,Math.max(0,(t-.15)/.4));
+  ix.save();
+  for(let i=0;i<26;i++){
+    const y=H*(.15+((i*97)%70)/100), len=W*(.08+.25*sp), x=((now*.9*(1+i%5)*sp+i*400)%(W+len))-len;
+    const g=ix.createLinearGradient(x,0,x+len,0);g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(1,i%6?"rgba(255,255,255,.18)":"rgba(227,22,27,.5)");
+    ix.fillStyle=g;ix.fillRect(x,y,len,Math.max(1,d*(i%3?1:2)));
+  }
+  ix.restore();
+  // roue : zoom caméra de très près vers cadrage
+  const ease=1-Math.pow(1-Math.min(1,t/.55),3);
+  const R=Math.min(W,H)*(0.95-0.6*ease);
+  const cx=W*(.5+.18*(1-ease)), cy=H*(.42+.1*(1-ease));
+  const ang=now*0.004*(0.3+2.2*sp);
+  // spot
+  const sg=ix.createRadialGradient(cx,cy,R*.2,cx,cy,R*1.8);sg.addColorStop(0,"rgba(80,84,92,.35)");sg.addColorStop(1,"rgba(0,0,0,0)");
+  ix.fillStyle=sg;ix.fillRect(0,0,W,H);
+  ix.globalAlpha=Math.min(1,t*4);
+  drawWheel(ix,cx,cy,R,ang,{blur:sp*.45,sweep:-1.2+t*3.2});
+  ix.globalAlpha=1;
+  // fondu final
+  if(t>.86){ix.fillStyle=`rgba(0,0,0,${(t-.86)/.14})`;ix.fillRect(0,0,W,H);}
+  if(t>=1){endIntro();return;}
+  requestAnimationFrame(introFrame);
+}
+function engine(){
+  try{
+    audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+    const o=audio.createOscillator(),o2=audio.createOscillator(),f=audio.createBiquadFilter(),g=audio.createGain(),n=audio.currentTime;
+    o.type="sawtooth";o2.type="square";f.type="lowpass";f.frequency.value=380;
+    o.frequency.setValueAtTime(38,n);o.frequency.exponentialRampToValueAtTime(120,n+1.6);o.frequency.exponentialRampToValueAtTime(55,n+3.2);
+    o2.frequency.setValueAtTime(19,n);o2.frequency.exponentialRampToValueAtTime(60,n+1.6);o2.frequency.exponentialRampToValueAtTime(28,n+3.2);
+    g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(.16,n+.4);g.gain.linearRampToValueAtTime(.12,n+2.4);g.gain.linearRampToValueAtTime(0,n+3.4);
+    o.connect(f);o2.connect(f);f.connect(g);g.connect(audio.destination);o.start(n);o2.start(n);o.stop(n+3.5);o2.stop(n+3.5);
+  }catch(e){}
+}
+document.getElementById("soundBtn").addEventListener("click",e=>{soundOn=!soundOn;e.currentTarget.textContent="Son : "+(soundOn?"on":"off");e.currentTarget.setAttribute("aria-pressed",soundOn);if(soundOn)engine();});
+document.getElementById("skipBtn").addEventListener("click",endIntro);
+function endIntro(){
+  if(introDone)return;introDone=true;
+  const fin=()=>{intro.remove();document.body.classList.remove("locked");heroIn();};
+  if(hasGSAP&&!REDUCED)gsap.to(intro,{opacity:0,duration:.6,ease:"power2.out",onComplete:fin});else fin();
+}
+let skipIntro=REDUCED;
+try{if(sessionStorage.getItem("mp_intro"))skipIntro=true;sessionStorage.setItem("mp_intro","1");}catch(e){}
+if(skipIntro){endIntro();}
+else{
+  requestAnimationFrame(introFrame);
+  if(hasGSAP){
+    gsap.to("#introWord span",{opacity:1,y:0,duration:.7,stagger:.05,ease:"power3.out",delay:2.1});
+    gsap.to("#introBar",{width:"60%",duration:1.2,ease:"power3.inOut",delay:2.6});
+  }else{word.querySelectorAll("span").forEach(s=>{s.style.opacity=1;s.style.transform="none"});}
+}
+
+/* ===== Hero ===== */
+const hc=document.getElementById("heroCanvas"),hx=hc.getContext("2d");
+let scrollY0=0,mouseX=0,mouseY=0;
+addEventListener("scroll",()=>{scrollY0=scrollY},{passive:true});
+addEventListener("pointermove",e=>{mouseX=e.clientX/innerWidth-.5;mouseY=e.clientY/innerHeight-.5},{passive:true});
+let heroVisible=true;
+new IntersectionObserver(es=>{heroVisible=es[0].isIntersecting}).observe(hc);
+function heroFrame(now){
+  if(heroVisible){
+    const d=fit(hc),W=hc.width,H=hc.height,mob=W/d<900;
+    hx.fillStyle="#0a0a0b";hx.fillRect(0,0,W,H);
+    // sol + lignes de route en perspective
+    const hz=H*.72;
+    const fl=hx.createLinearGradient(0,hz,0,H);fl.addColorStop(0,"#0e0f11");fl.addColorStop(1,"#18191d");
+    hx.fillStyle=fl;hx.fillRect(0,hz,W,H-hz);
+    hx.strokeStyle="rgba(255,255,255,.06)";hx.lineWidth=d;
+    for(let i=-12;i<=12;i++){hx.beginPath();hx.moveTo(W*.62+i*W*.01,hz);hx.lineTo(W*.62+i*W*.16,H);hx.stroke();}
+    const off=(now*.0006)%1;
+    for(let k=0;k<10;k++){const p=((k+off)/10);const y=hz+(H-hz)*p*p;hx.strokeStyle=`rgba(255,255,255,${.04+.06*p})`;hx.beginPath();hx.moveTo(0,y);hx.lineTo(W,y);hx.stroke();}
+    // lueur rouge
+    const R=mob?Math.min(W*.62,H*.36):Math.min(W*.3,H*.46);
+    const cx=mob?W*.72:W*.77+mouseX*W*.015, cy=(mob?H*.27:H*.48)+mouseY*H*.015-scrollY0*d*.25;
+    const glow=hx.createRadialGradient(cx,cy+R*.9,R*.1,cx,cy+R*.9,R*1.6);glow.addColorStop(0,"rgba(227,22,27,.22)");glow.addColorStop(1,"rgba(227,22,27,0)");
+    hx.fillStyle=glow;hx.fillRect(0,0,W,H);
+    // reflet au sol
+    hx.save();hx.globalAlpha=.12;hx.translate(0,(cy+R)*2);hx.scale(1,-1);drawWheel(hx,cx,cy,R,now*.0009+scrollY0*.01);hx.restore();
+    hx.fillStyle="rgba(10,10,11,.6)";hx.fillRect(0,cy+R,W,H);
+    drawWheel(hx,cx,cy,R,now*.0009+scrollY0*.01,{sweep:Math.sin(now*.0005)*.8-.6});
+  }
+  requestAnimationFrame(heroFrame);
+}
+requestAnimationFrame(heroFrame);
+function heroIn(){
+  if(!hasGSAP||REDUCED)return;
+  gsap.from(".hero h1 .ln>span",{yPercent:110,duration:1.1,stagger:.1,ease:"power4.out"});
+  gsap.from(".h-in",{y:24,opacity:0,duration:1,stagger:.1,delay:.35,ease:"power3.out"});
+}
+
+/* ===== Visuels services (procéduraux, à remplacer par de vraies photos) ===== */
+function vis(c){
+  const d=fit(c),x=c.getContext("2d"),W=c.width,H=c.height,k=c.dataset.vis;
+  const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#1a1c20");bg.addColorStop(1,"#0b0b0c");x.fillStyle=bg;x.fillRect(0,0,W,H);
+  if(k==="sale"){ // pile de pneus
+    for(let i=0;i<4;i++){const y=H*(.82-i*.17);x.fillStyle=i%2?"#16171a":"#1d1e22";x.beginPath();x.ellipse(W*.55,y,W*.28,H*.09,0,0,7);x.fill();x.fillStyle="#0c0c0d";x.fillRect(W*.27,y-H*.09,W*.56,H*.09);x.beginPath();x.ellipse(W*.55,y-H*.09,W*.28,H*.09,0,0,7);x.fillStyle="#232428";x.fill();x.beginPath();x.ellipse(W*.55,y-H*.09,W*.13,H*.042,0,0,7);x.fillStyle="#0a0a0b";x.fill();}
+    x.fillStyle="rgba(227,22,27,.8)";x.fillRect(W*.08,H*.15,W*.012,H*.7);
+  }else if(k==="mount"||k==="suv"||k==="van"){
+    drawWheel(x,W*(k==="mount"?.5:.62),H*.55,H*(k==="suv"?.5:.44),k==="van"?1.1:.4,{sweep:-.8});
+    if(k==="suv"){x.strokeStyle="rgba(255,255,255,.18)";x.lineWidth=d*2;for(let i=0;i<5;i++){x.beginPath();x.moveTo(W*.05,H*(.3+i*.12));x.lineTo(W*.28,H*(.3+i*.12));x.stroke();}}
+    if(k==="van"){x.fillStyle="#2a2c31";x.fillRect(0,H*.08,W*.4,H*.3);x.fillStyle="#e3161b";x.fillRect(0,H*.36,W*.4,H*.02);}
+    if(k==="mount"){x.strokeStyle="#e3161b";x.lineWidth=d*3;x.beginPath();x.arc(W*.5,H*.55,H*.52,-2.4,-1.2);x.stroke();}
+  }else if(k==="repair"){ // gros plan de sculpture
+    x.save();x.translate(W*.5,H*.5);x.rotate(-.25);
+    for(let r=-6;r<7;r++)for(let c=-9;c<10;c++){x.fillStyle=(r+c)%2?"#1b1c20":"#24252a";x.fillRect(c*W*.09,r*H*.16,W*.075,H*.12);}
+    x.restore();x.fillStyle="#e3161b";x.beginPath();x.arc(W*.52,H*.5,H*.06,0,7);x.fill();
+    x.strokeStyle="rgba(255,255,255,.5)";x.lineWidth=d*1.5;x.beginPath();x.arc(W*.52,H*.5,H*.14,0,7);x.stroke();
+  }
+}
+const vs=[...document.querySelectorAll("[data-vis]")];
+const drawVis=()=>vs.forEach(vis);
+document.fonts?document.fonts.ready.then(drawVis):drawVis();
+addEventListener("resize",()=>{clearTimeout(window._r);window._r=setTimeout(()=>{drawVis();drawWhy()},150)});
+
+/* ===== Visuel "Pourquoi" ===== */
+const wc=document.getElementById("whyCanvas");
+function drawWhy(){
+  const d=fit(wc),x=wc.getContext("2d"),W=wc.width,H=wc.height;
+  x.fillStyle="#050506";x.fillRect(0,0,W,H);
+  const g=x.createRadialGradient(W*.7,H*.4,0,W*.7,H*.4,W*.8);g.addColorStop(0,"rgba(227,22,27,.25)");g.addColorStop(1,"rgba(0,0,0,0)");x.fillStyle=g;x.fillRect(0,0,W,H);
+  drawWheel(x,W*.78,H*.42,Math.min(W*.55,H*.6),0.3,{sweep:-.5});
+  const s=x.createLinearGradient(0,0,W*.9,0);s.addColorStop(0,"rgba(5,5,6,.95)");s.addColorStop(1,"rgba(5,5,6,0)");x.fillStyle=s;x.fillRect(0,0,W,H);
+}
+drawWhy();
+
+/* ===== Bande défilante ===== */
+const tk=document.getElementById("ticker"),words=["Vente","Montage","Réparation","4x4","SUV","Utilitaires","Les Pennes-Mirabeau","13170"];
+tk.innerHTML=[...words,...words].map((w,i)=>`<span class="${i%4===1?"r":""}">${w}</span>`).join("");
+
+/* ===== Horaires ===== */
+(function(){
+  const tb=document.getElementById("hours"),now=new Date(),day=now.getDay(),mins=now.getHours()*60+now.getMinutes();
+  const order=[1,2,3,4,5,6,0];
+  tb.innerHTML=order.map(dd=>{const h=HORAIRES[dd];const txt=h.length?h.map(p=>p.join("–").replace(/:/g,"h")).join(" · "):"Fermé";return `<tr class="${dd===day?"today":""}"><td>${JOURS[dd]}</td><td>${txt}</td></tr>`}).join("");
+  const toM=s=>+s.slice(0,2)*60+ +s.slice(3);
+  const open=(HORAIRES[day]||[]).some(([a,b])=>mins>=toM(a)&&mins<toM(b));
+  const st=document.getElementById("status");st.classList.toggle("open",open);st.querySelector("span").textContent=open?"Ouvert en ce moment":"Fermé en ce moment";
+})();
+
+/* ===== Nav ===== */
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("solid",scrollY>40),{passive:true});
+const burger=document.getElementById("burger"),drawer=document.getElementById("drawer");
+function setMenu(o){burger.setAttribute("aria-expanded",o);burger.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");drawer.classList.toggle("open",o);drawer.setAttribute("aria-hidden",!o);document.body.style.overflow=o?"hidden":"";}
+burger.addEventListener("click",()=>setMenu(burger.getAttribute("aria-expanded")!=="true"));
+drawer.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});
+const links=[...document.querySelectorAll(".menu a")];
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+["accueil","services","marques","avis","contact"].forEach(id=>secObs.observe(document.getElementById(id)));
+
+/* ===== Révélations au scroll ===== */
+if(hasGSAP&&!REDUCED){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray(".rv").forEach(el=>{
+    gsap.fromTo(el,{y:40,opacity:0},{y:0,opacity:1,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%",once:true}});
+  });
+  gsap.to("#whyCanvas",{yPercent:8,ease:"none",scrollTrigger:{trigger:"#pourquoi",start:"top bottom",end:"bottom top",scrub:true}});
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const v=+el.dataset.count,o={n:0};
+    ScrollTrigger.create({trigger:el,start:"top 90%",once:true,onEnter:()=>gsap.to(o,{n:v,duration:1.6,ease:"power2.out",onUpdate:()=>el.textContent=Math.round(o.n)})});
+  });
+}
+
+/* ===== Curseur (ordinateur) ===== */
+const cur=document.getElementById("cursor");
+if(matchMedia("(hover:hover) and (pointer:fine)").matches&&!REDUCED){
+  let cx=0,cy=0,tx=0,ty=0;
+  addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY});
+  (function loop(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform=`translate(${cx-17}px,${cy-17}px)`;requestAnimationFrame(loop)})();
+  cur.style.left="0";cur.style.top="0";
+  document.querySelectorAll("a,button,[data-hover]").forEach(el=>{el.addEventListener("pointerenter",()=>cur.classList.add("hover"));el.addEventListener("pointerleave",()=>cur.classList.remove("hover"))});
+}
+
+/* ===== Formulaire (démonstration) ===== */
+document.getElementById("form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const n=document.getElementById("f-name"),t=document.getElementById("f-tel"),m=document.getElementById("formMsg");
+  if(!n.value.trim()||!t.value.trim()){m.className="form-msg";m.textContent="Indiquez au moins votre nom et votre téléphone.";(n.value.trim()?t:n).focus();return;}
+  m.className="form-msg ok";m.textContent="Merci "+n.value.trim()+" ! (Démonstration : dans le vrai site, votre demande serait transmise à l'atelier.)";
+  e.target.reset();
+});
+</script>
+</body>
+</html>
