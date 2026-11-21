@@ -1,0 +1,26 @@
+{
+  "id": "2026-11-19-erreurs-dm",
+  "sujet": "Les 3 erreurs qui tuent tes ventes en message privé",
+  "approche": "l'erreur à éviter",
+  "style": "ocean",
+  "scene3d": "knots",
+  "voix": "piper",
+  "chat": true,
+  "couleur_chat": "#F07A3C",
+  "segments": [
+    {"id": "hook", "say": "Tu reçois des messages, mais personne n'achète ? Voici pourquoi.",
+     "scene": {"type": "bigword", "label": "Messages privés", "word": "0 VENTE", "sub": "malgré les messages", "at": "achete"}},
+    {"id": "e1", "say": "Erreur numéro un : tu envoies ton prix tout de suite. Commence par poser une question.",
+     "scene": {"type": "versus", "left": {"t": "Le prix direct", "sub": "la personne fuit", "icon": "cross"}, "right": {"t": "Une question", "sub": "la conversation démarre", "icon": "chat"}, "winner": "right", "at": "question", "verdict": "DEMANDE D'ABORD"}},
+    {"id": "e2", "say": "Erreur numéro deux : tu réponds trois jours après. Réponds dans l'heure.",
+     "scene": {"type": "stat", "label": "Le bon délai", "value": "< 1 h", "sub": "pour répondre à un message", "at": "heure"}},
+    {"id": "e3", "say": "Erreur numéro trois : tu parles de toi. Parle de son problème, et de son résultat.",
+     "scene": {"type": "cards", "label": "Dans tes messages", "items": [{"t": "Son problème", "icon": "target", "at": "probleme"}, {"t": "Son résultat", "icon": "star", "at": "resultat"}]}},
+    {"id": "fin", "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
+     "scene": {"type": "cta", "line": "COMMENTE", "word": "VIP", "sub": "je t'explique tout dans ma formation", "at": "VIP"}}
+  ],
+  "caption": "Des messages mais zéro vente ? 📩\nLes 3 erreurs :\n1️⃣ envoyer le prix tout de suite (pose d'abord une question)\n2️⃣ répondre 3 jours après (réponds dans l'heure)\n3️⃣ parler de toi (parle de son problème et de son résultat)\n🎓 J'explique tout, étape par étape, dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "3 erreurs en message privé",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": ["#marketingdigital", "#vendreenligne", "#entrepreneur", "#dm", "#businessenligne"]
+}

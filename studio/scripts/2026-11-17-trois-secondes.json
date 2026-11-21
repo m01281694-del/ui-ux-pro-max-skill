@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-17-trois-secondes",
+  "sujet": "La rétention : les 3 premières secondes qui décident si l'algorithme pousse ta vidéo",
+  "style": "electric",
+  "scene3d": "phone",
+  "segments": [
+    {"id": "hook", "say": "Ta vidéo a trois secondes pour survivre.",
+     "scene": {"type": "stat", "label": "Sur TikTok et en Reels", "value": "3 s", "sub": "pour garder l'attention", "at": "trois"}},
+    {"id": "algo", "say": "Après, l'algorithme regarde une seule chose : est-ce que les gens restent, ou est-ce qu'ils swipent ?",
+     "scene": {"type": "versus", "left": {"t": "Ils swipent", "sub": "vidéo montrée à peu de monde", "icon": "cross"}, "right": {"t": "Ils restent", "sub": "vidéo poussée plus loin", "icon": "rocket"}, "winner": "right", "at": "restent", "verdict": "LA RÉTENTION DÉCIDE"}},
+    {"id": "debut", "say": "Pour qu'ils restent, ouvre fort : montre le résultat, pose une question, ou contredis une idée reçue.",
+     "scene": {"type": "cards", "label": "3 façons d'ouvrir", "items": [{"t": "Montre le résultat", "icon": "eye", "at": "resultat"}, {"t": "Pose une question", "icon": "chat", "at": "question"}, {"t": "Contredis une idée reçue", "icon": "fire", "at": "contredis"}]}},
+    {"id": "jamais", "say": "Et surtout, jamais de « Salut, aujourd'hui je vais vous parler de… ». On a déjà swipé.",
+     "scene": {"type": "bigword", "label": "À bannir", "word": "« SALUT… »", "strike": true, "at": "swipe"}},
+    {"id": "rythme", "say": "Ensuite, coupe tous les silences, et change d'image toutes les deux ou trois secondes.",
+     "scene": {"type": "arrow", "from": "Les blancs", "to": "UN PLAN TOUTES LES 3 S", "at": "change"}},
+    {"id": "retiens", "say": "Retiens quatre mots : accroche, rythme, sous-titres, et une fin qui relance.",
+     "scene": {"type": "tiles", "label": "La recette", "items": [{"t": "ACCROCHE", "icon": "megaphone", "at": "accroche"}, {"t": "RYTHME", "icon": "clock", "at": "rythme"}, {"t": "SOUS-TITRES", "icon": "chat", "at": "sous"}, {"t": "RELANCE", "icon": "arrow", "at": "relance"}]}},
+    {"id": "cta", "say": "Dis-moi en commentaire laquelle des trois ouvertures tu testes en premier.",
+     "scene": {"type": "cta", "line": "DIS-MOI", "word": "1, 2 OU 3 ?", "sub": "en commentaire", "at": "commentaire"}}
+  ],
+  "caption": "Ta vidéo a 3 secondes pour survivre ⏱️\nL'algorithme regarde surtout une chose : est-ce que les gens restent. Ouvre fort (résultat, question ou contre-pied), coupe les blancs, change de plan toutes les 2-3 secondes, mets des sous-titres et finis sur une relance.\n💬 Dis-moi en commentaire : 1, 2 ou 3 ?",
+  "titre": "Ta vidéo a 3 secondes pour survivre",
+  "hashtags": ["#marketingdigital", "#tiktokastuce", "#reels", "#algorithme", "#createurdecontenu", "#pourtoi"]
+}

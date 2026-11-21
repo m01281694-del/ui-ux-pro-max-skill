@@ -1,0 +1,36 @@
+{
+  "id": "LIVRE_003",
+  "slug": "ia-ton-assistant-business",
+  "titre": "L'IA, ton assistant business",
+  "sous_titre": "Le guide pratique pour lancer et développer ton activité avec les assistants d'intelligence artificielle — 100 prompts prêts à l'emploi",
+  "auteur": "Elm Publishing",
+  "langue": "fr",
+  "annee": 2026,
+  "date_verification": "novembre 2026",
+  "format_pouces": [
+    6,
+    9
+  ],
+  "papier": "blanc",
+  "police": "Literata",
+  "taille_police": 11,
+  "interligne": 1.5,
+  "couleurs": {
+    "accent": "#5b3cc4",
+    "fond": "#f1edfc"
+  },
+  "prix_broche": 12.9,
+  "prix_broche_tests": [
+    12.9,
+    14.9,
+    16.9
+  ],
+  "prix_kindle": 5.99,
+  "prix_kindle_tests": [
+    4.99,
+    5.99,
+    6.99
+  ],
+  "css_extra": ".prompt{border-left:4pt solid #5b3cc4!important} .prompt p:first-child{font-family:Montserrat;font-weight:700;font-size:8.6pt;letter-spacing:.06em;color:#5b3cc4;text-transform:uppercase} h1,h2,h3{break-inside:avoid} .bilan{break-inside:avoid}",
+  "mentions_html": "<p><b>L'IA, ton assistant business</b><br>Première édition, novembre 2026.</p><p>ChatGPT, Claude, Gemini, Copilot, Le Chat et les autres noms cités sont des marques de leurs propriétaires respectifs. Ils sont mentionnés uniquement pour désigner ces services. Ce livre n'est ni affilié à ces entreprises, ni sponsorisé ou approuvé par elles.</p><p>Ce livre ne promet aucun résultat financier. Les outils d'IA évoluent rapidement : les informations sont celles de novembre 2026.</p>"
+}

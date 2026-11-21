@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Montserrat, sans-serif">
+<rect x="0" y="0" width="600" height="620" fill="#f7efe4"/>
+<rect x="20" y="40" width="560" height="560" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<rect x="202" y="40" width="196" height="232" fill="#efe0cc" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 0 372,272" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 1 372,272" fill="none" stroke="#9a7b5b" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M56,40 L56,165 A270,270 0 0 0 544,165 L544,40" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M240,600 A60,60 0 0 1 360,600" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<line x1="270" y1="80" x2="330" y2="80" stroke="#555" stroke-width="5"/>
+<circle cx="300" cy="103" r="18" fill="none" stroke="#e8590c" stroke-width="5"/>
+<polygon points="300,284 287,311 313,311" fill="#ff922b" stroke="#c2410c" stroke-width="2.5"/>
+<polygon points="300,354 287,381 313,381" fill="#ff922b" stroke="#c2410c" stroke-width="2.5"/>
+<polygon points="300,424 287,451 313,451" fill="#ff922b" stroke="#c2410c" stroke-width="2.5"/>
+<polygon points="300,494 287,521 313,521" fill="#ff922b" stroke="#c2410c" stroke-width="2.5"/>
+<line x1="300" y1="300" x2="300.0" y2="356.0" stroke="#2b8a3e" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/><polygon points="300.0,356.0 293.0,341.6 307.0,341.6" fill="#2b8a3e"/>
+<line x1="300" y1="370" x2="300.0" y2="426.0" stroke="#2b8a3e" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/><polygon points="300.0,426.0 293.0,411.6 307.0,411.6" fill="#2b8a3e"/>
+<line x1="300" y1="440" x2="300.0" y2="496.0" stroke="#2b8a3e" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/><polygon points="300.0,496.0 293.0,481.6 307.0,481.6" fill="#2b8a3e"/>
+<circle cx="300" cy="300" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="300" y="307" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+</svg>

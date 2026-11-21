@@ -1,0 +1,23 @@
+{
+  "id": "2026-11-17-benefice",
+  "sujet": "La différence entre une caractéristique et un bénéfice",
+  "style": "sunset",
+  "segments": [
+    {"id": "hook", "say": "Les gens n'achètent pas une perceuse.",
+     "scene": {"type": "bigword", "label": "Personne n'achète une…", "word": "PERCEUSE", "strike": true, "at": "perceuse"}},
+    {"id": "trou", "say": "Ils achètent un trou dans le mur. Et même, un cadre bien accroché.",
+     "scene": {"type": "arrow", "from": "Une perceuse", "to": "UN CADRE ACCROCHÉ", "at": "cadre"}},
+    {"id": "diff", "say": "C'est toute la différence entre une caractéristique, et un bénéfice.",
+     "scene": {"type": "versus", "left": {"t": "Ce que c'est", "sub": "caractéristique", "icon": "tag"}, "right": {"t": "Ce que ça change", "sub": "bénéfice", "icon": "heart"}, "winner": "right", "at": "benefice", "verdict": "LE BÉNÉFICE VEND"}},
+    {"id": "ex", "say": "Exemple. Batterie de cinq mille milliampères : tout le monde s'en fiche. Deux jours sans recharger : là, tu vends.",
+     "scene": {"type": "cards", "label": "Exemple", "items": [{"t": "5000 mAh", "icon": "cross", "at": "batterie"}, {"t": "2 jours sans recharger", "icon": "check", "at": "jours"}]}},
+    {"id": "methode", "say": "La méthode : prends chaque caractéristique, et demande-toi : et alors ? Jusqu'à tomber sur ce que ton client ressent.",
+     "scene": {"type": "steps", "label": "La méthode", "items": [{"t": "Une caractéristique", "at": "prends"}, {"t": "« Et alors ? »", "at": "alors"}, {"t": "Ce que le client ressent", "at": "tomber"}]}},
+    {"id": "save", "say": "Enregistre ça, et applique-le à ta prochaine description.",
+     "scene": {"type": "save", "sub": "et applique-le ce soir"}},
+    {"id": "cta", "say": "Abonne-toi : demain, je te montre les mots qui font cliquer.",
+     "scene": {"type": "cta", "line": "ABONNE-TOI", "word": "DEMAIN", "sub": "les mots qui font cliquer", "at": "abonne"}}
+  ],
+  "caption": "Personne n'achète une perceuse 🔩 Les gens achètent le trou dans le mur… et le cadre bien accroché 🖼️\nCaractéristique = ce que c'est. Bénéfice = ce que ça change pour ton client. Demande-toi « et alors ? » jusqu'à trouver ce qu'il ressent.\n🔖 Enregistre et applique-le à ta prochaine description",
+  "hashtags": ["#marketing", "#copywriting", "#marketingdigital", "#vendreenligne", "#business", "#pourtoi"]
+}

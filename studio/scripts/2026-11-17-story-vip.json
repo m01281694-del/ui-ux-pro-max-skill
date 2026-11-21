@@ -1,0 +1,21 @@
+{
+  "id": "2026-11-17-story-vip",
+  "sujet": "Story : présentation de la formation VIP",
+  "approche": "story courte",
+  "style": "navy",
+  "scene3d": "knots",
+  "voix": "piper",
+  "chat": true,
+  "couleur_chat": "#F07A3C",
+  "segments": [
+    {"id": "hook", "say": "Stop ! Tu veux enfin vendre avec tes vidéos ?",
+     "scene": {"type": "bigword", "label": "Question", "word": "VENDRE", "sub": "avec tes vidéos", "at": "vendre"}},
+    {"id": "contenu", "say": "Dans ma formation, je t'apprends tout : trouver ta niche, créer tes vidéos, les automatiser, et vendre.",
+     "scene": {"type": "tiles", "label": "Ma formation", "items": [{"t": "TA NICHE", "icon": "target", "at": "niche"}, {"t": "TES VIDÉOS", "icon": "phone", "at": "creer"}, {"t": "AUTOMATISER", "icon": "rocket", "at": "automatiser"}, {"t": "VENDRE", "icon": "money", "at": "vendre"}]}},
+    {"id": "fin", "say": "Étape par étape. Réponds VIP à cette story, et je t'envoie tout.",
+     "scene": {"type": "cta", "line": "RÉPONDS", "word": "VIP", "sub": "à cette story", "at": "VIP"}}
+  ],
+  "caption": "Réponds VIP à cette story 💬",
+  "titre": "Story VIP",
+  "hashtags": []
+}

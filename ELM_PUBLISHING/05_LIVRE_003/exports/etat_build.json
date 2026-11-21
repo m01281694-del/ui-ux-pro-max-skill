@@ -1,0 +1,69 @@
+{
+  "pages": 64,
+  "pages_corps": 59,
+  "marges": {
+    "top": 0.7,
+    "bottom": 0.75,
+    "left": 0.375,
+    "right": 0.5
+  },
+  "toc": [
+    [
+      "Introduction : un assistant disponible à toute heure",
+      1
+    ],
+    [
+      "1. Ce que l’IA sait faire (et ce qu’elle fait mal)",
+      4
+    ],
+    [
+      "2. Bien parler à l’IA : la méthode RCTF",
+      8
+    ],
+    [
+      "3. Clarifier ton offre et ta cible",
+      12
+    ],
+    [
+      "4. Créer du contenu pour les réseaux",
+      17
+    ],
+    [
+      "5. Écrire pour vendre",
+      23
+    ],
+    [
+      "6. Trouver et servir tes clients",
+      29
+    ],
+    [
+      "7. Gagner du temps au quotidien",
+      34
+    ],
+    [
+      "8. Analyser, apprendre et décider",
+      39
+    ],
+    [
+      "8 bis. Trois cas pratiques pas à pas",
+      44
+    ],
+    [
+      "9. Les règles d’or : vérifier, protéger, rester honnête",
+      48
+    ],
+    [
+      "10. Ton plan d’action de 14 jours",
+      52
+    ],
+    [
+      "Conclusion : l’IA t’accélère, tu restes le moteur",
+      56
+    ],
+    [
+      "Glossaire",
+      58
+    ]
+  ],
+  "construit_le": "2026-11-21T01:12:15"
+}

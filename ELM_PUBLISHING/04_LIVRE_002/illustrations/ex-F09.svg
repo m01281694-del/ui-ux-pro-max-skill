@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Montserrat, sans-serif">
+<rect x="0" y="0" width="600" height="620" fill="#f7efe4"/>
+<rect x="20" y="40" width="560" height="560" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<rect x="202" y="40" width="196" height="232" fill="#efe0cc" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 0 372,272" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 1 372,272" fill="none" stroke="#9a7b5b" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M56,40 L56,165 A270,270 0 0 0 544,165 L544,40" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M240,600 A60,60 0 0 1 360,600" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<line x1="270" y1="80" x2="330" y2="80" stroke="#555" stroke-width="5"/>
+<circle cx="300" cy="103" r="18" fill="none" stroke="#e8590c" stroke-width="5"/>
+<polyline points="502.0,318.0 495.8,301.2 474.3,298.7 473.1,277.1 451.6,274.6 450.5,253.0 429.0,250.5 427.9,228.9 406.4,226.4 405.2,204.8 383.7,202.3 382.6,180.7 361.1,178.2 360.0,156.6 338.4,154.1 337.3,132.5 315.8,130.0 309.6,113.2" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="309.6,113.2 324.5,118.9 314.4,128.5" fill="#1c7ed6"/>
+<polyline points="300.0,103.0 283.6,110.3 282.5,131.9 260.9,134.3 259.8,156.0 238.3,158.4 237.2,180.1 215.7,182.5 214.6,204.2 193.0,206.6 191.9,228.3 170.4,230.7 169.3,252.4 147.8,254.8 146.6,276.4 125.1,278.9 124.0,300.5 107.6,307.8" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="107.6,307.8 112.4,292.5 122.5,302.1" fill="#1c7ed6"/>
+<polyline points="98.0,318.0 114.4,310.7 115.5,289.1 137.1,286.7 138.2,265.0 159.7,262.6 160.8,240.9 182.3,238.5 183.4,216.8 205.0,214.4 206.1,192.7 227.6,190.3 228.7,168.6 250.2,166.2 251.4,144.6 272.9,142.1 274.0,120.5 290.4,113.2" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="290.4,113.2 285.6,128.5 275.5,118.9" fill="#1c7ed6"/>
+<circle cx="502" cy="318" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="502" y="325" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+</svg>

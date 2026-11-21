@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+{{FONTS}}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--W:{{W}}in;--H:{{H}}in;--S:{{SPINE}}in;--B:{{BLEED}}in;--navy:#0f2d4a;--blue:#1f5f8b;--sun:#ffb703;--mint:#7fd1b9;--paper:#fdfaf3}
+html,body{background:var(--navy)} html{overflow:hidden}
+body.full{width:{{TOTALW}}in;height:{{TOTALH}}in;position:relative;overflow:hidden}
+body.kindle{width:1600px;height:2560px;overflow:hidden}
+.front,.back,.spine{position:absolute;top:var(--B);height:var(--H)}
+.full .back{left:var(--B);width:var(--W)}
+.full .spine{left:calc(var(--B) + var(--W));width:var(--S)}
+.full .front{left:calc(var(--B) + var(--W) + var(--S));width:var(--W)}
+.kindle .back,.kindle .spine{display:none}
+.kindle .front{top:0;left:0;width:var(--W);height:{{KH}}in;transform-origin:0 0;transform:scale({{KSCALE}})}
+.bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 80% 10%,#1d4f7a 0,#0f2d4a 55%,#0a1f35 100%)}
+.front .safe{position:absolute;inset:.42in .4in .45in .4in;display:flex;flex-direction:column;color:#fff}
+.kick{font-family:Montserrat;font-weight:700;font-size:10.5pt;letter-spacing:.22em;text-transform:uppercase;color:var(--mint)}
+h1{font-family:Montserrat;font-weight:900;font-size:43pt;line-height:.98;letter-spacing:-.025em;margin-top:.18in}
+h1 .a{color:#fff;display:block} h1 .b{display:block;color:var(--sun)}
+.sub{font-family:Literata;font-size:12.5pt;line-height:1.32;margin-top:.22in;color:#dbe7f2;max-width:4.9in}
+.art{position:relative;flex:1;margin:.15in -.4in 0}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.badges{display:flex;gap:.12in;flex-wrap:wrap;margin-bottom:.18in}
+.badge{font-family:Montserrat;font-weight:700;font-size:9.5pt;padding:.07in .14in;border-radius:.2in;background:rgba(255,255,255,.12);border:1.2px solid rgba(255,255,255,.35)}
+.brand{font-family:Montserrat;font-weight:700;font-size:9pt;letter-spacing:.35em;color:#9fb8cf;text-align:center}
+.spine .in{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.spine .t{transform:rotate(90deg);white-space:nowrap;font-family:Montserrat;font-weight:800;font-size:{{SPINE_FONT}}pt;color:#fff;letter-spacing:.02em}
+.spine .t b{color:var(--sun)}
+.back .safe{position:absolute;inset:.5in .45in .45in .5in;color:#eaf1f7;display:flex;flex-direction:column}
+.back h2{font-family:Montserrat;font-weight:800;font-size:17pt;line-height:1.15;color:#fff}
+.back h2 span{color:var(--sun)}
+.back p{font-family:Literata;font-size:10.2pt;line-height:1.45;margin-top:.14in}
+.back ul{list-style:none;margin-top:.16in}
+.back li{font-family:Literata;font-size:10pt;line-height:1.38;margin:.07in 0;padding-left:.24in;position:relative}
+.back li:before{content:"";position:absolute;left:0;top:.06in;width:.11in;height:.11in;border-radius:50%;background:var(--sun)}
+.back .who{font-family:Montserrat;font-weight:700;font-size:9.5pt;color:var(--mint);margin-top:.18in;letter-spacing:.04em}
+.barcode{position:absolute;right:.25in;bottom:.25in;width:2in;height:1.2in;background:#fff}
+.back .ed{position:absolute;left:.5in;bottom:.5in;font-family:Montserrat;font-weight:700;font-size:8.5pt;letter-spacing:.3em;color:#9fb8cf}
+</style></head>
+<body class="{{MODE}}">
+<div class="bg"></div>
+
+<div class="back"><div class="safe">
+  <h2>Tu révises des heures… <span>et tu oublies tout le jour du contrôle ?</span></h2>
+  <p>Ce n'est pas un problème d'intelligence. C'est un problème de méthode. Les chercheurs en psychologie l'ont montré : relire et surligner, les méthodes les plus utilisées par les élèves, sont parmi les moins efficaces.</p>
+  <p>Ce livre t'explique simplement ce qui marche vraiment, et comment l'appliquer dès ce soir :</p>
+  <ul>
+    <li><b>Se tester</b> plutôt que relire : la page blanche, les cartes mémoire, la boîte de Leitner.</li>
+    <li><b>Espacer</b> ses révisions pour retenir des mois au lieu de quelques jours.</li>
+    <li><b>Mélanger</b> les exercices et <b>expliquer</b> pour vraiment comprendre.</li>
+    <li>Rester concentré malgré le téléphone, gérer le stress, préparer le brevet et le bac.</li>
+    <li>Un <b>plan de 30 jours</b> et des fiches prêtes à remplir.</li>
+  </ul>
+  <p>Toutes les méthodes s'appuient sur des études publiées, citées en fin d'ouvrage. Aucune promesse miracle : des outils concrets, testés par la recherche.</p>
+  <div class="who">POUR LES 13–18 ANS · AVEC UN CHAPITRE POUR LES PARENTS</div>
+</div><div class="ed">ELM PUBLISHING</div><div class="barcode"></div></div>
+
+<div class="spine"><div class="in"><div class="t" data-show="{{SPINE_TEXT}}">Réviser moins, <b>retenir plus</b></div></div></div>
+
+<div class="front"><div class="safe">
+  <div class="kick">Méthodes validées par la science</div>
+  <h1><span class="a">Réviser moins,</span><span class="b">retenir plus</span></h1>
+  <div class="sub">Les techniques d'apprentissage les plus efficaces, expliquées aux collégiens et lycéens — avec un plan de 30 jours</div>
+  <div class="art">
+    <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#7fd1b9"/><stop offset="1" stop-color="#ffb703"/></linearGradient></defs>
+      <g opacity=".18" stroke="#fff" stroke-width="1"><path d="M40 360 H560 M40 290 H560 M40 220 H560 M40 150 H560 M40 80 H560"/></g>
+      <path d="M50 90 C90 230 140 300 210 330 S420 360 560 368" fill="none" stroke="#ff6b6b" stroke-width="7" stroke-dasharray="14 12" opacity=".75"/>
+      <path d="M50 90 C70 150 100 175 140 185 L140 95 C175 150 215 170 265 176 L265 95 C320 140 380 155 440 160 L440 95 C490 125 530 135 560 138" fill="none" stroke="url(#g1)" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+      <g fill="#ffb703"><circle cx="140" cy="95" r="12"/><circle cx="265" cy="95" r="12"/><circle cx="440" cy="95" r="12"/></g>
+      <g transform="translate(470 210)">
+        <rect x="-70" y="-60" width="140" height="170" rx="12" fill="#fdfaf3" transform="rotate(8)"/>
+        <rect x="-80" y="-66" width="140" height="170" rx="12" fill="#ffffff" transform="rotate(-6)"/>
+        <text x="-10" y="0" font-family="Montserrat" font-weight="900" font-size="54" fill="#1f5f8b" text-anchor="middle" transform="rotate(-6)">?</text>
+        <g transform="rotate(-6)" stroke="#1f5f8b" stroke-width="5" stroke-linecap="round"><line x1="-55" y1="40" x2="35" y2="40"/><line x1="-55" y1="62" x2="15" y2="62"/></g>
+      </g>
+    </svg>
+  </div>
+  <div class="badges"><span class="badge">Se tester</span><span class="badge">Espacer</span><span class="badge">Mélanger</span><span class="badge">Expliquer</span></div>
+  <div class="brand">ELM PUBLISHING</div>
+</div></div>
+<script>document.querySelectorAll('[data-show="0"]').forEach(e=>e.style.display='none')</script>
+</body></html>

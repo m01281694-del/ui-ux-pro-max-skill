@@ -1,0 +1,116 @@
+{
+  "id": "2026-11-17-sketch-automatise",
+  "format": "sketch",
+  "nom_createur": "LÉO",
+  "nom_assistant": "BIP",
+  "couleur_sweat": "#2fb39a",
+  "fin_sous": "je t'explique tout dans ma formation",
+  "sujet": "Sketch : l'assistant IA qui automatise tout le contenu",
+  "approche": "sketch dialogue",
+  "segments": [
+    {
+      "id": "l1",
+      "who": "leo",
+      "plan": "large",
+      "emotion": "fache",
+      "say": "Bip… j'en peux plus. Je passe trois heures par jour sur mes vidéos."
+    },
+    {
+      "id": "b1",
+      "who": "bip",
+      "say": "Trois heures ? Donne-moi deux minutes. Je t'automatise tout."
+    },
+    {
+      "id": "l2",
+      "who": "leo",
+      "emotion": "surpris",
+      "say": "Tout ? Même les idées ?"
+    },
+    {
+      "id": "b2",
+      "who": "bip",
+      "plan": "ecran",
+      "say": "Les idées, le script, la voix, le montage… et je publie toutes les cinq heures.",
+      "ecran": {
+        "tag": "AUTOMATISATION",
+        "title": "Pilote automatique",
+        "items": [
+          "Idées",
+          "Script + voix",
+          "Montage",
+          "Publication"
+        ]
+      }
+    },
+    {
+      "id": "l3",
+      "who": "leo",
+      "regard": "bip",
+      "say": "Et moi, je fais quoi alors ?"
+    },
+    {
+      "id": "b3",
+      "who": "bip",
+      "say": "Toi ? Tu réponds aux commentaires. C'est là que tu vends."
+    },
+    {
+      "id": "l5",
+      "who": "leo",
+      "regard": "bip",
+      "say": "Mais l'IA, elle connaît mon audience ?"
+    },
+    {
+      "id": "b5",
+      "who": "bip",
+      "say": "Tu me décris ta cible une seule fois. Après, chaque vidéo lui parle à elle, pas à tout le monde."
+    },
+    {
+      "id": "l4",
+      "who": "leo",
+      "emotion": "surpris",
+      "geste": "montre",
+      "say": "Attends… ça marche vraiment ?"
+    },
+    {
+      "id": "b4",
+      "who": "bip",
+      "plan": "ecran",
+      "say": "Regarde ton écran.",
+      "ecran": {
+        "tag": "CETTE SEMAINE",
+        "title": "35 vidéos prévues",
+        "items": [
+          "TikTok",
+          "Instagram",
+          "Toutes les 5 h"
+        ]
+      }
+    },
+    {
+      "id": "l6",
+      "who": "leo",
+      "regard": "bip",
+      "say": "Bip… t'es incroyable."
+    },
+    {
+      "id": "b6",
+      "who": "bip",
+      "say": "Je sais."
+    },
+    {
+      "id": "fin",
+      "who": "leo",
+      "plan": "leo",
+      "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout."
+    }
+  ],
+  "caption": "Mon assistant IA m'a fait gagner 3 heures par jour 🤖⏱️\nIdées, script, voix, montage, publication : tout est automatisé. Moi ? Je réponds aux commentaires… c'est là qu'on vend.\n🎓 J'explique tout dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "Mon assistant IA automatise tout",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": [
+    "#automatisation",
+    "#intelligenceartificielle",
+    "#marketingdigital",
+    "#createurdecontenu"
+  ]
+}

@@ -1,0 +1,8 @@
+videos/*/voice.wav
+videos/*/still-*.jpg
+videos/*/silent.mp4
+videos/*/mix.wav
+comptines/videos/*/mix.wav
+comptines/videos/*/silent.mp4
+comptines/videos/*/v_*
+comptines/videos/*/still-*.jpg

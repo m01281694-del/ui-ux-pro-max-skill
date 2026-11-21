@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" font-family="Montserrat, sans-serif"><rect width="1200" height="170" fill="#fff"/>
+<polyline points="30.0,60.0 47.7,67.0 65.3,53.0 83.0,67.0 100.7,53.0 118.3,67.0 136.0,60.0" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="136.0,60.0 121.6,67.0 121.6,53.0" fill="#1c7ed6"/>
+<text x="165" y="68" font-size="24" font-weight="600" fill="#212529">Dribble</text>
+<line x1="320" y1="60" x2="426.0" y2="60.0" stroke="#2b8a3e" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/><polygon points="426.0,60.0 411.6,67.0 411.6,53.0" fill="#2b8a3e"/>
+<text x="455" y="68" font-size="24" font-weight="600" fill="#212529">Course sans ballon</text>
+<path d="M610,60 Q659.0,100.0 708.0,60.0" fill="none" stroke="#d9480f" stroke-width="4.5"/><polygon points="708.0,60.0 701.2,74.5 692.4,63.7" fill="#d9480f"/>
+<text x="745" y="68" font-size="24" font-weight="600" fill="#212529">Tir / finition</text>
+<line x1="900" y1="60" x2="1006.0" y2="60.0" stroke="#7048e8" stroke-width="4" stroke-dasharray="3 8" stroke-linecap="round"/><polygon points="1006.0,60.0 991.6,67.0 991.6,53.0" fill="#7048e8"/>
+<text x="1035" y="68" font-size="24" font-weight="600" fill="#212529">Passe</text>
+<circle cx="60" cy="130" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="60" y="137" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+<text x="95" y="138" font-size="24" font-weight="600">Toi (joueur)</text>
+<polygon points="380,116 367,143 393,143" fill="#ff922b" stroke="#c2410c" stroke-width="2.5"/>
+<text x="410" y="140" font-size="24" font-weight="600">Plot</text>
+<circle cx="640" cy="130" r="11" fill="#d9480f"/><text x="665" y="140" font-size="24" font-weight="600">Position de tir</text>
+</svg>

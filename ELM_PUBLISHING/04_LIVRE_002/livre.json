@@ -1,0 +1,36 @@
+{
+  "id": "LIVRE_002",
+  "slug": "basket-cahier-entrainement-solo",
+  "titre": "Basket : le cahier d'entraînement solo",
+  "sous_titre": "60 exercices pour progresser seul avec un ballon et un panier — dribble, tir, finitions, jeu de pieds — et un programme de 8 semaines",
+  "auteur": "Elm Publishing",
+  "langue": "fr",
+  "annee": 2026,
+  "date_verification": "novembre 2026",
+  "format_pouces": [
+    8.5,
+    11
+  ],
+  "papier": "blanc",
+  "police": "Source Serif 4",
+  "taille_police": 11,
+  "interligne": 1.45,
+  "couleurs": {
+    "accent": "#d9480f",
+    "fond": "#fff1e6"
+  },
+  "prix_broche": 12.9,
+  "prix_broche_tests": [
+    11.9,
+    12.9,
+    14.9
+  ],
+  "prix_kindle": 4.99,
+  "prix_kindle_tests": [
+    3.99,
+    4.99,
+    5.99
+  ],
+  "mentions_html": "<p><b>Basket : le cahier d'entraînement solo</b><br>Première édition, 2026.</p><p><b>Avertissement :</b> la pratique sportive comporte des risques de blessure. Échauffe-toi, progresse graduellement et arrête-toi en cas de douleur. Les mineurs doivent s'entraîner avec l'accord de leurs parents, sur un terrain sûr. En cas de doute sur ta santé, consulte un médecin.</p>",
+  "css_extra": ".exo{box-sizing:border-box;width:100%;min-height:4.15in;display:flex;gap:.22in;align-items:flex-start;break-inside:avoid;margin:.05in 0 .22in;padding:.12in;border:1pt solid #f0c8ad;border-radius:6pt;background:#fffaf6}\n.exo>p:first-child{flex:0 0 2.55in;margin:0}.exo svg{width:2.55in!important;height:auto!important;max-height:none!important;border-radius:4pt}\n.exo-txt{flex:1;font-size:10pt;line-height:1.38}.exo-txt p{margin:0 0 .38em;text-align:left}\nh2{break-after:avoid;margin:.5em 0 .25em!important;font-size:12.5pt!important}\n.page-test td:empty{height:.42in}\n.exo .notes{height:.95in;margin-top:.1in;background:repeating-linear-gradient(transparent 0 .27in,#d9b99b .27in calc(.27in + .6pt))}"
+}

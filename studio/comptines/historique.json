@@ -1,0 +1,76 @@
+{
+  "comptines": [
+    {
+      "date": "2026-11-16",
+      "id": "frere-jacques",
+      "titre": "Frère Jacques",
+      "type": "traditionnelle",
+      "theme": "matin",
+      "animal": "ours",
+      "fichier": "studio/comptines/videos/frere-jacques/frere-jacques.mp4",
+      "publie": true,
+      "programme": "2026-11-16T21:40 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-3782540977394923507"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "au-clair-de-la-lune",
+      "titre": "Au clair de la lune",
+      "type": "traditionnelle",
+      "theme": "nuit",
+      "animal": "lapin",
+      "fichier": "studio/comptines/videos/au-clair-de-la-lune/au-clair-de-la-lune.mp4",
+      "publie": true,
+      "programme": "2026-11-16T22:45 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7641800283353859649"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "ah-vous-dirai-je-maman",
+      "titre": "Ah ! vous dirai-je maman",
+      "type": "traditionnelle",
+      "theme": "etoiles",
+      "animal": "chat",
+      "fichier": "studio/comptines/videos/ah-vous-dirai-je-maman/ah-vous-dirai-je-maman.mp4",
+      "publie": true,
+      "programme": "2026-11-17T12:40 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-7559883851464946615"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "les-couleurs",
+      "titre": "Les couleurs",
+      "type": "originale",
+      "theme": "couleurs",
+      "animal": "poussin",
+      "fichier": "studio/comptines/videos/les-couleurs/les-couleurs.mp4",
+      "publie": true,
+      "programme": "2026-11-17T19:55 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1621170911830260626"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "je-compte-jusqua-cinq",
+      "titre": "Je compte jusqu'à cinq",
+      "type": "originale",
+      "theme": "mer",
+      "animal": "grenouille",
+      "fichier": "studio/comptines/videos/je-compte-jusqua-cinq/je-compte-jusqua-cinq.mp4",
+      "publie": true,
+      "programme": "2026-11-17T22:45 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-9088808353342600447"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "bonjour-petit-soleil",
+      "titre": "Bonjour petit soleil",
+      "type": "originale",
+      "theme": "matin",
+      "animal": "souris",
+      "fichier": "studio/comptines/videos/bonjour-petit-soleil/bonjour-petit-soleil.mp4",
+      "publie": true,
+      "programme": "2026-11-19T15:15 Europe/Paris",
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-2841260162578232782"
+    }
+  ]
+}

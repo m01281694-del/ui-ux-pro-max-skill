@@ -1,0 +1,147 @@
+{
+  "id": "je-compte-jusqua-cinq",
+  "titre": "Je compte jusqu'à cinq",
+  "theme": "mer",
+  "animal": "grenouille",
+  "bpm": 104,
+  "transpose": -1,
+  "sous_titre": "Compte avec Grenouille !",
+  "lignes": [
+    {
+      "texte": "Un, deux, trois, qua|tre, cinq,",
+      "notes": [
+        [
+          "C4",
+          0.5
+        ],
+        [
+          "D4",
+          0.5
+        ],
+        [
+          "E4",
+          0.5
+        ],
+        [
+          "F4",
+          0.5
+        ],
+        [
+          "G4",
+          1
+        ],
+        [
+          "G4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "je comp|te sur mes doigts,",
+      "notes": [
+        [
+          "A4",
+          0.5
+        ],
+        [
+          "A4",
+          0.5
+        ],
+        [
+          "G4",
+          0.5
+        ],
+        [
+          "F4",
+          0.5
+        ],
+        [
+          "E4",
+          1
+        ],
+        [
+          "E4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "cinq pe|tits doigts qui dan|sent,",
+      "notes": [
+        [
+          "F4",
+          0.5
+        ],
+        [
+          "F4",
+          0.5
+        ],
+        [
+          "E4",
+          0.5
+        ],
+        [
+          "E4",
+          0.5
+        ],
+        [
+          "D4",
+          0.5
+        ],
+        [
+          "D4",
+          0.5
+        ],
+        [
+          "E4",
+          1
+        ]
+      ]
+    },
+    {
+      "texte": "et qui di|sent : c'est moi !",
+      "notes": [
+        [
+          "C4",
+          0.5
+        ],
+        [
+          "D4",
+          0.5
+        ],
+        [
+          "E4",
+          0.5
+        ],
+        [
+          "D4",
+          0.5
+        ],
+        [
+          "C4",
+          1
+        ],
+        [
+          "C4",
+          1
+        ]
+      ]
+    }
+  ],
+  "type": "originale (écrite pour la chaîne)",
+  "repetitions": 3,
+  "pause_beats": 2,
+  "fin": "Bravo !",
+  "youtube": {
+    "titre": "Je compte jusqu'à cinq 🖐️ Comptine pour enfants avec paroles | Compte avec Grenouille",
+    "description": "Compte jusqu'à cinq avec Grenouille ! 🐸🖐️\nUne comptine originale pour apprendre à compter en chantant.\n\n#comptine #chansonpourenfant #comptines",
+    "tags": [
+      "comptine",
+      "chanson pour enfant",
+      "apprendre à compter",
+      "comptines",
+      "maternelle",
+      "karaoké enfant"
+    ]
+  }
+}

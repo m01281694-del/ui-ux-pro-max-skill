@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Montserrat, sans-serif">
+<rect x="0" y="0" width="600" height="620" fill="#f7efe4"/>
+<rect x="20" y="40" width="560" height="560" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<rect x="202" y="40" width="196" height="232" fill="#efe0cc" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 0 372,272" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 1 372,272" fill="none" stroke="#9a7b5b" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M56,40 L56,165 A270,270 0 0 0 544,165 L544,40" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M240,600 A60,60 0 0 1 360,600" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<line x1="270" y1="80" x2="330" y2="80" stroke="#555" stroke-width="5"/>
+<circle cx="300" cy="103" r="18" fill="none" stroke="#e8590c" stroke-width="5"/>
+<polyline points="300.0,405.0 307.0,388.0 293.0,371.0 307.0,354.0 293.0,337.0 307.0,320.0 293.0,303.0 300.0,286.0" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="300.0,286.0 307.0,300.4 293.0,300.4" fill="#1c7ed6"/>
+<path d="M300,272 Q340.0,198.5 300.0,125.0" fill="none" stroke="#d9480f" stroke-width="4.5"/><polygon points="300.0,125.0 313.0,134.3 300.8,141.0" fill="#d9480f"/>
+<circle cx="300" cy="405" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="300" y="412" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+<rect x="150" y="612" width="300" height="40" rx="20" fill="#212529"/><text x="300" y="639" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">floater</text>
+</svg>

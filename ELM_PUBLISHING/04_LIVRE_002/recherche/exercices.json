@@ -1,0 +1,1506 @@
+{
+ "categories": {
+  "D": {
+   "titre": "Dribble et maîtrise du ballon",
+   "intro": "Le dribble te permet d'avancer, de créer de l'espace et de garder le ballon sous pression. L'objectif est de dribbler sans regarder le ballon, des deux mains, à différentes hauteurs et vitesses. Dribble avec le bout des doigts et le poignet, pas avec la paume, et garde la tête haute."
+  },
+  "T": {
+   "titre": "Tir",
+   "intro": "Un bon tir repose sur une mécanique répétable : pieds alignés, coude sous le ballon, extension complète et poignet cassé à la fin (le « col de cygne »). Commence près du panier, valide ta mécanique, puis recule. Compte toujours tes tirs réussis : ce qui se mesure progresse."
+  },
+  "F": {
+   "titre": "Finitions près du panier",
+   "intro": "Les finitions transforment tes pénétrations en points. Travaille des deux côtés, de la main droite et de la main gauche, et en variant les appuis. Utilise la planche : visée du coin supérieur du petit rectangle quand tu arrives en angle."
+  },
+  "P": {
+   "titre": "Jeu de pieds et feintes",
+   "intro": "Les appuis font la différence entre un bon joueur et un très bon joueur : pied de pivot, arrêts, départs, feintes. Ces exercices sont lents au début : la précision passe avant la vitesse."
+  },
+  "S": {
+   "titre": "Passes (contre un mur)",
+   "intro": "Seul, un mur devient ton coéquipier. Vise un point précis (un carré dessiné à la craie, une brique), passe avec les deux mains puis avec une seule, et récupère le ballon en position de triple menace : prêt à tirer, passer ou dribbler."
+  },
+  "C": {
+   "titre": "Défense et condition physique",
+   "intro": "La défense et la condition se travaillent aussi seul : appuis défensifs, glissements, changements de direction. Ces exercices sont exigeants : respecte les temps de récupération et arrête-toi en cas de douleur."
+  }
+ },
+ "exercices": [
+  {
+   "id": "D01",
+   "cat": "D",
+   "titre": "Dribble sur place, main forte puis main faible",
+   "niveau": 1,
+   "objectif": "Contrôler le ballon sans le regarder.",
+   "materiel": "Ballon",
+   "consigne": "Pieds écartés largeur d'épaules, genoux fléchis. Dribble à hauteur de hanche avec la main droite, en regardant devant toi (fixe un point sur le mur ou le panier). Puis main gauche.",
+   "volume": "3 × 30 s par main",
+   "progression": "Dribble à hauteur de genou (rapide) puis à hauteur d'épaule (contrôle).",
+   "erreur": "Regarder le ballon. Astuce : compte à voix haute les doigts qu'un partenaire te montre.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D02",
+   "cat": "D",
+   "titre": "Changements de main devant soi (crossover)",
+   "niveau": 1,
+   "objectif": "Changer de main vite et bas.",
+   "materiel": "Ballon",
+   "consigne": "Dribble main droite, puis fais passer le ballon devant toi, bas (sous le genou), vers la main gauche. Continue gauche-droite en rythme.",
+   "volume": "3 × 30 s",
+   "progression": "Deux dribbles de chaque côté avant de changer, puis un seul ; accélère.",
+   "erreur": "Ballon trop haut et trop large : un défenseur le volerait.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D03",
+   "cat": "D",
+   "titre": "Entre les jambes",
+   "niveau": 2,
+   "objectif": "Protéger le ballon en changeant de main.",
+   "materiel": "Ballon",
+   "consigne": "Fente avant, jambe gauche devant. Fais rebondir le ballon entre tes jambes de la main droite vers la main gauche. Change de jambe avant et recommence.",
+   "volume": "3 × 20 répétitions",
+   "progression": "Enchaîne sans t'arrêter en changeant de jambe à chaque passage (marche avant).",
+   "erreur": "Rebond trop loin derrière : le ballon tape le talon.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D04",
+   "cat": "D",
+   "titre": "Dans le dos",
+   "niveau": 2,
+   "objectif": "Changer de main en protégeant le ballon avec le corps.",
+   "materiel": "Ballon",
+   "consigne": "Dribble main droite, puis enroule le ballon derrière ton dos pour qu'il rebondisse devant ta main gauche. Fais le geste lentement au début.",
+   "volume": "3 × 15 par côté",
+   "progression": "En marchant, puis en trottinant le long de la ligne de touche.",
+   "erreur": "Ballon qui part trop en arrière : pousse-le vers l'avant de la main opposée.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D05",
+   "cat": "D",
+   "titre": "Combo des 3 changements",
+   "niveau": 2,
+   "objectif": "Enchaîner devant, entre les jambes et dans le dos.",
+   "materiel": "Ballon",
+   "consigne": "Enchaîne : crossover devant, puis entre les jambes, puis dans le dos. Recommence de l'autre côté.",
+   "volume": "4 × 45 s",
+   "progression": "Ajoute un dribble rapide bas entre chaque changement.",
+   "erreur": "Se redresser entre les gestes : reste fléchi.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D06",
+   "cat": "D",
+   "titre": "Dribble à deux ballons",
+   "niveau": 3,
+   "objectif": "Renforcer la main faible et la coordination.",
+   "materiel": "2 ballons",
+   "consigne": "Un ballon dans chaque main. Dribble les deux en même temps, puis en alternance (un monte, l'autre descend).",
+   "volume": "4 × 30 s",
+   "progression": "Dribble bas puis haut ; en marchant vers l'avant.",
+   "erreur": "La main faible ralentit : laisse-la imposer le rythme.",
+   "schema": {
+    "joueur": "haut",
+    "label": "2 ballons"
+   }
+  },
+  {
+   "id": "D07",
+   "cat": "D",
+   "titre": "Huit autour des jambes",
+   "niveau": 1,
+   "objectif": "Sensation du ballon et rapidité des mains.",
+   "materiel": "Ballon",
+   "consigne": "Jambes écartées, fléchis-toi et fais passer le ballon en huit autour de tes jambes, sans dribbler, puis en dribblant bas.",
+   "volume": "3 × 30 s",
+   "progression": "Change de sens toutes les 10 s.",
+   "erreur": "Les mains « attrapent » au lieu de guider : utilise le bout des doigts.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sur place"
+   }
+  },
+  {
+   "id": "D08",
+   "cat": "D",
+   "titre": "Slalom entre les plots",
+   "niveau": 1,
+   "objectif": "Dribbler en mouvement et changer de main à chaque plot.",
+   "materiel": "Ballon, 5 plots (ou bouteilles)",
+   "consigne": "Place 5 plots en ligne espacés de 2 m. Dribble en slalom, en changeant de main à chaque plot (toujours la main éloignée du plot).",
+   "volume": "6 allers-retours",
+   "progression": "Chronomètre-toi, puis utilise entre les jambes ou dans le dos à chaque plot.",
+   "erreur": "Garder la même main : le ballon doit toujours être du côté opposé au plot.",
+   "schema": {
+    "cones": [
+     "c1",
+     "c2",
+     "c3",
+     "c4"
+    ],
+    "chemin": [
+     [
+      "milieu",
+      "c4",
+      "dribble"
+     ],
+     [
+      "c4",
+      "c3",
+      "dribble"
+     ],
+     [
+      "c3",
+      "c2",
+      "dribble"
+     ],
+     [
+      "c2",
+      "c1",
+      "dribble"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "D09",
+   "cat": "D",
+   "titre": "Contre-attaque en dribble de vitesse",
+   "niveau": 1,
+   "objectif": "Dribbler vite en ligne droite et finir.",
+   "materiel": "Ballon",
+   "consigne": "Depuis le milieu du terrain, dribble le plus vite possible en poussant le ballon devant toi (3 à 4 dribbles maximum), puis termine par un double pas.",
+   "volume": "8 répétitions (4 par côté)",
+   "progression": "Réduis le nombre de dribbles ; finis main faible.",
+   "erreur": "Dribbler trop haut et trop près des pieds : pousse le ballon devant.",
+   "schema": {
+    "chemin": [
+     [
+      "milieu",
+      "aile_d",
+      "dribble"
+     ],
+     [
+      "aile_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "D10",
+   "cat": "D",
+   "titre": "Arrêts et départs",
+   "niveau": 2,
+   "objectif": "Changer de rythme pour déséquilibrer un défenseur.",
+   "materiel": "Ballon",
+   "consigne": "Dribble en avançant, arrête-toi net en deux temps (un pied puis l'autre), compte 1, puis repars explosif. Répète sur toute la longueur.",
+   "volume": "4 longueurs",
+   "progression": "Arrêt en un temps (les deux pieds ensemble), puis feinte de départ.",
+   "erreur": "Perdre le dribble à l'arrêt : garde le ballon bas pendant l'arrêt.",
+   "schema": {
+    "chemin": [
+     [
+      "milieu",
+      "mi_d",
+      "dribble"
+     ],
+     [
+      "mi_d",
+      "coin_d",
+      "dribble"
+     ]
+    ],
+    "label": "stop & go"
+   }
+  },
+  {
+   "id": "D11",
+   "cat": "D",
+   "titre": "Retrait (dribble en reculant)",
+   "niveau": 2,
+   "objectif": "Reculer pour créer de l'espace sans perdre le ballon.",
+   "materiel": "Ballon",
+   "consigne": "Avance en 2 dribbles, puis recule en 2 dribbles en gardant le corps entre le ballon et un défenseur imaginaire, puis change de main et attaque de l'autre côté.",
+   "volume": "3 × 6 répétitions",
+   "progression": "Enchaîne retrait + crossover + accélération.",
+   "erreur": "Tourner le dos au panier : reste de profil, la tête vers le panier.",
+   "schema": {
+    "chemin": [
+     [
+      "haut",
+      "coude_d",
+      "dribble"
+     ],
+     [
+      "coude_d",
+      "haut",
+      "dribble"
+     ],
+     [
+      "haut",
+      "coude_g",
+      "dribble"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "D12",
+   "cat": "D",
+   "titre": "Le dribble « hésitation »",
+   "niveau": 3,
+   "objectif": "Faire croire à un arrêt puis accélérer.",
+   "materiel": "Ballon",
+   "consigne": "En dribblant à mi-vitesse, relève légèrement le buste et ralentis (comme pour t'arrêter), puis repousse le ballon devant toi et accélère.",
+   "volume": "8 répétitions par main",
+   "progression": "Combine hésitation + crossover.",
+   "erreur": "Ralentir sans relever le buste : la feinte n'est pas crédible.",
+   "schema": {
+    "chemin": [
+     [
+      "milieu",
+      "haut",
+      "dribble"
+     ],
+     [
+      "haut",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "hésitation"
+   }
+  },
+  {
+   "id": "D13",
+   "cat": "D",
+   "titre": "Dribble autour de la raquette",
+   "niveau": 2,
+   "objectif": "Dribbler en courbe et en changeant de main.",
+   "materiel": "Ballon",
+   "consigne": "Fais le tour de la raquette en dribblant, main extérieure (main droite quand tu tournes dans le sens inverse des aiguilles d'une montre). Change de sens et de main à chaque tour.",
+   "volume": "6 tours",
+   "progression": "Accélère dans les virages ; ajoute un changement de main à chaque coin.",
+   "erreur": "Couper les virages : longe les lignes.",
+   "schema": {
+    "chemin": [
+     [
+      "coude_g",
+      "coude_d",
+      "dribble"
+     ],
+     [
+      "coude_d",
+      "bloc_d",
+      "dribble"
+     ],
+     [
+      "bloc_d",
+      "bloc_g",
+      "dribble"
+     ],
+     [
+      "bloc_g",
+      "coude_g",
+      "dribble"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "D14",
+   "cat": "D",
+   "titre": "Dribble les yeux fermés",
+   "niveau": 2,
+   "objectif": "Développer la sensation du ballon.",
+   "materiel": "Ballon, endroit sûr et dégagé",
+   "consigne": "Sur place uniquement : dribble main droite les yeux fermés, puis main gauche, puis crossovers. Ouvre les yeux si tu perds le ballon.",
+   "volume": "3 × 30 s",
+   "progression": "Dribble bas et rapide, yeux fermés.",
+   "erreur": "Se déplacer les yeux fermés : reste sur place pour ta sécurité.",
+   "schema": {
+    "joueur": "haut",
+    "label": "yeux fermés"
+   }
+  },
+  {
+   "id": "D15",
+   "cat": "D",
+   "titre": "Le défi des 100 dribbles",
+   "niveau": 1,
+   "objectif": "Endurance de la main faible.",
+   "materiel": "Ballon",
+   "consigne": "Fais 100 dribbles bas consécutifs avec ta main faible sans perdre le ballon. Si tu le perds, recommence à zéro.",
+   "volume": "1 à 3 réussites",
+   "progression": "200 dribbles ; ou 100 en alternant bas/haut toutes les 10.",
+   "erreur": "Changer de main en cachette : reste honnête, c'est ta main faible qui progresse.",
+   "schema": {
+    "joueur": "haut",
+    "label": "main faible"
+   }
+  },
+  {
+   "id": "T01",
+   "cat": "T",
+   "titre": "Tir à une main près du panier",
+   "niveau": 1,
+   "objectif": "Construire une mécanique propre.",
+   "materiel": "Ballon",
+   "consigne": "À 1 m du panier, face à lui. Ballon dans la main de tir seulement, coude sous le ballon. Tire en extension complète et garde le poignet cassé jusqu'à ce que le ballon touche le cercle.",
+   "volume": "5 séries de 10, compte tes réussites",
+   "progression": "Recule d'un pas quand tu réussis 8/10.",
+   "erreur": "Coude qui part sur le côté : le ballon part de travers.",
+   "schema": {
+    "joueur": "sous",
+    "chemin": [
+     [
+      "sous",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T02",
+   "cat": "T",
+   "titre": "Le tour du monde près du panier",
+   "niveau": 1,
+   "objectif": "Tirer sous tous les angles.",
+   "materiel": "Ballon",
+   "consigne": "Cinq positions à 2–3 m du panier (deux côtés de la ligne de fond, deux angles à 45°, face). Marque 2 paniers à chaque position avant de passer à la suivante.",
+   "volume": "2 tours",
+   "progression": "Passe à mi-distance (4–5 m).",
+   "erreur": "Changer de mécanique selon l'angle : seuls tes pieds s'orientent.",
+   "schema": {
+    "spots": [
+     "bloc_g",
+     "coude_g",
+     "lf",
+     "coude_d",
+     "bloc_d"
+    ],
+    "chemin": [
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ],
+     [
+      "lf",
+      "panier",
+      "tir"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T03",
+   "cat": "T",
+   "titre": "Lancers francs : la routine",
+   "niveau": 1,
+   "objectif": "Créer une routine identique à chaque tir.",
+   "materiel": "Ballon",
+   "consigne": "Définis ta routine : même placement des pieds, mêmes dribbles (par exemple 2), une respiration, puis tir. Fais 10 lancers et note ton score.",
+   "volume": "3 × 10, note chaque série",
+   "progression": "Fais 10 sauts ou 1 aller-retour en courant avant chaque série pour tirer fatigué, comme en match.",
+   "erreur": "Changer de routine à chaque tir.",
+   "schema": {
+    "joueur": "lf",
+    "chemin": [
+     [
+      "lf",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T04",
+   "cat": "T",
+   "titre": "Tir après réception (passe à soi-même)",
+   "niveau": 2,
+   "objectif": "Tirer en équilibre après une réception.",
+   "materiel": "Ballon",
+   "consigne": "Fais-toi une passe en lançant le ballon devant toi avec un effet rétro (il revient vers toi). Réceptionne en un temps, pieds orientés vers le panier, et tire.",
+   "volume": "5 positions × 5 tirs",
+   "progression": "Réception en deux temps, puis en sautant.",
+   "erreur": "Tirer en déséquilibre vers l'arrière.",
+   "schema": {
+    "joueur": "coude_d",
+    "chemin": [
+     [
+      "coude_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "passe à soi"
+   }
+  },
+  {
+   "id": "T05",
+   "cat": "T",
+   "titre": "Tir en sortie de dribble",
+   "niveau": 2,
+   "objectif": "S'arrêter en équilibre et tirer après un dribble.",
+   "materiel": "Ballon",
+   "consigne": "Depuis l'aile, un dribble vers le centre, arrêt en un temps, tir. Puis un dribble vers la ligne de fond.",
+   "volume": "4 × 6 tirs par côté",
+   "progression": "Deux dribbles, puis un changement de main avant le tir.",
+   "erreur": "Dérive latérale : ton corps doit monter droit.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "coude_d",
+      "dribble"
+     ],
+     [
+      "coude_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T06",
+   "cat": "T",
+   "titre": "Le « catch & shoot » sur 5 positions",
+   "niveau": 2,
+   "objectif": "Tir à mi-distance rapide.",
+   "materiel": "Ballon",
+   "consigne": "Tire depuis 5 positions à 4–5 m. Après chaque tir, récupère le rebond le plus vite possible et sprint vers la position suivante.",
+   "volume": "3 tours de 10 tirs",
+   "progression": "Recule derrière la ligne à 3 points quand tu réussis 6/10.",
+   "erreur": "Négliger le replacement : sprint entre les tirs.",
+   "schema": {
+    "spots": [
+     "coin_g",
+     "mi_g",
+     "lf",
+     "mi_d",
+     "coin_d"
+    ],
+    "chemin": [
+     [
+      "mi_g",
+      "panier",
+      "tir"
+     ],
+     [
+      "mi_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T07",
+   "cat": "T",
+   "titre": "Tirs à 3 points depuis les coins",
+   "niveau": 3,
+   "objectif": "Le 3 points le plus court (6,60 m dans les coins selon les règles FIBA).",
+   "materiel": "Ballon",
+   "consigne": "Place-toi dans le coin, pieds juste derrière la ligne. Tire 10 fois, puis change de coin.",
+   "volume": "4 × 10",
+   "progression": "Réception + tir rapide après une course depuis l'aile.",
+   "erreur": "Marcher sur la ligne : regarde tes pieds avant de commencer.",
+   "schema": {
+    "spots": [
+     "coin_g",
+     "coin_d"
+    ],
+    "chemin": [
+     [
+      "coin_d",
+      "panier",
+      "tir"
+     ],
+     [
+      "coin_g",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T08",
+   "cat": "T",
+   "titre": "Le défi des 5 positions à 3 points",
+   "niveau": 3,
+   "objectif": "Tir longue distance sous pression.",
+   "materiel": "Ballon",
+   "consigne": "Cinq positions derrière la ligne (coins, ailes, axe). 5 tirs par position. Note ton total sur 25.",
+   "volume": "2 défis, note les deux scores",
+   "progression": "Une position ne compte que si tu marques au moins 2 tirs sur 5.",
+   "erreur": "Forcer avec les bras : la puissance vient des jambes.",
+   "schema": {
+    "spots": [
+     "coin_g",
+     "aile_g",
+     "haut",
+     "aile_d",
+     "coin_d"
+    ],
+    "chemin": [
+     [
+      "aile_g",
+      "panier",
+      "tir"
+     ],
+     [
+      "haut",
+      "panier",
+      "tir"
+     ],
+     [
+      "aile_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T09",
+   "cat": "T",
+   "titre": "Tir face à une main levée (balai ou chaise)",
+   "niveau": 2,
+   "objectif": "Tirer avec une trajectoire plus haute.",
+   "materiel": "Ballon, un balai calé dans une chaise devant toi (environ 1 m)",
+   "consigne": "Tire par-dessus l'obstacle à mi-distance. La trajectoire doit monter franchement.",
+   "volume": "4 × 10",
+   "progression": "Rapproche l'obstacle.",
+   "erreur": "Tir à plat : vise une trajectoire en cloche.",
+   "schema": {
+    "joueur": "lf",
+    "cones": [
+     "lf_obs"
+    ],
+    "chemin": [
+     [
+      "lf",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T10",
+   "cat": "T",
+   "titre": "Tir en step-back (pas en arrière)",
+   "niveau": 3,
+   "objectif": "Créer de l'espace avant de tirer.",
+   "materiel": "Ballon",
+   "consigne": "Attaque en dribble vers le panier, puis repousse-toi d'un saut en arrière avec les deux pieds, réception équilibrée, tir.",
+   "volume": "3 × 6 par côté",
+   "progression": "Combine avec une feinte d'épaule.",
+   "erreur": "Reculer de travers : recule droit, épaules face au panier.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "mi_d",
+      "dribble"
+     ],
+     [
+      "mi_d",
+      "aile_d",
+      "course"
+     ],
+     [
+      "aile_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "step-back"
+   }
+  },
+  {
+   "id": "T11",
+   "cat": "T",
+   "titre": "Tir du « coude » après un écran imaginaire",
+   "niveau": 2,
+   "objectif": "Tirer en sortie de course.",
+   "materiel": "Ballon, 1 plot",
+   "consigne": "Pars sous le panier, cours autour d'un plot placé au poste bas comme si tu sortais d'un écran, reçois ta propre passe au coude et tire.",
+   "volume": "4 × 5 par côté",
+   "progression": "Course en courbe plus serrée et plus rapide.",
+   "erreur": "S'arrêter longtemps avant de tirer.",
+   "schema": {
+    "cones": [
+     "bloc_d"
+    ],
+    "chemin": [
+     [
+      "sous",
+      "bloc_d",
+      "course"
+     ],
+     [
+      "bloc_d",
+      "coude_d",
+      "course"
+     ],
+     [
+      "coude_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T12",
+   "cat": "T",
+   "titre": "Le tir « sans ballon » (mécanique)",
+   "niveau": 1,
+   "objectif": "Graver la mécanique dans ton corps.",
+   "materiel": "Aucun (ou un miroir)",
+   "consigne": "Devant un miroir, mime le geste de tir lentement : flexion, extension, poignet cassé. Puis allongé sur le dos, tire le ballon vers le plafond et rattrape-le.",
+   "volume": "3 × 20 gestes",
+   "progression": "Les yeux fermés, en sentant chaque étape.",
+   "erreur": "Aller trop vite : la lenteur rend le geste précis.",
+   "schema": {
+    "joueur": "haut",
+    "label": "sans ballon"
+   }
+  },
+  {
+   "id": "T13",
+   "cat": "T",
+   "titre": "Tirs rapprochés en rafale",
+   "niveau": 1,
+   "objectif": "Toucher et régularité près du panier.",
+   "materiel": "Ballon",
+   "consigne": "Sous le panier, enchaîne des tirs rapprochés de chaque côté (main droite à droite, main gauche à gauche), en récupérant le ballon avant qu'il ne touche le sol si possible.",
+   "volume": "3 × 1 min, compte tes réussites",
+   "progression": "Ajoute des tirs en revers.",
+   "erreur": "Lever la tête trop tard : vise la planche tôt.",
+   "schema": {
+    "joueur": "sous",
+    "chemin": [
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T14",
+   "cat": "T",
+   "titre": "Tirs en fatigue",
+   "niveau": 3,
+   "objectif": "Garder la mécanique quand le corps est fatigué.",
+   "materiel": "Ballon",
+   "consigne": "Fais 10 sauts sur place ou un aller-retour en courant, puis 2 tirs à mi-distance. Répète.",
+   "volume": "8 cycles",
+   "progression": "Lancers francs après chaque sprint.",
+   "erreur": "Bâcler le tir pour aller vite : la qualité d'abord.",
+   "schema": {
+    "chemin": [
+     [
+      "milieu",
+      "lf",
+      "course"
+     ],
+     [
+      "lf",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "T15",
+   "cat": "T",
+   "titre": "Le défi des 10 réussites d'affilée",
+   "niveau": 2,
+   "objectif": "Concentration et régularité.",
+   "materiel": "Ballon",
+   "consigne": "Choisis une position à mi-distance. Objectif : 10 tirs réussis consécutifs. Un échec remet le compteur à zéro. Note ton record.",
+   "volume": "1 défi par séance",
+   "progression": "Change de position une fois le défi réussi.",
+   "erreur": "Tirer trop vite après un échec : respire, refais ta routine.",
+   "schema": {
+    "joueur": "mi_g",
+    "chemin": [
+     [
+      "mi_g",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F01",
+   "cat": "F",
+   "titre": "Double pas main droite et main gauche",
+   "niveau": 1,
+   "objectif": "Le geste de base de la finition.",
+   "materiel": "Ballon",
+   "consigne": "Côté droit : appui droit, appui gauche, saut et pose du ballon main droite contre la planche. Côté gauche : appui gauche, appui droit, main gauche.",
+   "volume": "10 par côté",
+   "progression": "Pars de plus loin avec un dribble, puis deux.",
+   "erreur": "Mauvais pied : du côté droit, tu sautes sur le pied gauche.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "bloc_d",
+      "dribble"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ],
+     [
+      "aile_g",
+      "bloc_g",
+      "dribble"
+     ],
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F02",
+   "cat": "F",
+   "titre": "Le « Mikan Drill »",
+   "niveau": 1,
+   "objectif": "Finitions rapides des deux mains.",
+   "materiel": "Ballon",
+   "consigne": "Sous le panier : tir main droite à droite, rattrape le ballon, pas vers la gauche, tir main gauche. Enchaîne sans dribbler.",
+   "volume": "3 × 1 min, compte tes paniers",
+   "progression": "Version « revers » : tire du côté opposé sous le cercle.",
+   "erreur": "Laisser tomber le ballon bas : garde-le au-dessus des épaules.",
+   "schema": {
+    "joueur": "sous",
+    "chemin": [
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "enchaîner"
+   }
+  },
+  {
+   "id": "F03",
+   "cat": "F",
+   "titre": "Finition en revers (reverse)",
+   "niveau": 2,
+   "objectif": "Finir de l'autre côté du cercle pour se protéger du contre.",
+   "materiel": "Ballon",
+   "consigne": "Attaque la ligne de fond côté droit, passe sous le panier et finis main gauche de l'autre côté, en utilisant le cercle comme protection.",
+   "volume": "8 par côté",
+   "progression": "À vitesse match.",
+   "erreur": "Passer trop loin du panier : frôle le cercle.",
+   "schema": {
+    "chemin": [
+     [
+      "coin_d",
+      "sous",
+      "dribble"
+     ],
+     [
+      "sous",
+      "bloc_g",
+      "course"
+     ],
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F04",
+   "cat": "F",
+   "titre": "Le « pas de l'Euro » (eurostep)",
+   "niveau": 3,
+   "objectif": "Éviter un défenseur par un changement de direction pendant le double pas.",
+   "materiel": "Ballon, 1 plot",
+   "consigne": "Plot à 2 m du panier. Premier appui à droite du plot, deuxième appui large vers la gauche, finition.",
+   "volume": "8 par côté",
+   "progression": "À vitesse match, finition main faible.",
+   "erreur": "Faire trois pas : seulement deux appuis après le dernier dribble.",
+   "schema": {
+    "cones": [
+     "lf"
+    ],
+    "chemin": [
+     [
+      "haut",
+      "lf",
+      "dribble"
+     ],
+     [
+      "lf",
+      "coude_g",
+      "course"
+     ],
+     [
+      "coude_g",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F05",
+   "cat": "F",
+   "titre": "Le tir en suspension sur un pied (floater)",
+   "niveau": 3,
+   "objectif": "Finir au-dessus des grands.",
+   "materiel": "Ballon",
+   "consigne": "Attaque la raquette, et à 3–4 m du panier, décolle sur un pied et lâche le ballon tôt, haut et doux, d'une main.",
+   "volume": "10 par côté",
+   "progression": "Depuis un départ en dribble rapide.",
+   "erreur": "Trajectoire tendue : le ballon doit retomber dans le cercle.",
+   "schema": {
+    "chemin": [
+     [
+      "haut",
+      "lf",
+      "dribble"
+     ],
+     [
+      "lf",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "floater"
+   }
+  },
+  {
+   "id": "F06",
+   "cat": "F",
+   "titre": "Le pas de puissance (power step)",
+   "niveau": 2,
+   "objectif": "Finir fort au contact.",
+   "materiel": "Ballon",
+   "consigne": "Depuis l'aile, un dribble vers le panier, arrêt en un temps sur les deux pieds, ballon protégé sous le menton, puis montée puissante à deux mains contre la planche.",
+   "volume": "8 par côté",
+   "progression": "Ajoute une feinte de tir avant la montée.",
+   "erreur": "Ballon bas au moment de l'arrêt : il serait volé.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "bloc_d",
+      "dribble"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "2 pieds"
+   }
+  },
+  {
+   "id": "F07",
+   "cat": "F",
+   "titre": "Finitions main faible uniquement",
+   "niveau": 2,
+   "objectif": "Ne plus avoir de « côté faible ».",
+   "materiel": "Ballon",
+   "consigne": "Toutes les finitions de la séance avec ta main faible : double pas, revers, Mikan.",
+   "volume": "30 finitions",
+   "progression": "Note ton pourcentage chaque semaine.",
+   "erreur": "Revenir à la main forte quand c'est difficile.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_g",
+      "bloc_g",
+      "dribble"
+     ],
+     [
+      "bloc_g",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "main faible"
+   }
+  },
+  {
+   "id": "F08",
+   "cat": "F",
+   "titre": "Le départ de la ligne de fond",
+   "niveau": 2,
+   "objectif": "Attaquer par la ligne de fond.",
+   "materiel": "Ballon",
+   "consigne": "Depuis le coin, un dribble le long de la ligne de fond, puis finition (double pas ou revers).",
+   "volume": "8 par côté",
+   "progression": "Feinte de tir avant le départ.",
+   "erreur": "Sortir des limites : reste près de la ligne sans la toucher.",
+   "schema": {
+    "chemin": [
+     [
+      "coin_d",
+      "bloc_d",
+      "dribble"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F09",
+   "cat": "F",
+   "titre": "Les 2 minutes de layups",
+   "niveau": 2,
+   "objectif": "Finitions en fatigue.",
+   "materiel": "Ballon, chronomètre",
+   "consigne": "Pendant 2 minutes : double pas à droite, récupère, dribble jusqu'à la ligne à 3 points, double pas à gauche, et ainsi de suite. Compte tes paniers.",
+   "volume": "2 séries, note ton score",
+   "progression": "Bats ton record chaque semaine.",
+   "erreur": "Ralentir dans les derniers 30 s.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "panier",
+      "dribble"
+     ],
+     [
+      "panier",
+      "aile_g",
+      "dribble"
+     ],
+     [
+      "aile_g",
+      "panier",
+      "dribble"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "F10",
+   "cat": "F",
+   "titre": "Finition après un changement de main",
+   "niveau": 2,
+   "objectif": "Combiner dribble et finition.",
+   "materiel": "Ballon, 1 plot",
+   "consigne": "Plot au niveau du lancer franc. Crossover devant le plot, attaque du côté opposé, double pas.",
+   "volume": "8 par côté",
+   "progression": "Entre les jambes ou dans le dos devant le plot.",
+   "erreur": "Changement trop près du plot : commence 1 m avant.",
+   "schema": {
+    "cones": [
+     "lf"
+    ],
+    "chemin": [
+     [
+      "haut",
+      "lf",
+      "dribble"
+     ],
+     [
+      "lf",
+      "coude_d",
+      "dribble"
+     ],
+     [
+      "coude_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "P01",
+   "cat": "P",
+   "titre": "Le pivot avant et arrière",
+   "niveau": 1,
+   "objectif": "Maîtriser le pied de pivot.",
+   "materiel": "Ballon",
+   "consigne": "Ballon tenu sous le menton. Garde le pied gauche fixe et tourne autour (pivot avant, puis arrière). Change de pied de pivot.",
+   "volume": "3 × 10 par pied",
+   "progression": "Enchaîne pivot + passe ou pivot + tir.",
+   "erreur": "Décoller le pied de pivot : c'est un marcher.",
+   "schema": {
+    "joueur": "coude_d",
+    "label": "pivot"
+   }
+  },
+  {
+   "id": "P02",
+   "cat": "P",
+   "titre": "La triple menace",
+   "niveau": 1,
+   "objectif": "Recevoir prêt à tirer, passer ou dribbler.",
+   "materiel": "Ballon",
+   "consigne": "Après chaque réception (passe à soi-même), place-toi fléchi, ballon près de la hanche côté main forte, regard vers le panier. Tiens 2 secondes, puis choisis : tir, dribble ou passe contre un mur.",
+   "volume": "20 réceptions",
+   "progression": "Ajoute une feinte avant chaque choix.",
+   "erreur": "Recevoir debout, jambes tendues.",
+   "schema": {
+    "joueur": "aile_d",
+    "label": "triple menace"
+   }
+  },
+  {
+   "id": "P03",
+   "cat": "P",
+   "titre": "Feinte de tir et départ",
+   "niveau": 2,
+   "objectif": "Faire décoller le défenseur puis passer.",
+   "materiel": "Ballon",
+   "consigne": "En triple menace, feinte de tir crédible (ballon monte, jambes restent fléchies), puis départ en dribble croisé ou direct.",
+   "volume": "10 par côté",
+   "progression": "Feinte + départ + finition.",
+   "erreur": "Se redresser pendant la feinte : tu perds ton explosivité.",
+   "schema": {
+    "chemin": [
+     [
+      "aile_d",
+      "bloc_d",
+      "dribble"
+     ],
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "feinte"
+   }
+  },
+  {
+   "id": "P04",
+   "cat": "P",
+   "titre": "Le départ croisé (jab step)",
+   "niveau": 2,
+   "objectif": "Tester le défenseur avec un pas d'appel.",
+   "materiel": "Ballon",
+   "consigne": "En triple menace, petit pas vif vers l'avant avec le pied libre, ramène-le, puis tire ou pars en dribble.",
+   "volume": "10 par côté",
+   "progression": "Enchaîne deux jab steps avant le choix.",
+   "erreur": "Pas trop grand : tu perds l'équilibre.",
+   "schema": {
+    "joueur": "aile_d",
+    "label": "jab step"
+   }
+  },
+  {
+   "id": "P05",
+   "cat": "P",
+   "titre": "Les arrêts en un temps et en deux temps",
+   "niveau": 1,
+   "objectif": "S'arrêter équilibré et sans marcher.",
+   "materiel": "Ballon",
+   "consigne": "Course en dribble, arrêt en un temps (deux pieds en même temps) au plot, puis arrêt en deux temps (droit-gauche) au plot suivant.",
+   "volume": "4 longueurs",
+   "progression": "Arrêt + pivot + tir.",
+   "erreur": "Glisser à l'arrêt : abaisse ton centre de gravité.",
+   "schema": {
+    "cones": [
+     "c2",
+     "c4"
+    ],
+    "chemin": [
+     [
+      "milieu",
+      "c4",
+      "dribble"
+     ],
+     [
+      "c4",
+      "c2",
+      "dribble"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "P06",
+   "cat": "P",
+   "titre": "Le « drop step » au poste bas",
+   "niveau": 2,
+   "objectif": "Jeu dos au panier.",
+   "materiel": "Ballon",
+   "consigne": "Dos au panier sur le bloc, ballon protégé. Pivot arrière en ramenant le pied côté ligne de fond vers le panier, un dribble, finition en puissance.",
+   "volume": "8 par côté",
+   "progression": "Ajoute une feinte vers le centre avant le drop step.",
+   "erreur": "Ballon exposé : garde-le serré sous le menton.",
+   "schema": {
+    "joueur": "bloc_d",
+    "chemin": [
+     [
+      "bloc_d",
+      "panier",
+      "tir"
+     ]
+    ],
+    "label": "dos au panier"
+   }
+  },
+  {
+   "id": "P07",
+   "cat": "P",
+   "titre": "Le spin (rotation en dribble)",
+   "niveau": 3,
+   "objectif": "Changer de direction en tournant.",
+   "materiel": "Ballon, 1 plot",
+   "consigne": "Dribble vers le plot, plante le pied avant, tourne en gardant le ballon collé à toi, repars de l'autre côté.",
+   "volume": "8 par côté",
+   "progression": "Spin + finition.",
+   "erreur": "Ballon qui s'éloigne pendant la rotation : tire-le vers toi.",
+   "schema": {
+    "cones": [
+     "lf"
+    ],
+    "chemin": [
+     [
+      "haut",
+      "lf",
+      "dribble"
+     ],
+     [
+      "lf",
+      "coude_g",
+      "dribble"
+     ]
+    ],
+    "label": "spin"
+   }
+  },
+  {
+   "id": "P08",
+   "cat": "P",
+   "titre": "La séquence feinte-pivot-tir",
+   "niveau": 3,
+   "objectif": "Enchaîner les appuis comme en match.",
+   "materiel": "Ballon",
+   "consigne": "Réception au coude : feinte de tir, pivot arrière, un dribble, arrêt en un temps, tir.",
+   "volume": "6 par côté",
+   "progression": "Ajoute un deuxième pivot (up and under).",
+   "erreur": "Précipiter : chaque étape doit être nette.",
+   "schema": {
+    "chemin": [
+     [
+      "coude_d",
+      "mi_d",
+      "dribble"
+     ],
+     [
+      "mi_d",
+      "panier",
+      "tir"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "S01",
+   "cat": "S",
+   "titre": "Passe à deux mains contre le mur",
+   "niveau": 1,
+   "objectif": "Passe précise et forte.",
+   "materiel": "Ballon, un mur solide",
+   "consigne": "À 3 m du mur, passe à deux mains à hauteur de poitrine vers une cible, pouces vers le bas à la fin du geste. Récupère en triple menace.",
+   "volume": "3 × 20",
+   "progression": "Recule à 4–5 m ; vise une cible plus petite.",
+   "erreur": "Passe en cloche : la passe doit être tendue.",
+   "schema": {
+    "mur": true,
+    "label": "poitrine"
+   }
+  },
+  {
+   "id": "S02",
+   "cat": "S",
+   "titre": "Passe à une main (main droite, main gauche)",
+   "niveau": 2,
+   "objectif": "Passer vite sans changer de main.",
+   "materiel": "Ballon, mur",
+   "consigne": "Passe à une main depuis le côté de la hanche, en avançant le pied opposé.",
+   "volume": "3 × 15 par main",
+   "progression": "Après un dribble.",
+   "erreur": "Ne jamais utiliser la main faible.",
+   "schema": {
+    "mur": true,
+    "label": "une main"
+   }
+  },
+  {
+   "id": "S03",
+   "cat": "S",
+   "titre": "Passe à terre (rebond)",
+   "niveau": 1,
+   "objectif": "Passer sous les bras d'un défenseur.",
+   "materiel": "Ballon, mur",
+   "consigne": "Le ballon doit rebondir aux deux tiers de la distance vers le mur et arriver à hauteur de hanche.",
+   "volume": "3 × 15",
+   "progression": "À une main.",
+   "erreur": "Rebond trop près de toi : la passe est lente.",
+   "schema": {
+    "mur": true,
+    "label": "rebond"
+   }
+  },
+  {
+   "id": "S04",
+   "cat": "S",
+   "titre": "Passes rapides en série",
+   "niveau": 2,
+   "objectif": "Mains rapides et réception sûre.",
+   "materiel": "Ballon, mur",
+   "consigne": "À 2 m du mur, passes à deux mains le plus vite possible pendant 30 s. Compte les passes.",
+   "volume": "4 × 30 s",
+   "progression": "Alterne poitrine et rebond.",
+   "erreur": "Réceptions avec les paumes : utilise les doigts.",
+   "schema": {
+    "mur": true,
+    "label": "vitesse"
+   }
+  },
+  {
+   "id": "S05",
+   "cat": "S",
+   "titre": "Passe par-dessus la tête",
+   "niveau": 2,
+   "objectif": "Passe longue au-dessus d'un défenseur.",
+   "materiel": "Ballon, mur",
+   "consigne": "Ballon au-dessus de la tête, coudes légèrement fléchis, passe vers une cible haute, en avançant d'un pas.",
+   "volume": "3 × 15",
+   "progression": "Recule à 6 m.",
+   "erreur": "Ramener le ballon derrière la tête : le geste est lent.",
+   "schema": {
+    "mur": true,
+    "label": "au-dessus"
+   }
+  },
+  {
+   "id": "C01",
+   "cat": "C",
+   "titre": "Position défensive tenue",
+   "niveau": 1,
+   "objectif": "Construire la position de base.",
+   "materiel": "Aucun",
+   "consigne": "Pieds plus larges que les épaules, genoux fléchis, dos droit, mains actives. Tiens la position.",
+   "volume": "4 × 30 s, 30 s de repos",
+   "progression": "Ajoute des petits sautillements sur place.",
+   "erreur": "Se pencher en avant : garde le dos droit.",
+   "schema": {
+    "joueur": "lf",
+    "label": "position"
+   }
+  },
+  {
+   "id": "C02",
+   "cat": "C",
+   "titre": "Glissements défensifs",
+   "niveau": 1,
+   "objectif": "Se déplacer latéralement sans croiser les pieds.",
+   "materiel": "Aucun",
+   "consigne": "En position défensive, glisse le long de la ligne de lancer franc d'un côté à l'autre de la raquette, sans croiser les pieds ni te redresser.",
+   "volume": "4 × 30 s",
+   "progression": "Touche la ligne de chaque côté avec la main.",
+   "erreur": "Sautiller : les pieds restent proches du sol.",
+   "schema": {
+    "chemin": [
+     [
+      "coude_g",
+      "coude_d",
+      "course"
+     ]
+    ],
+    "label": "glisser"
+   }
+  },
+  {
+   "id": "C03",
+   "cat": "C",
+   "titre": "Le zigzag défensif",
+   "niveau": 2,
+   "objectif": "Changer de direction comme face à un dribbleur.",
+   "materiel": "Plots",
+   "consigne": "Recule en glissant en diagonale d'un plot à l'autre en zigzag, sur la moitié du terrain.",
+   "volume": "4 passages",
+   "progression": "Plus vite, plots plus écartés.",
+   "erreur": "Tourner le dos au jeu en changeant de direction.",
+   "schema": {
+    "cones": [
+     "c1",
+     "c2",
+     "c3",
+     "c4"
+    ],
+    "chemin": [
+     [
+      "c1",
+      "c2",
+      "course"
+     ],
+     [
+      "c2",
+      "c3",
+      "course"
+     ],
+     [
+      "c3",
+      "c4",
+      "course"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "C04",
+   "cat": "C",
+   "titre": "Sprints courts (suicides réduits)",
+   "niveau": 2,
+   "objectif": "Vitesse et changements de direction.",
+   "materiel": "Aucun",
+   "consigne": "Depuis la ligne de fond : sprint jusqu'au lancer franc et retour, jusqu'au milieu et retour.",
+   "volume": "4 séries, 1 min de repos",
+   "progression": "Réduis le repos à 45 s.",
+   "erreur": "Freiner tard : abaisse-toi avant de toucher la ligne.",
+   "schema": {
+    "chemin": [
+     [
+      "sous",
+      "lf",
+      "course"
+     ],
+     [
+      "lf",
+      "sous",
+      "course"
+     ],
+     [
+      "sous",
+      "milieu",
+      "course"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "C05",
+   "cat": "C",
+   "titre": "Sauts pour le rebond",
+   "niveau": 2,
+   "objectif": "Explosivité et timing.",
+   "materiel": "Ballon",
+   "consigne": "Lance le ballon contre la planche, saute et attrape-le au point le plus haut, à deux mains, et retombe équilibré.",
+   "volume": "3 × 8",
+   "progression": "Enchaîne avec un tir sans redescendre le ballon.",
+   "erreur": "Attraper avec une main : sécurise à deux mains.",
+   "schema": {
+    "joueur": "sous",
+    "label": "rebond"
+   }
+  },
+  {
+   "id": "C06",
+   "cat": "C",
+   "titre": "Gainage du joueur",
+   "niveau": 1,
+   "objectif": "Stabilité du tronc pour mieux encaisser les contacts.",
+   "materiel": "Tapis",
+   "consigne": "Planche sur les avant-bras, corps aligné. Puis planche latérale de chaque côté.",
+   "volume": "3 × 20–30 s chaque",
+   "progression": "Augmente de 5 s par semaine.",
+   "erreur": "Bassin qui tombe : arrête la série plutôt que mal faire.",
+   "schema": {
+    "joueur": "haut",
+    "label": "gainage"
+   }
+  },
+  {
+   "id": "C07",
+   "cat": "C",
+   "titre": "Course navette avec ballon",
+   "niveau": 2,
+   "objectif": "Endurance avec dribble.",
+   "materiel": "Ballon",
+   "consigne": "Dribble de la ligne de fond à la ligne médiane et retour, main droite à l'aller, main gauche au retour, sans t'arrêter.",
+   "volume": "4 × 45 s, 1 min de repos",
+   "progression": "Termine chaque série par 2 lancers francs.",
+   "erreur": "Changer de main au mauvais moment.",
+   "schema": {
+    "chemin": [
+     [
+      "sous",
+      "milieu",
+      "dribble"
+     ],
+     [
+      "milieu",
+      "sous",
+      "dribble"
+     ]
+    ]
+   }
+  }
+ ]
+}

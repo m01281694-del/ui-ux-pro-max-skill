@@ -1,0 +1,229 @@
+{
+  "videos": [
+    {
+      "date": "2026-11-15",
+      "id": "vip-mot-secret",
+      "sujet": "Présentation de VIP (mot secret)",
+      "style": "navy",
+      "cta": "dm",
+      "fichier": "VIP-tiktok.mp4",
+      "publie": false
+    },
+    {
+      "date": "2026-11-16",
+      "id": "c-est-quoi-le-marketing",
+      "sujet": "C'est quoi le marketing (pas de la pub, 4 mots, exemple des cafés)",
+      "style": "forest",
+      "cta": "dm",
+      "fichier": "Marketing-tiktok.mp4",
+      "publie": false
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-benefice",
+      "sujet": "La différence entre une caractéristique et un bénéfice",
+      "style": "sunset",
+      "accroche": "contre-pied",
+      "cta": "follow",
+      "fichier": "studio/videos/2026-11-17-benefice/2026-11-17-benefice.mp4",
+      "publie": false,
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "note": "remplacée avant publication (sujet jugé hors marketing digital)"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-17-trois-secondes",
+      "sujet": "Les 3 premières secondes et la rétention",
+      "approche": "chiffre clé expliqué",
+      "style": "electric",
+      "scene3d": "phone",
+      "cta": "comment",
+      "fichier": "studio/videos/2026-11-17-trois-secondes/2026-11-17-trois-secondes.mp4",
+      "publie": true,
+      "programme": "2026-11-16T21:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=1193485369018697889"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-16-mots-cles",
+      "sujet": "Mots-clés plutôt que hashtags en 2026",
+      "approche": "l'erreur que tout le monde fait",
+      "style": "ocean",
+      "scene3d": "grid",
+      "host": {
+        "hair": "bun",
+        "glasses": true
+      },
+      "cta": "save",
+      "fichier": "studio/videos/2026-11-16-mots-cles/2026-11-16-mots-cles.mp4",
+      "publie": true,
+      "programme": "2026-11-16T22:30 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=6214109773277317275"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-avant-aujourdhui",
+      "format": "calme",
+      "palette": "peche",
+      "sujet": "Vendre avant vs aujourd'hui",
+      "approche": "avant / après",
+      "cta": "VIP",
+      "fichier": "studio/videos/2026-11-17-avant-aujourdhui/2026-11-17-avant-aujourdhui.mp4",
+      "publie": true,
+      "programme": "2026-11-17T07:00 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7628667743676287608",
+      "duree": "47 s"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "2026-11-16-pilote-automatique",
+      "format": "film",
+      "look": "nuit",
+      "sujet": "Automatiser la création et la publication de ses vidéos",
+      "approche": "tuto en 4 étapes (mini-film)",
+      "cta": "VIP",
+      "fichier": "studio/videos/2026-11-16-pilote-automatique/2026-11-16-pilote-automatique.mp4",
+      "publie": true,
+      "programme": "2026-11-16T23:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=699494805668712164",
+      "duree": "46 s"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-sketch-automatise",
+      "format": "sketch",
+      "sujet": "Sketch : l'assistant IA qui automatise tout le contenu",
+      "approche": "sketch dialogue",
+      "cta": "VIP",
+      "duree": "49 s",
+      "fichier": "studio/videos/2026-11-17-sketch-automatise/2026-11-17-sketch-automatise.mp4",
+      "publie": true,
+      "programme": "2026-11-17T00:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-1760470755447127764"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-chambre-site",
+      "format": "sketch",
+      "moteur": "chambre.html (HD)",
+      "sujet": "Pourquoi ta page de vente ne vend pas",
+      "approche": "sketch dialogue",
+      "cta": "VIP",
+      "duree": "39 s",
+      "fichier": "studio/videos/2026-11-17-chambre-site/2026-11-17-chambre-site.mp4",
+      "publie": true,
+      "programme": "2026-11-17T12:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8419028939560602320"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-avant-aujourdhui-v2",
+      "format": "presentateur dynamique",
+      "sujet": "Vendre avant vs aujourd'hui (refaite, version dynamique)",
+      "cta": "VIP",
+      "duree": "35 s",
+      "fichier": "studio/videos/2026-11-17-avant-aujourdhui-v2/2026-11-17-avant-aujourdhui-v2.mp4",
+      "publie": true,
+      "programme": "2026-11-17T19:50 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=5414631310486489680"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-page-qui-vend",
+      "format": "calme (grille, style capture)",
+      "voix": "piper (français de France)",
+      "sujet": "8 éléments d'une page de vente qui vend",
+      "cta": "VIP",
+      "duree": "34 s",
+      "fichier": "studio/videos/2026-11-17-page-qui-vend/2026-11-17-page-qui-vend.mp4",
+      "publie": true,
+      "programme": "2026-11-17T21:15 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=-6737557524089846907"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "2026-11-17-idees-videos",
+      "format": "3D dynamique + chat pixel",
+      "voix": "piper",
+      "sujet": "Quoi poster quand on n'a plus d'idées (4 formats)",
+      "cta": "VIP",
+      "duree": "36 s",
+      "fichier": "studio/videos/2026-11-17-idees-videos/2026-11-17-idees-videos.mp4",
+      "publie": true,
+      "programme": "2026-11-17T22:10 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=7275509814188199469"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "2026-11-19-plan-10k",
+      "format": "film 3D (chat voxel, gros mots)",
+      "voix": "piper + musique",
+      "sujet": "Le plan 10K par mois avec Claude",
+      "cta": "VIP",
+      "duree": "36 s",
+      "fichier": "studio/videos/2026-11-19-plan-10k/2026-11-19-plan-10k.mp4",
+      "publie": true,
+      "programme": "2026-11-19T20:30 Europe/Paris",
+      "reseaux": [
+        "tiktok",
+        "instagram"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8258520445054568964"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "2026-11-19-story-claude",
+      "format": "story 3D (chat pixel)",
+      "voix": "piper",
+      "sujet": "Story : ce que Claude fait pour ton business",
+      "cta": "VIP",
+      "fichier": "studio/videos/2026-11-19-story-claude/2026-11-19-story-claude.mp4",
+      "publie": true,
+      "programme": "2026-11-19T20:35 Europe/Paris",
+      "reseaux": [
+        "instagram story"
+      ],
+      "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=8094155&openWithPostUuid=8474708732688681022"
+    }
+  ]
+}

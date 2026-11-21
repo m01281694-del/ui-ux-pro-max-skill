@@ -1,0 +1,105 @@
+{
+  "id": "2026-11-16-pilote-automatique",
+  "format": "film",
+  "look": "nuit",
+  "film_titre": "Le *pilote* automatique",
+  "presente": "MANU DIGITAL PRÉSENTE",
+  "fin_sous": "je t'explique tout dans ma formation",
+  "sujet": "Comment automatiser la création et la publication de ses vidéos avec l'IA",
+  "approche": "tuto en 4 étapes (mini-film)",
+  "segments": [
+    {
+      "id": "prologue",
+      "chapitre": "PROLOGUE",
+      "plan": "large",
+      "say": "Cette vidéo, personne ne l'a montée. Elle s'est créée… et publiée toute seule. Je te montre comment, en quatre étapes.",
+      "holo": {
+        "tag": "Prologue",
+        "title": "Pilote automatique",
+        "items": []
+      }
+    },
+    {
+      "id": "idees",
+      "chapitre": "CHAPITRE 1 · LES IDÉES",
+      "plan": "epaule",
+      "say": "Un : une banque d'idées. Tu écris cinquante sujets une seule fois, et l'IA en pioche un nouveau à chaque vidéo.",
+      "holo": {
+        "tag": "Chapitre 1",
+        "title": "La banque d'idées",
+        "items": [
+          "50 sujets",
+          "Jamais deux fois"
+        ]
+      }
+    },
+    {
+      "id": "script",
+      "chapitre": "CHAPITRE 2 · SCRIPT & VOIX",
+      "plan": "visage",
+      "say": "Deux : le script et la voix. L'IA écrit trente secondes de texte, et une voix de synthèse le lit.",
+      "holo": {
+        "tag": "Chapitre 2",
+        "title": "Script + voix",
+        "items": [
+          "Texte de 30 s",
+          "Voix IA"
+        ]
+      }
+    },
+    {
+      "id": "montage",
+      "chapitre": "CHAPITRE 3 · LE MONTAGE",
+      "plan": "ecran",
+      "say": "Trois : le montage. Les scènes, les sous-titres et la musique se fabriquent automatiquement.",
+      "holo": {
+        "tag": "Chapitre 3",
+        "title": "Montage auto",
+        "items": [
+          "Scènes",
+          "Sous-titres",
+          "Musique"
+        ]
+      }
+    },
+    {
+      "id": "publication",
+      "chapitre": "CHAPITRE 4 · LA PUBLICATION",
+      "plan": "orbite",
+      "say": "Quatre : la publication. Un outil de programmation poste sur TikTok et Instagram, toutes les cinq heures.",
+      "holo": {
+        "tag": "Chapitre 4",
+        "title": "Publication",
+        "items": [
+          "TikTok",
+          "Instagram",
+          "Toutes les 5 h"
+        ]
+      }
+    },
+    {
+      "id": "fin",
+      "chapitre": "ÉPILOGUE",
+      "plan": "moyen",
+      "say": "J'explique tout, étape par étape, dans ma formation de marketing digital. Écris VIP en commentaire, et je t'envoie tout.",
+      "holo": {
+        "tag": "La formation",
+        "title": "Ma formation",
+        "items": [
+          "Étape par étape",
+          "Marketing digital"
+        ]
+      }
+    }
+  ],
+  "caption": "Le pilote automatique 🤖🎬\nCette vidéo s'est créée et publiée toute seule. Les 4 étapes :\n1️⃣ une banque d'idées\n2️⃣ script + voix IA\n3️⃣ montage automatique\n4️⃣ publication programmée\n🎓 J'explique tout dans ma formation de marketing digital\n💬 Écris VIP en commentaire et je t'envoie tout",
+  "titre": "Le pilote automatique",
+  "question": "Écris VIP en commentaire 👇",
+  "hashtags": [
+    "#automatisation",
+    "#intelligenceartificielle",
+    "#marketingdigital",
+    "#createurdecontenu"
+  ],
+  "cta_at": 4.88
+}

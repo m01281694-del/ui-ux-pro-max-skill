@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Montserrat, sans-serif">
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="120" y1="80" x2="120" y2="590" stroke="#222" stroke-width="3"/>
+  <line x1="120" y1="590" x2="1140" y2="590" stroke="#222" stroke-width="3"/>
+  <polygon points="120,62 110,84 130,84" fill="#222"/>
+  <polygon points="1158,590 1136,580 1136,600" fill="#222"/>
+  <text x="60" y="335" font-size="26" fill="#222" text-anchor="middle" transform="rotate(-90 60 335)" font-weight="600">Ce que tu retiens</text>
+  <text x="630" y="650" font-size="26" fill="#222" text-anchor="middle" font-weight="600">Temps (jours)</text>
+  <g font-size="20" fill="#555" text-anchor="middle">
+    <text x="120" y="620">J0</text><text x="250" y="620">J1</text><text x="430" y="620">J3</text><text x="700" y="620">J7</text><text x="1080" y="620">J21</text>
+  </g>
+  <!-- sans révision -->
+  <path d="M120,110 C170,330 230,440 330,490 S700,555 1130,565" fill="none" stroke="#c0392b" stroke-width="6" stroke-dasharray="14 10"/>
+  <text x="900" y="535" font-size="22" fill="#c0392b" font-weight="700">Sans révision</text>
+  <!-- avec révisions espacées -->
+  <path d="M120,110 C150,210 200,250 250,265 L250,115 C300,200 380,240 430,250 L430,115 C520,185 620,215 700,225 L700,115 C850,165 980,185 1080,190 L1080,115" fill="none" stroke="#1f5f8b" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="#1f5f8b"><circle cx="250" cy="115" r="10"/><circle cx="430" cy="115" r="10"/><circle cx="700" cy="115" r="10"/><circle cx="1080" cy="115" r="10"/></g>
+  <text x="760" y="300" font-size="22" fill="#1f5f8b" font-weight="700">Avec des rappels espacés</text>
+  <text x="760" y="330" font-size="19" fill="#1f5f8b">chaque rappel remonte la mémoire</text>
+  <text x="760" y="356" font-size="19" fill="#1f5f8b">et l'oubli suivant est plus lent</text>
+  <text x="1140" y="40" font-size="17" fill="#888" text-anchor="end" font-style="italic">Schéma illustratif — pas de données mesurées</text>
+</svg>

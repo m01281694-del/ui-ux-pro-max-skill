@@ -1,0 +1,61 @@
+{
+  "pages": 56,
+  "pages_corps": 52,
+  "marges": {
+    "top": 0.7,
+    "bottom": 0.75,
+    "left": 0.375,
+    "right": 0.5
+  },
+  "toc": [
+    [
+      "Introduction : progresser entre deux entraînements",
+      1
+    ],
+    [
+      "1. Sécurité, matériel et échauffement",
+      3
+    ],
+    [
+      "2. Tes tests de niveau",
+      5
+    ],
+    [
+      "3. Dribble et maîtrise du ballon",
+      7
+    ],
+    [
+      "4. Tir",
+      15
+    ],
+    [
+      "5. Finitions près du panier",
+      23
+    ],
+    [
+      "6. Jeu de pieds et feintes",
+      29
+    ],
+    [
+      "7. Passes (contre un mur)",
+      34
+    ],
+    [
+      "8. Défense et condition physique",
+      37
+    ],
+    [
+      "9. Le programme de 8 semaines",
+      41
+    ],
+    [
+      "10. Ton journal de progression",
+      42
+    ],
+    [
+      "Conclusion : et maintenant ?",
+      52
+    ]
+  ],
+  "construit_le": "2026-11-21T01:11:58"
+}

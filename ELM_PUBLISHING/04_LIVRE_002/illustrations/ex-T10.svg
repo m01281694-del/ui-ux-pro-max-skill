@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Montserrat, sans-serif">
+<rect x="0" y="0" width="600" height="620" fill="#f7efe4"/>
+<rect x="20" y="40" width="560" height="560" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<rect x="202" y="40" width="196" height="232" fill="#efe0cc" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 0 372,272" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M228,272 A72,72 0 0 1 372,272" fill="none" stroke="#9a7b5b" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M56,40 L56,165 A270,270 0 0 0 544,165 L544,40" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<path d="M240,600 A60,60 0 0 1 360,600" fill="none" stroke="#9a7b5b" stroke-width="3"/>
+<line x1="270" y1="80" x2="330" y2="80" stroke="#555" stroke-width="5"/>
+<circle cx="300" cy="103" r="18" fill="none" stroke="#e8590c" stroke-width="5"/>
+<polyline points="502.0,318.0 495.8,299.2 473.3,293.6 472.5,270.3 450.0,264.7 443.8,245.9" fill="none" stroke="#1c7ed6" stroke-width="4" stroke-linejoin="round"/><polygon points="443.8,245.9 458.3,252.7 447.4,261.5" fill="#1c7ed6"/>
+<line x1="435" y1="235" x2="493.2" y2="307.1" stroke="#2b8a3e" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/><polygon points="493.2,307.1 478.7,300.3 489.6,291.5" fill="#2b8a3e"/>
+<path d="M502,318 Q437.7,191.1 315.1,119.0" fill="none" stroke="#d9480f" stroke-width="4.5"/><polygon points="315.1,119.0 331.0,120.3 324.0,132.3" fill="#d9480f"/>
+<circle cx="502" cy="318" r="17" fill="#fff" stroke="#212529" stroke-width="4"/><text x="502" y="325" font-size="19" font-weight="800" text-anchor="middle" fill="#212529">J</text>
+<rect x="150" y="612" width="300" height="40" rx="20" fill="#212529"/><text x="300" y="639" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">step-back</text>
+</svg>
