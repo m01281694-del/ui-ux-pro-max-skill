@@ -1,5 +1,5 @@
 {
- "updatedAt": 1795327602965,
+ "updatedAt": 1795338407343,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
@@ -23,9 +23,9 @@
   },
   "youtube": {
    "handle": "chaîne UCC2akO2lNGQEjQ_nX3OgI-Q",
-   "followers": 4,
+   "followers": 6,
    "posts": 5,
-   "views": 11
+   "views": 162
   }
  },
  "daily": [
@@ -310,7 +310,7 @@
  "goals": [
   {
    "label": "Abonnés (tous réseaux)",
-   "current": 13,
+   "current": 15,
    "target": 1000
   },
   {
