@@ -712,6 +712,16 @@
    "start": 1795316880000,
    "end": 1795316940000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795326480000-60",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "production du jour suspendue : limite Metricool toujours atteinte — quota de voix préservé",
+   "start": 1795326480000,
+   "end": 1795326540000,
+   "residentId": 113
   }
  ],
  "contents": [
