@@ -722,6 +722,26 @@
    "start": 1795326480000,
    "end": 1795326540000,
    "residentId": 113
+  },
+  {
+   "id": "r-1795327620000-61",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève les stats Metricool (aucun changement)",
+   "start": 1795327620000,
+   "end": 1795327680000,
+   "residentId": 260
+  },
+  {
+   "id": "r-1795327680000-62",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795327680000,
+   "end": 1795327740000,
+   "residentId": 273
   }
  ],
  "contents": [
