@@ -1,0 +1,20 @@
+{
+  "name": "relanceo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "RELANCEO — système d'abonnements, droits (entitlements), quotas, facturation et automatisations de relances.",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "test": "node --test --test-concurrency=1 \"test/*.test.mjs\"",
+    "economics": "node scripts/economics.mjs",
+    "admin": "node scripts/admin.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.14.0",
+    "@electric-sql/pglite": "0.3.14"
+  }
+}

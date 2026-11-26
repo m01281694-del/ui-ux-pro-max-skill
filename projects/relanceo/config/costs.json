@@ -1,0 +1,47 @@
+{
+  "$comment": "HYPOTHÈSES DE COÛTS — à remplacer par les tarifs réellement contractés. Toutes les valeurs sont en euros HT. usd_to_eur sert à convertir les tarifs publiés en dollars. Ces chiffres alimentent : (1) le journal de coûts (cost_ledger) à chaque appel IA / envoi d'e-mail, (2) les alertes internes de dépenses anormales, (3) scripts/economics.mjs (estimation de marge).",
+  "as_of": "2026-11-26",
+  "usd_to_eur": 0.92,
+  "ai": {
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "input_usd_per_mtok": 4.0,
+    "output_usd_per_mtok": 20.0,
+    "alternative_model_for_review": { "model": "claude-haiku-5-5", "input_usd_per_mtok": 0.10, "output_usd_per_mtok": 0.50, "note": "Modèle moins coûteux à évaluer sur un jeu de test avant toute bascule : décision produit, non appliquée." },
+    "avg_input_tokens_per_op": 1800,
+    "avg_output_tokens_per_op": 450
+  },
+  "email": {
+    "provider": "resend",
+    "eur_per_email": 0.0009,
+    "monthly_fixed_eur": 18.5
+  },
+  "sms": { "enabled": false, "note": "Aucun envoi SMS n'est développé. Ne pas commercialiser." },
+  "payments": {
+    "provider": "stripe",
+    "percent": 1.5,
+    "fixed_eur": 0.25,
+    "billing_percent": 0.7,
+    "note": "Cartes standard EEE + Stripe Billing. À vérifier selon contrat, moyens de paiement et pays."
+  },
+  "infrastructure": {
+    "hosting_monthly_eur": 20,
+    "database_monthly_eur": 25,
+    "storage_monthly_eur": 5,
+    "monitoring_monthly_eur": 0,
+    "note": "Coûts fixes mutualisés, répartis sur le nombre de clients du scénario."
+  },
+  "support": {
+    "hourly_cost_eur": 35,
+    "minutes_per_customer_month": { "starter": 10, "pro": 15, "business": 30 }
+  },
+  "scenario": {
+    "customers": { "starter": 30, "pro": 15, "business": 5 },
+    "usage_ratio_typical": 0.4,
+    "usage_ratio_worst": 1.0
+  },
+  "alerts": {
+    "max_variable_cost_ratio_of_plan_price": 0.35,
+    "platform_daily_spend_alert_eur": 50
+  }
+}

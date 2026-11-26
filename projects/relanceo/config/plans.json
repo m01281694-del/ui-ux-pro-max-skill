@@ -1,0 +1,216 @@
+{
+  "$comment": "SOURCE UNIQUE DE VÉRITÉ des offres RELANCEO. Ce fichier est chargé au démarrage puis recopié dans la base (tables plans, plan_permissions, plan_limits, role_permissions, app_config). Les contrôles d'accès s'exécutent dans la base (fonctions app.*) et côté serveur Node ; aucun composant frontend ne contient de règle d'abonnement. Modifier un quota ou un prix ici ne demande aucune réécriture de code, mais TOUTE modification publique doit être validée (voir commercial.validation_required).",
+  "catalog_version": 1,
+  "currency": "EUR",
+  "commercial": {
+    "ready": false,
+    "validation_required": true,
+    "price_tax_note": "Prix mensuels hors taxes — HT/TTC, TVA et mentions légales à confirmer avant commercialisation.",
+    "notice": "Offres en cours de validation : prix et quotas sont des hypothèses commerciales de départ, non encore validées économiquement ni juridiquement."
+  },
+  "permissions": {
+    "requests.create": "Créer une demande client",
+    "requests.view": "Consulter les demandes et leur historique",
+    "requests.manage": "Modifier, changer le statut, clôturer une demande, journaliser un échange",
+    "customers.view": "Consulter les fiches clients",
+    "customers.manage": "Créer et modifier les fiches clients",
+    "reminders.manual": "Créer des rappels manuels (aucun envoi au client)",
+    "statistics.basic": "Statistiques essentielles",
+    "statistics.advanced": "Statistiques avancées",
+    "priorities.advanced": "Gestion avancée des priorités (4 niveaux, échéance de traitement, file triée)",
+    "templates.manage": "Créer, modifier et valider des modèles de réponses",
+    "ai.summary": "Résumé d'une demande par IA",
+    "ai.classification": "Classification et priorisation assistées par IA",
+    "ai.suggestions": "Suggestion de réponse par IA (jamais envoyée automatiquement)",
+    "automations.view": "Consulter les automatisations et leur historique",
+    "automations.create": "Créer, configurer, activer, mettre en pause les automatisations",
+    "automations.execute": "Exécution des relances automatiques par le planificateur serveur",
+    "team.view": "Voir l'équipe",
+    "team.invite": "Inviter un collaborateur",
+    "team.manage": "Modifier les rôles, retirer ou réactiver un collaborateur",
+    "billing.view": "Voir l'abonnement, la consommation et les factures",
+    "billing.manage": "Changer d'offre, annuler, réactiver",
+    "data.export": "Exporter ses données",
+    "support.priority": "Support prioritaire (traitement en priorité dans la file de support)"
+  },
+  "roles": {
+    "owner": ["*"],
+    "admin": [
+      "requests.create", "requests.view", "requests.manage", "customers.view", "customers.manage",
+      "reminders.manual", "statistics.basic", "statistics.advanced", "priorities.advanced", "templates.manage",
+      "ai.summary", "ai.classification", "ai.suggestions", "automations.view", "automations.create",
+      "automations.execute", "team.view", "team.invite", "team.manage", "billing.view", "data.export", "support.priority"
+    ],
+    "member": [
+      "requests.create", "requests.view", "requests.manage", "customers.view", "customers.manage",
+      "reminders.manual", "statistics.basic", "statistics.advanced", "priorities.advanced",
+      "ai.summary", "ai.classification", "ai.suggestions", "automations.view", "team.view", "support.priority"
+    ]
+  },
+  "metrics": {
+    "requests_monthly": { "label": "Demandes par mois", "kind": "counter", "on_exceed": "block_and_offer_upgrade" },
+    "ai_operations_monthly": { "label": "Opérations IA par mois", "kind": "counter", "on_exceed": "block_and_offer_upgrade" },
+    "automation_sends_monthly": { "label": "Relances automatiques envoyées par mois", "kind": "counter", "on_exceed": "block_and_offer_upgrade" },
+    "seats": { "label": "Collaborateurs (membres actifs + invitations en attente)", "kind": "gauge", "on_exceed": "block_and_offer_upgrade" },
+    "automation_rules_active": { "label": "Règles d'automatisation actives", "kind": "gauge", "on_exceed": "block_and_offer_upgrade" }
+  },
+  "quota_alert_thresholds": [70, 85, 100],
+  "access_policy": {
+    "$comment": "past_due : accès complet pendant past_due_grace_days, puis lecture seule. Tout autre statut non actif : lecture seule (aucune donnée supprimée). period_end_grace_days : tolérance si le renouvellement n'est pas confirmé par webhook.",
+    "past_due_grace_days": 7,
+    "period_end_grace_days": 3,
+    "readonly_permissions": [
+      "requests.view", "customers.view", "statistics.basic", "automations.view",
+      "team.view", "billing.view", "billing.manage", "data.export"
+    ]
+  },
+  "plan_changes": {
+    "upgrade": "immediate_after_provider_confirmation",
+    "downgrade": "at_period_end",
+    "cancel": "at_period_end",
+    "data_retention_after_cancel_days": null,
+    "$comment": "data_retention_after_cancel_days=null : aucune suppression automatique n'est programmée. La durée de conservation après résiliation est une décision juridique à prendre (RGPD)."
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "price_cents": 4900,
+      "interval": "month",
+      "tagline": "Organisez vos demandes clients.",
+      "audience": "Petites entreprises qui veulent centraliser et suivre leurs demandes clients.",
+      "highlight": false,
+      "permissions": [
+        "requests.create", "requests.view", "requests.manage", "customers.view", "customers.manage",
+        "reminders.manual", "statistics.basic", "team.view", "billing.view", "billing.manage", "data.export"
+      ],
+      "limits": {
+        "requests_monthly": 100,
+        "seats": 1,
+        "ai_operations_monthly": 0,
+        "automation_sends_monthly": 0,
+        "automation_rules_active": 0
+      }
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "price_cents": 9900,
+      "interval": "month",
+      "tagline": "Gérez mieux, gagnez du temps.",
+      "audience": "Entreprises qui veulent améliorer leur gestion et gagner du temps grâce à l'assistance IA.",
+      "highlight": false,
+      "permissions": [
+        "requests.create", "requests.view", "requests.manage", "customers.view", "customers.manage",
+        "reminders.manual", "statistics.basic", "statistics.advanced", "priorities.advanced", "templates.manage",
+        "ai.summary", "ai.classification", "ai.suggestions",
+        "team.view", "team.invite", "team.manage", "billing.view", "billing.manage", "data.export"
+      ],
+      "limits": {
+        "requests_monthly": 500,
+        "seats": 3,
+        "ai_operations_monthly": 1000,
+        "automation_sends_monthly": 0,
+        "automation_rules_active": 0
+      }
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "price_cents": 14900,
+      "interval": "month",
+      "tagline": "Automatisez votre suivi client.",
+      "audience": "Entreprises qui veulent exploiter pleinement RELANCEO et automatiser leurs relances.",
+      "highlight": true,
+      "custom_offer_note": "Besoin de volumes supérieurs ? Une offre personnalisée peut être étudiée sur demande.",
+      "permissions": [
+        "requests.create", "requests.view", "requests.manage", "customers.view", "customers.manage",
+        "reminders.manual", "statistics.basic", "statistics.advanced", "priorities.advanced", "templates.manage",
+        "ai.summary", "ai.classification", "ai.suggestions",
+        "automations.view", "automations.create", "automations.execute",
+        "team.view", "team.invite", "team.manage", "billing.view", "billing.manage", "data.export",
+        "support.priority"
+      ],
+      "limits": {
+        "requests_monthly": 3000,
+        "seats": 10,
+        "ai_operations_monthly": 3000,
+        "automation_sends_monthly": 6000,
+        "automation_rules_active": 20
+      }
+    }
+  ],
+  "features": [
+    { "group": "Demandes", "label": "Centralisation des demandes clients", "permissions": ["requests.create", "requests.view"] },
+    { "group": "Demandes", "label": "Historique complet de chaque demande", "permissions": ["requests.view"] },
+    { "group": "Demandes", "label": "Gestion des statuts et suivi manuel", "permissions": ["requests.manage"] },
+    { "group": "Demandes", "label": "Rappels manuels (pour votre équipe, aucun envoi au client)", "permissions": ["reminders.manual"] },
+    { "group": "Demandes", "label": "Gestion avancée des priorités", "permissions": ["priorities.advanced"] },
+    { "group": "Clients", "label": "Fiches clients", "permissions": ["customers.manage"] },
+    { "group": "Réponses", "label": "Modèles de réponses personnalisables", "permissions": ["templates.manage"] },
+    { "group": "IA (assistance, jamais d'envoi automatique)", "label": "Résumé des demandes", "permissions": ["ai.summary"], "requires_configuration": "ai_provider" },
+    { "group": "IA (assistance, jamais d'envoi automatique)", "label": "Classification et priorisation assistées", "permissions": ["ai.classification"], "requires_configuration": "ai_provider" },
+    { "group": "IA (assistance, jamais d'envoi automatique)", "label": "Suggestions de réponses", "permissions": ["ai.suggestions"], "requires_configuration": "ai_provider" },
+    { "group": "Automatisations de relances", "label": "Règles de relance configurables (déclencheur, délai, conditions)", "permissions": ["automations.create"], "requires_configuration": "email_provider" },
+    { "group": "Automatisations de relances", "label": "Arrêt automatique si le client répond ou si la demande est clôturée", "permissions": ["automations.execute"] },
+    { "group": "Automatisations de relances", "label": "Historique des automatisations et statut des messages envoyés", "permissions": ["automations.view", "automations.execute"] },
+    { "group": "Pilotage", "label": "Statistiques essentielles", "permissions": ["statistics.basic"] },
+    { "group": "Pilotage", "label": "Statistiques avancées", "permissions": ["statistics.advanced"] },
+    { "group": "Équipe", "label": "Invitation et gestion des collaborateurs", "permissions": ["team.invite", "team.manage"] },
+    { "group": "Support", "label": "Support prioritaire", "permissions": ["support.priority"], "requires_configuration": "support_process" }
+  ],
+  "upsell": {
+    "automations": {
+      "permissions": ["automations.view", "automations.create", "automations.execute"],
+      "required_plan": "business",
+      "title": "Automatisez vos relances avec Business",
+      "body": "Configurez vos règles de suivi client et laissez RELANCEO vous aider à ne plus oublier vos demandes.",
+      "by_plan": {
+        "pro": {
+          "title": "Fonctionnalité réservée à Business",
+          "body": "Cette fonctionnalité est réservée à Business. Passez à Business pour configurer vos automatisations de relances."
+        }
+      },
+      "benefits": [
+        "Relances envoyées selon vos délais et vos conditions",
+        "Arrêt automatique dès que le client répond ou que la demande est clôturée",
+        "Historique et statut de chaque message envoyé"
+      ]
+    },
+    "ai": {
+      "permissions": ["ai.summary", "ai.classification", "ai.suggestions"],
+      "required_plan": "pro",
+      "title": "Gagnez du temps avec l'assistance IA",
+      "body": "Résumez une demande en un clic, obtenez une proposition de priorité et un brouillon de réponse que vous relisez avant tout envoi.",
+      "benefits": ["Résumé instantané des demandes longues", "Classification et priorité suggérées", "Brouillon de réponse modifiable — rien n'est envoyé sans vous"]
+    },
+    "templates": {
+      "permissions": ["templates.manage"],
+      "required_plan": "pro",
+      "title": "Répondez plus vite avec les modèles",
+      "body": "Enregistrez vos réponses fréquentes et réutilisez-les en un clic.",
+      "benefits": ["Modèles personnalisables", "Réponses homogènes dans toute l'équipe"]
+    },
+    "statistics_advanced": {
+      "permissions": ["statistics.advanced"],
+      "required_plan": "pro",
+      "title": "Pilotez avec les statistiques avancées",
+      "body": "Délais de première réponse, taux de clôture, répartition par priorité et tendance sur 8 semaines.",
+      "benefits": ["Délai moyen de première réponse", "Tendance hebdomadaire", "Répartition par priorité et catégorie"]
+    },
+    "priorities": {
+      "permissions": ["priorities.advanced"],
+      "required_plan": "pro",
+      "title": "Gestion avancée des priorités",
+      "body": "Quatre niveaux de priorité, échéance de traitement et file de travail triée par urgence.",
+      "benefits": ["Niveaux « basse » et « urgente »", "Échéance de traitement", "File triée par priorité"]
+    },
+    "team": {
+      "permissions": ["team.invite", "team.manage"],
+      "required_plan": "pro",
+      "title": "Travaillez en équipe",
+      "body": "Invitez jusqu'à 3 collaborateurs avec Pro, jusqu'à 10 avec Business.",
+      "benefits": ["Rôles administrateur et membre", "Historique partagé"]
+    }
+  }
+}

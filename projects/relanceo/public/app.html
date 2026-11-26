@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Espace RELANCEO</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/app.html">RELAN<span>CEO</span></a>
+      <nav class="nav" aria-label="Navigation"><a href="/pricing.html">Offres</a><a href="#" id="logout" hidden>Se déconnecter</a></nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section id="login" class="login card" hidden>
+      <h1>Connexion (démonstration)</h1>
+      <p>Collez un jeton de session généré par <code>npm run dev</code>. L'authentification de production (Supabase Auth ou équivalent) reste à brancher.</p>
+      <label for="token">Jeton de session</label>
+      <input id="token" autocomplete="off" spellcheck="false">
+      <button class="btn primary" id="login-btn" type="button">Ouvrir mon espace</button>
+    </section>
+    <section id="dash" hidden>
+      <div class="grid">
+        <article class="card span-4"><h2>Abonnement</h2><div id="sub"></div></article>
+        <article class="card span-8"><h2>Consommation de la période</h2><div id="meters"></div></article>
+        <article class="card span-12"><h2>Fonctionnalités</h2><p id="features-help" class="tax">Les fonctionnalités verrouillées indiquent l'offre requise. Rien n'est activé sans confirmation.</p><div class="features" id="features"></div></article>
+        <article class="card span-6"><h2>Notifications</h2><ul class="list" id="notifications"></ul></article>
+        <article class="card span-6"><h2>Demandes récentes</h2><ul class="list" id="requests"></ul></article>
+      </div>
+    </section>
+  </main>
+  <dialog id="upsell" aria-labelledby="up-title">
+    <div class="inner">
+      <h2 id="up-title"></h2>
+      <p id="up-body"></p>
+      <ul id="up-benefits"></ul>
+      <p><strong id="up-price"></strong></p>
+      <div id="up-preview"></div>
+      <div id="up-msg"></div>
+      <div class="actions">
+        <button class="btn ghost" type="button" data-close>Plus tard</button>
+        <button class="btn primary" type="button" id="up-cta"></button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
