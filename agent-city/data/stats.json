@@ -1,14 +1,14 @@
 {
- "updatedAt": 1795694821718,
+ "updatedAt": 1795705659307,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
   "tiktok": {
    "handle": "@manu_digi0",
-   "followers": 7,
-   "posts": 23,
-   "views": 14886,
-   "likes": 381,
+   "followers": 10,
+   "posts": 28,
+   "views": 17010,
+   "likes": 592,
    "profileViews": 107,
    "comments": 11,
    "shares": 12
@@ -35,39 +35,51 @@
   },
   {
    "day": "2026-11-12",
-   "tiktokViews": 1720
+   "tiktokViews": 1724
   },
   {
    "day": "2026-11-13",
-   "tiktokViews": 1710
+   "tiktokViews": 1711
   },
   {
    "day": "2026-11-14",
-   "tiktokViews": 2342
+   "tiktokViews": 2344
   },
   {
    "day": "2026-11-16",
-   "tiktokViews": 3671
+   "tiktokViews": 3680
   },
   {
    "day": "2026-11-17",
-   "tiktokViews": 691
+   "tiktokViews": 692
   },
   {
    "day": "2026-11-18",
-   "tiktokViews": 701
+   "tiktokViews": 702
   },
   {
    "day": "2026-11-19",
-   "tiktokViews": 1874
+   "tiktokViews": 1875
   },
   {
    "day": "2026-11-20",
-   "tiktokViews": 909
+   "tiktokViews": 912
   },
   {
    "day": "2026-11-22",
-   "tiktokViews": 652
+   "tiktokViews": 745
+  },
+  {
+   "day": "2026-11-24",
+   "tiktokViews": 1140
+  },
+  {
+   "day": "2026-11-25",
+   "tiktokViews": 856
+  },
+  {
+   "day": "2026-11-26",
+   "tiktokViews": 13
   }
  ],
  "posts": [
@@ -290,6 +302,56 @@
    "likes": 3,
    "comments": 0,
    "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795692855000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7712442046577003815",
+   "title": "🔗change ta vie en un commentaire 「go」🚀",
+   "views": 13,
+   "likes": 1,
+   "comments": 0,
+   "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795645486000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7712238614729575719",
+   "title": "📎écrit moi \"go\" en prv🚀",
+   "views": 144,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795616224000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7712112938714254625",
+   "title": "🔗envoie moi「go」en privé 🚀",
+   "views": 712,
+   "likes": 69,
+   "comments": 0,
+   "shares": 0
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795558698000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7711865855096720679",
+   "title": "🔗send me 「go」 in prv🚀",
+   "views": 879,
+   "likes": 134,
+   "comments": 0,
+   "shares": 2
+  },
+  {
+   "network": "tiktok",
+   "publishedAt": 1795545191000,
+   "url": "https://www.tiktok.com/@manu_digi0/video/7711807851471047969",
+   "title": "🔗envoie moi 「go」 en privé pour commencer ta nouvelle vie🚀",
+   "views": 261,
+   "likes": 3,
+   "comments": 0,
+   "shares": 0
   }
  ],
  "revenue": {
@@ -314,7 +376,7 @@
  "goals": [
   {
    "label": "Abonnés (tous réseaux)",
-   "current": 14,
+   "current": 17,
    "target": 1000
   },
   {

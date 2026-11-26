@@ -814,6 +814,44 @@
    "start": 1795672500000,
    "end": 1795672560000,
    "residentId": 113
+  },
+  {
+   "id": "r-1795705620000-69",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "détecte 5 nouvelles vidéos TikTok (24–26/11) : record 134 likes sur « send me go » — TikTok 28 vidéos, 17 010 vues, 10 abonnés",
+   "start": 1795705620000,
+   "end": 1795705740000,
+   "residentId": 267,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795705740000-70",
+   "demo": false,
+   "dept": "loop",
+   "job": "Loop Feeder",
+   "title": "renforce la leçon « CTA go » (confiance 0,6) et nuance la règle 1 vidéo/jour",
+   "start": 1795705740000,
+   "end": 1795705800000,
+   "residentId": 295,
+   "output": {
+    "kind": "note",
+    "label": "Leçon CTA go"
+   }
+  },
+  {
+   "id": "r-1795705800000-71",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons : 0 nouvelle vente",
+   "start": 1795705800000,
+   "end": 1795705860000,
+   "residentId": 277
   }
  ],
  "contents": [
