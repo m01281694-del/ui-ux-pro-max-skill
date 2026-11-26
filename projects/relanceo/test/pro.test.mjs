@@ -60,7 +60,7 @@ test('PRO — automatisations refusées avec le message Business dédié', async
   assert.equal(res.status, 403);
   assert.equal(res.body.error.upgrade.required_plan, 'business');
   assert.equal(res.body.error.upgrade.body, 'Cette fonctionnalité est réservée à Business. Passez à Business pour configurer vos automatisations de relances.');
-  assert.equal(res.body.error.upgrade.price_cents, 14900);
+  assert.equal(res.body.error.upgrade.price_cents, 14999);
 });
 
 test('PRO — ne peut pas contourner la restriction par requête API ou falsification', async () => {

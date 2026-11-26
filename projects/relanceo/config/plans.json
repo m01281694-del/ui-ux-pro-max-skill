@@ -75,7 +75,7 @@
     {
       "id": "starter",
       "name": "Starter",
-      "price_cents": 4900,
+      "price_cents": 4999,
       "interval": "month",
       "tagline": "Organisez vos demandes clients.",
       "audience": "Petites entreprises qui veulent centraliser et suivre leurs demandes clients.",
@@ -117,7 +117,7 @@
     {
       "id": "business",
       "name": "Business",
-      "price_cents": 14900,
+      "price_cents": 14999,
       "interval": "month",
       "tagline": "Automatisez votre suivi client.",
       "audience": "Entreprises qui veulent exploiter pleinement RELANCEO et automatiser leurs relances.",

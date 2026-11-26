@@ -12,7 +12,7 @@ nécessaire pour faire réellement fonctionner et tester le système d'abonnemen
 ```bash
 cd projects/relanceo
 npm install
-npm test            # 63 tests (Postgres embarqué PGlite, aucun service externe)
+npm test            # 64 tests (Postgres embarqué PGlite, aucun service externe)
 npm run dev         # http://localhost:3000/pricing.html — affiche 3 jetons de démo (Starter/Pro/Business)
 npm run economics   # coûts et marges par offre (HT et hypothèse TTC)
 ```
@@ -22,7 +22,7 @@ Prérequis : Node.js 22+. Dépendances : `@electric-sql/pglite` (Postgres en Web
 
 ---
 
-## 1. Fonctionnalités Starter (49 €/mois)
+## 1. Fonctionnalités Starter (49,99 €/mois)
 
 | Fonctionnalité | Permission | Où c'est contrôlé |
 |---|---|---|
@@ -58,7 +58,7 @@ Exclu : automatisations de relance (y compris via l'API ou la base — testé).
 L'IA est **développée mais non activée** : sans `AI_PROVIDER=anthropic` + clé, les appels renvoient
 « L'assistance IA n'est pas encore configurée » et la page tarifs affiche « activation en cours ».
 
-## 3. Fonctionnalités Business (149 €/mois)
+## 3. Fonctionnalités Business (149,99 €/mois)
 
 Tout Pro, plus :
 
@@ -121,7 +121,7 @@ src/
   costs.js                 journal des coûts + alertes internes
 public/                    page tarifs + tableau de bord (aucune règle d'abonnement côté navigateur)
 scripts/                   dev, economics, admin (opérateur)
-test/                      63 tests
+test/                      64 tests
 ```
 
 **Décision d'accès** = rôle de l'utilisateur ∩ permissions de l'offre ∩ statut de l'abonnement :
@@ -174,7 +174,7 @@ volontairement ignoré.
 
 ## 7. Tests exécutés et résultats
 
-Commande : `npm test` — exécutée le 26/11/2026 : **63 tests, 63 réussis, 0 échec** (≈ 18 s).
+Commande : `npm test` — exécutée le 26/11/2026 : **64 tests, 64 réussis, 0 échec** (≈ 18 s).
 
 | Fichier | Tests | Couverture |
 |---|---|---|
@@ -184,7 +184,7 @@ Commande : `npm test` — exécutée le 26/11/2026 : **63 tests, 63 réussis, 0 
 | `lifecycle.test.mjs` | 15 | sans abonnement, signatures invalides/périmées/corps modifié, checkout seul n'active rien, Starter→Pro→Business, Starter→Business, rétrogradation à l'échéance (rien supprimé), échec de paiement + grâce + réactivation, annulation/expiration/réactivation, renouvellement et remise à zéro, période qui avance sans webhook, idempotence + désordre + prix inconnu, remboursement, panne / désactivation du prestataire, falsification de plan, automatisation stoppée quand l'abonnement devient inactif |
 | `security.test.mjs` | 8 | isolation API et RLS entre entreprises (lecture, écriture, fonctions, tables internes), en-tête d'entreprise falsifié, auto-attribution Business / propriétaire, retrait d'un collaborateur, authentification, entrées invalides, jeton de réponse inconnu |
 | `concurrency.test.mjs` | 5 | 30 créations simultanées pour 10 places, double clic idempotent, invitations simultanées, IA simultanée, activations simultanées au plafond |
-| `catalog.test.mjs` | 9 | validation bloquante du catalogue, quotas, base = catalogue, chaque fonctionnalité annoncée protégée par une route, page tarifs sans promesse interdite ni prix en dur, fonctionnalités non configurées signalées, rentabilité, alerte FinOps, offre personnalisée |
+| `catalog.test.mjs` | 10 | validation bloquante du catalogue, quotas, base = catalogue, chaque fonctionnalité annoncée protégée par une route, page tarifs sans promesse interdite ni prix en dur, fonctionnalités non configurées signalées, rentabilité, alerte FinOps, offre personnalisée, affichage 49,99 € / 99 € / 149,99 € |
 
 Vérification visuelle (Playwright) de la page tarifs (bureau + mobile 390 px, sans débordement) et de la
 fenêtre d'upsell du tableau de bord.
@@ -229,22 +229,22 @@ Scénario « typique » = 40 % des quotas consommés, « plafond » = 100 %.
 
 | Offre | IA | E-mails | Paiement | Support | Fixe | **Total typique** | **Total plafond** |
 |---|---|---|---|---|---|---|---|
-| Starter | 0 | 0 | 1,33 | 5,83 | 1,37 | **8,53** | **8,53** |
+| Starter | 0 | 0 | 1,35 | 5,83 | 1,37 | **8,55** | **8,55** |
 | Pro | 5,96 / 14,90 | 0 | 2,43 | 8,75 | 1,37 | **18,51** | **27,45** |
-| Business | 17,88 / 44,71 | 2,16 / 5,40 | 3,53 | 17,50 | 1,37 | **42,44** | **72,51** |
+| Business | 17,88 / 44,71 | 2,16 / 5,40 | 3,55 | 17,50 | 1,37 | **42,46** | **72,53** |
 
 ## 11. Estimation des marges
 
 | Offre | Prix | Marge typique (HT) | Marge au plafond (HT) | Si les prix sont TTC (plafond) |
 |---|---|---|---|---|
-| Starter | 49 € | 40,47 € (82,6 %) | 40,47 € (82,6 %) | 32,30 € (79,1 %) |
+| Starter | 49,99 € | 41,44 € (82,9 %) | 41,44 € (82,9 %) | 33,11 € (79,5 %) |
 | Pro | 99 € | 80,49 € (81,3 %) | 71,55 € (72,3 %) | 55,05 € (66,7 %) |
-| Business | 149 € | 106,56 € (71,5 %) | 76,49 € (51,3 %) | 51,66 € (**41,6 %**, alerte < 50 %) |
+| Business | 149,99 € | 107,53 € (71,7 %) | 77,46 € (51,6 %) | 52,46 € (**42,0 %**, alerte < 50 %) |
 
 Lecture FinOps :
 - Aucune offre n'est déficitaire avec ces hypothèses, même au plafond.
-- **Business est le point de vigilance** : au plafond, l'IA + les e-mails représentent 33,6 % du prix
-  (seuil d'alerte interne : 35 %). Si les prix affichés s'entendent TTC, la marge tombe à 41,6 %.
+- **Business est le point de vigilance** : au plafond, l'IA + les e-mails représentent 33,4 % du prix
+  (seuil d'alerte interne : 35 %). Si les prix affichés s'entendent TTC, la marge tombe à 42,0 %.
 - Levier principal : le modèle IA. Avec `claude-haiku-5-5` (0,10 $ / 0,50 $), le coût par opération
   passerait à ~0,0004 €. **Non appliqué** : c'est une décision produit à prendre après évaluation de la
   qualité sur des demandes réelles.

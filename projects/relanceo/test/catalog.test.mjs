@@ -26,7 +26,7 @@ test('Quotas configurés (valeurs de départ du cahier des charges)', () => {
   assert.deepEqual([l.starter.requests_monthly, l.pro.requests_monthly], [100, 500]);
   assert.deepEqual([l.starter.seats, l.pro.seats, l.business.seats], [1, 3, 10]);
   assert.ok(l.business.requests_monthly > l.pro.requests_monthly, 'Business : plafond élevé mais fini');
-  assert.deepEqual(catalog.plans.map((p) => p.price_cents), [4900, 9900, 14900]);
+  assert.deepEqual(catalog.plans.map((p) => p.price_cents), [4999, 9900, 14999]);
 });
 
 test('Base = catalogue : permissions et limites recopiées à l\'identique', async () => {
@@ -91,4 +91,9 @@ test('Offre personnalisée : dérogation de quota par l\'opérateur, sans modifi
   await env.db.asService((tx) => tx.query(
     `insert into tenant_limit_overrides (tenant_id, metric, limit_value, reason, approved_by) values ($1, 'seats', 25, 'Contrat sur devis', 'operateur@relanceo')`, [t.tenantId]));
   assert.equal((await t.call('GET', '/api/entitlements')).body.limits.seats, 25);
+});
+
+test('Affichage des prix : 49,99 € / 99 € / 149,99 €', async () => {
+  const res = await env.api(null, 'GET', '/api/plans');
+  assert.deepEqual(res.body.plans.map((p) => p.price_label), ['49,99 €', '99 €', '149,99 €']);
 });
