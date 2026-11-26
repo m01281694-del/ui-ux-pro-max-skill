@@ -766,6 +766,54 @@
    "start": 1795338480000,
    "end": 1795338540000,
    "residentId": 273
+  },
+  {
+   "id": "r-1795672140000-65",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "rattrapage de 3 jours de stats : YouTube 538 vues (+376) et 6 abonnés, TikTok 23 vidéos / 14 886 vues / 7 abonnés, Instagram 832 vues",
+   "start": 1795672140000,
+   "end": 1795672320000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795672320000-66",
+   "demo": false,
+   "dept": "loop",
+   "job": "Loop Feeder",
+   "title": "écrit la leçon « YouTube Shorts décolle » et met à jour la règle TikTok (1 vidéo/jour max)",
+   "start": 1795672320000,
+   "end": 1795672440000,
+   "residentId": 296,
+   "output": {
+    "kind": "note",
+    "label": "2 leçons"
+   }
+  },
+  {
+   "id": "r-1795672440000-67",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie les mails Beacons des 5 derniers jours : 0 vente",
+   "start": 1795672440000,
+   "end": 1795672500000,
+   "residentId": 273
+  },
+  {
+   "id": "r-1795672500000-68",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "productions des 23, 24, 25 et 26/11 suspendues : limite Metricool non résolue (quota de voix préservé)",
+   "start": 1795672500000,
+   "end": 1795672560000,
+   "residentId": 113
   }
  ],
  "contents": [

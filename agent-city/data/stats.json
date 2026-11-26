@@ -1,13 +1,13 @@
 {
- "updatedAt": 1795338407343,
+ "updatedAt": 1795672109483,
  "source": "Metricool (brand 8094155) + Gmail (ventes Beacons)",
  "period": "30 derniers jours",
  "platforms": {
   "tiktok": {
    "handle": "@manu_digi0",
-   "followers": 8,
-   "posts": 22,
-   "views": 14110,
+   "followers": 7,
+   "posts": 23,
+   "views": 14886,
    "likes": 381,
    "profileViews": 107,
    "comments": 11,
@@ -17,7 +17,7 @@
    "handle": "@manu.digi0",
    "followers": 1,
    "posts": 18,
-   "views": 810,
+   "views": 832,
    "reelViews": 794,
    "interactions": 20
   },
@@ -25,7 +25,7 @@
    "handle": "chaîne UCC2akO2lNGQEjQ_nX3OgI-Q",
    "followers": 6,
    "posts": 5,
-   "views": 162
+   "views": 538
   }
  },
  "daily": [
@@ -39,15 +39,15 @@
   },
   {
    "day": "2026-11-13",
-   "tiktokViews": 1708
+   "tiktokViews": 1710
   },
   {
    "day": "2026-11-14",
-   "tiktokViews": 2333
+   "tiktokViews": 2342
   },
   {
    "day": "2026-11-16",
-   "tiktokViews": 3668
+   "tiktokViews": 3671
   },
   {
    "day": "2026-11-17",
@@ -55,15 +55,19 @@
   },
   {
    "day": "2026-11-18",
-   "tiktokViews": 700
+   "tiktokViews": 701
   },
   {
    "day": "2026-11-19",
-   "tiktokViews": 1871
+   "tiktokViews": 1874
   },
   {
    "day": "2026-11-20",
-   "tiktokViews": 803
+   "tiktokViews": 909
+  },
+  {
+   "day": "2026-11-22",
+   "tiktokViews": 652
   }
  ],
  "posts": [
@@ -310,7 +314,7 @@
  "goals": [
   {
    "label": "Abonnés (tous réseaux)",
-   "current": 15,
+   "current": 14,
    "target": 1000
   },
   {

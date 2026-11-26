@@ -18,3 +18,6 @@ source: "Metricool, 16 vidéos TikTok @manu_digi0 du 11 au 18/11/2026"
 
 ## Mise à jour 22/11
 Les 3 vidéos du 20/11 restent à 208, 285 et 310 vues après ~36 h (803 au total, aucune progression depuis le 21/11). Pour la première fois, le premier lot de diffusion est **plus petit** (~270 au lieu de ~700). Hypothèses à vérifier : 3 vidéos postées le même soir (17h41, 20h11, 21h47) qui se font concurrence, et légendes avec promesses de gains (« deviens riche ») qui peuvent limiter la diffusion. Confiance de la leçon « plafond 700 » baissée à 0,4.
+
+## Mise à jour 26/11
+La vidéo seule du 22/11 revient à **652 vues**. Ça appuie l'hypothèse : publier 3 vidéos le même soir (20/11) les fait se concurrencer. Règle provisoire : **une vidéo TikTok par jour maximum, espacées de 24 h**.
