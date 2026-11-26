@@ -2,9 +2,11 @@
 // - asUser(userId, fn)  : transaction exécutée sous le rôle "authenticated" avec l'identité de
 //                         l'utilisateur => toutes les politiques RLS s'appliquent.
 // - asService(fn, actor): transaction sous "service_role" (webhooks, planificateur, opérateur).
-// En production (Supabase / Postgres managé), remplacer PGlite par un pool `pg` : les mêmes
-// requêtes SQL, migrations, rôles et politiques s'appliquent.
+// Deux moteurs, mêmes migrations / rôles / politiques :
+//   * DATABASE_URL défini  -> Postgres réel (Supabase, Neon, RDS…) via `pg` (production) ;
+//   * sinon                -> PGlite (Postgres embarqué) pour le développement et les tests.
 import { PGlite } from '@electric-sql/pglite';
+import pg from 'pg';
 import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -12,25 +14,78 @@ import { loadCatalog } from './plans.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const migrationsDir = path.join(here, '..', 'db', 'migrations');
+pg.types.setTypeParser(20, (v) => (v === null ? null : Number(v))); // bigint -> number (valeurs < 2^53)
+const MIGRATION_LOCK = 724_001;
 
-export async function openDb({ dataDir, catalog = loadCatalog() } = {}) {
-  const pg = dataDir ? new PGlite(dataDir) : new PGlite();
-  await pg.waitReady;
-  await pg.exec(`create table if not exists schema_migrations (name text primary key, applied_at timestamptz default now())`);
-  const done = new Set((await pg.query('select name from schema_migrations')).rows.map((r) => r.name));
-  for (const file of readdirSync(migrationsDir).filter((f) => f.endsWith('.sql')).sort()) {
-    if (done.has(file)) continue;
-    await pg.exec(readFileSync(path.join(migrationsDir, file), 'utf8'));
-    await pg.query('insert into schema_migrations(name) values ($1)', [file]);
+class PgliteDriver {
+  constructor(dataDir) { this.pg = dataDir ? new PGlite(dataDir) : new PGlite(); this.kind = 'pglite'; }
+  async ready() { await this.pg.waitReady; }
+  transaction(fn) { return this.pg.transaction((tx) => fn({ query: (q, p) => tx.query(q, p), exec: (q) => tx.exec(q) })); }
+  async withLock(_key, fn) { return fn(); } // un seul processus
+  close() { return this.pg.close(); }
+}
+
+class PostgresDriver {
+  constructor(url) {
+    const ssl = /sslmode=disable/.test(url) || /@(localhost|127\.0\.0\.1)/.test(url) ? false : { rejectUnauthorized: false };
+    this.pool = new pg.Pool({ connectionString: url, ssl, max: Number(process.env.DATABASE_POOL_SIZE ?? 10) });
+    this.kind = 'postgres';
   }
-  const db = new Db(pg);
+  async ready() { const c = await this.pool.connect(); c.release(); }
+  async transaction(fn) {
+    const client = await this.pool.connect();
+    try {
+      await client.query('begin');
+      const out = await fn({ query: (q, p) => client.query(q, p), exec: (q) => client.query(q) });
+      await client.query('commit');
+      return out;
+    } catch (err) {
+      await client.query('rollback').catch(() => {});
+      throw err;
+    } finally {
+      client.release();
+    }
+  }
+  // Verrou applicatif exclusif (ex. un seul planificateur à la fois, même avec plusieurs instances).
+  async withLock(key, fn) {
+    const client = await this.pool.connect();
+    try {
+      const got = (await client.query('select pg_try_advisory_lock($1) as ok', [key])).rows[0].ok;
+      if (!got) return { skipped: 'already_running' };
+      try { return await fn(); } finally { await client.query('select pg_advisory_unlock($1)', [key]); }
+    } finally {
+      client.release();
+    }
+  }
+  close() { return this.pool.end(); }
+}
+
+export async function openDb({ dataDir, databaseUrl = process.env.DATABASE_URL, catalog = loadCatalog() } = {}) {
+  const driver = databaseUrl ? new PostgresDriver(databaseUrl) : new PgliteDriver(dataDir);
+  await driver.ready();
+  await migrate(driver);
+  const db = new Db(driver);
   await db.syncCatalog(catalog);
   return db;
 }
 
+async function migrate(driver) {
+  await driver.transaction(async (tx) => {
+    if (driver.kind === 'postgres') await tx.query('select pg_advisory_xact_lock($1)', [MIGRATION_LOCK]);
+    await tx.exec('create table if not exists schema_migrations (name text primary key, applied_at timestamptz default now())');
+    const done = new Set((await tx.query('select name from schema_migrations')).rows.map((r) => r.name));
+    for (const file of readdirSync(migrationsDir).filter((f) => f.endsWith('.sql')).sort()) {
+      if (done.has(file)) continue;
+      await tx.exec(readFileSync(path.join(migrationsDir, file), 'utf8'));
+      await tx.query('insert into schema_migrations(name) values ($1)', [file]);
+    }
+  });
+}
+
 export class Db {
-  constructor(pg) {
-    this.pg = pg;
+  constructor(driver) {
+    this.driver = driver;
+    this.kind = driver.kind;
     this.clock = null; // Date | null — horloge simulée pour les tests
   }
 
@@ -44,7 +99,7 @@ export class Db {
 
   async asUser(userId, fn) {
     if (!userId) throw new Error('asUser requires a user id');
-    return this.pg.transaction(async (tx) => {
+    return this.driver.transaction(async (tx) => {
       await this.#prepare(tx);
       await tx.query(`select set_config('request.jwt.claims', $1, true)`, [JSON.stringify({ sub: userId, role: 'authenticated' })]);
       await tx.exec('set local role authenticated');
@@ -53,7 +108,7 @@ export class Db {
   }
 
   async asService(fn, actor = 'service') {
-    return this.pg.transaction(async (tx) => {
+    return this.driver.transaction(async (tx) => {
       await this.#prepare(tx);
       await tx.query(`select set_config('app.actor', $1, true)`, [actor]);
       await tx.exec('set local role service_role');
@@ -61,9 +116,14 @@ export class Db {
     });
   }
 
+  withLock(key, fn) {
+    return this.driver.withLock(key, fn);
+  }
+
   // Recopie le catalogue (config/plans.json) dans la base : source unique, deux exécutions cohérentes.
   async syncCatalog(catalog) {
-    await this.pg.transaction(async (tx) => {
+    await this.driver.transaction(async (tx) => {
+      if (this.kind === 'postgres') await tx.query('select pg_advisory_xact_lock($1)', [MIGRATION_LOCK]);
       for (const p of catalog.plans) {
         await tx.query(
           `insert into plans (id, name, price_cents, currency, interval, catalog_version) values ($1,$2,$3,$4,$5,$6)
@@ -101,7 +161,7 @@ export class Db {
   }
 
   async close() {
-    await this.pg.close();
+    await this.driver.close();
   }
 }
 

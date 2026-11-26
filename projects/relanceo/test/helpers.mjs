@@ -26,7 +26,27 @@ export async function startEnv({ env: envOverrides = {}, services = {} } = {}) {
     billing: new FakeBillingProvider(),
     ...services,
   };
-  const built = await buildApp({ env, services: fakes });
+  // TEST_DATABASE_URL défini => chaque environnement de test obtient une base Postgres neuve.
+  let databaseUrl;
+  let dropDb = async () => {};
+  if (process.env.TEST_DATABASE_URL) {
+    const { default: pg } = await import('pg');
+    const name = `relanceo_t_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+    const admin = new pg.Client({ connectionString: process.env.TEST_DATABASE_URL });
+    await admin.connect();
+    await admin.query(`create database ${name}`);
+    await admin.end();
+    const u = new URL(process.env.TEST_DATABASE_URL);
+    u.pathname = `/${name}`;
+    databaseUrl = u.toString();
+    dropDb = async () => {
+      const c = new pg.Client({ connectionString: process.env.TEST_DATABASE_URL });
+      await c.connect();
+      await c.query(`drop database if exists ${name} with (force)`);
+      await c.end();
+    };
+  }
+  const built = await buildApp({ env, services: fakes, databaseUrl: databaseUrl ?? null });
   const server = await listen(built.app, 0);
   const base = `http://127.0.0.1:${server.address().port}`;
 
@@ -86,6 +106,7 @@ export async function startEnv({ env: envOverrides = {}, services = {} } = {}) {
   async function close() {
     await new Promise((r) => server.close(r));
     await built.db.close();
+    await dropDb();
   }
 
   return { ...built, ...fakes, env, base, api, tenant, addMember, webhook, inbound, close };

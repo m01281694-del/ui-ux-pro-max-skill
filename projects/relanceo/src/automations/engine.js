@@ -23,9 +23,16 @@ export function renderTemplate(text, vars) {
   });
 }
 
+const SCHEDULER_LOCK = 724_002;
+
 export async function runAutomationTick(db, services, { env = process.env } = {}) {
   if (env.AUTOMATIONS_ENABLED !== 'true') return { skipped: 'automations_globally_disabled' };
   if (!services.email?.configured) return { skipped: 'email_provider_not_configured' };
+  // Un seul planificateur à la fois, même si le cron se chevauche ou si plusieurs instances tournent.
+  return db.withLock(SCHEDULER_LOCK, () => tick(db, services));
+}
+
+async function tick(db, services) {
   const report = { planned: 0, sent: 0, skipped: 0, failed: 0, retried: 0, needs_review: 0, tenants_blocked: 0 };
 
   // 0. Jobs bloqués en « sending » (crash pendant l'envoi) : pas de renvoi automatique -> revue humaine.

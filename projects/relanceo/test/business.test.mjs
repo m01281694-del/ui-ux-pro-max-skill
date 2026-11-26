@@ -69,7 +69,7 @@ test('BUSINESS — relance envoyée après le délai, une seule fois, puis 2e te
   assert.equal(env.email.sent.length, 0, 'pas avant le délai');
   at(49);
   const [r1, r2] = await Promise.all([tick(), tick()]);
-  assert.equal(r1.sent + r2.sent, 1, 'deux passages simultanés : un seul envoi');
+  assert.equal((r1.sent ?? 0) + (r2.sent ?? 0), 1, 'deux passages simultanés : un seul envoi');
   await tick();
   assert.equal(env.email.sent.length, 1);
   const mail = env.email.sent[0];

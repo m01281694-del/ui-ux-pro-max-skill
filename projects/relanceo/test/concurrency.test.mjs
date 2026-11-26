@@ -1,7 +1,6 @@
-// Requêtes simultanées. NB : PGlite (Postgres embarqué) exécute les transactions l'une après l'autre ;
-// ces tests valident l'absence de « vérifier puis agir » non atomique côté application et le
-// comportement des contraintes. Le verrouillage multi-connexions de Postgres (UPDATE conditionnel,
-// ON CONFLICT, SELECT … FOR UPDATE) n'est pas exercé ici : à valider sur l'infrastructure cible.
+// Requêtes simultanées. Avec PGlite (npm test) les transactions sont sérialisées ; avec
+// `npm run test:postgres` (Postgres réel, pool de 10 connexions) elles s'exécutent réellement en
+// parallèle et ces tests valident le verrouillage (UPDATE conditionnel, ON CONFLICT, FOR UPDATE).
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { startEnv } from './helpers.mjs';

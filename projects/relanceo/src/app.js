@@ -22,9 +22,9 @@ export async function buildServices(env = process.env, overrides = {}) {
   };
 }
 
-export async function buildApp({ env = process.env, dataDir, services: overrides } = {}) {
+export async function buildApp({ env = process.env, dataDir, databaseUrl = env.DATABASE_URL, services: overrides } = {}) {
   const catalog = loadCatalog();
-  const db = await openDb({ dataDir, catalog });
+  const db = await openDb({ dataDir, databaseUrl, catalog });
   const services = await buildServices(env, overrides);
   const app = createApp({ db, catalog, services, env });
   return { db, catalog, services, app };
