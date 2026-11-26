@@ -5,7 +5,11 @@ import { randomBytes, randomUUID } from 'node:crypto';
 import { AppError, quotaError, requirePermission } from '../entitlements.js';
 import { diffPlans, publicCatalog, planById, upsellFor } from '../plans.js';
 import { runAi } from '../ai/gateway.js';
-import { hashToken } from './server.js';
+import { hashToken, sessionCookie } from './server.js';
+import * as auth from '../auth.js';
+import { sendTransactional } from '../email/templates.js';
+
+const withSession = (status, body, token, appUrl) => ({ __http: true, status, body, headers: { 'Set-Cookie': sessionCookie(token, appUrl) } });
 
 const asUser = (ctx, fn) => ctx.db.asUser(ctx.userId, fn);
 const str = (v, max = 300) => (v == null ? null : String(v).slice(0, max));
@@ -39,6 +43,40 @@ export function buildRoutes() {
           support_process: ctx.env.SUPPORT_PROCESS_READY === 'true',
         },
       }),
+    },
+
+    // ------------------------------------------------------------ comptes
+    {
+      method: 'POST', path: '/api/auth/signup', auth: false,
+      handler: async (ctx) => {
+        const r = await auth.signup(ctx, { companyName: ctx.body.company, name: ctx.body.name, email: ctx.body.email, password: ctx.body.password, acceptTerms: ctx.body.accept_terms });
+        return withSession(201, { user_id: r.userId, tenant_id: r.tenantId }, r.token, ctx.services.appUrl);
+      },
+    },
+    {
+      method: 'POST', path: '/api/auth/login', auth: false,
+      handler: async (ctx) => {
+        const r = await auth.login(ctx, { email: ctx.body.email, password: ctx.body.password });
+        return withSession(200, { user_id: r.userId }, r.token, ctx.services.appUrl);
+      },
+    },
+    {
+      method: 'POST', path: '/api/auth/logout', tenant: false,
+      handler: async (ctx) => {
+        await auth.logout(ctx, ctx.sessionToken);
+        return withSession(200, { logged_out: true }, null, ctx.services.appUrl);
+      },
+    },
+    { method: 'POST', path: '/api/auth/forgot', auth: false, handler: (ctx) => auth.forgotPassword(ctx, { email: ctx.body.email }) },
+    { method: 'POST', path: '/api/auth/reset', auth: false, handler: (ctx) => auth.resetPassword(ctx, { token: ctx.body.token, password: ctx.body.password }) },
+    { method: 'POST', path: '/api/auth/password', tenant: false, handler: (ctx) => auth.changePassword(ctx, { current: ctx.body.current, password: ctx.body.password }) },
+    { method: 'GET', path: '/api/invitations/lookup', auth: false, handler: (ctx) => auth.lookupInvitation(ctx, ctx.query.token) },
+    {
+      method: 'POST', path: '/api/auth/signup-invited', auth: false,
+      handler: async (ctx) => {
+        const r = await auth.signupInvited(ctx, { token: ctx.body.token, name: ctx.body.name, password: ctx.body.password, acceptTerms: ctx.body.accept_terms });
+        return withSession(201, { user_id: r.userId, tenant_id: r.tenantId }, r.token, ctx.services.appUrl);
+      },
     },
 
     // ------------------------------------------------------------ session / droits
@@ -372,9 +410,22 @@ export function buildRoutes() {
           [ctx.tenantId, email, ctx.body.role === 'admin' ? 'admin' : 'member', hashToken(token)])).r);
         if (!res.ok && res.reason === 'quota_exceeded') throw quotaError(ctx, res);
         if (!res.ok) throw new AppError(409, res.reason, 'Cette personne fait déjà partie de l\'équipe.');
-        // L'envoi de l'e-mail d'invitation n'est pas implémenté : le lien est renvoyé à l'administrateur.
-        return { __http: true, status: 201, body: { id: res.invitation_id, accept_token: token, seats: { used: res.used, limit: res.limit } } };
+        const link = `${ctx.services.appUrl}/invitation.html#token=${token}`;
+        const company = await asUser(ctx, (tx) => tx.one('select name from tenants where id = $1', [ctx.tenantId]));
+        const me = await asUser(ctx, (tx) => tx.one('select coalesce(display_name, email) as n from users where id = app.current_user_id()'));
+        const mail = await sendTransactional(ctx.services, 'invitation', { to: email, company: company.name, inviter: me.n, link });
+        // Le lien est aussi renvoyé à l'administrateur (à transmettre lui-même si l'e-mail n'est pas parti).
+        // Il ne fonctionne que pour l'adresse invitée.
+        return { __http: true, status: 201, body: { id: res.invitation_id, accept_token: token, link, email_sent: mail.sent, seats: { used: res.used, limit: res.limit } } };
       },
+    },
+    {
+      method: 'POST', path: '/api/team/invitations/:id/revoke', permission: 'team.manage',
+      handler: (ctx) => asUser(ctx, async (tx) => {
+        const r = await tx.one(`update invitations set status = 'revoked' where id = $1 and tenant_id = $2 and status in ('pending', 'suspended_over_limit') returning id, status`, [ctx.params.id, ctx.tenantId]);
+        if (!r) throw new AppError(404, 'not_found', 'Invitation introuvable.');
+        return r;
+      }),
     },
     {
       method: 'POST', path: '/api/invitations/accept', tenant: false,
@@ -450,6 +501,27 @@ export function buildRoutes() {
       handler: (ctx) => requestChange(ctx, String(ctx.body.plan ?? '')),
     },
     {
+      // Premier abonnement (ou ré-abonnement après résiliation) : page de paiement Stripe.
+      method: 'POST', path: '/api/billing/checkout', permission: 'billing.manage',
+      handler: (ctx) => startCheckout(ctx, String(ctx.body.plan ?? '')),
+    },
+    {
+      // Portail client Stripe : carte bancaire, factures, adresse de facturation, résiliation.
+      method: 'POST', path: '/api/billing/portal', permission: 'billing.manage',
+      handler: async (ctx) => {
+        const billing = ctx.services.billing;
+        if (!billing?.enabled) throw new AppError(503, 'billing_disabled', "Le paiement en ligne n'est pas encore activé.");
+        const sub = await ctx.db.asService((tx) => tx.one('select provider_customer_id from subscriptions where tenant_id = $1', [ctx.tenantId]), 'billing');
+        if (!sub?.provider_customer_id) throw new AppError(409, 'no_billing_account', 'Aucun compte de facturation : choisissez d\'abord une offre.');
+        try {
+          const r = await billing.portal({ customerId: sub.provider_customer_id });
+          return { url: r.url };
+        } catch {
+          throw new AppError(502, 'billing_provider_error', 'Le prestataire de paiement est indisponible. Réessayez dans quelques minutes.');
+        }
+      },
+    },
+    {
       method: 'POST', path: '/api/billing/cancel', permission: 'billing.manage',
       handler: (ctx) => requestCancel(ctx, 'cancel'),
     },
@@ -509,7 +581,37 @@ async function recordChangeRequest(ctx, { from, to, kind, status, reference = nu
     [ctx.tenantId, ctx.userId, from, to, kind, status, reference]), `user:${ctx.userId}`);
 }
 
+const NEEDS_CHECKOUT = new Set(['none', 'canceled', 'incomplete']);
+
+async function startCheckout(ctx, target) {
+  const plan = planById(ctx.catalog, target);
+  if (!plan) throw new AppError(400, 'unknown_plan', 'Offre inconnue.');
+  if (!NEEDS_CHECKOUT.has(ctx.ent.status)) {
+    throw new AppError(409, 'already_subscribed', 'Vous avez déjà un abonnement : utilisez le changement d\'offre.');
+  }
+  const billing = ctx.services.billing;
+  if (!billing?.enabled) {
+    await recordChangeRequest(ctx, { from: ctx.ent.plan_id ?? 'none', to: target, kind: 'upgrade', status: 'billing_disabled' });
+    throw new AppError(503, 'billing_disabled', "Le paiement en ligne n'est pas encore activé. Aucun prélèvement n'a été effectué.");
+  }
+  const sub = await ctx.db.asService((tx) => tx.one('select provider_customer_id from subscriptions where tenant_id = $1', [ctx.tenantId]), 'billing');
+  const me = await ctx.db.asUser(ctx.userId, (tx) => tx.one('select email from users where id = app.current_user_id()'));
+  try {
+    const r = await billing.startCheckout({
+      tenantId: ctx.tenantId, planId: target, customerId: sub?.provider_customer_id ?? null, email: me.email,
+      idempotencyKey: `checkout:${ctx.tenantId}:${target}:${ctx.headers['idempotency-key'] ?? randomUUID()}`,
+    });
+    await recordChangeRequest(ctx, { from: ctx.ent.plan_id ?? 'none', to: target, kind: 'upgrade', status: 'pending', reference: r.reference });
+    return { __http: true, status: 201, body: { checkout_url: r.url,
+      message: 'Vous allez être redirigé vers la page de paiement sécurisée. Votre offre sera activée dès la confirmation du paiement.' } };
+  } catch {
+    await recordChangeRequest(ctx, { from: ctx.ent.plan_id ?? 'none', to: target, kind: 'upgrade', status: 'failed' });
+    throw new AppError(502, 'billing_provider_error', 'Le prestataire de paiement est indisponible. Aucun prélèvement n\'a été effectué.');
+  }
+}
+
 async function requestChange(ctx, target) {
+  if (NEEDS_CHECKOUT.has(ctx.ent.status)) return startCheckout(ctx, target);
   const preview = await previewChange(ctx, target);
   if (preview.kind === 'same') throw new AppError(409, 'same_plan', 'Vous êtes déjà sur cette offre.');
   const billing = ctx.services.billing;
@@ -517,12 +619,13 @@ async function requestChange(ctx, target) {
     await recordChangeRequest(ctx, { from: preview.from, to: target, kind: preview.kind, status: 'billing_disabled' });
     throw new AppError(503, 'billing_disabled', "Le paiement en ligne n'est pas encore activé. Aucun changement n'a été effectué. Contactez-nous pour changer d'offre.");
   }
-  const sub = await ctx.db.asService((tx) => tx.one('select provider_subscription_id, provider_customer_id from subscriptions where tenant_id = $1', [ctx.tenantId]), 'billing');
+  const sub = await ctx.db.asService((tx) => tx.one('select provider, provider_subscription_id, provider_customer_id from subscriptions where tenant_id = $1', [ctx.tenantId]), 'billing');
+  if (!sub?.provider_subscription_id) {
+    throw new AppError(409, 'manual_subscription', 'Votre abonnement est géré manuellement : contactez-nous pour changer d\'offre.');
+  }
   const idempotencyKey = `plan:${ctx.tenantId}:${target}:${ctx.headers['idempotency-key'] ?? randomUUID()}`;
   try {
-    const r = sub?.provider_subscription_id
-      ? await billing.changePlan({ subscriptionId: sub.provider_subscription_id, planId: target, kind: preview.kind, idempotencyKey })
-      : await billing.startCheckout({ tenantId: ctx.tenantId, planId: target, customerId: sub?.provider_customer_id, idempotencyKey });
+    const r = await billing.changePlan({ subscriptionId: sub.provider_subscription_id, planId: target, kind: preview.kind, idempotencyKey });
     await recordChangeRequest(ctx, { from: preview.from, to: target, kind: preview.kind, status: 'pending', reference: r.reference });
     return { __http: true, status: 202, body: { status: 'pending_provider_confirmation', checkout_url: r.url ?? null, preview,
       message: "Votre demande est transmise. L'offre sera modifiée dès la confirmation du prestataire de paiement." } };

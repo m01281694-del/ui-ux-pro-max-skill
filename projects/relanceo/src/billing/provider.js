@@ -12,6 +12,7 @@ export class DisabledBillingProvider {
   async changePlan() { throw new BillingDisabledError(); }
   async cancelAtPeriodEnd() { throw new BillingDisabledError(); }
   async resume() { throw new BillingDisabledError(); }
+  async portal() { throw new BillingDisabledError(); }
 }
 
 // Prestataire de test : enregistre les appels ; l'état ne change que lorsque le test envoie le webhook signé.
@@ -28,23 +29,32 @@ export class FakeBillingProvider {
   changePlan(a) { return this.#call('changePlan', a); }
   cancelAtPeriodEnd(a) { return this.#call('cancelAtPeriodEnd', a); }
   resume(a) { return this.#call('resume', a); }
+  portal(a) { return this.#call('portal', a).then((r) => ({ ...r, url: 'https://billing.invalid/portal' })); }
 }
 
-// Implémentation Stripe (API REST, form-encoded). NON testée contre Stripe dans ce dépôt.
-// Activation : BILLING_PROVIDER=stripe + STRIPE_SECRET_KEY + STRIPE_PRICE_<PLAN> + STRIPE_WEBHOOK_SECRET.
+// Implémentation Stripe (API REST, form-encoded, version d'API figée).
+// Testée contre un faux serveur Stripe (test/stripe.test.mjs) ; à valider en mode test Stripe avant production.
+// Activation : BILLING_PROVIDER=stripe + STRIPE_SECRET_KEY + STRIPE_PRICE_<PLAN> + STRIPE_WEBHOOK_SECRET + APP_URL.
+export const STRIPE_API_VERSION = '2024-06-20';
+
 export class StripeBillingProvider {
   name = 'stripe';
   enabled = true;
-  constructor({ secretKey, priceMap, appUrl, fetchImpl = fetch }) {
+  constructor({ secretKey, priceMap, appUrl, automaticTax = false, fetchImpl = fetch, baseUrl = 'https://api.stripe.com' }) {
     if (!secretKey) throw new Error('STRIPE_SECRET_KEY manquant');
-    this.key = secretKey; this.priceMap = priceMap; this.appUrl = appUrl; this.fetch = fetchImpl;
+    if (!appUrl) throw new Error('APP_URL manquant');
+    for (const plan of ['starter', 'pro', 'business']) if (!priceMap[plan]) throw new Error(`STRIPE_PRICE_${plan.toUpperCase()} manquant`);
+    this.key = secretKey; this.priceMap = priceMap; this.appUrl = appUrl; this.fetch = fetchImpl; this.baseUrl = baseUrl;
+    this.automaticTax = automaticTax;
+    this.mode = secretKey.startsWith('sk_live_') ? 'live' : 'test';
   }
   async #api(method, pathname, params, idempotencyKey) {
-    const res = await this.fetch(`https://api.stripe.com/v1/${pathname}`, {
+    const res = await this.fetch(`${this.baseUrl}/v1/${pathname}`, {
       method,
       headers: {
         Authorization: `Bearer ${this.key}`,
         'Content-Type': 'application/x-www-form-urlencoded',
+        'Stripe-Version': STRIPE_API_VERSION,
         ...(idempotencyKey ? { 'Idempotency-Key': idempotencyKey } : {}),
       },
       body: params ? new URLSearchParams(params).toString() : undefined,
@@ -53,17 +63,27 @@ export class StripeBillingProvider {
     if (!res.ok) throw new Error(`stripe_${res.status}_${body?.error?.code ?? 'error'}`);
     return body;
   }
-  async startCheckout({ tenantId, planId, customerId, idempotencyKey }) {
+  async startCheckout({ tenantId, planId, customerId, email, idempotencyKey }) {
     const s = await this.#api('POST', 'checkout/sessions', {
       mode: 'subscription',
+      locale: 'fr',
       'line_items[0][price]': this.priceMap[planId],
       'line_items[0][quantity]': '1',
-      success_url: `${this.appUrl}/app.html?checkout=pending`,
-      cancel_url: `${this.appUrl}/pricing.html`,
+      success_url: `${this.appUrl}/app.html#/abonnement?paiement=confirmation`,
+      cancel_url: `${this.appUrl}/app.html#/abonnement?paiement=annule`,
       client_reference_id: tenantId,
       'subscription_data[metadata][tenant_id]': tenantId,
-      ...(customerId ? { customer: customerId } : {}),
+      'metadata[tenant_id]': tenantId,
+      billing_address_collection: 'required',
+      'tax_id_collection[enabled]': 'true',
+      ...(this.automaticTax ? { 'automatic_tax[enabled]': 'true' } : {}),
+      ...(customerId ? { customer: customerId, 'customer_update[address]': 'auto', 'customer_update[name]': 'auto' } : (email ? { customer_email: email } : {})),
     }, idempotencyKey);
+    return { reference: s.id, url: s.url };
+  }
+  // Portail client Stripe : moyen de paiement, factures, résiliation (configuré par scripts/stripe-setup.mjs).
+  async portal({ customerId }) {
+    const s = await this.#api('POST', 'billing_portal/sessions', { customer: customerId, locale: 'fr', return_url: `${this.appUrl}/app.html#/abonnement` });
     return { reference: s.id, url: s.url };
   }
   async changePlan({ subscriptionId, planId, kind, idempotencyKey }) {
@@ -93,7 +113,7 @@ export function priceMapFromEnv(env = process.env) {
 
 export function billingProviderFromEnv(env = process.env) {
   if (env.BILLING_PROVIDER === 'stripe') {
-    return new StripeBillingProvider({ secretKey: env.STRIPE_SECRET_KEY, priceMap: priceMapFromEnv(env), appUrl: env.APP_URL });
+    return new StripeBillingProvider({ secretKey: env.STRIPE_SECRET_KEY, priceMap: priceMapFromEnv(env), appUrl: env.APP_URL, automaticTax: env.STRIPE_AUTOMATIC_TAX === 'true' });
   }
   return new DisabledBillingProvider();
 }

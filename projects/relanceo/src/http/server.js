@@ -19,6 +19,24 @@ import { buildRoutes } from './routes.js';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(here, '..', '..', 'public');
 const MAX_BODY = 100 * 1024;
+export const SESSION_COOKIE = 'relanceo_session';
+const SESSION_DAYS = 7;
+
+export function parseCookies(header) {
+  const out = {};
+  for (const part of String(header ?? '').split(';')) {
+    const i = part.indexOf('=');
+    if (i > 0) out[part.slice(0, i).trim()] = decodeURIComponent(part.slice(i + 1).trim());
+  }
+  return out;
+}
+
+export function sessionCookie(token, appUrl) {
+  const secure = String(appUrl ?? '').startsWith('https://') ? '; Secure' : '';
+  return token
+    ? `${SESSION_COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_DAYS * 86400}${secure}`
+    : `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`;
+}
 
 export const hashToken = (t) => createHash('sha256').update(String(t)).digest('hex');
 export const newToken = () => randomBytes(32).toString('base64url');
@@ -91,14 +109,28 @@ export function createApp({ db, catalog, services, env = process.env }) {
     return n > limit;
   }
 
+  // Session : en-tête Authorization (API) ou cookie HttpOnly (navigateur).
+  function sessionToken(req) {
+    const m = /^Bearer\s+(.+)$/.exec(req.headers.authorization ?? '');
+    if (m) return { token: m[1], via: 'bearer' };
+    const c = parseCookies(req.headers.cookie)[SESSION_COOKIE];
+    return c ? { token: c, via: 'cookie' } : null;
+  }
+
   async function authenticate(req) {
-    const h = req.headers.authorization ?? '';
-    const m = /^Bearer\s+(.+)$/.exec(h);
-    if (!m) throw new AppError(401, 'unauthenticated', 'Authentification requise.');
+    const s = sessionToken(req);
+    if (!s) throw new AppError(401, 'unauthenticated', 'Authentification requise.');
     const row = await db.asService((tx) => tx.one(
-      'select user_id from sessions where token_hash = $1 and expires_at > app.now()', [hashToken(m[1])]), 'auth');
+      'select user_id from sessions where token_hash = $1 and expires_at > app.now()', [hashToken(s.token)]), 'auth');
     if (!row) throw new AppError(401, 'unauthenticated', 'Session invalide ou expirée.');
-    return row.user_id;
+    return { userId: row.user_id, ...s };
+  }
+
+  // Protection CSRF : une requête authentifiée par cookie qui modifie des données doit venir de notre origine.
+  function checkOrigin(req) {
+    const origin = req.headers.origin;
+    const allowed = new Set([new URL(services.appUrl ?? 'http://localhost').origin, `http://${req.headers.host}`, `https://${req.headers.host}`]);
+    if (!origin || !allowed.has(origin)) throw new AppError(403, 'csrf', 'Origine de la requête refusée.');
   }
 
   async function resolveTenant(userId, req) {
@@ -175,7 +207,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
     const url = new URL(req.url, 'http://localhost');
     const pathname = url.pathname;
     try {
-      if (rateLimited(req.headers.authorization ?? req.socket.remoteAddress ?? 'anon')) {
+      if (rateLimited(req.headers.authorization ?? req.headers.cookie ?? req.socket.remoteAddress ?? 'anon')) {
         throw new AppError(429, 'rate_limited', 'Trop de requêtes. Réessayez dans une minute.');
       }
       if (req.method === 'POST' && pathname === '/api/webhooks/stripe') return await handleWebhook(req, res, await readBody(req));
@@ -204,9 +236,15 @@ export function createApp({ db, catalog, services, env = process.env }) {
           if (typeof body !== 'object' || body === null || Array.isArray(body)) throw new AppError(400, 'invalid_json', 'Objet JSON attendu.');
         }
       }
-      const ctx = { db, catalog, services, env, params, body, query: Object.fromEntries(url.searchParams), headers: req.headers };
+      const ip = env.TRUST_PROXY === 'true'
+        ? String(req.headers['x-forwarded-for'] ?? '').split(',')[0].trim() || req.socket.remoteAddress
+        : req.socket.remoteAddress;
+      const ctx = { db, catalog, services, env, params, body, query: Object.fromEntries(url.searchParams), headers: req.headers, ip, cookies: parseCookies(req.headers.cookie) };
       if (route.auth !== false) {
-        ctx.userId = await authenticate(req);
+        const a = await authenticate(req);
+        ctx.userId = a.userId;
+        ctx.sessionToken = a.token;
+        if (a.via === 'cookie' && req.method !== 'GET') checkOrigin(req);
         if (route.tenant !== false) {
           ctx.tenantId = await resolveTenant(ctx.userId, req);
           ctx.ent = await db.asUser(ctx.userId, (tx) => loadEntitlements(tx, ctx.tenantId));
@@ -214,7 +252,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
         }
       }
       const out = await route.handler(ctx);
-      return out?.__http ? send(res, out.status, out.body) : send(res, 200, out ?? {});
+      return out?.__http ? send(res, out.status, out.body, out.headers ?? {}) : send(res, 200, out ?? {});
     } catch (err) {
       const e = err instanceof AppError ? err : mapDbError(err);
       if (e) return send(res, e.status, { error: { code: e.code, message: e.message, ...e.details } });
