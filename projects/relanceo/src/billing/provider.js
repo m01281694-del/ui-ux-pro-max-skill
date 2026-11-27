@@ -112,8 +112,53 @@ export function priceMapFromEnv(env = process.env) {
 }
 
 export function billingProviderFromEnv(env = process.env) {
+  if (env.BILLING_PROVIDER === 'demo') return new DemoBillingProvider();
   if (env.BILLING_PROVIDER === 'stripe') {
     return new StripeBillingProvider({ secretKey: env.STRIPE_SECRET_KEY, priceMap: priceMapFromEnv(env), appUrl: env.APP_URL, automaticTax: env.STRIPE_AUTOMATIC_TAX === 'true' });
   }
   return new DisabledBillingProvider();
+}
+
+// MODE DÉMONSTRATION (BILLING_PROVIDER=demo) : simule Stripe pour tester le parcours sans paiement.
+// Les « paiements » passent par la page /demo-paiement.html, clairement signalée, puis par le MÊME
+// traitement de webhooks que la production (handleBillingEvent). Aucun prélèvement n'est possible.
+export class DemoBillingProvider {
+  name = 'demo';
+  enabled = true;
+  demo = true;
+  constructor() { this.sessions = new Map(); this.n = 0; }
+  attach({ db, catalog, apply }) { this.db = db; this.catalog = catalog; this.apply = apply; }
+  async startCheckout({ tenantId, planId }) {
+    const id = `demo_cs_${Date.now()}_${++this.n}`;
+    this.sessions.set(id, { tenantId, planId });
+    return { reference: id, url: `/demo-paiement.html#session=${id}&offre=${planId}` };
+  }
+  async #subEvent(type, sub, overrides = {}) {
+    const now = Math.floor(Date.now() / 1000);
+    const start = sub?.current_period_start ? Math.floor(new Date(sub.current_period_start).getTime() / 1000) : now;
+    const end = sub?.current_period_end ? Math.floor(new Date(sub.current_period_end).getTime() / 1000) : now + 30 * 86400;
+    const o = { planId: sub?.plan_id, cancel: sub?.cancel_at_period_end ?? false, status: 'active', ...overrides };
+    return this.apply({
+      id: `evt_demo_${Date.now()}_${++this.n}`, type, created: now + this.n,
+      data: { object: { id: o.subscriptionId ?? sub.provider_subscription_id, customer: o.customerId ?? sub.provider_customer_id, status: o.status,
+        cancel_at_period_end: o.cancel, metadata: { tenant_id: o.tenantId ?? sub?.tenant_id },
+        items: { data: [{ price: { id: `demo_price_${o.planId}` }, current_period_start: start, current_period_end: end }] } } },
+    });
+  }
+  async #sub(subscriptionId) {
+    return this.db.asService((tx) => tx.one('select * from subscriptions where provider_subscription_id = $1', [subscriptionId]), 'demo-billing');
+  }
+  async pay(sessionId) {
+    const s = this.sessions.get(sessionId);
+    if (!s) return false;
+    this.sessions.delete(sessionId);
+    const existing = await this.db.asService((tx) => tx.one('select provider_customer_id from subscriptions where tenant_id = $1', [s.tenantId]), 'demo-billing');
+    const customerId = existing?.provider_customer_id ?? `demo_cus_${s.tenantId.slice(0, 8)}`;
+    await this.#subEvent('customer.subscription.created', null, { tenantId: s.tenantId, planId: s.planId, customerId, subscriptionId: `demo_sub_${Date.now()}` });
+    return true;
+  }
+  async changePlan({ subscriptionId, planId }) { const sub = await this.#sub(subscriptionId); await this.#subEvent('customer.subscription.updated', sub, { planId }); return { reference: 'demo' }; }
+  async cancelAtPeriodEnd({ subscriptionId }) { const sub = await this.#sub(subscriptionId); await this.#subEvent('customer.subscription.updated', sub, { cancel: true }); return { reference: 'demo' }; }
+  async resume({ subscriptionId }) { const sub = await this.#sub(subscriptionId); await this.#subEvent('customer.subscription.updated', sub, { cancel: false }); return { reference: 'demo' }; }
+  async portal() { return { reference: 'demo', url: '/demo-paiement.html#portail=1' }; }
 }

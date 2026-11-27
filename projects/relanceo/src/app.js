@@ -9,6 +9,7 @@ import { aiProviderFromEnv } from './ai/anthropic.js';
 
 export async function buildServices(env = process.env, overrides = {}) {
   const priceMap = priceMapFromEnv(env);
+  if (env.BILLING_PROVIDER === 'demo') Object.assign(priceMap, { starter: 'demo_price_starter', pro: 'demo_price_pro', business: 'demo_price_business' });
   const priceToPlan = Object.fromEntries(Object.entries(priceMap).filter(([, v]) => v).map(([plan, price]) => [price, plan]));
   return {
     billing: billingProviderFromEnv(env),
@@ -27,5 +28,13 @@ export async function buildApp({ env = process.env, dataDir, databaseUrl = env.D
   const db = await openDb({ dataDir, databaseUrl, catalog });
   const services = await buildServices(env, overrides);
   const app = createApp({ db, catalog, services, env });
+  if (services.billing.demo) {
+    const { handleBillingEvent } = await import('./billing/webhooks.js');
+    services.billing.attach({ db, catalog, apply: async (event) => {
+      const r = await handleBillingEvent(db, event, { priceToPlan: services.priceToPlan, catalog });
+      if (r.status !== 200) throw new Error(`demo_billing_${r.body?.error ?? r.status}`);
+      return r;
+    } });
+  }
   return { db, catalog, services, app };
 }

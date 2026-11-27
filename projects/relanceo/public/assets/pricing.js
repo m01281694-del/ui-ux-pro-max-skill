@@ -32,8 +32,8 @@ function renderPlans(data) {
     const own = data.features.filter((f) => f.permissions.every((perm) => p.permissions.includes(perm))
       && !(i > 0 && f.permissions.every((perm) => data.plans[i - 1].permissions.includes(perm))));
     const cta = data.configuration.billing_enabled
-      ? `<a class="btn ${p.highlight ? 'primary' : ''}" href="/app.html?plan=${encodeURIComponent(p.id)}">Choisir ${esc(p.name)}</a>`
-      : `<a class="btn ${p.highlight ? 'primary' : ''}" href="/app.html?plan=${encodeURIComponent(p.id)}">Demander ${esc(p.name)}</a>`;
+      ? `<a class="btn ${p.highlight ? 'primary' : ''}" href="/inscription.html?offre=${encodeURIComponent(p.id)}">Choisir ${esc(p.name)}</a>`
+      : `<a class="btn ${p.highlight ? 'primary' : ''}" href="/inscription.html?offre=${encodeURIComponent(p.id)}">Choisir ${esc(p.name)}</a>`;
     return `<article class="plan ${p.highlight ? 'highlight' : ''}" aria-labelledby="plan-${p.id}">
       ${p.highlight ? '<span class="badge">Le plus complet</span>' : ''}
       <h2 id="plan-${p.id}">${esc(p.name)}</h2>

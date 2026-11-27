@@ -41,6 +41,7 @@ export function buildRoutes() {
           email_provider: Boolean(ctx.services.email?.configured),
           automations_enabled: ctx.env.AUTOMATIONS_ENABLED === 'true',
           support_process: ctx.env.SUPPORT_PROCESS_READY === 'true',
+          demo_mode: Boolean(ctx.services.billing?.demo),
         },
       }),
     },
@@ -76,6 +77,17 @@ export function buildRoutes() {
       handler: async (ctx) => {
         const r = await auth.signupInvited(ctx, { token: ctx.body.token, name: ctx.body.name, password: ctx.body.password, acceptTerms: ctx.body.accept_terms });
         return withSession(201, { user_id: r.userId, tenant_id: r.tenantId }, r.token, ctx.services.appUrl);
+      },
+    },
+
+    {
+      // Mode démonstration uniquement : « paiement » simulé d'une session créée par DemoBillingProvider.
+      method: 'POST', path: '/api/demo/pay', tenant: false,
+      handler: async (ctx) => {
+        if (!ctx.services.billing?.demo) throw new AppError(404, 'not_found', 'Route inconnue.');
+        const ok = await ctx.services.billing.pay(String(ctx.body.session ?? ''));
+        if (!ok) throw new AppError(400, 'invalid_session', 'Session de paiement inconnue ou déjà utilisée.');
+        return { paid: true };
       },
     },
 
@@ -143,9 +155,10 @@ export function buildRoutes() {
           : 'created_at desc';
         const status = STATUSES.includes(ctx.query.status) ? ctx.query.status : null;
         return tx.query(
-          `select id, customer_id, subject, status, priority, due_at, category, channel, created_at, updated_at, closed_at,
-                  last_outbound_at, last_customer_reply_at
-             from requests where tenant_id = $1 and ($2::text is null or status = $2) order by ${order} limit 500`,
+          `select r.id, r.customer_id, c.name as customer_name, r.subject, r.status, r.priority, r.due_at, r.category, r.channel,
+                  r.created_at, r.updated_at, r.closed_at, r.last_outbound_at, r.last_customer_reply_at
+             from requests r left join customers c on c.id = r.customer_id
+            where r.tenant_id = $1 and ($2::text is null or r.status = $2) order by ${order.replace(/(priority|due_at|created_at)/g, 'r.$1')} limit 500`,
           [ctx.tenantId, status]);
       }),
     },

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Connexion RELANCEO</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/auth.js" defer></script>
+</head>
+<body data-page="login">
+<div class="auth-wrap">
+  <main class="auth-main" id="main">
+    <div class="auth-card">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <h1>Bon retour</h1>
+      <p>Connectez-vous à votre espace RELANCEO.</p>
+      <form id="form" novalidate>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="password">Mot de passe</label><input class="input" id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <div id="msg" role="alert"></div>
+        <button class="btn primary w100" type="submit">Se connecter</button>
+      </form>
+      <p class="small" style="margin-top:18px"><a href="/mot-de-passe-oublie.html">Mot de passe oublié ?</a></p>
+      <p class="small muted">Pas encore de compte ? <a href="/inscription.html">Créer un espace</a></p>
+    </div>
+  </main>
+  <aside class="auth-aside" aria-hidden="true">
+    <h2>Plus aucune demande client oubliée.</h2>
+    <ul>
+      <li>Toutes vos demandes au même endroit</li>
+      <li>Un historique clair pour toute l'équipe</li>
+      <li>L'IA vous aide, vous gardez la main</li>
+      <li>Des relances qui s'arrêtent dès que le client répond</li>
+    </ul>
+    <div class="selected" id="aside-plan" hidden></div>
+  </aside>
+</div>
+</body>
+</html>

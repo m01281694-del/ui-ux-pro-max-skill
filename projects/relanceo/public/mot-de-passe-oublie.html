@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mot de passe oublié</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/auth.js" defer></script>
+</head>
+<body data-page="forgot">
+<div class="auth-wrap">
+  <main class="auth-main" id="main">
+    <div class="auth-card">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <h1>Mot de passe oublié</h1>
+      <p>Indiquez votre e-mail : si un compte existe, vous recevrez un lien pour choisir un nouveau mot de passe (valable 1 heure).</p>
+      <form id="form" novalidate>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div id="msg" role="alert"></div>
+        <button class="btn primary w100" type="submit">Recevoir le lien</button>
+      </form>
+      <p class="small" style="margin-top:18px"><a href="/connexion.html">Retour à la connexion</a></p>
+    </div>
+  </main>
+  <aside class="auth-aside" aria-hidden="true">
+    <h2>Plus aucune demande client oubliée.</h2>
+    <ul>
+      <li>Toutes vos demandes au même endroit</li>
+      <li>Un historique clair pour toute l'équipe</li>
+      <li>L'IA vous aide, vous gardez la main</li>
+      <li>Des relances qui s'arrêtent dès que le client répond</li>
+    </ul>
+    <div class="selected" id="aside-plan" hidden></div>
+  </aside>
+</div>
+</body>
+</html>

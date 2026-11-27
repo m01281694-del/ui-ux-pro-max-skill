@@ -104,6 +104,7 @@ export async function startEnv({ env: envOverrides = {}, services = {} } = {}) {
   }
 
   async function close() {
+    server.closeAllConnections?.();
     await new Promise((r) => server.close(r));
     await built.db.close();
     await dropDb();

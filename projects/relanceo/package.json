@@ -9,10 +9,13 @@
     "test": "node --test --test-concurrency=1 \"test/*.test.mjs\"",
     "economics": "node scripts/economics.mjs",
     "admin": "node scripts/admin.mjs",
-    "test:postgres": "TEST_DATABASE_URL=${TEST_DATABASE_URL:-postgres://postgres:postgres@localhost:5432/postgres} node --test --test-concurrency=1 \"test/*.test.mjs\""
+    "test:postgres": "TEST_DATABASE_URL=${TEST_DATABASE_URL:-postgres://postgres:postgres@localhost:5432/postgres} node --test --test-concurrency=1 \"test/*.test.mjs\"",
+    "test:e2e": "node test/e2e/browser.e2e.mjs",
+    "stripe:setup": "node scripts/stripe-setup.mjs",
+    "start": "node scripts/start.mjs"
   },
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.14.0",

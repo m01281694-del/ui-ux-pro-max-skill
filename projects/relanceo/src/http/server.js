@@ -7,7 +7,9 @@
 // Les champs envoyés par le client (plan, statut d'abonnement, tenant_id, quotas…) ne sont jamais lus
 // pour décider d'un droit.
 import http from 'node:http';
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';
+import { runAutomationTick } from '../automations/engine.js';
+import { checkCostAnomalies } from '../costs.js';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -178,6 +180,24 @@ export function createApp({ db, catalog, services, env = process.env }) {
     return send(res, result ? 200 : 404, result ? { received: true } : { error: { code: 'unknown_reply_token' } });
   }
 
+  // Tâche planifiée (Vercel Cron ou tout autre ordonnanceur) : relances, alertes de coûts, ménage.
+  // Protégée par CRON_SECRET (en-tête Authorization: Bearer <secret>, envoyé automatiquement par Vercel).
+  async function handleCron(req, res) {
+    const secret = env.CRON_SECRET;
+    const given = /^Bearer\s+(.+)$/.exec(req.headers.authorization ?? '')?.[1] ?? '';
+    if (!secret || given.length !== secret.length || !timingSafeEqual(Buffer.from(given), Buffer.from(secret))) {
+      return send(res, 401, { error: { code: 'unauthorized' } });
+    }
+    const automations = await runAutomationTick(db, services, { env });
+    const costAlerts = await checkCostAnomalies(db, services.costs, catalog);
+    await db.asService(async (tx) => {
+      await tx.query(`delete from sessions where expires_at < app.now()`);
+      await tx.query(`delete from auth_throttle where window_start < app.now() - interval '1 day'`);
+      await tx.query(`delete from password_resets where expires_at < app.now() - interval '1 day'`);
+    }, 'cron');
+    return send(res, 200, { ok: true, automations, cost_alerts: costAlerts.length });
+  }
+
   async function handleUnsubscribe(req, res, token) {
     const customer = await db.asService((tx) => tx.one('select id, opted_out_at from customers where unsubscribe_token = $1', [token]), 'unsubscribe');
     if (!customer) return send(res, 404, '<!doctype html><meta charset="utf-8"><title>Lien invalide</title><p>Lien invalide ou expiré.</p>');
@@ -190,7 +210,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
   }
 
   async function serveStatic(res, pathname) {
-    const rel = pathname === '/' ? 'pricing.html' : pathname.replace(/^\/+/, '');
+    const rel = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
     const file = path.normalize(path.join(PUBLIC_DIR, rel));
     if (!file.startsWith(PUBLIC_DIR)) return send(res, 404, { error: { code: 'not_found' } });
     try {
@@ -212,6 +232,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
       }
       if (req.method === 'POST' && pathname === '/api/webhooks/stripe') return await handleWebhook(req, res, await readBody(req));
       if (req.method === 'POST' && pathname === '/api/webhooks/inbound-email') return await handleInbound(req, res, await readBody(req));
+      if ((req.method === 'GET' || req.method === 'POST') && pathname === '/api/cron/tick') return await handleCron(req, res);
       const unsub = /^\/u\/([a-f0-9]{16,80})$/.exec(pathname);
       if (unsub && (req.method === 'GET' || req.method === 'POST')) return await handleUnsubscribe(req, res, unsub[1]);
       if (!pathname.startsWith('/api/')) {

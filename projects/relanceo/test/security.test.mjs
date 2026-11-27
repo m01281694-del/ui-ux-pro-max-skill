@@ -108,3 +108,16 @@ test('Webhook entrant : un jeton de réponse ne permet de toucher qu\'à sa prop
   const r = await env.inbound({ reply_token: 'inexistant', text: 'x' });
   assert.equal(r.status, 404);
 });
+
+test('Tâche planifiée /api/cron/tick : refusée sans le secret, exécutée avec', async () => {
+  const c = await startEnv({ env: { CRON_SECRET: 'secret-cron-de-test-123' } });
+  try {
+    assert.equal((await c.api(null, 'POST', '/api/cron/tick')).status, 401);
+    assert.equal((await c.api('mauvais-secret-de-test', 'POST', '/api/cron/tick')).status, 401);
+    const ok = await c.api('secret-cron-de-test-123', 'POST', '/api/cron/tick');
+    assert.equal(ok.status, 200);
+    assert.equal(ok.body.ok, true);
+  } finally { await c.close(); }
+  const none = await env.api('x', 'POST', '/api/cron/tick');
+  assert.equal(none.status, 401, 'sans CRON_SECRET configuré : toujours refusé');
+});

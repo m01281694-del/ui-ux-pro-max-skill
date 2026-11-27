@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RELANCEO — suivi des demandes clients et relances</title>
+  <meta name="description" content="Centralisez vos demandes clients, gagnez du temps avec l'assistance IA et automatisez vos relances. Offres mensuelles sans engagement.">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/landing.css">
+  <script src="/assets/pricing.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <nav class="nav" aria-label="Navigation principale"><a href="#fonctionnalites">Fonctionnalités</a><a href="#offres">Offres</a><a href="/connexion.html">Connexion</a><a class="btn sm primary nav-cta" href="/inscription.html">Commencer</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="l-hero">
+      <div class="wrap l-hero-grid">
+        <div>
+          <p class="eyebrow">Suivi client pour les PME</p>
+          <h1>Ne laissez plus aucune demande client <em>sans suite</em>.</h1>
+          <p class="lead">RELANCEO centralise les demandes de vos clients, aide votre équipe à y répondre plus vite et relance automatiquement ceux qui n'ont pas répondu — puis s'arrête dès qu'ils le font.</p>
+          <div class="row"><a class="btn primary lg" href="/inscription.html">Créer mon espace</a><a class="btn lg" href="#offres">Voir les offres</a></div>
+          <p class="small muted" style="margin-top:14px">Sans engagement · résiliable pour la fin du mois en cours · paiement sécurisé par Stripe</p>
+        </div>
+        <figure class="mock" aria-label="Aperçu illustratif de l'interface">
+          <div class="mock-bar"><i></i><i></i><i></i><span>Demandes</span></div>
+          <div class="mock-body">
+            <div class="mock-row"><b>Devis rénovation cuisine</b><span class="chip amber">En attente client</span></div>
+            <div class="mock-row"><b>Question sur la facture n° 2041</b><span class="chip blue">En cours</span></div>
+            <div class="mock-row"><b>Demande de rendez-vous</b><span class="chip green">Clôturée</span></div>
+            <div class="mock-ai"><span class="tag">Brouillon IA — à relire</span><p>Bonjour Mme Leroy, merci pour votre message. Je vous propose un rendez-vous…</p></div>
+            <div class="mock-relance">⚡ Relance prévue dans 2 jours <span>· s'annule si le client répond</span></div>
+          </div>
+          <figcaption class="small muted">Aperçu illustratif</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap l-steps" aria-labelledby="how">
+      <h2 class="section center" id="how">Comment ça marche</h2>
+      <ol class="steps">
+        <li><span>1</span><h3>Centralisez</h3><p>Chaque demande — e-mail, appel, formulaire — est enregistrée avec son client, son statut et son historique.</p></li>
+        <li><span>2</span><h3>Répondez plus vite</h3><p>Modèles de réponses, résumé et brouillon proposés par l'IA : vous relisez, vous décidez.</p></li>
+        <li><span>3</span><h3>Relancez sans y penser</h3><p>Avec Business, une relance part après le délai choisi si le client n'a pas répondu. Elle s'arrête toute seule dès sa réponse.</p></li>
+      </ol>
+    </section>
+
+    <section class="l-features" id="fonctionnalites" aria-labelledby="feat">
+      <div class="wrap">
+        <h2 class="section center" id="feat">Tout ce qu'il faut pour un suivi client sans oubli</h2>
+        <div class="fgrid">
+          <article><h3>Demandes et fiches clients</h3><p>Statuts, priorités, échéances, rappels internes et historique complet, pour toute l'équipe.</p></article>
+          <article><h3>Assistance IA</h3><p>Résumé, classement et brouillon de réponse en un clic. L'IA n'envoie jamais rien à votre place.</p></article>
+          <article><h3>Relances automatiques</h3><p>Délais, nombre de relances et conditions configurables, désinscription en un clic pour vos clients.</p></article>
+          <article><h3>Arrêt intelligent</h3><p>Réponse du client, demande clôturée, pause d'urgence : la relance n'est pas envoyée.</p></article>
+          <article><h3>Statistiques</h3><p>Demandes en cours, délais de première réponse, taux de clôture, tendance hebdomadaire.</p></article>
+          <article><h3>Données protégées</h3><p>Chaque entreprise dispose d'un espace isolé ; vos données restent exportables à tout moment.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="offres" aria-labelledby="offres-title">
+      <div id="notice" class="notice" role="status" hidden></div>
+      <h2 class="section center" id="offres-title" style="margin-top:56px">Des offres claires, sans surprise</h2>
+      <p class="center muted">Vos limites sont affichées, vous êtes prévenu avant de les atteindre.</p>
+      <div id="plans" class="plans" aria-busy="true"></div>
+      <h3 class="section" id="comparatif">Comparatif détaillé</h3>
+      <div class="table-wrap"><table class="compare" id="compare"></table></div>
+    </section>
+
+    <section class="wrap" id="questions" aria-labelledby="faq-title">
+      <h2 class="section" id="faq-title">Questions fréquentes</h2>
+      <div class="faq">
+        <article><h3>Que se passe-t-il si j'atteins une limite ?</h3><p>Vous êtes prévenu à 70 %, 85 % et 100 % de chaque quota. À 100 %, la création concernée est mise en pause jusqu'au renouvellement, et vous pouvez passer à l'offre supérieure. Rien n'est facturé en supplément sans votre accord.</p></article>
+        <article><h3>Puis-je changer d'offre ?</h3><p>Oui, depuis votre espace. Une montée en gamme est active dès la confirmation du paiement. Une rétrogradation prend effet à la fin de la période en cours ; nous vous indiquons à l'avance ce qui sera désactivé.</p></article>
+        <article><h3>Mes données sont-elles supprimées si je change d'offre ou résilie ?</h3><p>Non. Aucune donnée n'est supprimée lors d'un changement d'offre. Après résiliation, votre espace passe en lecture seule et reste exportable.</p></article>
+        <article><h3>L'IA envoie-t-elle des messages à mes clients ?</h3><p>Non. L'IA propose un résumé, une priorité ou un brouillon de réponse : vous relisez et décidez. Seules les automatisations Business, que vous configurez et autorisez explicitement, envoient des relances.</p></article>
+        <article><h3>Comment se passe le paiement ?</h3><p>Par carte bancaire via Stripe. Vos coordonnées bancaires ne transitent jamais par nos serveurs. Factures et moyen de paiement sont accessibles depuis votre espace.</p></article>
+        <article><h3>Engagement et renouvellement</h3><p>Abonnement mensuel renouvelé automatiquement, résiliable à tout moment pour la fin de la période en cours.</p></article>
+      </div>
+    </section>
+
+    <section class="l-cta">
+      <div class="wrap"><h2>Prêt à ne plus rien oublier ?</h2><p>Créez votre espace en moins d'une minute.</p><a class="btn lg" href="/inscription.html">Créer mon espace</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-grid"><span>© RELANCEO</span><nav aria-label="Informations légales"><a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">Conditions générales</a><a href="/confidentialite.html">Confidentialité</a></nav><span id="footer-note"></span></div></footer>
+</body>
+</html>

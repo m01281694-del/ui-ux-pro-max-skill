@@ -54,7 +54,7 @@ test('Chaque fonctionnalité annoncée est réellement protégée par une route 
 });
 
 test('Pages commerciales : aucune promesse interdite, aucun prix codé en dur', () => {
-  const pricing = readFileSync(new URL('../public/pricing.html', import.meta.url), 'utf8')
+  const pricing = readFileSync(new URL('../public/index.html', import.meta.url), 'utf8')
     + readFileSync(new URL('../public/assets/pricing.js', import.meta.url), 'utf8');
   const banned = [/illimit/i, /unlimited/i, /24\s*h\s*\/\s*24/i, /24\/7/, /multi-?sites?/i, /multi-?entreprises?/i, /SMS/];
   for (const re of banned) assert.ok(!re.test(pricing), `motif interdit : ${re}`);

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+  <title>Paiement de démonstration</title>
+  <link rel="stylesheet" href="/assets/styles.css"><link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/demo-pay.js" defer></script>
+</head>
+<body>
+  <main class="auth-main" id="main" style="min-height:100vh">
+    <div class="auth-card card">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <div class="banner warn" style="margin-top:16px"><div class="grow"><strong>Version de démonstration.</strong> Aucun paiement réel : aucune carte n'est demandée et rien n'est prélevé. En production, cette étape est la page de paiement sécurisée Stripe.</div></div>
+      <div id="pay" hidden>
+        <h1 id="title">Paiement</h1>
+        <p class="muted" id="desc"></p>
+        <div id="msg"></div>
+        <div class="row"><button class="btn primary" type="button" id="ok">Simuler un paiement réussi</button><a class="btn" href="/app.html#/abonnement?paiement=annule">Annuler</a></div>
+      </div>
+      <div id="portal" hidden>
+        <h1>Portail de facturation</h1>
+        <p class="muted">En production, vos clients gèrent ici leur carte bancaire, téléchargent leurs factures et résilient (portail Stripe). Rien à simuler en démonstration.</p>
+        <a class="btn primary" href="/app.html#/abonnement">Retour à l'abonnement</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

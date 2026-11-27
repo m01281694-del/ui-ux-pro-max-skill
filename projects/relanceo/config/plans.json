@@ -5,7 +5,7 @@
   "commercial": {
     "ready": false,
     "validation_required": true,
-    "price_tax_note": "Prix mensuels hors taxes — HT/TTC, TVA et mentions légales à confirmer avant commercialisation.",
+    "price_tax_note": "Prix par mois, payés par carte. Régime de TVA et mentions de facturation à confirmer avant commercialisation.",
     "notice": "Offres en cours de validation : prix et quotas sont des hypothèses commerciales de départ, non encore validées économiquement ni juridiquement."
   },
   "permissions": {

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Créer un compte RELANCEO</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/auth.js" defer></script>
+</head>
+<body data-page="signup">
+<div class="auth-wrap">
+  <main class="auth-main" id="main">
+    <div class="auth-card">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <h1>Créez votre espace</h1>
+      <p>Quelques secondes. Vous choisirez ensuite votre offre et réglerez en ligne de façon sécurisée.</p>
+      <form id="form" novalidate>
+        <div class="field"><label for="company">Nom de l'entreprise</label><input class="input" id="company" name="company" autocomplete="organization" required maxlength="200"></div>
+        <div class="field"><label for="name">Votre nom</label><input class="input" id="name" name="name" autocomplete="name" maxlength="120"></div>
+        <div class="field"><label for="email">E-mail professionnel</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="password">Mot de passe</label><input class="input" id="password" name="password" type="password" autocomplete="new-password" required minlength="10"><span class="hint">10 caractères minimum, avec des lettres et au moins un chiffre ou un symbole.</span></div>
+        <div class="field"><label class="check"><input type="checkbox" id="accept_terms" name="accept_terms" required><span>J'accepte les <a href="/cgv.html" target="_blank">conditions générales</a> et la <a href="/confidentialite.html" target="_blank">politique de confidentialité</a>.</span></label></div>
+        <div id="msg" role="alert"></div>
+        <button class="btn primary w100" type="submit">Créer mon espace</button>
+      </form>
+      <p class="small muted" style="margin-top:18px">Déjà un compte ? <a href="/connexion.html">Se connecter</a></p>
+    </div>
+  </main>
+  <aside class="auth-aside" aria-hidden="true">
+    <h2>Plus aucune demande client oubliée.</h2>
+    <ul>
+      <li>Toutes vos demandes au même endroit</li>
+      <li>Un historique clair pour toute l'équipe</li>
+      <li>L'IA vous aide, vous gardez la main</li>
+      <li>Des relances qui s'arrêtent dès que le client répond</li>
+    </ul>
+    <div class="selected" id="aside-plan" hidden></div>
+  </aside>
+</div>
+</body>
+</html>

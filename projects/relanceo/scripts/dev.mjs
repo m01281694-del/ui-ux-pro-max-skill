@@ -2,7 +2,8 @@
 // (une par offre) et leurs jetons de session. Aucun paiement, e-mail ou appel IA réel n'est
 // effectué tant que les variables d'environnement correspondantes ne sont pas définies.
 import { buildApp } from '../src/app.js';
-import { listen, createSession } from '../src/http/server.js';
+import { listen } from '../src/http/server.js';
+import { hashPassword } from '../src/auth.js';
 import { createTenantWithOwner, operatorSetSubscription } from '../src/accounts.js';
 import { runAutomationTick } from '../src/automations/engine.js';
 import { checkCostAnomalies } from '../src/costs.js';
@@ -19,11 +20,18 @@ if (!existing.length) {
     demo.push({ id: tenantId, name: `Démo ${plan}`, user_id: userId });
   }
 }
-console.log('\nJetons de session de démonstration (valables 7 jours) :');
-for (const t of demo) console.log(`  ${t.name.padEnd(14)} ${await createSession(db, t.user_id)}`);
+const DEMO_PASSWORD = 'Demo-relanceo-2026';
+const hash = await hashPassword(DEMO_PASSWORD);
+console.log(`\nComptes de démonstration (mot de passe : ${DEMO_PASSWORD}) :`);
+for (const t of demo) {
+  await db.asService((tx) => tx.query(`insert into user_credentials (user_id, password_hash) values ($1, $2)
+    on conflict (user_id) do update set password_hash = excluded.password_hash`, [t.user_id, hash]));
+  const u = await db.asService((tx) => tx.one('select email from users where id = $1', [t.user_id]));
+  console.log(`  ${t.name.padEnd(14)} ${u.email}`);
+}
 
 await listen(app, port);
-console.log(`\nRELANCEO : http://localhost:${port}/pricing.html  ·  espace : http://localhost:${port}/app.html`);
+console.log(`\nRELANCEO : http://localhost:${port}/  ·  connexion : http://localhost:${port}/connexion.html`);
 console.log(`Paiement : ${services.billing.name} · E-mail : ${services.email.name} · IA : ${services.ai.name} · Automatisations : ${process.env.AUTOMATIONS_ENABLED === 'true' ? 'activées' : 'désactivées'}`);
 
 // Planificateur (en production : un cron unique, pas un setInterval par instance).
