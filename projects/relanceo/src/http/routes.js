@@ -7,6 +7,7 @@ import { diffPlans, publicCatalog, planById, upsellFor } from '../plans.js';
 import { runAi } from '../ai/gateway.js';
 import { hashToken, sessionCookie } from './server.js';
 import * as auth from '../auth.js';
+import * as admin from '../admin.js';
 import { sendTransactional } from '../email/templates.js';
 
 const withSession = (status, body, token, appUrl) => ({ __http: true, status, body, headers: { 'Set-Cookie': sessionCookie(token, appUrl) } });
@@ -88,6 +89,43 @@ export function buildRoutes() {
         const ok = await ctx.services.billing.pay(String(ctx.body.session ?? ''));
         if (!ok) throw new AppError(400, 'invalid_session', 'Session de paiement inconnue ou déjà utilisée.');
         return { paid: true };
+      },
+    },
+
+    {
+      // Formulaire public « demander une démo ». Anti-spam : champ piège + limite par adresse IP.
+      method: 'POST', path: '/api/leads', auth: false,
+      handler: async (ctx) => {
+        const b = ctx.body;
+        if (b.website) return { __http: true, status: 201, body: { ok: true } }; // robot : ignoré silencieusement
+        const email = String(b.email ?? '').trim().toLowerCase();
+        const name = String(b.name ?? '').trim();
+        if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new AppError(400, 'invalid_input', 'Nom et e-mail valides requis.');
+        await auth.throttle(ctx.db, `lead:${ctx.ip}`, 5);
+        await ctx.db.asService((tx) => tx.query(
+          'insert into leads (name, company, email, phone, message, team_size) values ($1,$2,$3,$4,$5,$6)',
+          [name.slice(0, 120), str(b.company, 200), email, str(b.phone, 40), str(b.message, 2000), str(b.team_size, 40)]), 'lead');
+        if (ctx.env.OPERATOR_EMAIL) {
+          await sendTransactional(ctx.services, 'lead', { to: ctx.env.OPERATOR_EMAIL, name, company: b.company, email, phone: b.phone, message: b.message });
+        }
+        return { __http: true, status: 201, body: { ok: true } };
+      },
+    },
+    { method: 'GET', path: '/api/admin/overview', tenant: false, handler: (ctx) => admin.overview(ctx) },
+    { method: 'PATCH', path: '/api/admin/leads/:id', tenant: false, handler: (ctx) => admin.updateLead(ctx, ctx.params.id, ctx.body.status) },
+    {
+      method: 'POST', path: '/api/customers/import', permission: 'customers.manage',
+      handler: async (ctx) => {
+        const rows = admin.parseCustomersCsv(ctx.body.csv);
+        return asUser(ctx, async (tx) => {
+          let created = 0; let skipped = 0;
+          for (const r of rows) {
+            if (r.email && await tx.one('select 1 as x from customers where tenant_id = $1 and lower(email) = $2', [ctx.tenantId, r.email])) { skipped++; continue; }
+            await tx.query('insert into customers (tenant_id, name, email, phone) values ($1,$2,$3,$4)', [ctx.tenantId, r.name, r.email, r.phone]);
+            created++;
+          }
+          return { created, skipped };
+        });
       },
     },
 

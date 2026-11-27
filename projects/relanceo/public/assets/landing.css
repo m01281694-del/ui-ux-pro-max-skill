@@ -40,3 +40,9 @@
 .footer-grid { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer-grid nav a { margin-right: 16px; color: var(--muted); }
 @media (max-width: 520px) { .nav a[href^="#"] { display: none; } }
+
+.l-demo { padding: 56px 16px; }
+.demo-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 32px; align-items: start; }
+@media (max-width: 860px) { .demo-grid { grid-template-columns: minmax(0, 1fr); } }
+.demo-points { padding-left: 20px; display: grid; gap: 8px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

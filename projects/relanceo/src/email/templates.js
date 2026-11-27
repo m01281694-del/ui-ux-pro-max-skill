@@ -3,6 +3,10 @@
 const FOOTER = '\n\n—\nRELANCEO\nCet e-mail est envoyé automatiquement, merci de ne pas y répondre.';
 
 const TEMPLATES = {
+  lead: ({ name, company, email, phone, message }) => ({
+    subject: `Nouvelle demande de démo : ${company || name}`,
+    text: `Nom : ${name}\nEntreprise : ${company ?? '—'}\nE-mail : ${email}\nTéléphone : ${phone ?? '—'}\n\n${message ?? ''}`,
+  }),
   welcome: ({ name, company, appUrl }) => ({
     subject: 'Bienvenue sur RELANCEO',
     text: `Bonjour${name ? ` ${name}` : ''},\n\nVotre espace « ${company} » est créé. Choisissez votre offre pour commencer : ${appUrl}/app.html#/abonnement${FOOTER}`,

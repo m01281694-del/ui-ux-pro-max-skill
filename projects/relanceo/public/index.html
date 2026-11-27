@@ -15,6 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/styles.css">
   <link rel="stylesheet" href="/assets/landing.css">
+  <link rel="stylesheet" href="/assets/app.css">
   <script src="/assets/pricing.js" defer></script>
 </head>
 <body>
@@ -22,7 +23,7 @@
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/">RELAN<span>CEO</span></a>
-      <nav class="nav" aria-label="Navigation principale"><a href="#fonctionnalites">Fonctionnalités</a><a href="#offres">Offres</a><a href="/connexion.html">Connexion</a><a class="btn sm primary nav-cta" href="/inscription.html">Commencer</a></nav>
+      <nav class="nav" aria-label="Navigation principale"><a href="#fonctionnalites">Fonctionnalités</a><a href="#offres">Offres</a><a href="#demo">Démo</a><a href="/connexion.html">Connexion</a><a class="btn sm primary nav-cta" href="/inscription.html">Commencer</a></nav>
     </div>
   </header>
   <main id="main">
@@ -90,6 +91,28 @@
         <article><h3>L'IA envoie-t-elle des messages à mes clients ?</h3><p>Non. L'IA propose un résumé, une priorité ou un brouillon de réponse : vous relisez et décidez. Seules les automatisations Business, que vous configurez et autorisez explicitement, envoient des relances.</p></article>
         <article><h3>Comment se passe le paiement ?</h3><p>Par carte bancaire via Stripe. Vos coordonnées bancaires ne transitent jamais par nos serveurs. Factures et moyen de paiement sont accessibles depuis votre espace.</p></article>
         <article><h3>Engagement et renouvellement</h3><p>Abonnement mensuel renouvelé automatiquement, résiliable à tout moment pour la fin de la période en cours.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap l-demo" id="demo" aria-labelledby="demo-title">
+      <div class="demo-grid">
+        <div>
+          <h2 class="section" id="demo-title">Une démonstration de 15 minutes ?</h2>
+          <p class="muted">Nous vous montrons RELANCEO sur vos propres cas : devis restés sans réponse, demandes perdues dans la boîte mail, relances oubliées. Sans engagement.</p>
+          <ul class="demo-points"><li>Réponse sous 24 h ouvrées</li><li>Mise en place guidée de votre espace</li><li>Import de votre fichier clients</li></ul>
+        </div>
+        <form id="lead-form" class="card" novalidate>
+          <div class="grid2"><div class="field"><label for="l-name">Votre nom</label><input class="input" id="l-name" required autocomplete="name"></div>
+          <div class="field"><label for="l-company">Entreprise</label><input class="input" id="l-company" autocomplete="organization"></div></div>
+          <div class="grid2"><div class="field"><label for="l-email">E-mail</label><input class="input" id="l-email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="l-phone">Téléphone</label><input class="input" id="l-phone" type="tel" autocomplete="tel"></div></div>
+          <div class="field"><label for="l-size">Taille de l'équipe</label><select class="input" id="l-size"><option>Seul(e)</option><option>2 à 3 personnes</option><option>4 à 10 personnes</option><option>Plus de 10</option></select></div>
+          <div class="field"><label for="l-msg">Votre besoin (facultatif)</label><textarea class="input" id="l-msg" maxlength="2000" placeholder="Ex. : nous envoyons 40 devis par mois et en relançons peu"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="l-website">Site web</label><input id="l-website" tabindex="-1" autocomplete="off"></div>
+          <p class="small muted">Vos coordonnées servent uniquement à vous recontacter. <a href="/confidentialite.html">Confidentialité</a></p>
+          <div id="lead-msg" role="status"></div>
+          <button class="btn primary w100" type="submit">Être recontacté</button>
+        </form>
       </div>
     </section>
 

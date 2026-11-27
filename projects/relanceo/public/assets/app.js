@@ -362,11 +362,20 @@ async function runAi(id, kind, btn) {
 async function viewCustomers() {
   if (!can('customers.view')) { view.innerHTML = head('Clients') + upsellPanel('customers.view'); return; }
   const rows = (await api('GET', '/api/customers')).body;
-  view.innerHTML = `${head('Clients', 'Vos fiches clients et leur historique.', can('customers.manage') ? `<button class="btn primary" type="button" id="new-c">${icon('plus', 'ico')} Nouveau client</button>` : '')}
+  view.innerHTML = `${head('Clients', 'Vos fiches clients et leur historique.', can('customers.manage') ? `<label class="btn" for="csv-file">Importer un fichier CSV</label><input id="csv-file" type="file" accept=".csv,text/csv" hidden><button class="btn primary" type="button" id="new-c">${icon('plus', 'ico')} Nouveau client</button>` : '')}
     <section class="panel">${rows.length ? `<div class="scroll-x"><table class="data"><thead><tr><th>Nom</th><th>E-mail</th><th>Téléphone</th><th>Relances</th></tr></thead><tbody>
     ${rows.map((c) => `<tr class="click" data-href="#/clients/${c.id}"><td><strong>${esc(c.name)}</strong></td><td>${esc(c.email ?? '—')}</td><td>${esc(c.phone ?? '—')}</td><td>${c.opted_out_at ? '<span class="chip red">Désinscrit</span>' : '<span class="chip">Accepte</span>'}</td></tr>`).join('')}
     </tbody></table></div>` : '<div class="empty"><strong>Aucun client</strong>Ajoutez vos clients pour suivre leurs demandes.</div>'}</section>`;
   if ($('#new-c')) $('#new-c').onclick = () => customerModal();
+  if ($('#csv-file')) {
+    $('#csv-file').onchange = async (ev) => {
+      const file = ev.target.files[0];
+      if (!file) return;
+      if (file.size > 1024 * 1024) { toast('Fichier trop volumineux (1 Mo maximum).', 'error'); return; }
+      const r = await api('POST', '/api/customers/import', { csv: await file.text() });
+      if (r.ok) { toast(`${r.body.created} client(s) importé(s)${r.body.skipped ? `, ${r.body.skipped} déjà présent(s)` : ''}.`); route(); } else toast(errMsg(r), 'error');
+    };
+  }
 }
 
 function customerModal(c = null) {

@@ -100,3 +100,23 @@ async function main() {
   }
 }
 main();
+
+// Formulaire « demander une démo »
+const lead = document.getElementById('lead-form');
+if (lead) {
+  lead.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const v = (id) => document.getElementById(id).value;
+    const out = document.getElementById('lead-msg');
+    const btn = lead.querySelector('button[type=submit]');
+    btn.disabled = true;
+    try {
+      const r = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: v('l-name'), company: v('l-company'), email: v('l-email'), phone: v('l-phone'), team_size: v('l-size'), message: v('l-msg'), website: v('l-website') }) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok) { lead.reset(); out.innerHTML = '<p class="msg">Merci ! Nous vous recontactons sous 24 h ouvrées.</p>'; }
+      else out.innerHTML = `<p class="msg error">${esc(j.error?.message ?? 'Envoi impossible.')}</p>`;
+    } catch { out.innerHTML = '<p class="msg error">Envoi impossible. Réessayez.</p>'; }
+    btn.disabled = false;
+  });
+}

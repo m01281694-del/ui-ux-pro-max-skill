@@ -69,14 +69,14 @@ function send(res, status, body, headers = {}) {
   res.end(isString ? body : JSON.stringify(body));
 }
 
-async function readBody(req) {
+async function readBody(req, max = MAX_BODY) {
   return new Promise((resolve, reject) => {
     let size = 0;
     let tooLarge = false;
     const chunks = [];
     req.on('data', (c) => {
       size += c.length;
-      if (size > MAX_BODY) { tooLarge = true; chunks.length = 0; return; } // on vide le flux sans le stocker
+      if (size > max) { tooLarge = true; chunks.length = 0; return; } // on vide le flux sans le stocker
       chunks.push(c);
     });
     req.on('end', () => (tooLarge
@@ -261,7 +261,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
       }
       let body = {};
       if (['POST', 'PATCH', 'PUT'].includes(req.method)) {
-        const raw = await readBody(req);
+        const raw = await readBody(req, pathname === '/api/customers/import' ? 1.5 * 1024 * 1024 : MAX_BODY);
         if (raw) {
           if (!String(req.headers['content-type'] ?? '').includes('application/json')) {
             throw new AppError(415, 'unsupported_media_type', 'JSON attendu.');

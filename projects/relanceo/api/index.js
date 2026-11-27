@@ -18,6 +18,13 @@ async function boot() {
       await operatorSetSubscription(built.db, tenantId, { planId: plan, actor: 'demo-seed' });
       await built.db.asService((tx) => tx.query('insert into user_credentials (user_id, password_hash) values ($1, $2)', [userId, hash]));
     }
+    // Compte propriétaire de démonstration (page /admin.html) : ADMIN_EMAILS=admin@relanceo.app
+    await built.db.asService(async (tx) => {
+      const u = await tx.one(`insert into users (email, display_name) values ('admin@relanceo.app', 'Administrateur') returning id`);
+      await tx.query('insert into user_credentials (user_id, password_hash) values ($1, $2)', [u.id, hash]);
+      await tx.query(`insert into leads (name, company, email, phone, message, team_size) values
+        ('Exemple — Marc Dupuis', 'Plomberie Dupuis', 'marc@exemple.test', '06 00 00 00 00', 'Nous envoyons 30 devis par mois et en relançons peu.', '2 à 3 personnes')`);
+    }, 'demo-seed');
   }
   return built.app;
 }
