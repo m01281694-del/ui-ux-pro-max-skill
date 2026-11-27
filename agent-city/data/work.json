@@ -978,6 +978,34 @@
     "kind": "stats",
     "label": "stats.json"
    }
+  },
+  {
+   "id": "r-1795770420000-81",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève Metricool 10 h : Instagram +4 vues (842) — TikTok 17 010, YouTube 539 inchangés",
+   "start": 1795770420000,
+   "end": 1795770540000,
+   "residentId": 267,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795770540000-82",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie Beacons via Gmail : aucune vente (0 €)",
+   "start": 1795770540000,
+   "end": 1795770660000,
+   "residentId": 276,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
   }
  ],
  "contents": [
