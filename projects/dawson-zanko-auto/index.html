@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060708">
+<!--@head-->
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/assets/img/hero-1600.avif" type="image/avif" imagesrcset="/assets/img/hero-960.avif 960w, /assets/img/hero-1600.avif 1600w, /assets/img/hero-2400.avif 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/boot.js"></script>
+</head>
+<body data-page="home">
+<!--@header-->
+
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro__line"></div>
+  <p class="intro__brand" data-split>{{BRAND}}</p>
+  <p class="intro__sub">Marseille</p>
+  <button class="intro__skip" type="button" data-intro-skip>Passer</button>
+</div>
+
+<main id="main">
+  <!-- HÉRO : scène sticky pilotée par le défilement -->
+  <section class="hero" data-hero aria-label="Présentation">
+    <div class="hero__stage">
+      <div class="hero__media" data-hero-media>
+        <picture>
+          <source media="(max-width: 640px)" srcset="/assets/img/hero-portrait-900.webp" type="image/webp">
+          <source srcset="/assets/img/hero-960.avif 960w, /assets/img/hero-1600.avif 1600w, /assets/img/hero-2400.avif 2400w" sizes="100vw" type="image/avif">
+          <source srcset="/assets/img/hero-960.webp 960w, /assets/img/hero-1600.webp 1600w, /assets/img/hero-2400.webp 2400w" sizes="100vw" type="image/webp">
+          <img src="/assets/img/hero-1600.jpg" alt="Coupé sportif noir éclairé dans un studio sombre" fetchpriority="high" decoding="async" width="2400" height="1350">
+        </picture>
+      </div>
+      <div class="hero__sweep" aria-hidden="true"></div>
+      <div class="hero__fog" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__content wrap" data-hero-content>
+        <p class="eyebrow" data-hero-in>Achat · Vente · Marseille 11e</p>
+        <h1 class="hero__title display" data-split data-hero-in>{{BRAND}}</h1>
+        <p class="hero__lead" data-hero-in>Des voitures d'occasion choisies avec exigence, présentées en toute transparence. Trouvez la vôtre en quelques secondes.</p>
+        <div class="row-btns" data-hero-in>
+          <a class="btn btn--light" href="/vehicules" data-magnetic><span>Découvrir les véhicules</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="/contact" data-magnetic><span>Contacter l'entreprise</span></a>
+        </div>
+      </div>
+
+      <form class="hero__search glass" action="/vehicules" role="search" data-hero-search data-hero-in>
+        <label class="sr" for="hero-q">Décrivez la voiture que vous cherchez</label>
+        <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="hero-q" name="q" type="search" autocomplete="off" placeholder="« SUV diesel auto, moins de 20 000 € »">
+        <button class="btn btn--accent btn--sm" type="submit">Rechercher</button>
+        <div class="hero__chips" aria-label="Exemples de recherche">
+          <button type="button" data-q="citadine essence moins de 15k">Citadine &lt; 15 k€</button>
+          <button type="button" data-q="suv automatique">SUV automatique</button>
+          <button type="button" data-q="hybride récente">Hybride récente</button>
+          <button type="button" data-q="moins de 60000 km">&lt; 60 000 km</button>
+        </div>
+      </form>
+
+      <p class="hero__caption" aria-hidden="true">Photo d'illustration</p>
+      <div class="hero__scroll" aria-hidden="true"><span></span></div>
+
+      <!-- Énoncés synchronisés au défilement -->
+      <div class="hero__statements" aria-hidden="true">
+        <p data-statement="0"><span>Sélection.</span> Chaque véhicule est présenté avec ses caractéristiques complètes.</p>
+        <p data-statement="1"><span>Transparence.</span> Prix, kilométrage, équipements : tout est sur la fiche.</p>
+        <p data-statement="2"><span>Simplicité.</span> Renseignement ou essai : une demande, une réponse.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bandeau d'informations vérifiables -->
+  <section class="facts" aria-label="L'entreprise en bref">
+    <div class="wrap facts__grid">
+      <div class="fact" data-reveal><span class="fact__k">Activité</span><strong>Commerce de voitures d'occasion</strong></div>
+      <div class="fact" data-reveal><span class="fact__k">Implantation</span><strong>Marseille 11e</strong></div>
+      <div class="fact" data-reveal><span class="fact__k">Statut</span><strong>Entreprise immatriculée au RNE</strong></div>
+      <div class="fact" data-reveal><span class="fact__k">En ligne</span><strong>Demande d'essai &amp; de renseignements</strong></div>
+    </div>
+  </section>
+
+  <!-- Sélection -->
+  <section class="section" aria-labelledby="sel-title">
+    <div class="wrap section__head">
+      <div>
+        <p class="eyebrow" data-reveal>La sélection</p>
+        <h2 id="sel-title" class="display display--md" data-reveal>En vitrine <span class="muted">cette semaine</span></h2>
+      </div>
+      <a class="link-arrow" href="/vehicules" data-reveal>Tout le stock <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="rail" data-featured tabindex="0" aria-label="Véhicules mis en avant"></div>
+    <div class="wrap rail__ctrl" data-rail-ctrl>
+      <button type="button" class="round" data-rail="-1" aria-label="Précédent"><svg class="i" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <div class="rail__progress"><span data-rail-progress></span></div>
+      <button type="button" class="round" data-rail="1" aria-label="Suivant"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section--alt" aria-labelledby="svc-title">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Ce que nous faisons</p>
+      <h2 id="svc-title" class="display display--md" data-reveal>Acheter. Vendre.<br><span class="muted">Trouver la bonne voiture.</span></h2>
+      <div class="services">
+        <a class="service" href="/vehicules" data-reveal data-glow>
+          <svg class="i i--lg" aria-hidden="true"><use href="#i-key"/></svg>
+          <h3>Acheter un véhicule</h3>
+          <p>Parcourez le stock, comparez les fiches complètes et demandez un essai en ligne.</p>
+          <span class="link-arrow">Voir le stock <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="service" href="/contact?sujet=vente" data-reveal data-glow>
+          <svg class="i i--lg" aria-hidden="true"><use href="#i-swap"/></svg>
+          <h3>Vendre votre voiture</h3>
+          <p>Décrivez votre véhicule : nous revenons vers vous pour étudier son rachat.</p>
+          <span class="link-arrow">Proposer mon véhicule <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="service" href="/contact?sujet=recherche" data-reveal data-glow>
+          <svg class="i i--lg" aria-hidden="true"><use href="#i-target"/></svg>
+          <h3>Recherche personnalisée</h3>
+          <p>Vous ne trouvez pas le modèle idéal ? Dites-nous ce que vous cherchez, budget compris.</p>
+          <span class="link-arrow">Décrire mon projet <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section class="section" aria-labelledby="steps-title">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Le parcours</p>
+      <h2 id="steps-title" class="display display--md" data-reveal>Quatre étapes, <span class="muted">zéro détour.</span></h2>
+      <ol class="steps" data-steps>
+        <li class="step" data-reveal><span class="step__n">01</span><h3>Choisissez</h3><p>Recherche en langage naturel, filtres précis, fiches complètes.</p></li>
+        <li class="step" data-reveal><span class="step__n">02</span><h3>Demandez</h3><p>Renseignement ou essai : le formulaire est déjà pré-rempli avec le véhicule.</p></li>
+        <li class="step" data-reveal><span class="step__n">03</span><h3>Essayez</h3><p>Nous convenons ensemble d'un rendez-vous à Marseille.</p></li>
+        <li class="step" data-reveal><span class="step__n">04</span><h3>Roulez</h3><p>Finalisation de la vente et remise des clés.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Détail / storytelling -->
+  <section class="story" aria-labelledby="story-title">
+    <div class="story__media" data-parallax="0.12">
+      <img src="/assets/img/detail-wheel-1200.webp" alt="" loading="lazy" decoding="async" width="1200" height="852">
+    </div>
+    <div class="story__body wrap">
+      <p class="eyebrow" data-reveal>L'entreprise</p>
+      <h2 id="story-title" class="display display--md" data-reveal>L'exigence <span class="muted">dans chaque détail.</span></h2>
+      <p class="lead" data-reveal>Entreprise marseillaise spécialisée dans l'achat et la revente de véhicules automobiles, installée dans le 11e arrondissement. Une approche simple : des informations claires, un interlocuteur unique, une réponse rapide.</p>
+      <a class="btn btn--ghost" href="/entreprise" data-reveal><span>Découvrir l'entreprise</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Avis (affichés uniquement s'ils sont réels) -->
+  <section class="section" data-reviews hidden aria-labelledby="rev-title">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Avis clients</p>
+      <h2 id="rev-title" class="display display--md" data-reveal>Ils nous ont <span class="muted">fait confiance.</span></h2>
+      <div class="reviews" data-reviews-list></div>
+    </div>
+  </section>
+</main>
+
+<!--@footer-->
+<script src="/content/site.js"></script>
+<script src="/content/vehicles.js"></script>
+<script src="/content/vehicles.example.js"></script>
+<script src="/assets/js/smart-search.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/home.js"></script>
+</body>
+</html>

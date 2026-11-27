@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060708">
+<!--@head-->
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/boot.js"></script>
+</head>
+<body data-page="legal">
+<!--@header-->
+<main id="main">
+  <section class="page-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Mentions légales</span></nav>
+      <h1 class="display" data-split>Mentions légales</h1>
+      
+    </div>
+  </section>
+  <article class="wrap legal">
+      <h2>Éditeur du site</h2>
+      <dl>
+        <dt>Éditeur</dt><dd><span data-bind="legal.owner"></span> — <span data-bind="legal.status"></span></dd>
+        <dt>Nom commercial</dt><dd data-bind="brand.name"></dd>
+        <dt>Adresse</dt><dd data-bind="legal.address"></dd>
+        <dt>SIREN</dt><dd data-bind="legal.siren"></dd>
+        <dt>SIRET (établissement)</dt><dd data-bind="legal.siret"></dd>
+        <dt>Immatriculation</dt><dd data-bind="legal.rne"></dd>
+        <dt>Activité (NAF)</dt><dd data-bind="legal.naf"></dd>
+        <dt>TVA intracommunautaire</dt><dd data-bind="legal.vat" data-empty="Non communiqué"></dd>
+        <dt>Téléphone</dt><dd data-bind="contact.phone_display" data-empty="À compléter"></dd>
+        <dt>E-mail</dt><dd data-bind="contact.email" data-empty="À compléter"></dd>
+        <dt>Directeur de la publication</dt><dd data-bind="legal.owner"></dd>
+      </dl>
+      <h2>Hébergement</h2>
+      <p><span data-bind="legal.host.name"></span> — <span data-bind="legal.host.address"></span> — <span data-bind="legal.host.url"></span></p>
+      <h2>Médiation de la consommation</h2>
+      <p>Conformément aux articles L.612-1 et suivants du Code de la consommation, le consommateur peut recourir gratuitement à un médiateur de la consommation : <strong data-bind="legal.mediator.name" data-empty="médiateur à désigner avant la mise en ligne"></strong> <span data-bind="legal.mediator.url"></span>.</p>
+      <h2>Propriété intellectuelle</h2>
+      <p>La structure, les textes et les éléments graphiques du site sont protégés. Toute reproduction sans autorisation est interdite.</p>
+      <h2 id="credits">Crédits</h2>
+      <p>Les visuels de la page d'accueil et de la page « L'entreprise » sont des photographies d'illustration issues d'Unsplash, utilisées conformément à la licence Unsplash ; ils ne représentent pas un véhicule proposé à la vente. Police de caractères : Archivo (SIL Open Font License).</p>
+      <h2>Informations sur les véhicules</h2>
+      <p>Les caractéristiques et prix sont fournis à titre indicatif et doivent être confirmés avant toute transaction. Les prix affichés sont TTC.</p>
+      <p class="small muted">Dernière mise à jour : <span data-bind="legal.updated"></span>.</p>
+  </article>
+</main>
+<!--@footer-->
+<script src="/content/site.js"></script>
+<script src="/content/vehicles.js"></script>
+<script src="/content/vehicles.example.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/pages.js"></script>
+</body>
+</html>
