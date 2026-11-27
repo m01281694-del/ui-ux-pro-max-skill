@@ -58,6 +58,7 @@ export async function runAi(ctx, { kind, requestId, idempotencyKey }) {
   try {
     result = await provider.run(kind, { subject: prepared.req.subject, body: prepared.req.body });
   } catch (err) {
+    console.error(`[ai] ${kind} échec : ${err?.status ?? ''} ${err?.message ?? err}`);
     await db.asUser(userId, (tx) => tx.one('select app.refund_ai($1, $2) as r', [tenantId, idem]));
     if (err instanceof AppError) throw err;
     throw new AppError(502, 'ai_provider_error', "Le service d'IA n'a pas répondu. Aucune opération n'a été décomptée.");
