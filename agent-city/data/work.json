@@ -852,6 +852,104 @@
    "start": 1795705800000,
    "end": 1795705860000,
    "residentId": 277
+  },
+  {
+   "id": "r-1795716600000-72",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève Metricool 19 h : aucun changement — TikTok 17 010 vues, YouTube 539, Instagram 838",
+   "start": 1795716600000,
+   "end": 1795716720000,
+   "residentId": 264,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795716720000-73",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie Beacons via Gmail : aucune vente (0 €)",
+   "start": 1795716720000,
+   "end": 1795716840000,
+   "residentId": 275,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795727400000-74",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève Metricool 22 h : aucun changement",
+   "start": 1795727400000,
+   "end": 1795727520000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795727520000-75",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie Beacons via Gmail : aucune vente (0 €)",
+   "start": 1795727520000,
+   "end": 1795727640000,
+   "residentId": 273,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795748820000-76",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève Metricool de nuit (1 h + 4 h) : aucun changement",
+   "start": 1795748820000,
+   "end": 1795748940000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795748940000-77",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie Beacons via Gmail : aucune vente (0 €)",
+   "start": 1795748940000,
+   "end": 1795749060000,
+   "residentId": 273,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795758480000-78",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "production du 27/11 suspendue : limite Metricool toujours atteinte (incident du 20/11), v002 prête en attente",
+   "start": 1795758480000,
+   "end": 1795758600000,
+   "residentId": 113,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
   }
  ],
  "contents": [
