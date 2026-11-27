@@ -84,6 +84,16 @@ async function main() {
       document.getElementById('footer-note').textContent = 'Le paiement en ligne n\'est pas encore activé : aucune somme ne peut être prélevée depuis cette page.';
     }
     renderPlans(data);
+    // Données structurées pour Google (générées depuis le catalogue, jamais codées en dur).
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'RELANCEO',
+      applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+      description: 'Suivi des demandes clients, assistance IA et relances automatiques pour les PME.',
+      offers: data.plans.map((p) => ({ '@type': 'Offer', name: p.name, price: (p.price_cents / 100).toFixed(2), priceCurrency: data.currency, url: `${location.origin}/inscription.html?offre=${p.id}` })),
+    });
+    document.head.append(ld);
     renderCompare(data);
   } catch {
     document.getElementById('plans').innerHTML = '<p class="msg error">Impossible de charger les offres. Réessayez plus tard.</p>';

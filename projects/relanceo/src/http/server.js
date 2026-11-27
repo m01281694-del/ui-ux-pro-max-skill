@@ -198,6 +198,18 @@ export function createApp({ db, catalog, services, env = process.env }) {
     return send(res, 200, { ok: true, automations, cost_alerts: costAlerts.length });
   }
 
+  // Référencement : adresses absolues construites sur le domaine réel (APP_URL ou domaine appelé).
+  function seoFile(req, res, pathname) {
+    const origin = /^https?:\/\//.test(env.APP_URL ?? '') ? env.APP_URL.replace(/\/$/, '') : `https://${req.headers.host}`;
+    if (pathname === '/robots.txt') {
+      res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
+      return res.end(`User-agent: *\nAllow: /\nDisallow: /app.html\nDisallow: /api/\nDisallow: /u/\nDisallow: /demo-paiement.html\nSitemap: ${origin}/sitemap.xml\n`);
+    }
+    const pages = ['/', '/mentions-legales.html', '/cgv.html', '/confidentialite.html'];
+    res.writeHead(200, { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
+    return res.end(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${origin}${p}</loc></url>`).join('\n')}\n</urlset>\n`);
+  }
+
   async function handleUnsubscribe(req, res, token) {
     const customer = await db.asService((tx) => tx.one('select id, opted_out_at from customers where unsubscribe_token = $1', [token]), 'unsubscribe');
     if (!customer) return send(res, 404, '<!doctype html><meta charset="utf-8"><title>Lien invalide</title><p>Lien invalide ou expiré.</p>');
@@ -233,6 +245,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
       if (req.method === 'POST' && pathname === '/api/webhooks/stripe') return await handleWebhook(req, res, await readBody(req));
       if (req.method === 'POST' && pathname === '/api/webhooks/inbound-email') return await handleInbound(req, res, await readBody(req));
       if ((req.method === 'GET' || req.method === 'POST') && pathname === '/api/cron/tick') return await handleCron(req, res);
+      if (req.method === 'GET' && (pathname === '/robots.txt' || pathname === '/sitemap.xml')) return seoFile(req, res, pathname);
       const unsub = /^\/u\/([a-f0-9]{16,80})$/.exec(pathname);
       if (unsub && (req.method === 'GET' || req.method === 'POST')) return await handleUnsubscribe(req, res, unsub[1]);
       if (!pathname.startsWith('/api/')) {
