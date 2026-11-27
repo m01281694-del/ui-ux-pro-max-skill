@@ -109,7 +109,7 @@
     $("[data-count]").innerHTML = "<strong>" + res.length + "</strong> véhicule" + (res.length > 1 ? "s" : "") + (DZ.usingExamples ? ' <span class="badge badge--ghost">Exemples</span>' : "");
     grid.innerHTML = res.length ? res.map(DZ.card).join("") :
       '<div class="empty glass" style="grid-column:1/-1"><h3>' + (all.length ? "Aucun véhicule ne correspond… pour l'instant." : "Nouveaux arrivages en préparation") + '</h3><p class="muted">Confiez-nous votre recherche : nous vous recontactons dès qu\'un véhicule correspond.</p><div class="row-btns" style="justify-content:center">' +
-      (all.length ? '<button type="button" class="btn btn--ghost" data-reset>Effacer les filtres</button>' : "") + '<a class="btn btn--light" href="/contact?sujet=recherche">Recherche personnalisée</a></div></div>';
+      (all.length ? '<button type="button" class="btn btn--ghost" data-reset>Effacer les filtres</button>' : "") + '<a class="btn btn--light" href="contact.html?sujet=recherche">Recherche personnalisée</a></div></div>';
     renderUnderstood(); toUrl();
   }
 

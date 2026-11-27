@@ -73,7 +73,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var q = form.q.value.trim();
-      location.href = "/vehicules" + (q ? "?q=" + encodeURIComponent(q) : "") + "#recherche";
+      location.href = "vehicules.html" + (q ? "?q=" + encodeURIComponent(q) : "") + "#recherche";
     });
   }
 
@@ -84,7 +84,7 @@
     var feat = list.filter(function (v) { return v.featured; });
     list = (feat.length >= 3 ? feat : list).slice(0, 8);
     if (!list.length) {
-      rail.innerHTML = '<div class="wrap"><div class="empty glass"><h3>Nouveaux arrivages en préparation</h3><p class="muted">Décrivez-nous la voiture que vous cherchez, nous revenons vers vous.</p><a class="btn btn--light" href="/contact?sujet=recherche">Recherche personnalisée</a></div></div>';
+      rail.innerHTML = '<div class="wrap"><div class="empty glass"><h3>Nouveaux arrivages en préparation</h3><p class="muted">Décrivez-nous la voiture que vous cherchez, nous revenons vers vous.</p><a class="btn btn--light" href="contact.html?sujet=recherche">Recherche personnalisée</a></div></div>';
       $("[data-rail-ctrl]").hidden = true;
     } else {
       rail.innerHTML = '<div class="rail__track">' + list.map(DZ.card).join("") + "</div>";

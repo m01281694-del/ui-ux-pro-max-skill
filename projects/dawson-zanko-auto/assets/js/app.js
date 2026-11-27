@@ -39,7 +39,7 @@
     o._i = i;
     return o;
   });
-  function vurl(v) { return "/vehicule?id=" + encodeURIComponent(v.id); }
+  function vurl(v) { return "vehicule.html?id=" + encodeURIComponent(v.id); }
   function silhouette(v) {
     var s = { suv: "suv", monospace: "suv", berline: "sedan", break: "sedan", coupe: "sedan", cabriolet: "sedan", utilitaire: "van" }[v.body] || "hatch";
     return '<div class="carviz" aria-hidden="true"><svg viewBox="0 0 400 150"><use href="#car-' + s + '"/></svg><span class="carviz__floor"></span></div>';
@@ -118,7 +118,7 @@
       if (wa) items.push('<li><a href="' + esc(waLink()) + '" target="_blank" rel="noopener">WhatsApp</a></li>');
       if (C.email) items.push('<li><a href="mailto:' + esc(C.email) + '">' + esc(C.email) + "</a></li>");
       items.push("<li>" + esc(C.showroom_address || C.district || "Marseille") + "</li>");
-      items.push('<li><a href="/contact">Formulaire de contact</a></li>');
+      items.push('<li><a href="contact.html">Formulaire de contact</a></li>');
       list.innerHTML = items.join("");
     }
     var dock = $("[data-dock]");
@@ -126,8 +126,8 @@
       var b = [];
       if (tel) b.push('<a href="' + esc(tel) + '">' + icon("phone") + "<span>Appeler</span></a>");
       if (wa) b.push('<a href="' + esc(waLink("Bonjour, je vous contacte depuis votre site.")) + '" target="_blank" rel="noopener">' + icon("wa") + "<span>WhatsApp</span></a>");
-      if (document.body.getAttribute("data-page") !== "vehicules") b.push('<a href="/vehicules">' + icon("search") + "<span>Véhicules</span></a>");
-      b.push('<a href="/contact" class="is-primary">' + icon("mail") + "<span>Écrire</span></a>");
+      if (document.body.getAttribute("data-page") !== "vehicules") b.push('<a href="vehicules.html">' + icon("search") + "<span>Véhicules</span></a>");
+      b.push('<a href="contact.html" class="is-primary">' + icon("mail") + "<span>Écrire</span></a>");
       dock.innerHTML = b.join("");
       var showDock = function () { dock.classList.toggle("is-visible", scrollY > 280); };
       addEventListener("scroll", showDock, { passive: true }); showDock();

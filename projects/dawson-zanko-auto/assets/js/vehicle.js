@@ -3,12 +3,12 @@
   "use strict";
   var DZ = window.DZ, $ = DZ.$, $$ = DZ.$$, esc = DZ.esc;
   var mount = $("[data-vehicle]");
-  var id = new URLSearchParams(location.search).get("id") || "";
+  var id = new URLSearchParams(location.search).get("id") || decodeURIComponent(location.hash.slice(1)) || "";
   var v = DZ.vehicles.filter(function (x) { return x.id === id; })[0];
 
   if (!v) {
     document.title = "Véhicule introuvable | " + DZ.SITE.brand.name;
-    mount.innerHTML = '<div class="empty glass" style="margin:40px 0 120px"><h1 class="display display--md">Véhicule introuvable</h1><p class="muted">Ce véhicule n\'est plus en ligne ou l\'adresse est incorrecte.</p><a class="btn btn--light" href="/vehicules">Voir le stock</a></div>';
+    mount.innerHTML = '<div class="empty glass" style="margin:40px 0 120px"><h1 class="display display--md">Véhicule introuvable</h1><p class="muted">Ce véhicule n\'est plus en ligne ou l\'adresse est incorrecte.</p><a class="btn btn--light" href="vehicules.html">Voir le stock</a></div>';
     return;
   }
 
@@ -32,7 +32,7 @@
   var photos = v.photos;
 
   var html =
-    '<nav class="crumbs" aria-label="Fil d\'Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href="/vehicules">Véhicules</a><span aria-hidden="true">/</span><span aria-current="page">' + esc(v.title) + "</span></nav>" +
+    '<nav class="crumbs" aria-label="Fil d\'Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><a href="vehicules.html">Véhicules</a><span aria-hidden="true">/</span><span aria-current="page">' + esc(v.title) + "</span></nav>" +
     (v.example ? '<p class="notice" style="margin-bottom:24px">Fiche d\'<strong>exemple</strong> (maquette) : ce véhicule n\'est pas à vendre.</p>' : "") +
     '<div class="vlayout"><div>' +
     '<div class="gallery" data-reveal><div class="gallery__main' + (photos.length ? "" : " no-photo") + '" data-main' + (photos.length ? ' role="button" tabindex="0" aria-label="Agrandir la photo"' : "") + ">" + DZ.media(v, true) +

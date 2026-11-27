@@ -47,7 +47,7 @@
       ph: kind === "info" ? "Votre question sur ce véhicule…" : kind === "essai" ? "Disponibilités, questions…" : "Votre message…"
     });
     h += '<div class="hp" aria-hidden="true"><label for="' + p + 'web">Site web</label><input id="' + p + 'web" name="website" tabindex="-1" autocomplete="off"></div>';
-    h += '<label class="check"><input type="checkbox" name="consent" value="oui" required aria-required="true"><span>J\'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="/confidentialite">politique de confidentialité</a>. <span aria-hidden="true">*</span></span></label>';
+    h += '<label class="check"><input type="checkbox" name="consent" value="oui" required aria-required="true"><span>J\'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>. <span aria-hidden="true">*</span></span></label>';
     h += '<p class="form-note">* obligatoire · indiquez au moins un téléphone ou un e-mail.</p>';
     h += '<div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>';
     var cta = { contact: "Envoyer ma demande", info: "Demander des renseignements", essai: "Demander un essai" }[kind];
