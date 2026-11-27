@@ -282,6 +282,19 @@ Lecture FinOps :
 
 ---
 
+
+## Mettre en ligne (résumé)
+
+1. **Base de données** : dans Vercel → projet `relanceo` → *Storage* → *Create Database* → **Neon (Postgres)**, offre gratuite. Vercel ajoute `DATABASE_URL` au projet. Sans elle, seule la démo en mémoire fonctionne (données et sessions perdues entre instances).
+2. **Stripe** : créez votre compte Stripe (identité + IBAN pour recevoir les virements), puis
+   `STRIPE_SECRET_KEY=sk_test_… APP_URL=https://votre-domaine node scripts/stripe-setup.mjs` et recopiez les variables affichées dans Vercel. Testez avec la carte 4242 4242 4242 4242, puis passez en clé `sk_live_`.
+3. **E-mails** : compte Resend + domaine vérifié → `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM`.
+4. Retirez `DEMO_MODE` / `BILLING_PROVIDER=demo`, ajoutez `APP_URL`, `CRON_SECRET`, puis redéployez.
+5. Relances automatiques toutes les 5 minutes : nécessite l'offre Vercel Pro (l'offre gratuite limite la tâche planifiée à une fois par jour).
+6. Complétez les passages « À COMPLÉTER » des pages légales et faites-les relire.
+
+Ce que vous recevez : pour 49,99 €, Stripe prélève environ 2,2 % + 0,25 € (≈ 1,35 €) ; les virements vers votre banque arrivent selon le calendrier Stripe (premier virement environ 7 jours après le premier paiement, puis en continu). Si vous êtes assujetti à la TVA, une partie du prix est de la TVA à reverser.
+
 ### Variables d'environnement
 
 | Variable | Rôle | Défaut |
