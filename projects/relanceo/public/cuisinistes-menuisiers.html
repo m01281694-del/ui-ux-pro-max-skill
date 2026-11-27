@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RELANCEO pour cuisinistes et menuisiers — relance automatique des devis</title>
+  <meta name="description" content="Vos clients comparent plusieurs devis pendant des semaines. RELANCEO relance automatiquement vos devis de cuisine, salle de bain, fenêtres et vérandas, et s'arrête dès que le client répond.">
+  <meta property="og:title" content="RELANCEO — la relance de devis pour cuisinistes et menuisiers">
+  <meta property="og:image" content="/og.jpg">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/landing.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/pricing.js" defer></script>
+  <script src="/assets/roi.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/">RELAN<span>CEO</span></a>
+      <nav class="nav" aria-label="Navigation principale"><a href="#calcul">Calculer</a><a href="#offres">Offres</a><a href="#demo">Démo</a><a class="btn sm primary nav-cta" href="/inscription.html?offre=business">Essayer</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="l-hero">
+      <div class="wrap l-hero-grid">
+        <div>
+          <p class="eyebrow">Cuisinistes · Salles de bain · Menuiseries · Vérandas</p>
+          <h1>Vos clients comparent 3 devis. <em>Celui qui relance signe.</em></h1>
+          <p class="lead">Un projet de cuisine ou de fenêtres se décide en plusieurs semaines. RELANCEO relance automatiquement chaque devis resté sans réponse, au bon moment, avec votre message — et s'arrête dès que le client répond.</p>
+          <div class="row"><a class="btn primary lg" href="#demo">Voir une démo de 15 min</a><a class="btn lg" href="#calcul">Calculer mon gain</a></div>
+          <p class="small muted" style="margin-top:14px">Sans engagement · installation guidée · vos devis et vos clients restent à vous</p>
+        </div>
+        <figure class="mock" aria-label="Aperçu illustratif">
+          <div class="mock-bar"><i></i><i></i><i></i><span>Devis en attente</span></div>
+          <div class="mock-body">
+            <div class="mock-row"><b>Cuisine sur mesure — M. et Mme Bernard · 14 800 €</b><span class="chip amber">J+3</span></div>
+            <div class="mock-row"><b>Fenêtres alu x6 — M. Petit · 7 200 €</b><span class="chip amber">J+5</span></div>
+            <div class="mock-row"><b>Salle de bain — Mme Roux · 9 500 €</b><span class="chip green">A répondu</span></div>
+            <div class="mock-relance">⚡ Relance de M. et Mme Bernard prévue demain 9 h <span>· annulée s'ils répondent avant</span></div>
+          </div>
+          <figcaption class="small muted">Aperçu illustratif</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap l-steps" aria-labelledby="pb">
+      <h2 class="section center" id="pb">Le devis perdu ne fait pas de bruit</h2>
+      <ol class="steps">
+        <li><span>1</span><h3>Vous chiffrez</h3><p>Visite, métré, plans, devis détaillé : plusieurs heures de travail par projet.</p></li>
+        <li><span>2</span><h3>Le client compare</h3><p>Il attend les autres devis, en parle en famille, hésite. Les semaines passent.</p></li>
+        <li><span>3</span><h3>Personne ne relance</h3><p>Vous êtes en pose ou en showroom. Le concurrent qui rappelle signe le chantier.</p></li>
+      </ol>
+    </section>
+
+    <section class="wrap" id="calcul" aria-labelledby="calc-title" style="padding:48px 16px">
+      <h2 class="section center" id="calc-title">Combien vous rapporterait une relance systématique ?</h2>
+      <p class="center muted">Calcul à partir de vos propres chiffres. Indiquez une hypothèse prudente.</p>
+      <div class="panel" style="max-width:860px;margin:24px auto 0"><div class="body">
+        <div class="grid2">
+          <div class="field"><label for="r-devis">Devis envoyés par mois</label><input class="input" id="r-devis" type="number" min="1" value="20"></div>
+          <div class="field"><label for="r-montant">Montant moyen d'un devis (€)</label><input class="input" id="r-montant" type="number" min="100" step="100" value="8000"></div>
+          <div class="field"><label for="r-marge">Votre marge sur un chantier (%)</label><input class="input" id="r-marge" type="number" min="1" max="100" value="30"></div>
+          <div class="field"><label for="r-recup">Devis récupérés grâce aux relances, par mois</label><input class="input" id="r-recup" type="number" min="0" step="0.5" value="1"><span class="hint">Hypothèse à choisir vous-même : 1 sur 20 = un seul chantier de plus.</span></div>
+        </div>
+        <div class="kpis" style="margin:8px 0 0">
+          <div class="kpi-card"><div class="label">Chiffre d'affaires récupéré / an</div><div class="value" id="r-ca">—</div></div>
+          <div class="kpi-card"><div class="label">Marge récupérée / an</div><div class="value" id="r-mg">—</div></div>
+          <div class="kpi-card"><div class="label">Coût RELANCEO Business / an</div><div class="value" id="r-cost">—</div></div>
+          <div class="kpi-card"><div class="label">Rapport gain / coût</div><div class="value" id="r-roi">—</div></div>
+        </div>
+        <p class="small muted" style="margin-top:12px">Estimation indicative fondée uniquement sur les valeurs saisies ; aucun résultat n'est garanti.</p>
+      </div></div>
+    </section>
+
+    <section class="l-features" aria-labelledby="feat">
+      <div class="wrap">
+        <h2 class="section center" id="feat">Pensé pour les projets à gros devis</h2>
+        <div class="fgrid">
+          <article><h3>Relances au bon rythme</h3><p>Par exemple J+3 puis J+10 : vous choisissez le délai et le nombre de relances, adaptés à vos cycles de décision.</p></article>
+          <article><h3>Votre ton, vos mots</h3><p>Le message est le vôtre (« Avez-vous pu en parler en famille ? »), validé avant tout envoi. Le client répond directement.</p></article>
+          <article><h3>Jamais de relance en trop</h3><p>Le client répond, le chantier est signé ou perdu, il se désinscrit : la relance n'est pas envoyée.</p></article>
+          <article><h3>Tous vos devis en un coup d'œil</h3><p>En attente, relancés, répondus, signés : votre équipe voit où en est chaque projet.</p></article>
+          <article><h3>Showroom et chantier</h3><p>Chacun note ses échanges et ses rappels ; plus rien ne dépend de la mémoire d'une seule personne.</p></article>
+          <article><h3>Installé en 15 minutes</h3><p>Nous importons votre fichier clients et configurons votre première relance avec vous.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="offres" aria-labelledby="offres-title">
+      <div id="notice" class="notice" role="status" hidden></div>
+      <h2 class="section center" id="offres-title" style="margin-top:56px">Nos offres</h2>
+      <p class="center muted">Pour la relance automatique des devis, choisissez <strong>Business</strong>.</p>
+      <div id="plans" class="plans" aria-busy="true"></div>
+      <div hidden><table id="compare"></table></div>
+    </section>
+
+    <section class="wrap l-demo" id="demo" aria-labelledby="demo-title">
+      <div class="demo-grid">
+        <div>
+          <h2 class="section" id="demo-title">Voyons vos devis en attente</h2>
+          <p class="muted">15 minutes en visio ou au téléphone : nous regardons comment vous suivez vos devis aujourd'hui et ce que RELANCEO changerait concrètement.</p>
+          <ul class="demo-points"><li>Réponse sous 24 h ouvrées</li><li>Sans engagement</li><li>Import de votre fichier clients</li></ul>
+        </div>
+        <form id="lead-form" class="card" novalidate>
+          <div class="grid2"><div class="field"><label for="l-name">Votre nom</label><input class="input" id="l-name" required autocomplete="name"></div>
+          <div class="field"><label for="l-company">Entreprise</label><input class="input" id="l-company" autocomplete="organization"></div></div>
+          <div class="grid2"><div class="field"><label for="l-email">E-mail</label><input class="input" id="l-email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="l-phone">Téléphone</label><input class="input" id="l-phone" type="tel" autocomplete="tel"></div></div>
+          <div class="field"><label for="l-size">Votre activité</label><select class="input" id="l-size"><option>Cuisiniste</option><option>Salles de bain</option><option>Menuiserie / fenêtres</option><option>Vérandas / pergolas</option><option>Autre rénovation</option></select></div>
+          <div class="field"><label for="l-msg">Combien de devis par mois ? (facultatif)</label><textarea class="input" id="l-msg" maxlength="2000"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="l-website">Site web</label><input id="l-website" tabindex="-1" autocomplete="off"></div>
+          <div id="lead-msg" role="status"></div>
+          <button class="btn primary w100" type="submit">Être recontacté</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-grid"><span>© RELANCEO</span><nav aria-label="Informations légales"><a href="/">Accueil</a><a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">Conditions générales</a><a href="/confidentialite.html">Confidentialité</a></nav><span id="footer-note"></span></div></footer>
+</body>
+</html>

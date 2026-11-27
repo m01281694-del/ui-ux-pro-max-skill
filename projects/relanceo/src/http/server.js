@@ -205,7 +205,7 @@ export function createApp({ db, catalog, services, env = process.env }) {
       res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
       return res.end(`User-agent: *\nAllow: /\nDisallow: /app.html\nDisallow: /api/\nDisallow: /u/\nDisallow: /demo-paiement.html\nSitemap: ${origin}/sitemap.xml\n`);
     }
-    const pages = ['/', '/mentions-legales.html', '/cgv.html', '/confidentialite.html'];
+    const pages = ['/', '/cuisinistes-menuisiers.html', '/mentions-legales.html', '/cgv.html', '/confidentialite.html'];
     res.writeHead(200, { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
     return res.end(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${origin}${p}</loc></url>`).join('\n')}\n</urlset>\n`);
   }
