@@ -1174,6 +1174,16 @@
     "kind": "stats",
     "label": "stats.json"
    }
+  },
+  {
+   "id": "r-1795844877000-95",
+   "demo": false,
+   "dept": "publish",
+   "job": "Scheduler",
+   "title": "production du 28/11 suspendue : limite Metricool toujours atteinte (incident du 20/11), v002 prête en attente",
+   "start": 1795844877000,
+   "end": 1795844997000,
+   "residentId": 113
   }
  ],
  "contents": [
