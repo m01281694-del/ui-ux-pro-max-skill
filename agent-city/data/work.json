@@ -1296,6 +1296,34 @@
     "kind": "stats",
     "label": "stats.json"
    }
+  },
+  {
+   "id": "r-1795889210000-104",
+   "demo": false,
+   "dept": "loop",
+   "job": "Post Analyst",
+   "title": "relève Metricool 19 h : aucun changement — TikTok 17 949, YouTube 542, Instagram 842",
+   "start": 1795889210000,
+   "end": 1795889330000,
+   "residentId": 260,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
+  },
+  {
+   "id": "r-1795889330000-105",
+   "demo": false,
+   "dept": "loop",
+   "job": "Revenue Tracker",
+   "title": "vérifie Beacons via Gmail : aucune vente (0 €)",
+   "start": 1795889330000,
+   "end": 1795889450000,
+   "residentId": 273,
+   "output": {
+    "kind": "stats",
+    "label": "stats.json"
+   }
   }
  ],
  "contents": [
